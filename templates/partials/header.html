@@ -1,0 +1,60 @@
+<header class="header">
+    <div class="container">
+        <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="logo">
+            <span class="logo-icon">✿</span>
+            <span class="logo-text">D'Krisna</span>
+        </a>
+
+        <nav class="nav" id="main-nav">
+            <ul class="nav-links">
+                <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}">{{ trans(key="nav_nails") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}">{{ trans(key="nav_massages") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}">{{ trans(key="nav_about") }}</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                {% set path = current_path | default(value="/") %}
+                <div class="lang-toggle">
+                    {% if lang == "es" %}
+                        <span class="lang-active">ES</span>
+                        <span class="lang-sep">/</span>
+                        <a href="/en{{ path }}" class="lang-inactive" title="English">EN</a>
+                    {% else %}
+                        <a href="{{ path | replace(from='/en', to='') }}" class="lang-inactive" title="Español">ES</a>
+                        <span class="lang-sep">/</span>
+                        <span class="lang-active">EN</span>
+                    {% endif %}
+                </div>
+
+                <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+                    {{ trans(key="nav_book") }}
+                </a>
+            </div>
+        </nav>
+
+        <div class="header-actions-desktop">
+            {% set path = current_path | default(value="/") %}
+            <div class="lang-toggle">
+                {% if lang == "es" %}
+                    <span class="lang-active">ES</span>
+                    <span class="lang-sep">/</span>
+                    <a href="/en{{ path }}" class="lang-inactive" title="English">EN</a>
+                {% else %}
+                    <a href="{{ path | replace(from='/en', to='') }}" class="lang-inactive" title="Español">ES</a>
+                    <span class="lang-sep">/</span>
+                    <span class="lang-active">EN</span>
+                {% endif %}
+            </div>
+
+            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+                {{ trans(key="nav_book") }}
+            </a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>

@@ -1,16 +1,88 @@
 # The URL the site will be built for
 base_url = "https://dkrisna.es"
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+title = "D'Krisna"
+description = "Centro de belleza y bienestar en Caravaca de la Cruz. Uñas, masajes y tratamientos corporales."
 
-# Whether to build a search index to be used later on by a JavaScript library
+compile_sass = true
 build_search_index = false
+default_language = "es"
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
 
+[languages.en]
+title = "D'Krisna"
+description = "Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments."
+
+[translations]
+# Spanish translations (default)
+nav_home = "Inicio"
+nav_about = "Sobre Nosotros"
+nav_nails = "Manicura"
+nav_massages = "Masajes"
+nav_location = "Ubicación"
+nav_contact = "Contacto"
+nav_book = "Reservar"
+hero_title = "Tu Oasis de Bienestar"
+hero_subtitle = "Descubre la serenidad en el corazón de Caravaca"
+hero_cta = "Reserva tu cita"
+services_title = "Nuestros Servicios"
+about_title = "Sobre Nosotros"
+location_title = "Encuéntranos"
+contact_title = "Contacto"
+footer_hours = "Horario"
+footer_contact = "Contacto"
+footer_follow = "Síguenos"
+weekdays = "Lunes a Viernes"
+saturday = "Sábado"
+sunday = "Domingo"
+closed = "Cerrado"
+view_more = "Ver más"
+book_now = "Reservar ahora"
+
+[languages.en.translations]
+nav_home = "Home"
+nav_about = "About Us"
+nav_nails = "Manicure"
+nav_massages = "Massages"
+nav_location = "Location"
+nav_contact = "Contact"
+nav_book = "Book Now"
+hero_title = "Your Wellness Oasis"
+hero_subtitle = "Discover serenity in the heart of Caravaca"
+hero_cta = "Book your appointment"
+services_title = "Our Services"
+about_title = "About Us"
+location_title = "Find Us"
+contact_title = "Contact"
+footer_hours = "Hours"
+footer_contact = "Contact"
+footer_follow = "Follow Us"
+weekdays = "Monday to Friday"
+saturday = "Saturday"
+sunday = "Sunday"
+closed = "Closed"
+view_more = "View more"
+book_now = "Book now"
+
 [extra]
-# Put all your custom variables here
+# Site info
+phone = "+34 968 123 456"
+email = "info@dkrisna.es"
+address = "Calle Gran Vía, 15, 30400 Caravaca de la Cruz, Murcia"
+maps_url = "https://maps.google.com/?q=Caravaca+de+la+Cruz"
+maps_embed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12644.254089542847!2d-1.8686!3d38.1056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f4a1e1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sCaravaca%20de%20la%20Cruz!5e0!3m2!1ses!2ses!4v1234567890"
+
+# Social media
+instagram = "https://instagram.com/serenityspacaravaca"
+facebook = "https://facebook.com/serenityspacaravaca"
+whatsapp = "34968123456"
+
+# Booking
+booksy_url = "https://link.booksy.com/DKrisnaNails"
+
+# Business hours
+horario_semana = "10:00 - 20:00"
+horario_sabado = "10:00 - 14:00"
+horario_domingo = "Cerrado"

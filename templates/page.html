@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="page-subtitle">{{ page.description }}</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section page-content">
+    <div class="container">
+        {{ page.content | safe }}
+    </div>
+</section>
+
+{% if page.extra.show_cta | default(value=true) %}
+<section class="section cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>¿Lista para relajarte?</h2>
+            <p>Reserva tu cita y descubre una nueva forma de cuidarte</p>
+            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                {{ trans(key="book_now") }}
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

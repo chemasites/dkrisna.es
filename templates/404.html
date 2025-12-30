@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Página no encontrada | {{ config.title }}{% endblock %}
+
+{% block content %}
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>Página no encontrada</h2>
+            <p>Lo sentimos, la página que buscas no existe o ha sido movida.</p>
+            <a href="/" class="btn btn-primary">Volver al inicio</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .error-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 80px;
+    }
+    .error-content h1 {
+        font-size: 8rem;
+        color: var(--color-primary, #8B7355);
+        margin-bottom: 0;
+        line-height: 1;
+    }
+    .error-content h2 {
+        margin-bottom: 1rem;
+    }
+    .error-content p {
+        color: #6B6B6B;
+        margin-bottom: 2rem;
+    }
+</style>
+{% endblock %}
