@@ -67,7 +67,7 @@ show_cta = true
 </div>
 <h3>Teléfono</h3>
 <p><a href="tel:+34968123456">+34 968 123 456</a></p>
-<p class="small">Llámanos o envía un WhatsApp</p>
+<p class="small">Llámanos o <a href="https://api.whatsapp.com/message/RPZDDO7K7CCPL1" target="_blank" rel="noopener">envía un WhatsApp</a></p>
 </div>
 
 <div class="info-card">
