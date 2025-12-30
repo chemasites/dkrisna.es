@@ -1,6 +1,6 @@
 +++
 title = "Manicure"
-description = "Manicure, pedicure and custom designs"
+description = "Manicure, pedicure, brows and lashes"
 template = "page.html"
 
 [extra]
@@ -9,84 +9,199 @@ show_cta = true
 
 <div class="services-full">
 <div class="services-intro">
-<p>Discover our manicure and pedicure services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish.</p>
+<p>Discover our beauty services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish.</p>
 </div>
 
+<h2 class="services-category-title">Hand Nails</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Basic Manicure</h3>
-<span class="service-price">15€</span>
+<h3>Cleaning & Traditional Polish</h3>
+<span class="service-price">10€</span>
 </div>
-<p>Filing, cuticles, hydration and traditional polish. Perfect for keeping your nails well-groomed.</p>
-<span class="service-duration">⏱ 30 min</span>
-</div>
-
-<div class="service-detail-card">
-<div class="service-header">
-<h3>Gel Polish Manicure</h3>
-<span class="service-price">25€</span>
-</div>
-<p>Long-lasting color up to 3 weeks. Includes preparation, gel polish and glossy finish.</p>
-<span class="service-duration">⏱ 45 min</span>
+<p>Complete cleaning with traditional polish for impeccable hands.</p>
+<span class="service-duration">30 min</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Gel Nails</h3>
-<span class="service-price">40€</span>
+<h3>Dipping Gel Nails</h3>
+<span class="service-price">from 15€</span>
 </div>
-<p>Full gel construction. Includes filing, custom shape and polish in your chosen color.</p>
-<span class="service-duration">⏱ 90 min</span>
-</div>
-
-<div class="service-detail-card">
-<div class="service-header">
-<h3>Gel Refill</h3>
-<span class="service-price">30€</span>
-</div>
-<p>Gel nail maintenance. Recommended every 3-4 weeks to maintain the perfect look.</p>
-<span class="service-duration">⏱ 60 min</span>
+<p>Dipping technique for a durable and resistant finish.</p>
+<span class="service-duration">1 hour</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Full Pedicure</h3>
-<span class="service-price">30€</span>
+<h3>Acrylic Refill</h3>
+<span class="service-price">from 20€</span>
 </div>
-<p>Complete foot treatment: relaxing bath, exfoliation, deep hydration and polish.</p>
-<span class="service-duration">⏱ 60 min</span>
+<p>Acrylic nail maintenance for an always perfect look.</p>
+<span class="service-duration">1.5 hours</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Gel Polish Pedicure</h3>
-<span class="service-price">35€</span>
+<h3>Acrylic Nails</h3>
+<span class="service-price">from 25€</span>
 </div>
-<p>Complete pedicure with long-lasting gel polish.</p>
-<span class="service-duration">⏱ 75 min</span>
+<p>Complete acrylic construction for strong and durable nails.</p>
+<span class="service-duration">2 hours</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Softgel Nails</h3>
+<span class="service-price">from 29€</span>
+</div>
+<p>Soft and flexible gel for a natural and elegant finish.</p>
+<span class="service-duration">2 hours</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Polygel Nails</h3>
+<span class="service-price">from 30€</span>
+</div>
+<p>The best of acrylic and gel combined for maximum durability.</p>
+<span class="service-duration">2 hours</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Gel Polish Removal</h3>
+<span class="service-price">from 10€</span>
+</div>
+<p>Careful removal of gel polish without damaging the nail.</p>
+<span class="service-duration">30 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Acrylic Removal</h3>
+<span class="service-price">from 12€</span>
+</div>
+<p>Safe removal of acrylic nails with hydrating treatment.</p>
+<span class="service-duration">45 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Single Nail (Gel Polish)</h3>
+<span class="service-price">from 2€</span>
+</div>
+<p>Repair or gel polish application on a single nail.</p>
+<span class="service-duration">20 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Single Nail (Extension)</h3>
+<span class="service-price">from 3€</span>
+</div>
+<p>Individual extension to repair or match a nail.</p>
+<span class="service-duration">30 min</span>
+</div>
+</div>
+
+<h2 class="services-category-title">Foot Nails</h2>
+<div class="services-list">
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Dry Pedicure + Traditional Polish</h3>
+<span class="service-price">18€</span>
+</div>
+<p>Complete pedicure without soaking with traditional polish.</p>
+<span class="service-duration">1 hour</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Dry Pedicure + Gel Polish</h3>
+<span class="service-price">21€</span>
+</div>
+<p>Dry pedicure with long-lasting gel polish finish.</p>
+<span class="service-duration">1.5 hours</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Spa Pedicure + Traditional Polish</h3>
+<span class="service-price">23€</span>
+</div>
+<p>Complete experience with bath, exfoliation and traditional polish.</p>
+<span class="service-duration">1 hour 15 min</span>
 </div>
 
 <div class="service-detail-card featured">
 <div class="service-header">
-<h3>Nail Art / Designs</h3>
-<span class="service-price">from 5€</span>
+<h3>Spa Pedicure + Gel Polish</h3>
+<span class="service-price">26€</span>
 </div>
-<p>Custom designs, decorations, rhinestones and special effects for unique nails.</p>
-<span class="service-duration">⏱ Variable</span>
+<p>Complete spa treatment with long-lasting gel polish finish.</p>
+<span class="service-duration">1.5 hours</span>
+</div>
+</div>
+
+<h2 class="services-category-title">Brows & Lashes</h2>
+<div class="services-list">
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Upper Lip & Brow Waxing</h3>
+<span class="service-price">4€</span>
+</div>
+<p>Brow shaping and waxing with upper lip grooming.</p>
+<span class="service-duration">30 min</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Gel/Polish Removal</h3>
+<h3>Brow Lamination</h3>
+<span class="service-price">12€</span>
+</div>
+<p>Treatment for more defined and styled brows.</p>
+<span class="service-duration">45 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Brow Lamination + Tinting</h3>
+<span class="service-price">from 18€</span>
+</div>
+<p>Lamination with tint for fuller and more defined brows.</p>
+<span class="service-duration">1 hour</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Lash Lift</h3>
+<span class="service-price">12€</span>
+</div>
+<p>Permanent curling for longer and lifted lashes.</p>
+<span class="service-duration">1 hour</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Individual Lash Extensions</h3>
+<span class="service-price">18€</span>
+</div>
+<p>Individual extensions for a natural and intense look.</p>
+<span class="service-duration">1 hour</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Lash Removal + Facial Massage</h3>
 <span class="service-price">10€</span>
 </div>
-<p>Careful removal without damaging the natural nail. Includes post-hydration.</p>
-<span class="service-duration">⏱ 20 min</span>
+<p>Safe extension removal with relaxing facial massage.</p>
+<span class="service-duration">30 min</span>
 </div>
 </div>
 
 <div class="services-note">
-<p><strong>Note:</strong> Prices may vary depending on the design and materials used. Consult with us for personalized quotes.</p>
+<p><strong>Note:</strong> Prices may vary depending on design and materials used. Book your appointment on Booksy to check availability.</p>
 </div>
 </div>

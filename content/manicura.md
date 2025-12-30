@@ -1,6 +1,6 @@
 +++
 title = "Manicura"
-description = "Manicura, pedicura y diseños personalizados"
+description = "Manicura, pedicura, cejas y pestañas"
 template = "page.html"
 
 [extra]
@@ -9,84 +9,199 @@ show_cta = true
 
 <div class="services-full">
 <div class="services-intro">
-<p>Descubre nuestros servicios de manicura y pedicura, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.</p>
+<p>Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.</p>
 </div>
 
+<h2 class="services-category-title">Uñas de las Manos</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Manicura Básica</h3>
-<span class="service-price">15€</span>
+<h3>Limpieza y Esmaltado Tradicional</h3>
+<span class="service-price">10€</span>
 </div>
-<p>Limado, cutículas, hidratación y esmaltado tradicional. Perfecta para mantener tus uñas cuidadas.</p>
-<span class="service-duration">⏱ 30 min</span>
-</div>
-
-<div class="service-detail-card">
-<div class="service-header">
-<h3>Manicura Semipermanente</h3>
-<span class="service-price">25€</span>
-</div>
-<p>Color duradero hasta 3 semanas. Incluye preparación, esmaltado semipermanente y acabado brillante.</p>
-<span class="service-duration">⏱ 45 min</span>
+<p>Limpieza completa con esmaltado tradicional para unas manos impecables.</p>
+<span class="service-duration">30 min</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Uñas de Gel</h3>
-<span class="service-price">40€</span>
+<h3>Uñas Semipermanentes con Dipping</h3>
+<span class="service-price">desde 15€</span>
 </div>
-<p>Construcción completa con gel. Incluye limado, forma personalizada y esmaltado del color elegido.</p>
-<span class="service-duration">⏱ 90 min</span>
-</div>
-
-<div class="service-detail-card">
-<div class="service-header">
-<h3>Relleno de Gel</h3>
-<span class="service-price">30€</span>
-</div>
-<p>Mantenimiento de uñas de gel. Recomendado cada 3-4 semanas para mantener el aspecto perfecto.</p>
-<span class="service-duration">⏱ 60 min</span>
+<p>Técnica de inmersión para un acabado duradero y resistente.</p>
+<span class="service-duration">1 hora</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Pedicura Completa</h3>
-<span class="service-price">30€</span>
+<h3>Relleno de Acrílico</h3>
+<span class="service-price">desde 20€</span>
 </div>
-<p>Tratamiento completo de pies: baño relajante, exfoliación, hidratación profunda y esmaltado.</p>
-<span class="service-duration">⏱ 60 min</span>
+<p>Mantenimiento de uñas acrílicas para un aspecto siempre perfecto.</p>
+<span class="service-duration">1.5 horas</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Pedicura Semipermanente</h3>
-<span class="service-price">35€</span>
+<h3>Uñas Acrílicas</h3>
+<span class="service-price">desde 25€</span>
 </div>
-<p>Pedicura completa con esmaltado semipermanente de larga duración.</p>
-<span class="service-duration">⏱ 75 min</span>
+<p>Construcción completa con acrílico para uñas fuertes y duraderas.</p>
+<span class="service-duration">2 horas</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Uñas Softgel</h3>
+<span class="service-price">desde 29€</span>
+</div>
+<p>Gel suave y flexible para un acabado natural y elegante.</p>
+<span class="service-duration">2 horas</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Uñas Poligel</h3>
+<span class="service-price">desde 30€</span>
+</div>
+<p>Lo mejor del acrílico y el gel combinados para máxima durabilidad.</p>
+<span class="service-duration">2 horas</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Retiro de Semipermanente</h3>
+<span class="service-price">desde 10€</span>
+</div>
+<p>Retirada cuidadosa del esmalte semipermanente sin dañar la uña.</p>
+<span class="service-duration">30 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Retiro de Acrílicas</h3>
+<span class="service-price">desde 12€</span>
+</div>
+<p>Eliminación segura de uñas acrílicas con tratamiento hidratante.</p>
+<span class="service-duration">45 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Una Uña (Semi)</h3>
+<span class="service-price">desde 2€</span>
+</div>
+<p>Reparación o aplicación de semipermanente en una sola uña.</p>
+<span class="service-duration">20 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Una Uña (Extensión)</h3>
+<span class="service-price">desde 3€</span>
+</div>
+<p>Extensión individual para reparar o igualar una uña.</p>
+<span class="service-duration">30 min</span>
+</div>
+</div>
+
+<h2 class="services-category-title">Uñas de los Pies</h2>
+<div class="services-list">
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Pedicura en Seco + Esmaltado Tradicional</h3>
+<span class="service-price">18€</span>
+</div>
+<p>Pedicura completa sin remojo con esmaltado tradicional.</p>
+<span class="service-duration">1 hora</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Pedicura en Seco + Semipermanente</h3>
+<span class="service-price">21€</span>
+</div>
+<p>Pedicura en seco con acabado semipermanente de larga duración.</p>
+<span class="service-duration">1.5 horas</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Pedicura Spa + Esmaltado Tradicional</h3>
+<span class="service-price">23€</span>
+</div>
+<p>Experiencia completa con baño, exfoliación y esmaltado tradicional.</p>
+<span class="service-duration">1 hora 15 min</span>
 </div>
 
 <div class="service-detail-card featured">
 <div class="service-header">
-<h3>Nail Art / Diseños</h3>
-<span class="service-price">desde 5€</span>
+<h3>Pedicura Spa + Semipermanente</h3>
+<span class="service-price">26€</span>
 </div>
-<p>Diseños personalizados, decoraciones, pedrería y efectos especiales para unas uñas únicas.</p>
-<span class="service-duration">⏱ Variable</span>
+<p>Tratamiento spa completo con acabado semipermanente duradero.</p>
+<span class="service-duration">1.5 horas</span>
+</div>
+</div>
+
+<h2 class="services-category-title">Cejas y Pestañas</h2>
+<div class="services-list">
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Depilación de Bozo y Cejas</h3>
+<span class="service-price">4€</span>
+</div>
+<p>Diseño y depilación de cejas con perfilado del bozo.</p>
+<span class="service-duration">30 min</span>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Retirada de Gel/Semipermanente</h3>
+<h3>Laminado de Cejas</h3>
+<span class="service-price">12€</span>
+</div>
+<p>Tratamiento para cejas más definidas y peinadas.</p>
+<span class="service-duration">45 min</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Laminado de Cejas + Pigmentación</h3>
+<span class="service-price">desde 18€</span>
+</div>
+<p>Laminado con tinte para cejas más llenas y definidas.</p>
+<span class="service-duration">1 hora</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Lifting de Pestañas</h3>
+<span class="service-price">12€</span>
+</div>
+<p>Curvado permanente para pestañas más largas y levantadas.</p>
+<span class="service-duration">1 hora</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Pestañas Punto por Punto</h3>
+<span class="service-price">18€</span>
+</div>
+<p>Extensiones individuales para una mirada natural e intensa.</p>
+<span class="service-duration">1 hora</span>
+</div>
+
+<div class="service-detail-card">
+<div class="service-header">
+<h3>Retiro de Pestañas + Masaje Facial</h3>
 <span class="service-price">10€</span>
 </div>
-<p>Retirada cuidadosa sin dañar la uña natural. Incluye hidratación posterior.</p>
-<span class="service-duration">⏱ 20 min</span>
+<p>Retirada segura de extensiones con masaje relajante facial.</p>
+<span class="service-duration">30 min</span>
 </div>
 </div>
 
 <div class="services-note">
-<p><strong>Nota:</strong> Los precios pueden variar según el diseño y los materiales utilizados. Consulta con nosotras para presupuestos personalizados.</p>
+<p><strong>Nota:</strong> Los precios pueden variar según el diseño y los materiales utilizados. Reserva tu cita en Booksy para consultar disponibilidad.</p>
 </div>
 </div>

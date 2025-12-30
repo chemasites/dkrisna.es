@@ -33,21 +33,23 @@
                 <span class="service-link">{{ trans(key="view_more") }} →</span>
             </a>
 
-            <div class="service-card">
+            <a href="{{ get_url(path='manicura') }}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </div>
                 <h3>Cejas y Pestañas</h3>
-                <p>Diseño de cejas, tinte, laminado y extensiones de pestañas para una mirada perfecta.</p>
-            </div>
+                <p>Laminado, lifting, extensiones y depilación para una mirada perfecta.</p>
+                <span class="service-link">{{ trans(key="view_more") }} →</span>
+            </a>
 
-            <div class="service-card">
+            <a href="{{ get_url(path='masajes') }}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
                 </div>
-                <h3>Limpieza Facial</h3>
-                <p>Tratamientos faciales personalizados para limpiar, hidratar y rejuvenecer tu piel.</p>
-            </div>
+                <h3>KOBIDO Lifting Facial</h3>
+                <p>Técnica japonesa de masaje facial que tonifica y rejuvenece la piel naturalmente.</p>
+                <span class="service-link">{{ trans(key="view_more") }} →</span>
+            </a>
 
             <a href="{{ get_url(path='masajes') }}" class="service-card">
                 <div class="service-icon">
@@ -122,6 +124,7 @@
                         <p>{{ trans(key="saturday") }}: {{ config.extra.horario_sabado }}</p>
                     </div>
                 </div>
+                <a href="{{ get_url(path='ubicacion') }}" class="btn btn-outline">{{ trans(key="view_more") }}</a>
             </div>
             <div class="location-map">
                 <iframe

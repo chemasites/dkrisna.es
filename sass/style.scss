@@ -1006,6 +1006,27 @@ p {
     font-weight: 600;
     color: $color-primary;
     white-space: nowrap;
+
+    .price-original {
+        text-decoration: line-through;
+        color: $color-text-light;
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin-right: 0.25rem;
+    }
+}
+
+.services-category-title {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    color: $color-primary;
+    margin: $spacing-lg 0 $spacing-md;
+    padding-bottom: $spacing-xs;
+    border-bottom: 2px solid $color-primary-light;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
 }
 
 .service-duration {
