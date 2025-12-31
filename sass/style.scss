@@ -469,6 +469,34 @@ p {
     }
 }
 
+.nav-logo {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: $spacing-md;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10000;
+
+    @media (max-width: $breakpoint-lg) {
+        display: flex;
+    }
+
+    .logo-icon {
+        font-size: 1.375rem;
+        color: $color-primary;
+    }
+
+    .logo-text {
+        font-family: $font-heading;
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: $color-dark;
+        line-height: 1;
+    }
+}
+
 .menu-close {
     display: none;
     position: absolute;
