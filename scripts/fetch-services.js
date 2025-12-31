@@ -11,8 +11,8 @@ const CONFIG = {
   booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
   bookingUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
   contentDir: join(__dirname, '..', 'content'),
-  timeout: 60000,
-  waitForContent: 3000
+  timeout: 90000,
+  waitForContent: 5000
 };
 
 async function launchBrowser() {
@@ -22,77 +22,106 @@ async function launchBrowser() {
 async function extractServicesFromPage(page) {
   return page.evaluate(() => {
     const categories = [];
-    const categorySelectors = [
-      '[data-testid="service-category"]',
-      '.service-category',
-      '[class*="ServiceCategory"]'
-    ];
 
-    let categoryElements = [];
-    for (const selector of categorySelectors) {
-      categoryElements = document.querySelectorAll(selector);
-      if (categoryElements.length > 0) break;
-    }
+    // Try to extract from Nuxt's embedded data (window.__NUXT__)
+    try {
+      const nuxtData = window.__NUXT__;
+      if (nuxtData) {
+        // Recursively search for service categories in Nuxt data
+        const findServices = (obj, depth = 0) => {
+          if (depth > 15 || !obj) return null;
+          if (Array.isArray(obj)) {
+            for (const item of obj) {
+              const result = findServices(item, depth + 1);
+              if (result) return result;
+            }
+          } else if (typeof obj === 'object') {
+            // Check if this is a service category with services array
+            if (obj.name && Array.isArray(obj.services) && obj.services.length > 0) {
+              // Check if services have expected properties
+              if (obj.services[0].name || obj.services[0].title) {
+                return 'found_category';
+              }
+            }
+            // Check for service_categories array
+            if (Array.isArray(obj.service_categories)) {
+              return obj.service_categories;
+            }
+            // Check for categories array
+            if (Array.isArray(obj.categories) && obj.categories.length > 0 && obj.categories[0].services) {
+              return obj.categories;
+            }
+            // Check for business with service_categories
+            if (obj.business && obj.business.service_categories) {
+              return obj.business.service_categories;
+            }
+            // Recursively search
+            for (const key of Object.keys(obj)) {
+              const result = findServices(obj[key], depth + 1);
+              if (result && result !== 'found_category') return result;
+            }
+          }
+          return null;
+        };
 
-    if (categoryElements.length === 0) {
-      return extractFlatServices();
-    }
+        const foundCategories = findServices(nuxtData);
 
-    categoryElements.forEach(category => {
-      const parsed = parseCategoryElement(category);
-      if (parsed.services.length > 0) {
-        categories.push(parsed);
+        if (Array.isArray(foundCategories)) {
+          foundCategories.forEach(cat => {
+            const categoryName = cat.name || cat.title || 'Servicios';
+            const services = [];
+
+            if (Array.isArray(cat.services)) {
+              cat.services.forEach(svc => {
+                const name = svc.name || svc.title || '';
+                if (name) {
+                  // Format price
+                  let price = '';
+                  if (svc.price !== undefined && svc.price !== null) {
+                    const priceNum = typeof svc.price === 'number' ? svc.price : parseFloat(svc.price);
+                    if (!isNaN(priceNum)) {
+                      price = `${priceNum.toFixed(2).replace('.', ',')} €`;
+                    }
+                  } else if (svc.price_from !== undefined) {
+                    price = `${svc.price_from.toFixed(2).replace('.', ',')} €+`;
+                  }
+
+                  // Format duration
+                  let duration = '';
+                  if (svc.duration) {
+                    const mins = typeof svc.duration === 'number' ? svc.duration : parseInt(svc.duration);
+                    if (!isNaN(mins)) {
+                      if (mins >= 60) {
+                        const hours = Math.floor(mins / 60);
+                        const remainMins = mins % 60;
+                        duration = remainMins > 0 ? `${hours}h${remainMins}min` : `${hours}h`;
+                      } else {
+                        duration = `${mins}min`;
+                      }
+                    }
+                  }
+
+                  services.push({ name, price, duration });
+                }
+              });
+            }
+
+            if (services.length > 0) {
+              categories.push({ name: categoryName, services });
+            }
+          });
+        }
       }
-    });
-
-    return { categories };
-
-    function extractFlatServices() {
-      const serviceSelectors = [
-        '[data-testid="service-item"]',
-        '[class*="ServiceItem"]',
-        '[class*="service-item"]'
-      ];
-
-      let serviceItems = [];
-      for (const selector of serviceSelectors) {
-        serviceItems = document.querySelectorAll(selector);
-        if (serviceItems.length > 0) break;
-      }
-
-      if (serviceItems.length === 0) {
-        return { raw: document.body.innerText, categories: [] };
-      }
-
-      const services = Array.from(serviceItems).map(parseServiceElement).filter(Boolean);
-      return services.length > 0
-        ? { categories: [{ name: 'Servicios', services }] }
-        : { raw: document.body.innerText, categories: [] };
+    } catch (e) {
+      console.log('Error extracting from NUXT data:', e);
     }
 
-    function parseCategoryElement(category) {
-      const nameEl = category.querySelector('[class*="category-name"], h2, h3');
-      const categoryName = nameEl?.textContent?.trim() || 'Servicios';
-
-      const serviceItems = category.querySelectorAll('[class*="service-item"], [class*="ServiceItem"]');
-      const services = Array.from(serviceItems).map(parseServiceElement).filter(Boolean);
-
-      return { name: categoryName, services };
+    if (categories.length > 0) {
+      return { categories };
     }
 
-    function parseServiceElement(item) {
-      const nameEl = item.querySelector('[class*="name"], [class*="title"], h3, h4');
-      if (!nameEl) return null;
-
-      const priceEl = item.querySelector('[class*="price"]');
-      const durationEl = item.querySelector('[class*="duration"], [class*="time"]');
-
-      return {
-        name: nameEl.textContent?.trim() || '',
-        price: priceEl?.textContent?.trim() || '',
-        duration: durationEl?.textContent?.trim() || ''
-      };
-    }
+    // Fallback: return raw text for debugging
+    return { raw: document.body.innerText.substring(0, 1000), categories: [] };
   });
 }
 
@@ -104,12 +133,25 @@ async function fetchServicesFromBooksy() {
     const page = await browser.newPage();
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
+    // Navigate and wait for page load
     await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'domcontentloaded',
+      waitUntil: 'load',
       timeout: CONFIG.timeout
     });
 
-    await page.waitForSelector('[class*="service"]', { timeout: 30000 })
+    console.log('Waiting for page to fully render...');
+    await page.waitForTimeout(5000);
+
+    // Scroll down to trigger lazy loading of services
+    console.log('Scrolling to load services...');
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight / 3);
+    });
+
+    await page.waitForTimeout(2000);
+
+    // Wait for service content
+    await page.waitForSelector('[class*="service"]', { timeout: 15000 })
       .catch(() => console.log('Service selector not found, continuing...'));
 
     await page.waitForTimeout(CONFIG.waitForContent);
