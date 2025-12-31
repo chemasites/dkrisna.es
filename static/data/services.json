@@ -1,0 +1,225 @@
+{
+  "categories": [
+    {
+      "id": "hands",
+      "name": {
+        "es": "Uñas de las Manos",
+        "en": "Hand Nails"
+      },
+      "services": [
+        {
+          "name": "Una Uña (SEMI)",
+          "price": "2,00 €",
+          "originalPrice": null,
+          "duration": "20 min",
+          "description": "Arreglo puntual de una uña con esmaltado semipermanente",
+          "variantId": 2038814
+        },
+        {
+          "name": "Una Uña (EXTENSIÓN)",
+          "price": "3,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Reconstrucción de una uña acrílica o de gel",
+          "variantId": 2120720
+        },
+        {
+          "name": "Limpieza Y Esmaltado Tradicional (Manos)",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Limpeza de uñas, limado, cutículas y esmaltado clásico.",
+          "variantId": 2016866
+        },
+        {
+          "name": "Retiro De Semipermanente",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Eliminación segura del esmalte semipermanente sin dañar la uña natural.",
+          "variantId": 2053132
+        },
+        {
+          "name": "Retiro De Acrilicas",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "45 min",
+          "description": "Retirada profesional de uñas acrílicas y cuidando la uña natural.",
+          "variantId": 2053130
+        },
+        {
+          "name": "Uñas Semipermanentes Con Diping",
+          "price": "15,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Sistema de gel más polvo endurezador que aporta mayor resistencia y duración.",
+          "variantId": 2016863
+        },
+        {
+          "name": "Relleno De Acrílico Y Gel",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Mantenimiento de uñas acrílicas y gel corrigiendo el crecimiento.",
+          "variantId": 2086719
+        },
+        {
+          "name": "Uñas acrílicas",
+          "price": "25,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Extensión y esculpido con acrílico para uñas resistentes y personalizadas.",
+          "variantId": 2016865
+        },
+        {
+          "name": "Uñas Softgel",
+          "price": "29,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Extensiones con gel suave, ligeras, flexibles y de acabado natural.",
+          "variantId": 2029570
+        },
+        {
+          "name": "Uñas Poligel",
+          "price": "30,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Sistema híbrido entre acrílico y gel, resistente y de aspecto natural.",
+          "variantId": 2029571
+        }
+      ]
+    },
+    {
+      "id": "feet",
+      "name": {
+        "es": "Uñas de los Pies",
+        "en": "Foot Nails"
+      },
+      "services": [
+        {
+          "name": "Pedicura En Seco + Esmaltado Tradicional",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Limpieza de cutículas + esmaltado con esmalte tradicional sin agua",
+          "variantId": 2016864
+        },
+        {
+          "name": "Pedicura En Seco + Semi",
+          "price": "21,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Limpieza de cutículas + esmaltado en gel sin agua",
+          "variantId": 2120763
+        },
+        {
+          "name": "Pedicura Spa + Esmaltado Tradicional",
+          "price": "23,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 15 min",
+          "description": "Tratamiento relajante con exfoliación, hidratación, limpieza profunda y esmaltado clásico",
+          "variantId": 2066537
+        },
+        {
+          "name": "Pedicura spa + Semi",
+          "price": "26,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Exfoliación, retirar cayos y durezas, limpiza profudidad y esmaltado con esmalte semipermanente de larga duración.",
+          "variantId": 2016871
+        }
+      ]
+    },
+    {
+      "id": "brows_lashes",
+      "name": {
+        "es": "Cejas y Pestañas",
+        "en": "Brows & Lashes"
+      },
+      "services": [
+        {
+          "name": "Depilación De Bozo Y Cejas",
+          "price": "4,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Depilación con hojilla, diseño y limpieza del contorno facial para un acabado armonioso",
+          "variantId": 2120923
+        },
+        {
+          "name": "Retiro De Pestañas + Masaje Facial",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Eliminación de extensiones sin dañar las pesañas naturales y masaje relajante para el rostro.",
+          "variantId": 2120922
+        },
+        {
+          "name": "Lifting De Pestañas",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Curvatura y elevación natural de las pestañas para una mirada abierta.",
+          "variantId": 2016868
+        },
+        {
+          "name": "Laminado De Cejas",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "45 min",
+          "description": "Alineación y fijación del vello para cejas más definidas.",
+          "variantId": 2016869
+        },
+        {
+          "name": "Laminado De Cejas + Pigmentación",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Diseño, fijación y color para cejas con mayor intensidad.",
+          "variantId": 2103191
+        },
+        {
+          "name": "Pestañas Punto Por Punto",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Aplicación personalizada de extensiones para un efecto natural.",
+          "variantId": 2016870
+        }
+      ]
+    },
+    {
+      "id": "massages",
+      "name": {
+        "es": "Masajes",
+        "en": "Massages"
+      },
+      "services": [
+        {
+          "name": "KOBIDO lifting Facial",
+          "price": "20,00 €",
+          "originalPrice": "40,00 €",
+          "duration": "1 hora",
+          "description": "Elimina las líneas de expresión de forma natural, sin inyecciones ni tratamientos dolorosos.",
+          "variantId": 2291300
+        },
+        {
+          "name": "Masajes Relajantes",
+          "price": "15,00 €",
+          "originalPrice": "30,00 €",
+          "duration": "1 hora 20 min",
+          "description": "Masaje corporal suave con aceites naturales, que alivia el estrés y promueve el bienestar.",
+          "variantId": 2291441
+        },
+        {
+          "name": "Masaje Geotérmico (Piedras Calientes)",
+          "price": "20,00 €",
+          "originalPrice": "40,00 €",
+          "duration": "1 hora 20 min",
+          "description": "Masaje profundo con piedras calientes que relaja músculos y reduce tensiones.",
+          "variantId": 2291447
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2025-12-31T19:18:50.903Z"
+}

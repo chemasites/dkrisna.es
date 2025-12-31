@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% import "macros/service-card.html" as cards %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="page-subtitle">{{ page.description }}</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section page-content">
+    <div class="container">
+        {% set services_data = load_data(path="static/data/services.json") %}
+
+        <div class="services-full">
+            {% for category in services_data.categories %}
+                {% if page.extra.category_filter is undefined or category.id in page.extra.category_filter %}
+                <h2 class="services-category-title">
+                    {% if lang == "en" %}
+                        {{ category.name.en }}
+                    {% else %}
+                        {{ category.name.es }}
+                    {% endif %}
+                </h2>
+                <div class="services-list">
+                    {% for service in category.services %}
+                        {{ cards::render_card(service=service, lang=lang, booking_url=config.extra.booksy_url) }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="services-note">
+                <p>{{ trans(key=page.extra.services_note_key, lang=lang) | safe }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if page.extra.show_cta | default(value=true) %}
+<section class="section cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>{{ trans(key="cta_title", lang=lang) }}</h2>
+            <p>{{ trans(key="cta_subtitle", lang=lang) }}</p>
+            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                {{ trans(key="book_now", lang=lang) }}
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

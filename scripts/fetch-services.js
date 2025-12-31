@@ -1,18 +1,25 @@
 import { chromium } from 'playwright';
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { generateManicuraHTML, generateMasajesHTML, parsePrice, parseDuration } from './booksy-parser.js';
+import { parseDuration } from './booksy-parser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const CONFIG = {
   booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
-  bookingUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
-  contentDir: join(__dirname, '..', 'content'),
+  dataDir: join(__dirname, '..', 'static', 'data'),
   timeout: 90000,
   waitForContent: 5000
+};
+
+// Category translations - maps scraped Spanish names to bilingual structure
+const CATEGORY_TRANSLATIONS = {
+  hands: { es: 'Uñas de las Manos', en: 'Hand Nails' },
+  feet: { es: 'Uñas de los Pies', en: 'Foot Nails' },
+  brows_lashes: { es: 'Cejas y Pestañas', en: 'Brows & Lashes' },
+  massages: { es: 'Masajes', en: 'Massages' }
 };
 
 async function launchBrowser() {
@@ -225,62 +232,83 @@ async function fetchServicesFromBooksy() {
   }
 }
 
-function normalizeServices(services, lang = 'es') {
-  if (!services.categories) return services;
+/**
+ * Determines category ID from Spanish category name
+ */
+function getCategoryId(categoryName) {
+  const nameLower = categoryName.toLowerCase();
+  if (nameLower.includes('mano') || nameLower.includes('uñas de más')) {
+    return 'hands';
+  } else if (nameLower.includes('pie') || nameLower.includes('pedicura')) {
+    return 'feet';
+  } else if (nameLower.includes('ceja') || nameLower.includes('pestaña')) {
+    return 'brows_lashes';
+  } else if (nameLower.includes('masaje') || nameLower.includes('massage')) {
+    return 'massages';
+  }
+  return null;
+}
+
+/**
+ * Transforms raw services into JSON structure with bilingual category names
+ */
+function transformToJSON(rawServices) {
+  if (!rawServices.categories) return { categories: [], fetchedAt: new Date().toISOString() };
+
+  const categorizedServices = [];
+
+  rawServices.categories.forEach(category => {
+    const categoryId = getCategoryId(category.name);
+    if (!categoryId) {
+      console.log(`Skipping unknown category: ${category.name}`);
+      return;
+    }
+
+    const services = category.services.map(service => ({
+      name: service.name,
+      price: service.price || null,
+      originalPrice: service.originalPrice || null,
+      duration: parseDuration(service.duration, 'es'),
+      description: service.description || null,
+      variantId: service.variantId || null
+    }));
+
+    // Check if we already have this category (merge services)
+    const existingCategory = categorizedServices.find(c => c.id === categoryId);
+    if (existingCategory) {
+      existingCategory.services.push(...services);
+    } else {
+      categorizedServices.push({
+        id: categoryId,
+        name: CATEGORY_TRANSLATIONS[categoryId],
+        services
+      });
+    }
+  });
+
+  // Sort categories in preferred order
+  const categoryOrder = ['hands', 'feet', 'brows_lashes', 'massages'];
+  categorizedServices.sort((a, b) => categoryOrder.indexOf(a.id) - categoryOrder.indexOf(b.id));
 
   return {
-    categories: services.categories.map(category => ({
-      name: category.name,
-      services: category.services.map(service => ({
-        name: service.name,
-        price: service.price || '',
-        originalPrice: service.originalPrice || '',
-        duration: parseDuration(service.duration, lang),
-        description: service.description || '',
-        serviceId: service.serviceId || null,
-        variantId: service.variantId || null
-      }))
-    }))
+    categories: categorizedServices,
+    fetchedAt: new Date().toISOString()
   };
 }
 
-function updateContentFile(filePath, newContent) {
-  const content = readFileSync(filePath, 'utf-8');
-  const frontmatterMatch = content.match(/^\+\+\+[\s\S]*?\+\+\+/);
-
-  if (!frontmatterMatch) {
-    console.error(`Could not find frontmatter in ${filePath}`);
-    return false;
-  }
-
-  const newFileContent = `${frontmatterMatch[0]}\n\n${newContent}\n`;
-  writeFileSync(filePath, newFileContent, 'utf-8');
+/**
+ * Writes services data to JSON file
+ */
+function writeServicesJSON(servicesData) {
+  const filePath = join(CONFIG.dataDir, 'services.json');
+  writeFileSync(filePath, JSON.stringify(servicesData, null, 2), 'utf-8');
   console.log(`Updated ${filePath}`);
-  return true;
 }
 
-function updateAllContentFiles(rawServices) {
-  const { contentDir, bookingUrl } = CONFIG;
-
-  // Spanish content
-  const servicesES = normalizeServices(rawServices, 'es');
-  const manicuraES = generateManicuraHTML(servicesES.categories, { bookingUrl, lang: 'es' });
-  const masajesES = generateMasajesHTML(servicesES.categories, { bookingUrl, lang: 'es' });
-  updateContentFile(join(contentDir, 'manicura.md'), manicuraES);
-  updateContentFile(join(contentDir, 'masajes.md'), masajesES);
-
-  // English content
-  const servicesEN = normalizeServices(rawServices, 'en');
-  const manicuraEN = generateManicuraHTML(servicesEN.categories, { bookingUrl, lang: 'en' });
-  const masajesEN = generateMasajesHTML(servicesEN.categories, { bookingUrl, lang: 'en' });
-  updateContentFile(join(contentDir, 'manicura.en.md'), manicuraEN);
-  updateContentFile(join(contentDir, 'masajes.en.md'), masajesEN);
-}
-
-function logServicesSummary(services) {
-  console.log(`Found ${services.categories.length} service categories:`);
-  services.categories.forEach(cat => {
-    console.log(`  - ${cat.name}: ${cat.services.length} services`);
+function logServicesSummary(servicesData) {
+  console.log(`Found ${servicesData.categories.length} service categories:`);
+  servicesData.categories.forEach(cat => {
+    console.log(`  - ${cat.name.es}: ${cat.services.length} services`);
   });
 }
 
@@ -299,12 +327,14 @@ async function main() {
       process.exit(1);
     }
 
-    // Log summary using Spanish normalization
-    const servicesForLog = normalizeServices(rawServices, 'es');
-    logServicesSummary(servicesForLog);
+    // Transform to JSON structure with bilingual names
+    const servicesData = transformToJSON(rawServices);
 
-    // Update content files (handles both ES and EN)
-    updateAllContentFiles(rawServices);
+    // Log summary
+    logServicesSummary(servicesData);
+
+    // Write JSON file
+    writeServicesJSON(servicesData);
 
     console.log('✓ Services update complete!');
   } catch (error) {
