@@ -7,10 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const CONFIG = {
-  booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
+  booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz#reviews-section',
   staticDir: join(__dirname, '..', 'static', 'data'),
-  timeout: 60000,
-  waitForContent: 3000
+  timeout: 90000,
+  waitForContent: 5000
 };
 
 async function launchBrowser() {
@@ -90,9 +90,48 @@ async function fetchReviewsFromBooksy() {
     const page = await browser.newPage();
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
+    // Navigate and wait for full page load
     await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'domcontentloaded',
+      waitUntil: 'networkidle',
       timeout: CONFIG.timeout
+    });
+
+    console.log('Waiting for page to fully render...');
+    await page.waitForTimeout(3000);
+
+    // Scroll to reviews section to trigger lazy loading
+    console.log('Scrolling to reviews section...');
+    await page.evaluate(() => {
+      // Try to find and scroll to reviews section
+      const reviewsSection = document.querySelector('[id*="review"], [class*="reviews-section"], [class*="ReviewsSection"]');
+      if (reviewsSection) {
+        reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Scroll down the page to trigger lazy loading
+        window.scrollTo(0, document.body.scrollHeight / 2);
+      }
+    });
+
+    await page.waitForTimeout(2000);
+
+    // Try clicking on reviews tab/link if it exists
+    console.log('Looking for reviews tab...');
+    const reviewsTab = await page.$('a[href*="review"], button:has-text("reseñas"), button:has-text("reviews"), [data-testid*="review"]');
+    if (reviewsTab) {
+      console.log('Clicking reviews tab...');
+      await reviewsTab.click();
+      await page.waitForTimeout(3000);
+    }
+
+    // Scroll again after potential tab click
+    await page.evaluate(() => {
+      window.scrollBy(0, 300);
+    });
+
+    // Wait for review content to appear
+    console.log('Waiting for review content...');
+    await page.waitForSelector('[class*="review"]', { timeout: 15000 }).catch(() => {
+      console.log('Review selector not found, continuing anyway...');
     });
 
     await page.waitForTimeout(CONFIG.waitForContent);
