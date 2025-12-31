@@ -119,18 +119,54 @@ function saveReviewsData(reviews) {
   console.log(`  - Individual reviews: ${reviews.reviews.length}`);
 }
 
+function validateReviews(reviews) {
+  if (!reviews || !reviews.reviews || reviews.reviews.length === 0) {
+    return { valid: false, reason: 'No reviews found' };
+  }
+
+  // Check if all names are generic "Cliente X" pattern
+  const genericNames = reviews.reviews.filter(r => /^Cliente \d+$/.test(r.name));
+  if (genericNames.length === reviews.reviews.length) {
+    return { valid: false, reason: 'All names are generic placeholders' };
+  }
+
+  // Check if all texts contain "Usuario verificado" (placeholder text)
+  const placeholderTexts = reviews.reviews.filter(r =>
+    r.text.includes('Usuario verificado') || r.text.includes('Verified user')
+  );
+  if (placeholderTexts.length === reviews.reviews.length) {
+    return { valid: false, reason: 'All review texts are placeholders' };
+  }
+
+  // Check if at least some reviews have real content (dates or services)
+  const reviewsWithDetails = reviews.reviews.filter(r => r.date || r.service);
+  if (reviewsWithDetails.length === 0) {
+    return { valid: false, reason: 'No reviews have dates or services' };
+  }
+
+  return { valid: true };
+}
+
 async function main() {
   try {
     console.log('Starting Booksy reviews fetch...');
     const reviews = await fetchReviewsFromBooksy();
 
-    if (reviews && (reviews.reviewCount > 0 || reviews.reviews.length > 0)) {
-      saveReviewsData(reviews);
-      console.log('✓ Reviews update complete!');
-    } else {
+    if (!reviews || reviews.reviewCount === 0) {
       console.error('Failed to fetch reviews data.');
       process.exit(1);
     }
+
+    // Validate that we got real review data, not placeholders
+    const validation = validateReviews(reviews);
+    if (!validation.valid) {
+      console.error(`Review data validation failed: ${validation.reason}`);
+      console.error('Skipping update to preserve existing data.');
+      process.exit(1);
+    }
+
+    saveReviewsData(reviews);
+    console.log('✓ Reviews update complete!');
   } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
