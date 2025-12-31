@@ -20,6 +20,7 @@ show_cta = true
 <span class="service-price">2,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -28,6 +29,7 @@ show_cta = true
 <h3>Una Uña (EXTENSIÓN)</h3>
 <span class="service-price">3,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -38,6 +40,7 @@ show_cta = true
 <span class="service-price">10,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -46,6 +49,7 @@ show_cta = true
 <h3>Retiro De Semipermanente</h3>
 <span class="service-price">10,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -56,6 +60,7 @@ show_cta = true
 <span class="service-price">12,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -64,6 +69,7 @@ show_cta = true
 <h3>Uñas Semipermanentes Con Diping</h3>
 <span class="service-price">15,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -74,6 +80,7 @@ show_cta = true
 <span class="service-price">20,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -82,6 +89,7 @@ show_cta = true
 <h3>Uñas acrílicas</h3>
 <span class="service-price">25,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -92,6 +100,7 @@ show_cta = true
 <span class="service-price">29,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -100,6 +109,7 @@ show_cta = true
 <h3>Uñas Poligel</h3>
 <span class="service-price">30,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -114,6 +124,7 @@ show_cta = true
 <span class="service-price">18,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -122,6 +133,7 @@ show_cta = true
 <h3>Pedicura En Seco + Semi</h3>
 <span class="service-price">21,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -132,6 +144,7 @@ show_cta = true
 <span class="service-price">23,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -140,6 +153,7 @@ show_cta = true
 <h3>Pedicura spa + Semi</h3>
 <span class="service-price">26,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -154,6 +168,7 @@ show_cta = true
 <span class="service-price">4,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -162,6 +177,7 @@ show_cta = true
 <h3>Retiro De Pestañas + Masaje Facial</h3>
 <span class="service-price">10,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -172,6 +188,7 @@ show_cta = true
 <span class="service-price">12,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -180,6 +197,7 @@ show_cta = true
 <h3>Laminado De Cejas</h3>
 <span class="service-price">12,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
@@ -190,6 +208,7 @@ show_cta = true
 <span class="service-price">18,00€</span>
 </div>
 
+
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -198,6 +217,7 @@ show_cta = true
 <h3>Pestañas Punto Por Punto</h3>
 <span class="service-price">18,00€</span>
 </div>
+
 
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
