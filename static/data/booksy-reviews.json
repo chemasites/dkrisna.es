@@ -1,5 +1,5 @@
 {
-  "rating": 5.0,
+  "rating": 5,
   "reviewCount": 19,
   "reviews": [
     {
@@ -10,6 +10,13 @@
       "rating": 5
     },
     {
+      "name": "Jane J.",
+      "text": "vedy fast and easy to book",
+      "service": "Uñas Semipermanentes Con Diping",
+      "date": "dic. 2, 2025",
+      "rating": 5
+    },
+    {
       "name": "Alba Mirella L.",
       "text": "Fue mi primero haciéndome las uñas en este sitio y estoy encantada con mis uñas, la atención, el trato todo la verdad muy bien.",
       "service": "Uñas Semipermanentes Con Diping",
@@ -17,43 +24,43 @@
       "rating": 5
     },
     {
-      "name": "Erika",
-      "text": "Un servicio estupendo, son muy amables y su trabajo merece muchísimo la pena.",
+      "name": "Erika .",
+      "text": "Un servicio estupendo, son muy amables y su trabajo merece muchísimo la pena",
       "service": "Uñas Softgel",
       "date": "oct. 9, 2025",
       "rating": 5
     },
     {
       "name": "Encarna G.",
-      "text": "Me ha encantado, repetiré.",
-      "service": "Pedicura Spa + Semi",
+      "text": "me ha encantado , repetire",
+      "service": "Pedicura spa + Semi",
       "date": "sep. 18, 2025",
       "rating": 5
     },
     {
       "name": "Madi V.",
-      "text": "Preciosas, me encantan!",
-      "service": "Uñas Acrílicas",
+      "text": "Preciosassss me encantan😍😍",
+      "service": "Uñas acrílicas",
       "date": "sep. 2, 2025",
       "rating": 5
     },
     {
       "name": "Vicky P.",
-      "text": "Muy bien.",
+      "text": "Muy bien",
       "service": "Uñas Poligel",
       "date": "ago. 27, 2025",
       "rating": 5
     },
     {
-      "name": "Cristina F.",
-      "text": "Excelente servicio, y las chicas súper amables.",
+      "name": "cristina f.",
+      "text": "Excelente servicio , y las chicas super amables",
       "service": "Pestañas Punto Por Punto",
       "date": "ago. 24, 2025",
       "rating": 5
     },
     {
       "name": "Ana Olid M.",
-      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables.",
+      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables ❤️",
       "service": "Relleno De Acrílico",
       "date": "ago. 15, 2025",
       "rating": 5
@@ -61,17 +68,10 @@
     {
       "name": "Eva Sánchez L.",
       "text": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
-      "service": "Uñas Semipermanentes",
+      "service": "Retiro De Semipermanente",
       "date": "ago. 12, 2025",
-      "rating": 5
-    },
-    {
-      "name": "Jane J.",
-      "text": "Very fast and easy to book.",
-      "service": "Uñas Semipermanentes Con Diping",
-      "date": "dic. 2, 2025",
       "rating": 5
     }
   ],
-  "fetchedAt": "2025-12-31T00:00:00.000Z"
+  "fetchedAt": "2025-12-31T17:14:23.427Z"
 }
