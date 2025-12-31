@@ -8,6 +8,7 @@
  * @property {string} price
  * @property {string} duration
  * @property {string} [originalPrice]
+ * @property {string} [description]
  */
 
 /**
@@ -125,6 +126,7 @@ export function generateServiceCardHTML(service, options = {}) {
   const t = getTranslations(lang);
   const price = service.price || t.contactUs;
   const duration = service.duration || '';
+  const description = service.description || '';
 
   let priceHTML = price;
   if (service.originalPrice) {
@@ -141,6 +143,7 @@ export function generateServiceCardHTML(service, options = {}) {
 <span class="service-price">${priceHTML}</span>
 </div>
 ${duration ? `<span class="service-duration">${duration}</span>` : ''}
+${description ? `<p class="service-description">${description}</p>` : ''}
 ${bookingButton}
 </div>`;
 }

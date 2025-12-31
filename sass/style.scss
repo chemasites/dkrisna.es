@@ -1734,6 +1734,13 @@ p {
     margin-top: $spacing-xs;
 }
 
+.service-description {
+    font-size: 0.875rem;
+    color: $color-text-light;
+    margin: $spacing-xs 0 0 0;
+    line-height: 1.4;
+}
+
 .service-book-btn {
     display: inline-block;
     margin-top: $spacing-sm;

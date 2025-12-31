@@ -101,7 +101,10 @@ async function extractServicesFromPage(page) {
                     }
                   }
 
-                  services.push({ name, price, duration });
+                  // Extract description if available
+                  const description = svc.description || svc.desc || svc.details || '';
+
+                  services.push({ name, price, duration, description });
                 }
               });
             }
