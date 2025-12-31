@@ -55,7 +55,7 @@ show_cta = true
 <div class="team-avatar">
 <span>N</span>
 </div>
-<h3 class="team-name">Nazarina</h3>
+<h3 class="team-name">Nazareth</h3>
 <span class="team-role">Nail Artist</span>
 <p class="team-specialty">Manicure & Design</p>
 </div>
