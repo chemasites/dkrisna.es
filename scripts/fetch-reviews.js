@@ -90,14 +90,14 @@ async function fetchReviewsFromBooksy() {
     const page = await browser.newPage();
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
-    // Navigate and wait for full page load
+    // Navigate and wait for page load
     await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'networkidle',
+      waitUntil: 'load',
       timeout: CONFIG.timeout
     });
 
     console.log('Waiting for page to fully render...');
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(5000);
 
     // Scroll to reviews section to trigger lazy loading
     console.log('Scrolling to reviews section...');
