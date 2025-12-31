@@ -1052,18 +1052,65 @@ p {
     position: relative;
     margin: 0 -1rem;
     padding: 0 1rem;
+}
 
-    // Fade effect on right edge to hint scrollability
-    &::after {
-        content: '';
-        position: absolute;
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $color-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &:hover {
+        background: $color-primary;
+        border-color: $color-primary;
+        box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+
+        svg {
+            color: $color-white;
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        color: $color-primary;
+        transition: color 0.2s ease;
+    }
+
+    &.arrow-left {
+        left: 0;
+    }
+
+    &.arrow-right {
         right: 0;
-        top: 0;
-        bottom: 0;
-        width: 60px;
-        background: linear-gradient(to right, transparent, $color-bg);
-        pointer-events: none;
-        opacity: 0.8;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        width: 32px;
+        height: 32px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
     }
 }
 

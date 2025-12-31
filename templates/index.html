@@ -102,10 +102,16 @@
                 Booksy Reviews
             </a>
         </div>
-        <div class="reviews-carousel-wrapper">
+        <div class="reviews-carousel-wrapper" id="reviews-wrapper">
+            <button class="carousel-arrow arrow-left" id="arrow-left" aria-label="Scroll left">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
             <div class="reviews-carousel" id="reviews-carousel">
                 <!-- Reviews will be loaded dynamically from booksy-reviews.json -->
             </div>
+            <button class="carousel-arrow arrow-right" id="arrow-right" aria-label="Scroll right">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
         </div>
     </div>
 </section>
@@ -197,6 +203,52 @@
         '</div>';
     }
 
+    var carousel = document.getElementById('reviews-carousel');
+    var arrowLeft = document.getElementById('arrow-left');
+    var arrowRight = document.getElementById('arrow-right');
+
+    function updateArrows() {
+        if (!carousel) return;
+        var scrollLeft = carousel.scrollLeft;
+        var maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+        if (arrowLeft) {
+            if (scrollLeft > 10) {
+                arrowLeft.classList.add('visible');
+            } else {
+                arrowLeft.classList.remove('visible');
+            }
+        }
+
+        if (arrowRight) {
+            if (scrollLeft < maxScroll - 10) {
+                arrowRight.classList.add('visible');
+            } else {
+                arrowRight.classList.remove('visible');
+            }
+        }
+    }
+
+    function scrollCarousel(direction) {
+        if (!carousel) return;
+        var card = carousel.querySelector('.review-card');
+        if (!card) return;
+        var cardWidth = card.offsetWidth;
+        var gap = parseInt(getComputedStyle(carousel).gap) || 16;
+        var scrollAmount = cardWidth + gap;
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    if (arrowLeft) {
+        arrowLeft.addEventListener('click', function() { scrollCarousel(-1); });
+    }
+    if (arrowRight) {
+        arrowRight.addEventListener('click', function() { scrollCarousel(1); });
+    }
+    if (carousel) {
+        carousel.addEventListener('scroll', updateArrows);
+    }
+
     fetch('/data/booksy-reviews.json')
         .then(function(response) { return response.json(); })
         .then(function(data) {
@@ -214,13 +266,14 @@
             }
 
             // Render reviews carousel
-            var carousel = document.getElementById('reviews-carousel');
             if (carousel && data.reviews && data.reviews.length > 0) {
                 var html = '';
                 data.reviews.forEach(function(review) {
                     html += createReviewCard(review);
                 });
                 carousel.innerHTML = html;
+                // Update arrows after content is loaded
+                setTimeout(updateArrows, 100);
             }
         })
         .catch(function(err) {
