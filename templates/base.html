@@ -193,13 +193,42 @@
                 });
             });
 
-            // Header scroll effect
+            // Header scroll effect with hide on scroll down (mobile)
             const header = document.querySelector('.header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
+            let lastScrollY = 0;
+            let ticking = false;
+
+            function updateHeader() {
+                const currentScrollY = window.scrollY;
+
+                // Scrolled state for shadow
+                if (currentScrollY > 50) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
+                }
+
+                // Hide/show on scroll direction (only after scrolling past 100px)
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        // Scrolling down
+                        header.classList.add('header-hidden');
+                    } else {
+                        // Scrolling up
+                        header.classList.remove('header-hidden');
+                    }
+                } else {
+                    header.classList.remove('header-hidden');
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateHeader);
+                    ticking = true;
                 }
             });
         });

@@ -238,6 +238,12 @@ p {
         }
     }
 
+    &.header-hidden {
+        @media (max-width: $breakpoint-lg) {
+            transform: translateY(-100%);
+        }
+    }
+
     .container {
         display: flex;
         align-items: center;
