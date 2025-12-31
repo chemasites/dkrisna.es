@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 const CONFIG = {
   inputFile: join(__dirname, '..', 'static', 'data', 'services.json'),
   outputFile: join(__dirname, '..', 'static', 'data', 'services.en.json'),
-  model: 'claude-haiku-4-20250514'
+  model: 'claude-3-5-haiku-20241022'
 };
 
 /**
