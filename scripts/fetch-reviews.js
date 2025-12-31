@@ -21,61 +21,127 @@ async function extractReviewsFromPage(page) {
   return page.evaluate(() => {
     let rating = null;
     let reviewCount = null;
-
-    const bodyText = document.body.innerText;
-
-    // Match patterns like "5.0/5" or "5,0/5"
-    const ratingMatch = bodyText.match(/(\d[,.]?\d?)\s*\/\s*5/);
-    if (ratingMatch) {
-      rating = parseFloat(ratingMatch[1].replace(',', '.'));
-    }
-
-    // Match patterns like "19 reseñas" or "19 reviews"
-    const countMatch = bodyText.match(/(\d+)\s*(reviews?|opiniones?|reseñas?)/i);
-    if (countMatch) {
-      reviewCount = parseInt(countMatch[1], 10);
-    }
-
-    // Extract individual reviews
     const reviews = [];
-    const reviewSelectors = [
-      '[class*="review-item"]',
-      '[class*="ReviewItem"]',
-      '[class*="review-card"]',
-      '[data-testid*="review"]'
-    ];
 
-    let reviewElements = [];
-    for (const selector of reviewSelectors) {
-      reviewElements = document.querySelectorAll(selector);
-      if (reviewElements.length > 0) break;
+    // Try to extract from Nuxt's embedded data (window.__NUXT__)
+    try {
+      const nuxtData = window.__NUXT__;
+      if (nuxtData) {
+        // Navigate through Nuxt data structure to find reviews
+        const findReviews = (obj, depth = 0) => {
+          if (depth > 10 || !obj) return null;
+          if (Array.isArray(obj)) {
+            for (const item of obj) {
+              const result = findReviews(item, depth + 1);
+              if (result) return result;
+            }
+          } else if (typeof obj === 'object') {
+            // Check if this object has review-like properties
+            if (obj.review && obj.user && obj.created) {
+              return 'found_review_item';
+            }
+            // Check if this is an array of reviews
+            if (Array.isArray(obj.reviews)) {
+              return obj.reviews;
+            }
+            // Check for business data with reviews
+            if (obj.business && obj.business.reviews) {
+              return obj.business.reviews;
+            }
+            // Recursively search
+            for (const key of Object.keys(obj)) {
+              const result = findReviews(obj[key], depth + 1);
+              if (result && result !== 'found_review_item') return result;
+            }
+          }
+          return null;
+        };
+
+        // Also try to find rating info
+        const findRating = (obj, depth = 0) => {
+          if (depth > 10 || !obj) return null;
+          if (typeof obj === 'object' && obj !== null) {
+            if (typeof obj.rating === 'number' && typeof obj.reviews_count === 'number') {
+              return { rating: obj.rating, count: obj.reviews_count };
+            }
+            if (typeof obj.average_rating === 'number') {
+              return { rating: obj.average_rating, count: obj.reviews_count || 0 };
+            }
+            for (const key of Object.keys(obj)) {
+              const result = findRating(obj[key], depth + 1);
+              if (result) return result;
+            }
+          }
+          return null;
+        };
+
+        const foundReviews = findReviews(nuxtData);
+        const foundRating = findRating(nuxtData);
+
+        if (foundRating) {
+          rating = foundRating.rating;
+          reviewCount = foundRating.count;
+        }
+
+        if (Array.isArray(foundReviews)) {
+          foundReviews.forEach(r => {
+            if (r.review || r.text || r.comment) {
+              const userName = r.user
+                ? `${r.user.first_name || ''} ${(r.user.last_name || '').charAt(0)}.`.trim()
+                : (r.author || r.name || 'Cliente');
+
+              const reviewText = r.review || r.text || r.comment || '';
+              const serviceName = Array.isArray(r.services) && r.services.length > 0
+                ? r.services[0].name || r.services[0]
+                : (r.service || '');
+
+              // Format date from timestamp or string
+              let dateStr = '';
+              if (r.created) {
+                try {
+                  const d = new Date(r.created);
+                  const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+                  dateStr = `${months[d.getMonth()]}. ${d.getDate()}, ${d.getFullYear()}`;
+                } catch (e) {
+                  dateStr = r.created;
+                }
+              } else if (r.date) {
+                dateStr = r.date;
+              }
+
+              if (reviewText && reviewText.length > 5) {
+                reviews.push({
+                  name: userName.substring(0, 20),
+                  text: reviewText,
+                  service: serviceName,
+                  date: dateStr,
+                  rating: r.rating || 5
+                });
+              }
+            }
+          });
+        }
+      }
+    } catch (e) {
+      console.log('Error extracting from NUXT data:', e);
     }
 
-    reviewElements.forEach((el, index) => {
-      const nameEl = el.querySelector('[class*="name"], [class*="author"], h4, h5');
-      const textEl = el.querySelector('[class*="text"], [class*="comment"], [class*="content"], p');
-      const dateEl = el.querySelector('[class*="date"], time');
-      const serviceEl = el.querySelector('[class*="service"], [class*="treatment"]');
-
-      const name = nameEl?.textContent?.trim() || `Cliente ${index + 1}`;
-      const text = textEl?.textContent?.trim() || '';
-      const date = dateEl?.textContent?.trim() || '';
-      const service = serviceEl?.textContent?.trim() || '';
-
-      if (text) {
-        reviews.push({
-          name: name.substring(0, 20),
-          text: text,
-          service: service,
-          date: date,
-          rating: 5
-        });
+    // Fallback: try to get rating from page text
+    if (!rating) {
+      const bodyText = document.body.innerText;
+      const ratingMatch = bodyText.match(/(\d[,.]?\d?)\s*\/\s*5/);
+      if (ratingMatch) {
+        rating = parseFloat(ratingMatch[1].replace(',', '.'));
       }
-    });
+      const countMatch = bodyText.match(/(\d+)\s*(reviews?|opiniones?|reseñas?)/i);
+      if (countMatch) {
+        reviewCount = parseInt(countMatch[1], 10);
+      }
+    }
 
     return {
       rating: rating || 5.0,
-      reviewCount: reviewCount || 0,
+      reviewCount: reviewCount || reviews.length,
       reviews: reviews,
       fetchedAt: new Date().toISOString()
     };
