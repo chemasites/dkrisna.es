@@ -33,7 +33,8 @@ const translations = {
     categories: {
       hands: 'Uñas de las Manos',
       feet: 'Uñas de los Pies',
-      browsLashes: 'Cejas y Pestañas'
+      browsLashes: 'Cejas y Pestañas',
+      massages: 'Masajes'
     },
     manicuraIntro: 'Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.',
     manicuraNote: '<strong>Nota:</strong> Reserva tu cita en Booksy para consultar disponibilidad.',
@@ -50,7 +51,8 @@ const translations = {
     categories: {
       hands: 'Hand Nails',
       feet: 'Foot Nails',
-      browsLashes: 'Brows & Lashes'
+      browsLashes: 'Brows & Lashes',
+      massages: 'Massages'
     },
     manicuraIntro: 'Discover our beauty services, where every detail matters. We use high-quality products to ensure long-lasting results and a flawless finish.',
     manicuraNote: '<strong>Note:</strong> Book your appointment on Booksy to check availability.',
@@ -148,9 +150,11 @@ export function generateServiceCardHTML(service, options = {}) {
   return `<div class="service-detail-card">
 <div class="service-header">
 <h3>${service.name}</h3>
+<div class="service-meta">
+${duration ? `<span class="service-duration">${duration}</span>` : ''}
 <span class="service-price">${priceHTML}</span>
 </div>
-${duration ? `<span class="service-duration">${duration}</span>` : ''}
+</div>
 ${description ? `<p class="service-description">${description}</p>` : ''}
 ${bookingButton}
 </div>`;
@@ -170,10 +174,6 @@ export function generateManicuraHTML(categories, options = {}) {
   const categoryMap = categorizeNailServices(categories, lang);
 
   let html = `<div class="services-full">
-<div class="services-intro">
-<p>${t.manicuraIntro}</p>
-</div>
-
 `;
 
   for (const [categoryName, categoryServices] of Object.entries(categoryMap)) {
@@ -214,10 +214,7 @@ export function generateMasajesHTML(categories, options = {}) {
   const massageServices = extractMassageServices(categories);
 
   let html = `<div class="services-full">
-<div class="services-intro">
-<p>${t.masajesIntro}</p>
-</div>
-
+<h2 class="services-category-title">${t.categories.massages}</h2>
 <div class="services-list">
 `;
 

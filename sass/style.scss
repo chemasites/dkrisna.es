@@ -1692,6 +1692,9 @@ p {
 }
 
 .service-detail-card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
     background: $color-beige-light;
     padding: $spacing-md;
     border-radius: $border-radius-lg;
@@ -1700,20 +1703,25 @@ p {
 
     &:hover {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
     }
 }
 
 .service-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: $spacing-sm;
     margin-bottom: $spacing-xs;
 
     h3 {
         font-size: 1.125rem;
-        margin: 0;
+        margin: 0 0 $spacing-xs 0;
+        line-height: 1.3;
     }
+}
+
+.service-meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
 }
 
 .service-price {
@@ -1726,10 +1734,10 @@ p {
     .price-original {
         text-decoration: line-through;
         color: $color-text;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 400;
         margin-right: 0.25rem;
-        opacity: 0.7;
+        opacity: 0.6;
     }
 }
 
@@ -1748,11 +1756,28 @@ p {
     }
 }
 
+.service-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+}
+
 .service-duration {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.8125rem;
-    color: $color-text-light;
-    margin-top: $spacing-xs;
+    color: $color-text;
+    background: rgba($color-beige-dark, 0.15);
+    padding: 0.25rem 0.6rem;
+    border-radius: $border-radius;
+
+    &::before {
+        content: "⏱";
+        font-size: 0.75rem;
+    }
 }
 
 .service-description {
@@ -1764,7 +1789,7 @@ p {
 
 .service-book-btn {
     display: inline-block;
-    margin-top: $spacing-sm;
+    margin-top: auto;
     padding: $spacing-xs $spacing-md;
     background: $color-primary;
     color: $color-white;
