@@ -121,7 +121,7 @@ async function fetchServicesFromBooksy() {
   }
 }
 
-function normalizeServices(services) {
+function normalizeServices(services, lang = 'es') {
   if (!services.categories) return services;
 
   return {
@@ -129,8 +129,8 @@ function normalizeServices(services) {
       name: category.name,
       services: category.services.map(service => ({
         name: service.name,
-        ...parsePrice(service.price),
-        duration: parseDuration(service.duration)
+        ...parsePrice(service.price, lang),
+        duration: parseDuration(service.duration, lang)
       }))
     }))
   };

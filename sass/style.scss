@@ -1228,6 +1228,11 @@ p {
         .service-price {
             color: $color-white;
             font-weight: 700;
+
+            .price-original {
+                color: $color-white;
+                opacity: 0.7;
+            }
         }
 
         .service-duration {

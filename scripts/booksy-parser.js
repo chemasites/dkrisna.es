@@ -17,26 +17,77 @@
  */
 
 /**
+ * Translations for supported languages
+ */
+const translations = {
+  es: {
+    book: 'Reservar',
+    contactUs: 'Consultar',
+    from: 'desde',
+    hour: 'hora',
+    hours: 'horas',
+    min: 'min',
+    categories: {
+      hands: 'Uñas de las Manos',
+      feet: 'Uñas de los Pies',
+      browsLashes: 'Cejas y Pestañas'
+    },
+    manicuraIntro: 'Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.',
+    manicuraNote: '<strong>Nota:</strong> Reserva tu cita en Booksy para consultar disponibilidad.',
+    masajesIntro: 'Nuestros masajes están diseñados para liberar tensiones, mejorar la circulación y proporcionar un estado de relajación profunda. Cada sesión es personalizada según tus necesidades.',
+    masajesNote: '<strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales. Reserva tu cita en Booksy para consultar disponibilidad.'
+  },
+  en: {
+    book: 'Book',
+    contactUs: 'Contact us',
+    from: 'from',
+    hour: 'hour',
+    hours: 'hours',
+    min: 'min',
+    categories: {
+      hands: 'Hand Nails',
+      feet: 'Foot Nails',
+      browsLashes: 'Brows & Lashes'
+    },
+    manicuraIntro: 'Discover our beauty services, where every detail matters. We use high-quality products to ensure long-lasting results and a flawless finish.',
+    manicuraNote: '<strong>Note:</strong> Book your appointment on Booksy to check availability.',
+    masajesIntro: 'Our massages are designed to release tension, improve circulation, and provide a state of deep relaxation. Each session is personalized to your needs.',
+    masajesNote: '<strong>Special offer:</strong> Take advantage of our promotional prices. Book your appointment on Booksy to check availability.'
+  }
+};
+
+/**
+ * Get translations for a language
+ * @param {string} lang - 'es' or 'en'
+ * @returns {Object}
+ */
+export function getTranslations(lang = 'es') {
+  return translations[lang] || translations.es;
+}
+
+/**
  * Categorizes services into nail and beauty categories
  * @param {ServiceCategory[]} categories
+ * @param {string} [lang='es'] - Language code
  * @returns {Object} Categorized services for manicura page
  */
-export function categorizeNailServices(categories) {
+export function categorizeNailServices(categories, lang = 'es') {
+  const t = getTranslations(lang);
   const categoryMap = {
-    'Uñas de las Manos': [],
-    'Uñas de los Pies': [],
-    'Cejas y Pestañas': []
+    [t.categories.hands]: [],
+    [t.categories.feet]: [],
+    [t.categories.browsLashes]: []
   };
 
   categories.forEach(cat => {
     const catNameLower = cat.name.toLowerCase();
 
     if (catNameLower.includes('mano') || catNameLower.includes('uñas de más')) {
-      categoryMap['Uñas de las Manos'] = cat.services;
+      categoryMap[t.categories.hands] = cat.services;
     } else if (catNameLower.includes('pie') || catNameLower.includes('pedicura')) {
-      categoryMap['Uñas de los Pies'] = cat.services;
+      categoryMap[t.categories.feet] = cat.services;
     } else if (catNameLower.includes('ceja') || catNameLower.includes('pestaña')) {
-      categoryMap['Cejas y Pestañas'] = cat.services;
+      categoryMap[t.categories.browsLashes] = cat.services;
     }
   });
 
@@ -64,11 +115,15 @@ export function extractMassageServices(categories) {
 /**
  * Generates HTML for a single service card
  * @param {Service} service
- * @param {string} [bookingUrl] - Optional booking URL for the reserve button
+ * @param {Object} [options] - Options object
+ * @param {string} [options.bookingUrl] - Optional booking URL for the reserve button
+ * @param {string} [options.lang='es'] - Language code
  * @returns {string}
  */
-export function generateServiceCardHTML(service, bookingUrl) {
-  const price = service.price || 'Consultar';
+export function generateServiceCardHTML(service, options = {}) {
+  const { bookingUrl, lang = 'es' } = options;
+  const t = getTranslations(lang);
+  const price = service.price || t.contactUs;
   const duration = service.duration || '';
 
   let priceHTML = price;
@@ -77,7 +132,7 @@ export function generateServiceCardHTML(service, bookingUrl) {
   }
 
   const bookingButton = bookingUrl
-    ? `<a href="${bookingUrl}" class="service-book-btn" target="_blank" rel="noopener">Reservar</a>`
+    ? `<a href="${bookingUrl}" class="service-book-btn" target="_blank" rel="noopener">${t.book}</a>`
     : '';
 
   return `<div class="service-detail-card">
@@ -93,15 +148,19 @@ ${bookingButton}
 /**
  * Generates HTML for the manicura page
  * @param {ServiceCategory[]} categories
- * @param {string} [bookingUrl] - Optional booking URL for service buttons
+ * @param {Object} [options] - Options object
+ * @param {string} [options.bookingUrl] - Optional booking URL for service buttons
+ * @param {string} [options.lang='es'] - Language code
  * @returns {string}
  */
-export function generateManicuraHTML(categories, bookingUrl) {
-  const categoryMap = categorizeNailServices(categories);
+export function generateManicuraHTML(categories, options = {}) {
+  const { bookingUrl, lang = 'es' } = options;
+  const t = getTranslations(lang);
+  const categoryMap = categorizeNailServices(categories, lang);
 
   let html = `<div class="services-full">
 <div class="services-intro">
-<p>Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.</p>
+<p>${t.manicuraIntro}</p>
 </div>
 
 `;
@@ -113,7 +172,7 @@ export function generateManicuraHTML(categories, bookingUrl) {
 `;
 
       categoryServices.forEach(service => {
-        html += generateServiceCardHTML(service, bookingUrl) + '\n\n';
+        html += generateServiceCardHTML(service, { bookingUrl, lang }) + '\n\n';
       });
 
       html += `</div>
@@ -123,7 +182,7 @@ export function generateManicuraHTML(categories, bookingUrl) {
   }
 
   html += `<div class="services-note">
-<p><strong>Nota:</strong> Reserva tu cita en Booksy para consultar disponibilidad.</p>
+<p>${t.manicuraNote}</p>
 </div>
 </div>`;
 
@@ -133,28 +192,32 @@ export function generateManicuraHTML(categories, bookingUrl) {
 /**
  * Generates HTML for the masajes page
  * @param {ServiceCategory[]} categories
- * @param {string} [bookingUrl] - Optional booking URL for service buttons
+ * @param {Object} [options] - Options object
+ * @param {string} [options.bookingUrl] - Optional booking URL for service buttons
+ * @param {string} [options.lang='es'] - Language code
  * @returns {string}
  */
-export function generateMasajesHTML(categories, bookingUrl) {
+export function generateMasajesHTML(categories, options = {}) {
+  const { bookingUrl, lang = 'es' } = options;
+  const t = getTranslations(lang);
   const massageServices = extractMassageServices(categories);
 
   let html = `<div class="services-full">
 <div class="services-intro">
-<p>Nuestros masajes están diseñados para liberar tensiones, mejorar la circulación y proporcionar un estado de relajación profunda. Cada sesión es personalizada según tus necesidades.</p>
+<p>${t.masajesIntro}</p>
 </div>
 
 <div class="services-list">
 `;
 
   massageServices.forEach(service => {
-    html += generateServiceCardHTML(service, bookingUrl) + '\n\n';
+    html += generateServiceCardHTML(service, { bookingUrl, lang }) + '\n\n';
   });
 
   html += `</div>
 
 <div class="services-note">
-<p><strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales. Reserva tu cita en Booksy para consultar disponibilidad.</p>
+<p>${t.masajesNote}</p>
 </div>
 </div>`;
 
@@ -164,24 +227,26 @@ export function generateMasajesHTML(categories, bookingUrl) {
 /**
  * Parses price string to extract original and current price
  * @param {string} priceText
+ * @param {string} [lang='es'] - Language code
  * @returns {{ price: string, originalPrice?: string }}
  */
-export function parsePrice(priceText) {
-  if (!priceText) return { price: 'Consultar' };
+export function parsePrice(priceText, lang = 'es') {
+  const t = getTranslations(lang);
+  if (!priceText) return { price: t.contactUs };
 
   // Check for discounted price pattern (e.g., "40€ 20€" or "desde 15€")
   const discountMatch = priceText.match(/(\d+[.,]?\d*)\s*€?\s+(\d+[.,]?\d*)\s*€/);
   if (discountMatch) {
     return {
       originalPrice: `${discountMatch[1]}€`,
-      price: `desde ${discountMatch[2]}€`
+      price: `${t.from} ${discountMatch[2]}€`
     };
   }
 
   // Check for "desde" pattern
   const desdeMatch = priceText.match(/desde\s*(\d+[.,]?\d*)\s*€/i);
   if (desdeMatch) {
-    return { price: `desde ${desdeMatch[1]}€` };
+    return { price: `${t.from} ${desdeMatch[1]}€` };
   }
 
   // Simple price
@@ -196,9 +261,11 @@ export function parsePrice(priceText) {
 /**
  * Parses duration string to normalize format
  * @param {string} durationText
+ * @param {string} [lang='es'] - Language code
  * @returns {string}
  */
-export function parseDuration(durationText) {
+export function parseDuration(durationText, lang = 'es') {
+  const t = getTranslations(lang);
   if (!durationText) return '';
 
   // Normalize various duration formats
@@ -209,14 +276,14 @@ export function parseDuration(durationText) {
   const minMatch = text.match(/(\d+)\s*(m|min|minuto)/i);
 
   if (hourMatch && minMatch) {
-    return `${hourMatch[1]} hora${hourMatch[1] !== '1' ? 's' : ''} ${minMatch[1]} min`;
+    return `${hourMatch[1]} ${hourMatch[1] !== '1' ? t.hours : t.hour} ${minMatch[1]} ${t.min}`;
   } else if (hourMatch) {
     const hours = parseFloat(hourMatch[1].replace(',', '.'));
-    if (hours === 1) return '1 hora';
-    if (hours === 1.5) return '1 hora 30 min';
-    return `${hours} horas`;
+    if (hours === 1) return `1 ${t.hour}`;
+    if (hours === 1.5) return `1 ${t.hour} 30 ${t.min}`;
+    return `${hours} ${t.hours}`;
   } else if (minMatch) {
-    return `${minMatch[1]} min`;
+    return `${minMatch[1]} ${t.min}`;
   }
 
   return durationText.trim();
