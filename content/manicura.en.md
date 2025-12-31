@@ -1,6 +1,6 @@
 +++
 title = "Manicure"
-description = "Manicure, pedicure, brows and lashes"
+description = "Discover our beauty services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish."
 template = "page.html"
 
 [extra]
@@ -8,10 +8,6 @@ show_cta = true
 +++
 
 <div class="services-full">
-<div class="services-intro">
-<p>Discover our beauty services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish.</p>
-</div>
-
 <h2 class="services-category-title" id="unas-manos">Hand Nails</h2>
 <div class="services-list">
 <div class="service-detail-card">

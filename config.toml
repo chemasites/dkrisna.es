@@ -2,7 +2,7 @@
 base_url = "https://dkrisna.es"
 
 title = "D'Krisna"
-description = "Centro de belleza y bienestar en Caravaca de la Cruz. Uñas, masajes y tratamientos corporales."
+description = "Centro de belleza y bienestar en Caravaca de la Cruz, Murcia. Uñas, masajes y tratamientos corporales."
 
 compile_sass = true
 build_search_index = false
@@ -15,7 +15,7 @@ unsafe = true
 
 [languages.en]
 title = "D'Krisna"
-description = "Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments."
+description = "Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments."
 
 [translations]
 # Spanish translations (default)
@@ -43,7 +43,7 @@ service_massage_desc = "Masajes relajantes, descontracturantes y terapéuticos p
 about_label = "Sobre Nosotros"
 about_title = "Un espacio pensado para ti"
 about_p1 = "En D'Krisna creemos que el cuidado personal es un viaje, no un destino. Nuestro equipo de profesionales está dedicado a ofrecerte una experiencia única de belleza y bienestar."
-about_p2 = "Ubicados en el corazón de Caravaca de la Cruz, hemos creado un espacio de tranquilidad donde cada detalle está pensado para tu confort."
+about_p2 = "Ubicados en el corazón de Caravaca de la Cruz, Murcia, hemos creado un espacio de tranquilidad donde cada detalle está pensado para tu confort."
 cta_title = "Es hora de relajarte"
 cta_subtitle = "Reserva tu cita y descubre una nueva forma de cuidarte"
 location_title = "Encuéntranos"
@@ -52,7 +52,7 @@ location_phone = "Teléfono"
 location_hours = "Horario"
 footer_hours = "Horario"
 footer_contact = "Contacto"
-footer_tagline = "Tu espacio de belleza y bienestar en Caravaca de la Cruz"
+footer_tagline = "Tu espacio de belleza y bienestar en Caravaca de la Cruz, Murcia"
 footer_copyright = "Todos los derechos reservados."
 footer_developed_by = "Desarrollado por"
 footer_legal = "Legal"
@@ -92,7 +92,7 @@ service_massage_desc = "Relaxing, decontracting and therapeutic massages to rene
 about_label = "About Us"
 about_title = "A space designed for you"
 about_p1 = "At D'Krisna we believe that personal care is a journey, not a destination. Our team of professionals is dedicated to offering you a unique beauty and wellness experience."
-about_p2 = "Located in the heart of Caravaca de la Cruz, we have created a space of tranquility where every detail is designed for your comfort."
+about_p2 = "Located in the heart of Caravaca de la Cruz, Murcia, we have created a space of tranquility where every detail is designed for your comfort."
 cta_title = "Ready to relax?"
 cta_subtitle = "Book your appointment and discover a new way to take care of yourself"
 location_title = "Find Us"
@@ -101,7 +101,7 @@ location_phone = "Phone"
 location_hours = "Hours"
 footer_hours = "Hours"
 footer_contact = "Contact"
-footer_tagline = "Your beauty and wellness space in Caravaca de la Cruz"
+footer_tagline = "Your beauty and wellness space in Caravaca de la Cruz, Murcia"
 footer_copyright = "All rights reserved."
 footer_developed_by = "Developed by"
 footer_legal = "Legal"
@@ -120,7 +120,7 @@ error_404_button = "Back to home"
 # Site info
 phone = "+34 968 123 456"
 email = "info@dkrisna.es"
-address = "Calle Carretera de Murcia N45, 30400 Caravaca"
+address = "C/ Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia"
 maps_url = "https://maps.google.com/?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain"
 maps_embed = "https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed"
 

@@ -1,6 +1,6 @@
 +++
 title = "Manicura"
-description = "Manicura, pedicura, cejas y pestañas"
+description = "Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable."
 template = "page.html"
 
 [extra]
@@ -8,10 +8,6 @@ show_cta = true
 +++
 
 <div class="services-full">
-<div class="services-intro">
-<p>Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.</p>
-</div>
-
 <h2 class="services-category-title" id="unas-manos">Uñas de las Manos</h2>
 <div class="services-list">
 <div class="service-detail-card">

@@ -13,7 +13,7 @@ show_cta = false
 
 This website is owned by **D'Krisna**, a beauty and wellness center located in Caravaca de la Cruz, Murcia, Spain.
 
-- **Address:** Calle Carretera de Murcia N45, 30400 Caravaca de la Cruz
+- **Address:** C/ Carretera de Murcia N45, 30400 Caravaca de la Cruz
 - **Email:** info@dkrisna.es
 
 ## Privacy Policy

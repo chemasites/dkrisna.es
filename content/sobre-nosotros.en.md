@@ -1,6 +1,6 @@
 +++
 title = "About Us"
-description = "Learn about D'Krisna"
+description = "Discover our story, values, and the team that makes your beauty and wellness experience possible."
 template = "page.html"
 
 [extra]

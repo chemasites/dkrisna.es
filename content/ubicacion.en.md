@@ -1,6 +1,6 @@
 +++
 title = "Location"
-description = "Find us in Caravaca"
+description = "Visit us in the heart of Caravaca de la Cruz. Check our address, opening hours, and how to get here."
 template = "page.html"
 
 [extra]
@@ -15,7 +15,7 @@ show_cta = true
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
 </div>
 <h3>Address</h3>
-<p>Calle Carretera de Murcia N45<br>30400 Caravaca</p>
+<p>C/ Carretera de Murcia N45<br>30400 Caravaca</p>
 </div>
 
 <div class="info-card">
