@@ -52,7 +52,7 @@
           "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Gel system with hardening powder for increased resistance and durability.",
+          "description": "Gel system with hardening powder providing increased resistance and durability.",
           "variantId": 2016863
         },
         {
@@ -68,7 +68,7 @@
           "price": "25,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Extension and sculpting with acrylic for strong and personalized nails.",
+          "description": "Extension and sculpting with acrylic for resistant and personalized nails.",
           "variantId": 2016865
         },
         {
@@ -142,7 +142,7 @@
           "price": "4,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Razor hair removal, design, and facial contour cleaning for a harmonious finish",
+          "description": "Hair removal with razor blade, design and facial contour cleaning for a harmonious finish",
           "variantId": 2120923
         },
         {
@@ -150,7 +150,7 @@
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Removal of extensions without damaging natural lashes and relaxing facial massage.",
+          "description": "Extension removal without damaging natural lashes and relaxing facial massage.",
           "variantId": 2120922
         },
         {
@@ -158,7 +158,7 @@
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Natural curvature and elevation of lashes for an open gaze.",
+          "description": "Natural lash curving and elevation for an open gaze.",
           "variantId": 2016868
         },
         {
@@ -166,7 +166,7 @@
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Alignment and fixing of hair for more defined eyebrows.",
+          "description": "Hair alignment and fixation for more defined eyebrows.",
           "variantId": 2016869
         },
         {
@@ -174,7 +174,7 @@
           "price": "18,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Design, fixing, and color for more intense eyebrows.",
+          "description": "Design, fixation, and color for more intense eyebrows.",
           "variantId": 2103191
         },
         {
@@ -199,7 +199,7 @@
           "price": "20,00 €",
           "originalPrice": "40,00 €",
           "duration": "1 hora",
-          "description": "Eliminates expression lines naturally, without injections or painful treatments.",
+          "description": "Naturally eliminates expression lines without injections or painful treatments.",
           "variantId": 2291300
         },
         {
@@ -207,7 +207,7 @@
           "price": "15,00 €",
           "originalPrice": "30,00 €",
           "duration": "1 hora 20 min",
-          "description": "Gentle body massage with natural oils that relieves stress and promotes well-being.",
+          "description": "Gentle body massage with natural oils, alleviating stress and promoting well-being.",
           "variantId": 2291441
         },
         {
@@ -221,5 +221,5 @@
       ]
     }
   ],
-  "fetchedAt": "2025-12-31T19:54:36.159Z"
+  "fetchedAt": "2025-12-31T19:57:04.308Z"
 }
