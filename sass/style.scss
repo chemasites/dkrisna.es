@@ -218,10 +218,18 @@ p {
     backdrop-filter: blur(10px);
     transition: $transition;
 
+    @media (max-width: $breakpoint-md) {
+        padding: 1rem 0;
+    }
+
     &.scrolled {
         background: rgba($color-white, 0.98);
         box-shadow: 0 2px 16px rgba($color-primary, 0.08);
         padding: 0.75rem $spacing-md;
+
+        @media (max-width: $breakpoint-md) {
+            padding: 0.75rem 0;
+        }
     }
 
     .container {
@@ -458,8 +466,8 @@ p {
 .menu-close {
     display: none;
     position: absolute;
-    top: 19px;
-    right: 65px;
+    top: 1rem;
+    right: $spacing-md;
     background: none;
     border: none;
     cursor: pointer;
@@ -507,6 +515,13 @@ p {
     justify-content: center;
     background: url('/images/hero.jpg') center/cover no-repeat fixed;
     overflow: hidden;
+    padding-top: 80px; // Account for fixed header
+
+    @media (max-width: $breakpoint-md) {
+        min-height: 100svh; // Use small viewport height for mobile
+        padding-top: 70px;
+        background-attachment: scroll; // Fixed bg doesn't work well on mobile
+    }
 
     &-overlay {
         position: absolute;
@@ -539,6 +554,12 @@ p {
         padding: $spacing-lg;
         margin: 0 $spacing-md;
 
+        @media (max-width: $breakpoint-sm) {
+            padding: $spacing-md $spacing-sm;
+            margin: 0 $spacing-sm;
+            border-radius: 24px;
+        }
+
         @media (min-width: 864px) {
             margin: 0;
         }
@@ -552,6 +573,11 @@ p {
         color: $color-text;
         margin-bottom: $spacing-xs;
         text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+
+        @media (max-width: $breakpoint-sm) {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+        }
     }
 
     &-title {
@@ -768,6 +794,10 @@ p {
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
+    @media (max-width: $breakpoint-md) {
+        display: none;
+    }
+
     .image-placeholder {
         aspect-ratio: 4/5;
         background: linear-gradient(135deg, $color-primary-light 0%, $color-cyan-light 50%, $color-beige 100%);
@@ -873,6 +903,20 @@ p {
         font-size: 0.9375rem;
         color: $color-text-light;
         margin-bottom: 0;
+    }
+
+    .contact-whatsapp {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+
+        a {
+            color: #25D366;
+            font-weight: 500;
+
+            &:hover {
+                color: darken(#25D366, 10%);
+            }
+        }
     }
 }
 

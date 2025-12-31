@@ -121,8 +121,8 @@ error_404_button = "Back to home"
 phone = "+34 968 123 456"
 email = "info@dkrisna.es"
 address = "Calle Carretera de Murcia N45, 30400 Caravaca"
-maps_url = "https://maps.google.com/?q=Caravaca+de+la+Cruz"
-maps_embed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12644.254089542847!2d-1.8686!3d38.1056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f4a1e1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sCaravaca%20de%20la%20Cruz!5e0!3m2!1ses!2ses!4v1234567890"
+maps_url = "https://maps.google.com/?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain"
+maps_embed = "https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed"
 
 # Social media
 instagram = "https://www.instagram.com/d_krisnanails"

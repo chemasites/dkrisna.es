@@ -41,7 +41,7 @@ show_cta = true
 
 <div class="location-map-full">
 <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12644.254089542847!2d-1.8686!3d38.1056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f4a1e1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sCaravaca%20de%20la%20Cruz!5e0!3m2!1ses!2ses!4v1234567890" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
 </div>
