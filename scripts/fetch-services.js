@@ -75,29 +75,54 @@ async function extractServicesFromPage(page) {
               cat.services.forEach(svc => {
                 const name = svc.name || svc.title || '';
                 if (name) {
-                  // Format price
+                  // Format price and duration - check variants first
                   let price = '';
-                  if (svc.price !== undefined && svc.price !== null) {
-                    const priceNum = typeof svc.price === 'number' ? svc.price : parseFloat(svc.price);
-                    if (!isNaN(priceNum)) {
-                      price = `${priceNum.toFixed(2).replace('.', ',')} €`;
+                  let originalPrice = '';
+                  let duration = '';
+
+                  // Check variants for price, duration, and promotion data
+                  if (Array.isArray(svc.variants) && svc.variants.length > 0) {
+                    const variant = svc.variants[0];
+
+                    // Get duration from variant
+                    if (variant.duration) {
+                      const mins = typeof variant.duration === 'number' ? variant.duration : parseInt(variant.duration);
+                      if (!isNaN(mins)) {
+                        if (mins >= 60) {
+                          const hours = Math.floor(mins / 60);
+                          const remainMins = mins % 60;
+                          duration = remainMins > 0 ? `${hours}h ${remainMins}min` : `${hours}h`;
+                        } else {
+                          duration = `${mins} min`;
+                        }
+                      }
                     }
-                  } else if (svc.price_from !== undefined) {
-                    price = `${svc.price_from.toFixed(2).replace('.', ',')} €+`;
+
+                    // Check for promotion with original price
+                    if (variant.promotion) {
+                      // Promotion exists - get original and discounted price
+                      if (variant.promotion.old_price !== undefined) {
+                        originalPrice = `${variant.promotion.old_price.toFixed(2).replace('.', ',')} €`;
+                      }
+                      if (variant.promotion.new_price !== undefined) {
+                        price = `${variant.promotion.new_price.toFixed(2).replace('.', ',')} €`;
+                      } else if (variant.price !== undefined) {
+                        price = `${variant.price.toFixed(2).replace('.', ',')} €`;
+                      }
+                    } else if (variant.price !== undefined) {
+                      price = `${variant.price.toFixed(2).replace('.', ',')} €`;
+                    }
                   }
 
-                  // Format duration
-                  let duration = '';
-                  if (svc.duration) {
-                    const mins = typeof svc.duration === 'number' ? svc.duration : parseInt(svc.duration);
-                    if (!isNaN(mins)) {
-                      if (mins >= 60) {
-                        const hours = Math.floor(mins / 60);
-                        const remainMins = mins % 60;
-                        duration = remainMins > 0 ? `${hours}h${remainMins}min` : `${hours}h`;
-                      } else {
-                        duration = `${mins}min`;
+                  // Fallback to service-level price
+                  if (!price) {
+                    if (svc.price !== undefined && svc.price !== null) {
+                      const priceNum = typeof svc.price === 'number' ? svc.price : parseFloat(svc.price);
+                      if (!isNaN(priceNum)) {
+                        price = `${priceNum.toFixed(2).replace('.', ',')} €`;
                       }
+                    } else if (svc.price_from !== undefined) {
+                      price = `${svc.price_from.toFixed(2).replace('.', ',')} €+`;
                     }
                   }
 
@@ -112,7 +137,7 @@ async function extractServicesFromPage(page) {
                     ? svc.variants[0].id
                     : null;
 
-                  services.push({ name, price, duration, description, serviceId, variantId });
+                  services.push({ name, price, originalPrice, duration, description, serviceId, variantId });
                 }
               });
             }
@@ -208,7 +233,8 @@ function normalizeServices(services, lang = 'es') {
       name: category.name,
       services: category.services.map(service => ({
         name: service.name,
-        ...parsePrice(service.price, lang),
+        price: service.price || '',
+        originalPrice: service.originalPrice || '',
         duration: parseDuration(service.duration, lang),
         description: service.description || '',
         serviceId: service.serviceId || null,
