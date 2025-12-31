@@ -1482,8 +1482,20 @@ p {
 
 // About Page
 .about-full {
+    margin-top: $spacing-xl;
+    text-align: center;
+
+    .section-label {
+        display: block;
+        color: $color-primary;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: $spacing-xs;
+    }
+    
     .about-intro {
-        text-align: center;
         max-width: 700px;
         margin: 0 auto $spacing-xl;
 
@@ -1491,6 +1503,14 @@ p {
             margin-bottom: $spacing-sm;
         }
     }
+}
+
+.values-title {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: $color-dark;
+    margin-bottom: $spacing-md;
 }
 
 .values-grid {
@@ -1560,8 +1580,6 @@ p {
 
 // Team Section
 .team-section {
-    margin-top: $spacing-xl;
-    padding-top: $spacing-xl;
     text-align: center;
 
     .section-label {
@@ -1602,7 +1620,7 @@ p {
 
 .team-card {
     background: $color-white;
-    padding: $spacing-lg $spacing-md;
+    padding: $spacing-md $spacing-sm;
     border-radius: $border-radius;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
