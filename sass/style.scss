@@ -375,6 +375,36 @@ p {
     }
 }
 
+.nav-social {
+    display: none;
+
+    @media (max-width: $breakpoint-lg) {
+        display: flex;
+        gap: $spacing-md;
+        position: absolute;
+        bottom: $spacing-lg;
+        left: 50%;
+        transform: translateX(-50%);
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba($color-primary, 0.1);
+            color: $color-primary;
+            transition: $transition;
+
+            &:hover {
+                background: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+}
+
 .header-actions-desktop {
     display: flex;
     align-items: center;
@@ -1042,6 +1072,10 @@ p {
 
     .social-links {
         margin-top: $spacing-md;
+
+        @media (max-width: $breakpoint-sm) {
+            display: none;
+        }
     }
 }
 
@@ -1122,6 +1156,16 @@ p {
 
         &:nth-child(2):hover {
             background: $color-primary-dark;
+        }
+    }
+
+    &.social-links-mobile {
+        display: none;
+        justify-content: center;
+        margin-top: $spacing-md;
+
+        @media (max-width: $breakpoint-sm) {
+            display: flex;
         }
     }
 }

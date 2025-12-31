@@ -105,7 +105,7 @@ async function fetchServicesFromBooksy() {
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
     await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'networkidle',
+      waitUntil: 'domcontentloaded',
       timeout: CONFIG.timeout
     });
 
