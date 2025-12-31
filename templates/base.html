@@ -3,16 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
 
+    <!-- Primary Meta Tags -->
+    <title>{% block title %}{{ config.title }} - {% if lang == "en" %}Beauty & Wellness Center{% else %}Centro de Belleza y Bienestar{% endif %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
+    <meta name="author" content="D'Krisna">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#E8A4B8">
+
+    <!-- Canonical URL -->
+    {% if page %}
+    <link rel="canonical" href="{{ page.permalink }}">
+    {% elif section %}
+    <link rel="canonical" href="{{ section.permalink }}">
+    {% else %}
+    <link rel="canonical" href="{{ config.base_url }}{% if lang == 'en' %}/en/{% else %}/{% endif %}">
+    {% endif %}
+
+    <!-- Hreflang for multilingual SEO -->
+    {% if page %}
+    <link rel="alternate" hreflang="es" href="{{ page.permalink | replace(from='/en/', to='/') }}">
+    <link rel="alternate" hreflang="en" href="{% if '/en/' in page.permalink %}{{ page.permalink }}{% else %}{{ page.permalink | replace(from=config.base_url, to=config.base_url ~ '/en') }}{% endif %}">
+    {% else %}
+    <link rel="alternate" hreflang="es" href="{{ config.base_url }}/">
+    <link rel="alternate" hreflang="en" href="{{ config.base_url }}/en/">
+    {% endif %}
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
+    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg">
+    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
+    <meta property="og:site_name" content="D'Krisna">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/og-image.jpg">
+
+    <!-- Geo tags for local SEO -->
+    <meta name="geo.region" content="ES-MU">
+    <meta name="geo.placename" content="Caravaca de la Cruz">
+    <meta name="geo.position" content="38.1056;-1.8686">
+    <meta name="ICBM" content="38.1056, -1.8686">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+
+    <!-- JSON-LD Structured Data for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "D'Krisna",
+        "description": "{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}",
+        "url": "{{ config.base_url }}",
+        "telephone": "{{ config.extra.phone }}",
+        "email": "{{ config.extra.email }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Carretera de Murcia N45",
+            "addressLocality": "Caravaca de la Cruz",
+            "postalCode": "30400",
+            "addressRegion": "Murcia",
+            "addressCountry": "ES"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 38.1056,
+            "longitude": -1.8686
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "20:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+            }
+        ],
+        "priceRange": "$$",
+        "image": "{{ config.base_url }}/images/og-image.jpg",
+        "sameAs": [
+            "{{ config.extra.instagram }}",
+            "{{ config.extra.facebook }}",
+            "{{ config.extra.tiktok }}"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "{% if lang == 'en' %}Beauty Services{% else %}Servicios de Belleza{% endif %}",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "{% if lang == 'en' %}Manicure{% else %}Manicura{% endif %}"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "{% if lang == 'en' %}Pedicure{% else %}Pedicura{% endif %}"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "{% if lang == 'en' %}Massages{% else %}Masajes{% endif %}"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 
     {% block head %}{% endblock %}
 </head>

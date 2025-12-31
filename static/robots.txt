@@ -1,0 +1,11 @@
+# robots.txt for D'Krisna
+# https://dkrisna.es
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dkrisna.es/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
