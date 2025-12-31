@@ -1117,6 +1117,24 @@ p {
     margin-top: $spacing-xs;
 }
 
+.service-book-btn {
+    display: inline-block;
+    margin-top: $spacing-sm;
+    padding: $spacing-xs $spacing-md;
+    background: $color-primary;
+    color: $color-white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: $border-radius;
+    transition: $transition;
+
+    &:hover {
+        background: darken($color-primary, 10%);
+        color: $color-white;
+    }
+}
+
 .services-note {
     background: $color-bg-alt;
     padding: $spacing-md;

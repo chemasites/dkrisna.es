@@ -38,35 +38,35 @@ show_cta = true
 
 <div class="team-section">
 <span class="section-label">Nuestro Equipo</span>
-<h2 class="team-title">Conoce a Nuestras Expertas</h2>
-<p class="team-subtitle">Nuestro equipo de profesionales cualificadas está dedicado a brindarte la más alta calidad y atención personalizada.</p>
+<h2 class="team-title">Conoce a Nuestro Equipo</h2>
+<p class="team-subtitle">Nuestro equipo de profesionales está dedicado a brindarte la más alta calidad y atención personalizada.</p>
 
 <div class="team-grid">
 <div class="team-card">
 <div class="team-avatar">
-<span>KG</span>
+<span>D</span>
 </div>
-<h3 class="team-name">Krisna García</h3>
-<span class="team-role">Fundadora y Nail Artist</span>
-<p class="team-specialty">Uñas Acrílicas y Diseño</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<span>LM</span>
-</div>
-<h3 class="team-name">Laura Martínez</h3>
-<span class="team-role">Especialista en Cejas</span>
-<p class="team-specialty">Laminado y Micropigmentación</p>
+<h3 class="team-name">Deyanira</h3>
+<span class="team-role">Manicurista</span>
+<p class="team-specialty">Manicura y Diseño</p>
 </div>
 
 <div class="team-card">
 <div class="team-avatar">
-<span>AS</span>
+<span>N</span>
 </div>
-<h3 class="team-name">Ana Sánchez</h3>
-<span class="team-role">Masajista Terapéutica</span>
-<p class="team-specialty">KOBIDO y Piedras Calientes</p>
+<h3 class="team-name">Nazarina</h3>
+<span class="team-role">Manicurista</span>
+<p class="team-specialty">Manicura y Diseño</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>C</span>
+</div>
+<h3 class="team-name">Carlos</h3>
+<span class="team-role">Masajista Terapéutico</span>
+<p class="team-specialty">Masajes Relajantes</p>
 </div>
 </div>
 </div>

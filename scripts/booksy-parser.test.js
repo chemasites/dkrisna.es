@@ -186,6 +186,24 @@ describe('generateServiceCardHTML', () => {
 
     expect(html).toContain('Consultar');
   });
+
+  it('includes booking button when URL provided', () => {
+    const service = { name: 'Manicura', price: '15€' };
+    const html = generateServiceCardHTML(service, 'https://link.booksy.com/test');
+
+    expect(html).toContain('service-book-btn');
+    expect(html).toContain('href="https://link.booksy.com/test"');
+    expect(html).toContain('Reservar');
+    expect(html).toContain('target="_blank"');
+  });
+
+  it('omits booking button when URL not provided', () => {
+    const service = { name: 'Manicura', price: '15€' };
+    const html = generateServiceCardHTML(service);
+
+    expect(html).not.toContain('service-book-btn');
+    expect(html).not.toContain('Reservar');
+  });
 });
 
 describe('generateManicuraHTML', () => {
@@ -213,6 +231,12 @@ describe('generateManicuraHTML', () => {
     expect(html).toContain('services-note');
     expect(html).toContain('Reserva tu cita en Booksy');
   });
+
+  it('includes booking buttons when URL provided', () => {
+    const html = generateManicuraHTML(mockCategories, 'https://link.booksy.com/test');
+    expect(html).toContain('service-book-btn');
+    expect(html).toContain('Reservar');
+  });
 });
 
 describe('generateMasajesHTML', () => {
@@ -238,5 +262,11 @@ describe('generateMasajesHTML', () => {
   it('includes special offer note', () => {
     const html = generateMasajesHTML(mockCategories);
     expect(html).toContain('Oferta especial');
+  });
+
+  it('includes booking buttons when URL provided', () => {
+    const html = generateMasajesHTML(mockCategories, 'https://link.booksy.com/test');
+    expect(html).toContain('service-book-btn');
+    expect(html).toContain('Reservar');
   });
 });

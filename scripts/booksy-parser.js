@@ -64,9 +64,10 @@ export function extractMassageServices(categories) {
 /**
  * Generates HTML for a single service card
  * @param {Service} service
+ * @param {string} [bookingUrl] - Optional booking URL for the reserve button
  * @returns {string}
  */
-export function generateServiceCardHTML(service) {
+export function generateServiceCardHTML(service, bookingUrl) {
   const price = service.price || 'Consultar';
   const duration = service.duration || '';
 
@@ -75,21 +76,27 @@ export function generateServiceCardHTML(service) {
     priceHTML = `<span class="price-original">${service.originalPrice}</span> ${price}`;
   }
 
+  const bookingButton = bookingUrl
+    ? `<a href="${bookingUrl}" class="service-book-btn" target="_blank" rel="noopener">Reservar</a>`
+    : '';
+
   return `<div class="service-detail-card">
 <div class="service-header">
 <h3>${service.name}</h3>
 <span class="service-price">${priceHTML}</span>
 </div>
 ${duration ? `<span class="service-duration">${duration}</span>` : ''}
+${bookingButton}
 </div>`;
 }
 
 /**
  * Generates HTML for the manicura page
  * @param {ServiceCategory[]} categories
+ * @param {string} [bookingUrl] - Optional booking URL for service buttons
  * @returns {string}
  */
-export function generateManicuraHTML(categories) {
+export function generateManicuraHTML(categories, bookingUrl) {
   const categoryMap = categorizeNailServices(categories);
 
   let html = `<div class="services-full">
@@ -106,7 +113,7 @@ export function generateManicuraHTML(categories) {
 `;
 
       categoryServices.forEach(service => {
-        html += generateServiceCardHTML(service) + '\n\n';
+        html += generateServiceCardHTML(service, bookingUrl) + '\n\n';
       });
 
       html += `</div>
@@ -126,9 +133,10 @@ export function generateManicuraHTML(categories) {
 /**
  * Generates HTML for the masajes page
  * @param {ServiceCategory[]} categories
+ * @param {string} [bookingUrl] - Optional booking URL for service buttons
  * @returns {string}
  */
-export function generateMasajesHTML(categories) {
+export function generateMasajesHTML(categories, bookingUrl) {
   const massageServices = extractMassageServices(categories);
 
   let html = `<div class="services-full">
@@ -140,7 +148,7 @@ export function generateMasajesHTML(categories) {
 `;
 
   massageServices.forEach(service => {
-    html += generateServiceCardHTML(service) + '\n\n';
+    html += generateServiceCardHTML(service, bookingUrl) + '\n\n';
   });
 
   html += `</div>

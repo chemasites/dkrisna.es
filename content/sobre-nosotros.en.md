@@ -38,35 +38,35 @@ show_cta = true
 
 <div class="team-section">
 <span class="section-label">Our Team</span>
-<h2 class="team-title">Meet Our Experts</h2>
-<p class="team-subtitle">Our team of skilled professionals is dedicated to providing you with the highest quality care and personalized attention.</p>
+<h2 class="team-title">Meet Our Team</h2>
+<p class="team-subtitle">Our team of professionals is dedicated to providing you with the highest quality care and personalized attention.</p>
 
 <div class="team-grid">
 <div class="team-card">
 <div class="team-avatar">
-<span>KG</span>
+<span>D</span>
 </div>
-<h3 class="team-name">Krisna García</h3>
-<span class="team-role">Founder & Nail Artist</span>
-<p class="team-specialty">Acrylic Nails & Design</p>
-</div>
-
-<div class="team-card">
-<div class="team-avatar">
-<span>LM</span>
-</div>
-<h3 class="team-name">Laura Martínez</h3>
-<span class="team-role">Brow Specialist</span>
-<p class="team-specialty">Lamination & Micropigmentation</p>
+<h3 class="team-name">Deyanira</h3>
+<span class="team-role">Nail Artist</span>
+<p class="team-specialty">Manicure & Design</p>
 </div>
 
 <div class="team-card">
 <div class="team-avatar">
-<span>AS</span>
+<span>N</span>
 </div>
-<h3 class="team-name">Ana Sánchez</h3>
-<span class="team-role">Therapeutic Masseuse</span>
-<p class="team-specialty">KOBIDO & Hot Stones</p>
+<h3 class="team-name">Nazarina</h3>
+<span class="team-role">Nail Artist</span>
+<p class="team-specialty">Manicure & Design</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>C</span>
+</div>
+<h3 class="team-name">Carlos</h3>
+<span class="team-role">Therapeutic Masseur</span>
+<p class="team-specialty">Relaxing Massages</p>
 </div>
 </div>
 </div>

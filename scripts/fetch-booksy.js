@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 
 const CONFIG = {
   booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_23128_caravaca-de-la-cruz',
+  bookingUrl: 'https://link.booksy.com/DKrisnaNails',
   contentDir: join(__dirname, '..', 'content'),
   timeout: 60000,
   waitForContent: 3000
@@ -151,13 +152,13 @@ function updateContentFile(filePath, newContent) {
 }
 
 function updateAllContentFiles(services) {
-  const { contentDir } = CONFIG;
+  const { contentDir, bookingUrl } = CONFIG;
 
-  const manicuraHTML = generateManicuraHTML(services.categories);
+  const manicuraHTML = generateManicuraHTML(services.categories, bookingUrl);
   updateContentFile(join(contentDir, 'manicura.md'), manicuraHTML);
   updateContentFile(join(contentDir, 'manicura.en.md'), manicuraHTML);
 
-  const masajesHTML = generateMasajesHTML(services.categories);
+  const masajesHTML = generateMasajesHTML(services.categories, bookingUrl);
   updateContentFile(join(contentDir, 'masajes.md'), masajesHTML);
   updateContentFile(join(contentDir, 'masajes.en.md'), masajesHTML);
 }
