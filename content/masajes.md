@@ -16,7 +16,7 @@ show_cta = true
 <div class="service-detail-card">
 <div class="service-header">
 <h3>KOBIDO lifting Facial</h3>
-<span class="service-price">40,00 €</span>
+<span class="service-price"><span class="price-original">40,00 €</span> 20,00 €</span>
 </div>
 <span class="service-duration">1 hora</span>
 <p class="service-description">Elimina las líneas de expresión de forma natural, sin inyecciones ni tratamientos dolorosos.</p>
@@ -26,7 +26,7 @@ show_cta = true
 <div class="service-detail-card">
 <div class="service-header">
 <h3>Masajes Relajantes</h3>
-<span class="service-price">30,00 €</span>
+<span class="service-price"><span class="price-original">30,00 €</span> 15,00 €</span>
 </div>
 <span class="service-duration">1 hora 20 min</span>
 <p class="service-description">Masaje corporal suave con aceites naturales, que alivia el estrés y promueve el bienestar.</p>
@@ -36,7 +36,7 @@ show_cta = true
 <div class="service-detail-card">
 <div class="service-header">
 <h3>Masaje Geotérmico (Piedras Calientes)</h3>
-<span class="service-price">40,00 €</span>
+<span class="service-price"><span class="price-original">40,00 €</span> 20,00 €</span>
 </div>
 <span class="service-duration">1 hora 20 min</span>
 <p class="service-description">Masaje profundo con piedras calientes que relaja músculos y reduce tensiones.</p>

@@ -99,15 +99,15 @@ async function extractServicesFromPage(page) {
                     }
 
                     // Check for promotion with original price
-                    if (variant.promotion) {
-                      // Promotion exists - get original and discounted price
-                      if (variant.promotion.old_price !== undefined) {
-                        originalPrice = `${variant.promotion.old_price.toFixed(2).replace('.', ',')} €`;
+                    if (variant.promotion && variant.promotion.price) {
+                      // Promotion exists - original price is variant.price, discounted is promotion.price.price
+                      if (variant.price !== undefined) {
+                        originalPrice = `${variant.price.toFixed(2).replace('.', ',')} €`;
                       }
-                      if (variant.promotion.new_price !== undefined) {
-                        price = `${variant.promotion.new_price.toFixed(2).replace('.', ',')} €`;
-                      } else if (variant.price !== undefined) {
-                        price = `${variant.price.toFixed(2).replace('.', ',')} €`;
+                      if (variant.promotion.price.price !== undefined) {
+                        price = `${variant.promotion.price.price.toFixed(2).replace('.', ',')} €`;
+                      } else if (variant.promotion.price.formatted_price) {
+                        price = variant.promotion.price.formatted_price;
                       }
                     } else if (variant.price !== undefined) {
                       price = `${variant.price.toFixed(2).replace('.', ',')} €`;
