@@ -48,7 +48,6 @@ show_cta = true
 </div>
 <h3 class="team-name">Deyanira</h3>
 <span class="team-role">Nail Artist</span>
-<p class="team-specialty">Manicure & Design</p>
 </div>
 
 <div class="team-card">
@@ -57,7 +56,6 @@ show_cta = true
 </div>
 <h3 class="team-name">Nazareth</h3>
 <span class="team-role">Nail Artist</span>
-<p class="team-specialty">Manicure & Design</p>
 </div>
 
 <div class="team-card">
@@ -65,8 +63,7 @@ show_cta = true
 <span>C</span>
 </div>
 <h3 class="team-name">Carlos</h3>
-<span class="team-role">Expert Masseur</span>
-<p class="team-specialty">Relaxing Massages</p>
+<span class="team-role">Masseur</span>
 </div>
 </div>
 </div>
