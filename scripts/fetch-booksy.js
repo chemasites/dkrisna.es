@@ -151,16 +151,22 @@ function updateContentFile(filePath, newContent) {
   return true;
 }
 
-function updateAllContentFiles(services) {
+function updateAllContentFiles(rawServices) {
   const { contentDir, bookingUrl } = CONFIG;
 
-  const manicuraHTML = generateManicuraHTML(services.categories, bookingUrl);
-  updateContentFile(join(contentDir, 'manicura.md'), manicuraHTML);
-  updateContentFile(join(contentDir, 'manicura.en.md'), manicuraHTML);
+  // Spanish content
+  const servicesES = normalizeServices(rawServices, 'es');
+  const manicuraES = generateManicuraHTML(servicesES.categories, { bookingUrl, lang: 'es' });
+  const masajesES = generateMasajesHTML(servicesES.categories, { bookingUrl, lang: 'es' });
+  updateContentFile(join(contentDir, 'manicura.md'), manicuraES);
+  updateContentFile(join(contentDir, 'masajes.md'), masajesES);
 
-  const masajesHTML = generateMasajesHTML(services.categories, bookingUrl);
-  updateContentFile(join(contentDir, 'masajes.md'), masajesHTML);
-  updateContentFile(join(contentDir, 'masajes.en.md'), masajesHTML);
+  // English content
+  const servicesEN = normalizeServices(rawServices, 'en');
+  const manicuraEN = generateManicuraHTML(servicesEN.categories, { bookingUrl, lang: 'en' });
+  const masajesEN = generateMasajesHTML(servicesEN.categories, { bookingUrl, lang: 'en' });
+  updateContentFile(join(contentDir, 'manicura.en.md'), manicuraEN);
+  updateContentFile(join(contentDir, 'masajes.en.md'), masajesEN);
 }
 
 function logServicesSummary(services) {
@@ -186,9 +192,12 @@ async function main() {
       process.exit(1);
     }
 
-    const services = normalizeServices(rawServices);
-    logServicesSummary(services);
-    updateAllContentFiles(services);
+    // Log summary using Spanish normalization
+    const servicesForLog = normalizeServices(rawServices, 'es');
+    logServicesSummary(servicesForLog);
+
+    // Update content files (handles both ES and EN)
+    updateAllContentFiles(rawServices);
 
     console.log('Service update complete!');
   } catch (error) {
