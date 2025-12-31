@@ -3,9 +3,10 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { createHash } from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -38,6 +39,29 @@ function extractTranslatableText(servicesData) {
   });
 
   return texts;
+}
+
+/**
+ * Creates a hash of the translatable content
+ */
+function createContentHash(texts) {
+  const content = texts.map(t => t.text).sort().join('|');
+  return createHash('sha256').update(content).digest('hex').substring(0, 16);
+}
+
+/**
+ * Gets the stored hash from existing translations file
+ */
+function getStoredHash() {
+  if (!existsSync(CONFIG.outputFile)) {
+    return null;
+  }
+  try {
+    const data = JSON.parse(readFileSync(CONFIG.outputFile, 'utf-8'));
+    return data.sourceHash || null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -113,11 +137,25 @@ async function main() {
     const texts = extractTranslatableText(servicesData);
     console.log(`Found ${texts.length} texts to translate`);
 
+    // Check if translation is needed by comparing content hash
+    const currentHash = createContentHash(texts);
+    const storedHash = getStoredHash();
+
+    if (currentHash === storedHash) {
+      console.log('✓ No changes to translate (content hash matches)');
+      console.log(`  Hash: ${currentHash}`);
+      return;
+    }
+
+    console.log(`Content changed (${storedHash || 'no previous'} → ${currentHash})`);
     console.log('Calling Claude Haiku for translation...');
     const translations = await translateWithClaude(texts);
 
     console.log('Applying translations...');
     const translatedData = applyTranslations(servicesData, translations);
+
+    // Store the source hash for future comparison
+    translatedData.sourceHash = currentHash;
 
     console.log(`Writing ${CONFIG.outputFile}...`);
     writeFileSync(CONFIG.outputFile, JSON.stringify(translatedData, null, 2), 'utf-8');

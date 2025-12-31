@@ -37,22 +37,63 @@ jobs:
           cd scripts
           node fetch-services.js
 
-      - name: Check for services changes
-        id: changes
+      - name: Check if translation needed
+        id: translation
         run: |
-          if git diff --quiet static/data/services.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+          # Extract translatable content (names and descriptions) and create hash
+          CURRENT_HASH=$(node -e "
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const data = JSON.parse(fs.readFileSync('static/data/services.json', 'utf-8'));
+            const texts = [];
+            data.categories.forEach(cat => {
+              cat.services.forEach(svc => {
+                texts.push(svc.name);
+                if (svc.description) texts.push(svc.description);
+              });
+            });
+            console.log(crypto.createHash('sha256').update(texts.sort().join('|')).digest('hex').substring(0, 16));
+          ")
+
+          # Get stored hash from existing translations
+          STORED_HASH=""
+          if [ -f "static/data/services.en.json" ]; then
+            STORED_HASH=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('static/data/services.en.json', 'utf-8'));
+                console.log(data.sourceHash || '');
+              } catch { console.log(''); }
+            ")
+          fi
+
+          echo "Current hash: $CURRENT_HASH"
+          echo "Stored hash: $STORED_HASH"
+
+          if [ "$CURRENT_HASH" = "$STORED_HASH" ]; then
+            echo "needed=false" >> $GITHUB_OUTPUT
+            echo "No translation needed - content unchanged"
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "needed=true" >> $GITHUB_OUTPUT
+            echo "Translation needed - content changed"
           fi
 
       - name: Translate services to English
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.translation.outputs.needed == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           cd scripts
           node translate-services.js
+
+      - name: Check for changes to commit
+        id: changes
+        run: |
+          if git diff --quiet static/data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Build site to verify
         uses: taiki-e/install-action@v2
