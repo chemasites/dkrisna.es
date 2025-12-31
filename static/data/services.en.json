@@ -12,7 +12,7 @@
           "price": "2,00 €",
           "originalPrice": null,
           "duration": "20 min",
-          "description": "Single nail repair with semi-permanent polish",
+          "description": "Specific nail touch-up with semi-permanent polish",
           "variantId": 2038814
         },
         {
@@ -24,11 +24,11 @@
           "variantId": 2120720
         },
         {
-          "name": "Cleaning & Traditional Polish (Hands)",
+          "name": "Traditional Cleaning & Polish (Hands)",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Nail cleaning, filing, cuticles and classic polish.",
+          "description": "Nail cleaning, filing, cuticle care, and classic polish.",
           "variantId": 2016866
         },
         {
@@ -36,7 +36,7 @@
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Safe removal of semi-permanent polish without damaging the natural nail.",
+          "description": "Safe removal of semi-permanent polish without damaging natural nails.",
           "variantId": 2053132
         },
         {
@@ -44,7 +44,7 @@
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Professional removal of acrylic nails while caring for the natural nail.",
+          "description": "Professional removal of acrylic nails while preserving natural nail health.",
           "variantId": 2053130
         },
         {
@@ -52,15 +52,15 @@
           "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Gel system with hardening powder for greater resistance and duration.",
+          "description": "Gel system with hardening powder for increased resistance and durability.",
           "variantId": 2016863
         },
         {
-          "name": "Acrylic & Gel Fill",
+          "name": "Acrylic and Gel Refill",
           "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Maintenance of acrylic and gel nails, correcting growth.",
+          "description": "Maintenance of acrylic and gel nails, correcting nail growth.",
           "variantId": 2086719
         },
         {
@@ -68,7 +68,7 @@
           "price": "25,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Acrylic extension and sculpting for resistant and personalized nails.",
+          "description": "Extension and sculpting with acrylic for strong and personalized nails.",
           "variantId": 2016865
         },
         {
@@ -76,7 +76,7 @@
           "price": "29,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Soft gel extensions, light, flexible with a natural finish.",
+          "description": "Extensions with soft gel, lightweight, flexible, with a natural finish.",
           "variantId": 2029570
         },
         {
@@ -84,7 +84,7 @@
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Hybrid system between acrylic and gel, resistant with a natural look.",
+          "description": "Hybrid system between acrylic and gel, resistant with a natural appearance.",
           "variantId": 2029571
         }
       ]
@@ -101,7 +101,7 @@
           "price": "18,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Cuticle cleaning + traditional polish without water",
+          "description": "Cuticle cleaning + polish with traditional nail polish without water",
           "variantId": 2016864
         },
         {
@@ -117,7 +117,7 @@
           "price": "23,00 €",
           "originalPrice": null,
           "duration": "1 hora 15 min",
-          "description": "Relaxing treatment with exfoliation, hydration, deep cleaning and classic polish",
+          "description": "Relaxing treatment with exfoliation, hydration, deep cleaning, and classic polish",
           "variantId": 2066537
         },
         {
@@ -125,7 +125,7 @@
           "price": "26,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Exfoliation, callus and hardness removal, deep cleaning and long-lasting semi-permanent polish.",
+          "description": "Exfoliation, callus and hardness removal, deep cleaning, and long-lasting semi-permanent polish.",
           "variantId": 2016871
         }
       ]
@@ -138,11 +138,11 @@
       },
       "services": [
         {
-          "name": "Upper Lip & Eyebrow Waxing",
+          "name": "Mustache and Eyebrow Hair Removal",
           "price": "4,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Blade waxing, design and facial contour cleaning for a harmonious finish",
+          "description": "Razor hair removal, design, and facial contour cleaning for a harmonious finish",
           "variantId": 2120923
         },
         {
@@ -150,15 +150,15 @@
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Extension removal without damaging natural lashes and relaxing facial massage.",
+          "description": "Removal of extensions without damaging natural lashes and relaxing facial massage.",
           "variantId": 2120922
         },
         {
-          "name": "Lash Lift",
+          "name": "Lash Lifting",
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Natural lash curl and lift for an open look.",
+          "description": "Natural curvature and elevation of lashes for an open gaze.",
           "variantId": 2016868
         },
         {
@@ -166,19 +166,19 @@
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Hair alignment and fixation for more defined eyebrows.",
+          "description": "Alignment and fixing of hair for more defined eyebrows.",
           "variantId": 2016869
         },
         {
-          "name": "Eyebrow Lamination + Tinting",
+          "name": "Eyebrow Lamination + Pigmentation",
           "price": "18,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Design, fixation and color for more intense eyebrows.",
+          "description": "Design, fixing, and color for more intense eyebrows.",
           "variantId": 2103191
         },
         {
-          "name": "Individual Lash Extensions",
+          "name": "Point-by-Point Lashes",
           "price": "18,00 €",
           "originalPrice": null,
           "duration": "1 hora",
@@ -207,11 +207,11 @@
           "price": "15,00 €",
           "originalPrice": "30,00 €",
           "duration": "1 hora 20 min",
-          "description": "Gentle body massage with natural oils, relieving stress and promoting wellbeing.",
+          "description": "Gentle body massage with natural oils that relieves stress and promotes well-being.",
           "variantId": 2291441
         },
         {
-          "name": "Hot Stone Massage",
+          "name": "Geothermal Massage (Hot Stones)",
           "price": "20,00 €",
           "originalPrice": "40,00 €",
           "duration": "1 hora 20 min",
@@ -221,5 +221,5 @@
       ]
     }
   ],
-  "fetchedAt": "2025-12-31T19:18:50.903Z"
+  "fetchedAt": "2025-12-31T19:54:36.159Z"
 }
