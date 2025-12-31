@@ -1882,14 +1882,6 @@ p {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    &:nth-child(2n) {
-        background: $color-beige-light;
-    }
-
-    &:nth-child(3n) {
-        background: $color-primary-pale;
-    }
-
     h3 {
         font-size: 1.125rem;
         margin: $spacing-sm 0 $spacing-xs;
