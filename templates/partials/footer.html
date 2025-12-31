@@ -6,7 +6,7 @@
                     <span class="logo-icon">✿</span>
                     <span class="logo-text">D'Krisna</span>
                 </a>
-                <p class="footer-tagline">{{ trans(key="footer_tagline") }}</p>
+                <p class="footer-tagline">{{ trans(key="footer_tagline", lang=lang) }}</p>
 
                 <div class="social-links">
                     <a href="{{ config.extra.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
@@ -25,25 +25,25 @@
             </div>
 
             <div class="footer-section">
-                <h4>{{ trans(key="footer_hours") }}</h4>
+                <h4>{{ trans(key="footer_hours", lang=lang) }}</h4>
                 <ul class="footer-hours">
                     <li>
-                        <span>{{ trans(key="weekdays") }}</span>
+                        <span>{{ trans(key="weekdays", lang=lang) }}</span>
                         <span>{{ config.extra.horario_semana }}</span>
                     </li>
                     <li>
-                        <span>{{ trans(key="saturday") }}</span>
+                        <span>{{ trans(key="saturday", lang=lang) }}</span>
                         <span>{{ config.extra.horario_sabado }}</span>
                     </li>
                     <li>
-                        <span>{{ trans(key="sunday") }}</span>
-                        <span>{{ trans(key="closed") }}</span>
+                        <span>{{ trans(key="sunday", lang=lang) }}</span>
+                        <span>{{ trans(key="closed", lang=lang) }}</span>
                     </li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>{{ trans(key="footer_contact") }}</h4>
+                <h4>{{ trans(key="footer_contact", lang=lang) }}</h4>
                 <ul class="footer-contact">
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -62,8 +62,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ now() | date(format="%Y") }} D'Krisna. {{ trans(key="footer_copyright") }}</p>
-            <p class="footer-credits">{{ trans(key="footer_developed_by") }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a> · <a href="{{ get_url(path='legal') }}">{{ trans(key="footer_legal") }}</a></p>
+            <p>&copy; {{ now() | date(format="%Y") }} D'Krisna. {{ trans(key="footer_copyright", lang=lang) }}</p>
+            <p class="footer-credits">{{ trans(key="footer_developed_by", lang=lang) }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a> · <a href="{{ get_url(path='legal') }}">{{ trans(key="footer_legal", lang=lang) }}</a></p>
         </div>
     </div>
 </footer>

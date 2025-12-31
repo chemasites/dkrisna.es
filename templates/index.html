@@ -6,15 +6,15 @@
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <p class="hero-welcome">{{ trans(key="hero_welcome") }}</p>
-        <h1 class="hero-title">{{ trans(key="hero_title") }} <span class="highlight">{{ trans(key="hero_relaxation") }}</span> {{ trans(key="and") }} <span class="highlight">{{ trans(key="hero_beauty") }}</span></h1>
-        <p class="hero-subtitle">{{ trans(key="hero_subtitle") }}</p>
+        <p class="hero-welcome">{{ trans(key="hero_welcome", lang=lang) }}</p>
+        <h1 class="hero-title">{{ trans(key="hero_title", lang=lang) }} <span class="highlight">{{ trans(key="hero_relaxation", lang=lang) }}</span> {{ trans(key="and", lang=lang) }} <span class="highlight">{{ trans(key="hero_beauty", lang=lang) }}</span></h1>
+        <p class="hero-subtitle">{{ trans(key="hero_subtitle", lang=lang) }}</p>
         <div class="hero-buttons">
             <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
-                {{ trans(key="hero_cta") }}
+                {{ trans(key="hero_cta", lang=lang) }}
             </a>
             <a href="#servicios" class="btn btn-outline">
-                {{ trans(key="hero_explore") }} →
+                {{ trans(key="hero_explore", lang=lang) }} →
             </a>
         </div>
     </div>
@@ -23,42 +23,42 @@
 <!-- Services Preview -->
 <section id="servicios" class="section services-preview">
     <div class="container">
-        <h2 class="section-title">{{ trans(key="services_title") }}</h2>
+        <h2 class="section-title">{{ trans(key="services_title", lang=lang) }}</h2>
         <div class="services-grid">
             <a href="{% if lang == 'en' %}/en/manicura/#unas-manos{% else %}/manicura/#unas-manos{% endif %}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
                 </div>
-                <h3>{{ trans(key="service_hand_nails_title") }}</h3>
-                <p>{{ trans(key="service_hand_nails_desc") }}</p>
-                <span class="service-link">{{ trans(key="view_more") }} →</span>
+                <h3>{{ trans(key="service_hand_nails_title", lang=lang) }}</h3>
+                <p>{{ trans(key="service_hand_nails_desc", lang=lang) }}</p>
+                <span class="service-link">{{ trans(key="view_more", lang=lang) }} →</span>
             </a>
 
             <a href="{% if lang == 'en' %}/en/manicura/#unas-pies{% else %}/manicura/#unas-pies{% endif %}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/></svg>
                 </div>
-                <h3>{{ trans(key="service_foot_nails_title") }}</h3>
-                <p>{{ trans(key="service_foot_nails_desc") }}</p>
-                <span class="service-link">{{ trans(key="view_more") }} →</span>
+                <h3>{{ trans(key="service_foot_nails_title", lang=lang) }}</h3>
+                <p>{{ trans(key="service_foot_nails_desc", lang=lang) }}</p>
+                <span class="service-link">{{ trans(key="view_more", lang=lang) }} →</span>
             </a>
 
             <a href="{% if lang == 'en' %}/en/manicura/#cejas-pestanas{% else %}/manicura/#cejas-pestanas{% endif %}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </div>
-                <h3>{{ trans(key="service_eyebrows_title") }}</h3>
-                <p>{{ trans(key="service_eyebrows_desc") }}</p>
-                <span class="service-link">{{ trans(key="view_more") }} →</span>
+                <h3>{{ trans(key="service_eyebrows_title", lang=lang) }}</h3>
+                <p>{{ trans(key="service_eyebrows_desc", lang=lang) }}</p>
+                <span class="service-link">{{ trans(key="view_more", lang=lang) }} →</span>
             </a>
 
             <a href="{% if lang == 'en' %}/en/masajes/#masajes{% else %}/masajes/#masajes{% endif %}" class="service-card">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
                 </div>
-                <h3>{{ trans(key="service_massage_title") }}</h3>
-                <p>{{ trans(key="service_massage_desc") }}</p>
-                <span class="service-link">{{ trans(key="view_more") }} →</span>
+                <h3>{{ trans(key="service_massage_title", lang=lang) }}</h3>
+                <p>{{ trans(key="service_massage_desc", lang=lang) }}</p>
+                <span class="service-link">{{ trans(key="view_more", lang=lang) }} →</span>
             </a>
         </div>
     </div>
@@ -69,14 +69,14 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-image">
-                <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=800" alt="{{ trans(key='about_title') }}" loading="lazy">
+                <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=800" alt="{{ trans(key='about_title', lang=lang) }}" loading="lazy">
             </div>
             <div class="about-content">
-                <span class="section-label">{{ trans(key="about_label") }}</span>
-                <h2>{{ trans(key="about_title") }}</h2>
-                <p>{{ trans(key="about_p1") }}</p>
-                <p>{{ trans(key="about_p2") }}</p>
-                <a href="{{ get_url(path='sobre-nosotros') }}" class="btn btn-outline">{{ trans(key="view_more") }}</a>
+                <span class="section-label">{{ trans(key="about_label", lang=lang) }}</span>
+                <h2>{{ trans(key="about_title", lang=lang) }}</h2>
+                <p>{{ trans(key="about_p1", lang=lang) }}</p>
+                <p>{{ trans(key="about_p2", lang=lang) }}</p>
+                <a href="{{ get_url(path='sobre-nosotros') }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
             </div>
         </div>
     </div>
@@ -86,10 +86,10 @@
 <section class="section cta-section">
     <div class="container">
         <div class="cta-content">
-            <h2>{{ trans(key="cta_title") }}</h2>
-            <p>{{ trans(key="cta_subtitle") }}</p>
+            <h2>{{ trans(key="cta_title", lang=lang) }}</h2>
+            <p>{{ trans(key="cta_subtitle", lang=lang) }}</p>
             <a href="{{ config.extra.booksy_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-                {{ trans(key="book_now") }}
+                {{ trans(key="book_now", lang=lang) }}
             </a>
         </div>
     </div>
@@ -98,32 +98,32 @@
 <!-- Location Preview -->
 <section class="section location-preview">
     <div class="container">
-        <h2 class="section-title">{{ trans(key="location_title") }}</h2>
+        <h2 class="section-title">{{ trans(key="location_title", lang=lang) }}</h2>
         <div class="location-grid">
             <div class="location-info">
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <div>
-                        <h4>{{ trans(key="location_address") }}</h4>
+                        <h4>{{ trans(key="location_address", lang=lang) }}</h4>
                         <p>{{ config.extra.address }}</p>
                     </div>
                 </div>
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <div>
-                        <h4>{{ trans(key="location_phone") }}</h4>
+                        <h4>{{ trans(key="location_phone", lang=lang) }}</h4>
                         <p><a href="tel:{{ config.extra.phone }}">{{ config.extra.phone }}</a></p>
                     </div>
                 </div>
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     <div>
-                        <h4>{{ trans(key="location_hours") }}</h4>
-                        <p>{{ trans(key="weekdays") }}: {{ config.extra.horario_semana }}</p>
-                        <p>{{ trans(key="saturday") }}: {{ config.extra.horario_sabado }}</p>
+                        <h4>{{ trans(key="location_hours", lang=lang) }}</h4>
+                        <p>{{ trans(key="weekdays", lang=lang) }}: {{ config.extra.horario_semana }}</p>
+                        <p>{{ trans(key="saturday", lang=lang) }}: {{ config.extra.horario_sabado }}</p>
                     </div>
                 </div>
-                <a href="{{ get_url(path='ubicacion') }}" class="btn btn-outline">{{ trans(key="view_more") }}</a>
+                <a href="{{ get_url(path='ubicacion') }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
             </div>
             <div class="location-map">
                 <iframe

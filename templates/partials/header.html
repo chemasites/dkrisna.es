@@ -11,10 +11,10 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing("manicura") %}class="active"{% endif %}>{{ trans(key="nav_nails") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing("masajes") %}class="active"{% endif %}>{{ trans(key="nav_massages") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}" {% if page and page.permalink is containing("sobre-nosotros") %}class="active"{% endif %}>{{ trans(key="nav_about") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}" {% if page and page.permalink is containing("ubicacion") %}class="active"{% endif %}>{{ trans(key="nav_location") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing("manicura") %}class="active"{% endif %}>{{ trans(key="nav_nails", lang=lang) }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing("masajes") %}class="active"{% endif %}>{{ trans(key="nav_massages", lang=lang) }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}" {% if page and page.permalink is containing("sobre-nosotros") %}class="active"{% endif %}>{{ trans(key="nav_about", lang=lang) }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}" {% if page and page.permalink is containing("ubicacion") %}class="active"{% endif %}>{{ trans(key="nav_location", lang=lang) }}</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -30,7 +30,7 @@
                 </div>
 
                 <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
-                    {{ trans(key="nav_book") }}
+                    {{ trans(key="nav_book", lang=lang) }}
                 </a>
             </div>
         </nav>
@@ -48,7 +48,7 @@
             </div>
 
             <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
-                {{ trans(key="nav_book") }}
+                {{ trans(key="nav_book", lang=lang) }}
             </a>
         </div>
 
