@@ -1,16 +1,16 @@
-name: Update Services from Booksy
+name: Update Reviews from Booksy
 
 on:
   schedule:
-    # Run every night at 3:00 AM UTC
-    - cron: '0 3 * * *'
+    # Run every night at 2:00 AM UTC
+    - cron: '0 2 * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
   contents: write
 
 jobs:
-  update-services:
+  update-reviews:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,10 +32,10 @@ jobs:
           cd scripts
           npx playwright install chromium
 
-      - name: Fetch and update services
+      - name: Fetch and update reviews
         run: |
           cd scripts
-          node fetch-services.js
+          node fetch-reviews.js
 
       - name: Build site to verify
         uses: taiki-e/install-action@v2
@@ -48,7 +48,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet content/; then
+          if git diff --quiet static/data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -59,6 +59,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add content/
-          git commit -m "chore: update services from Booksy"
+          git add static/data/
+          git commit -m "chore: update reviews from Booksy"
           git push
