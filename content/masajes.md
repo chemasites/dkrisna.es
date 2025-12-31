@@ -8,46 +8,41 @@ show_cta = true
 +++
 
 <div class="services-full">
-<h2 class="services-category-title" id="masajes">Masajes</h2>
+<div class="services-intro">
+<p>Nuestros masajes están diseñados para liberar tensiones, mejorar la circulación y proporcionar un estado de relajación profunda. Cada sesión es personalizada según tus necesidades.</p>
+</div>
+
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Masaje Relajante</h3>
-<span class="service-price">30€</span>
+<h3>KOBIDO lifting Facial</h3>
+<span class="service-price">40,00€</span>
 </div>
-<p>Un viaje sensorial de 80 minutos donde manos expertas aplican técnicas de deslizamiento y presión suave para liberar la tensión acumulada en cuello, espalda y extremidades. Aceites aromáticos naturales envuelven tu cuerpo mientras te sumerges en un estado de calma profunda.</p>
-<span class="service-duration">1 hora 20 min</span>
+
+<a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Reservar</a>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
 <h3>Masaje Geotérmico (Piedras Calientes)</h3>
-<span class="service-price">40€</span>
-</div>
-<p>Experimenta el poder ancestral de las piedras volcánicas. El calor penetrante de las piedras basálticas se combina con movimientos de masaje para relajar la musculatura más profunda, mejorar la circulación y crear una sensación de bienestar que perdura días después del tratamiento.</p>
-<span class="service-duration">1 hora 20 min</span>
-</div>
+<span class="service-price">40,00€</span>
 </div>
 
-<h2 class="services-category-title" id="tratamientos-faciales">Tratamientos Faciales</h2>
-<div class="services-list">
-<div class="service-detail-card">
-<div class="service-header">
-<h3>KOBIDO Lifting Facial</h3>
-<span class="service-price">40€</span>
-</div>
-<p>Técnica milenaria japonesa de 500 años de antigüedad, originalmente reservada para la realeza. Mediante más de 50 movimientos diferentes, este masaje facial estimula la producción natural de colágeno, reduce líneas de expresión y devuelve firmeza y luminosidad al rostro. Resultados visibles desde la primera sesión.</p>
-<span class="service-duration">1 hora</span>
+<a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Reservar</a>
 </div>
 
 <div class="service-detail-card">
 <div class="service-header">
-<h3>Limpieza Facial</h3>
-<span class="service-price">25€</span>
-</div>
-<p>Tratamiento esencial para mantener una piel sana y radiante. Incluye limpieza profunda, vaporización para abrir los poros, extracción de impurezas y aplicación de productos hidratantes adaptados a tu tipo de piel. Tu rostro lucirá fresco, limpio y revitalizado.</p>
-<span class="service-duration">45 min</span>
-</div>
+<h3>Masajes Relajantes</h3>
+<span class="service-price">30,00€</span>
 </div>
 
+<a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz" class="service-book-btn" target="_blank" rel="noopener">Reservar</a>
+</div>
+
+</div>
+
+<div class="services-note">
+<p><strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales. Reserva tu cita en Booksy para consultar disponibilidad.</p>
+</div>
 </div>
