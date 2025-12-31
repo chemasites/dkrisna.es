@@ -20,7 +20,7 @@ show_cta = true
 <span class="service-price">2,00€</span>
 </div>
 
-
+<p class="service-description">Arreglo puntual de una uña con esmaltado semipermanente</p>
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz#ba-s1v2038814" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
@@ -30,7 +30,7 @@ show_cta = true
 <span class="service-price">3,00€</span>
 </div>
 
-
+<p class="service-description">Reconstrucción de una uña acrílica o de gel</p>
 <a href="https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz#ba-s1v2120720" class="service-book-btn" target="_blank" rel="noopener">Book</a>
 </div>
 
