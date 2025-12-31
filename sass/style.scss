@@ -258,7 +258,7 @@ p {
     text-decoration: none;
 
     &-img {
-        height: 50px;
+        height: 40px;
         width: auto;
         object-fit: contain;
     }
@@ -1313,9 +1313,7 @@ p {
     padding: $spacing-xl 0 $spacing-md;
 
     .logo-img {
-        background: $color-white;
-        border-radius: $border-radius;
-        padding: 0;
+        background: transparent;
     }
 
     .logo-text,
