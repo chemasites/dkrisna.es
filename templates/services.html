@@ -18,7 +18,11 @@
 
 <section class="section page-content">
     <div class="container">
-        {% set services_data = load_data(path="static/data/services.json") %}
+        {% if lang == "en" %}
+            {% set services_data = load_data(path="static/data/services.en.json") %}
+        {% else %}
+            {% set services_data = load_data(path="static/data/services.json") %}
+        {% endif %}
 
         <div class="services-full">
             {% for category in services_data.categories %}

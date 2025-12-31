@@ -8,6 +8,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "playwright": "^1.40.0"
   },
   "devDependencies": {

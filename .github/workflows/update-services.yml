@@ -37,6 +37,23 @@ jobs:
           cd scripts
           node fetch-services.js
 
+      - name: Check for services changes
+        id: changes
+        run: |
+          if git diff --quiet static/data/services.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Translate services to English
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd scripts
+          node translate-services.js
+
       - name: Build site to verify
         uses: taiki-e/install-action@v2
         with:
@@ -45,20 +62,11 @@ jobs:
       - name: Verify build
         run: zola build
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet content/; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add content/
+          git add static/data/
           git commit -m "chore: update services from Booksy"
           git push

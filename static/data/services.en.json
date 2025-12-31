@@ -1,0 +1,225 @@
+{
+  "categories": [
+    {
+      "id": "hands",
+      "name": {
+        "es": "Uñas de las Manos",
+        "en": "Hand Nails"
+      },
+      "services": [
+        {
+          "name": "Single Nail (SEMI)",
+          "price": "2,00 €",
+          "originalPrice": null,
+          "duration": "20 min",
+          "description": "Single nail repair with semi-permanent polish",
+          "variantId": 2038814
+        },
+        {
+          "name": "Single Nail (EXTENSION)",
+          "price": "3,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Reconstruction of an acrylic or gel nail",
+          "variantId": 2120720
+        },
+        {
+          "name": "Cleaning & Traditional Polish (Hands)",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Nail cleaning, filing, cuticles and classic polish.",
+          "variantId": 2016866
+        },
+        {
+          "name": "Semi-Permanent Removal",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Safe removal of semi-permanent polish without damaging the natural nail.",
+          "variantId": 2053132
+        },
+        {
+          "name": "Acrylic Removal",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "45 min",
+          "description": "Professional removal of acrylic nails while caring for the natural nail.",
+          "variantId": 2053130
+        },
+        {
+          "name": "Semi-Permanent Nails with Dipping",
+          "price": "15,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Gel system with hardening powder for greater resistance and duration.",
+          "variantId": 2016863
+        },
+        {
+          "name": "Acrylic & Gel Fill",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Maintenance of acrylic and gel nails, correcting growth.",
+          "variantId": 2086719
+        },
+        {
+          "name": "Acrylic Nails",
+          "price": "25,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Acrylic extension and sculpting for resistant and personalized nails.",
+          "variantId": 2016865
+        },
+        {
+          "name": "Softgel Nails",
+          "price": "29,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Soft gel extensions, light, flexible with a natural finish.",
+          "variantId": 2029570
+        },
+        {
+          "name": "Polygel Nails",
+          "price": "30,00 €",
+          "originalPrice": null,
+          "duration": "2 horas",
+          "description": "Hybrid system between acrylic and gel, resistant with a natural look.",
+          "variantId": 2029571
+        }
+      ]
+    },
+    {
+      "id": "feet",
+      "name": {
+        "es": "Uñas de los Pies",
+        "en": "Foot Nails"
+      },
+      "services": [
+        {
+          "name": "Dry Pedicure + Traditional Polish",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Cuticle cleaning + traditional polish without water",
+          "variantId": 2016864
+        },
+        {
+          "name": "Dry Pedicure + Semi-Permanent",
+          "price": "21,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Cuticle cleaning + gel polish without water",
+          "variantId": 2120763
+        },
+        {
+          "name": "Spa Pedicure + Traditional Polish",
+          "price": "23,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 15 min",
+          "description": "Relaxing treatment with exfoliation, hydration, deep cleaning and classic polish",
+          "variantId": 2066537
+        },
+        {
+          "name": "Spa Pedicure + Semi-Permanent",
+          "price": "26,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Exfoliation, callus and hardness removal, deep cleaning and long-lasting semi-permanent polish.",
+          "variantId": 2016871
+        }
+      ]
+    },
+    {
+      "id": "brows_lashes",
+      "name": {
+        "es": "Cejas y Pestañas",
+        "en": "Brows & Lashes"
+      },
+      "services": [
+        {
+          "name": "Upper Lip & Eyebrow Waxing",
+          "price": "4,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Blade waxing, design and facial contour cleaning for a harmonious finish",
+          "variantId": 2120923
+        },
+        {
+          "name": "Lash Removal + Facial Massage",
+          "price": "10,00 €",
+          "originalPrice": null,
+          "duration": "30 min",
+          "description": "Extension removal without damaging natural lashes and relaxing facial massage.",
+          "variantId": 2120922
+        },
+        {
+          "name": "Lash Lift",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Natural lash curl and lift for an open look.",
+          "variantId": 2016868
+        },
+        {
+          "name": "Eyebrow Lamination",
+          "price": "12,00 €",
+          "originalPrice": null,
+          "duration": "45 min",
+          "description": "Hair alignment and fixation for more defined eyebrows.",
+          "variantId": 2016869
+        },
+        {
+          "name": "Eyebrow Lamination + Tinting",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Design, fixation and color for more intense eyebrows.",
+          "variantId": 2103191
+        },
+        {
+          "name": "Individual Lash Extensions",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Personalized extension application for a natural effect.",
+          "variantId": 2016870
+        }
+      ]
+    },
+    {
+      "id": "massages",
+      "name": {
+        "es": "Masajes",
+        "en": "Massages"
+      },
+      "services": [
+        {
+          "name": "KOBIDO Facial Lifting",
+          "price": "20,00 €",
+          "originalPrice": "40,00 €",
+          "duration": "1 hora",
+          "description": "Eliminates expression lines naturally, without injections or painful treatments.",
+          "variantId": 2291300
+        },
+        {
+          "name": "Relaxing Massages",
+          "price": "15,00 €",
+          "originalPrice": "30,00 €",
+          "duration": "1 hora 20 min",
+          "description": "Gentle body massage with natural oils, relieving stress and promoting wellbeing.",
+          "variantId": 2291441
+        },
+        {
+          "name": "Hot Stone Massage",
+          "price": "20,00 €",
+          "originalPrice": "40,00 €",
+          "duration": "1 hora 20 min",
+          "description": "Deep massage with hot stones that relaxes muscles and reduces tension.",
+          "variantId": 2291447
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2025-12-31T19:18:50.903Z"
+}
