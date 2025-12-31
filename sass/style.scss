@@ -1226,11 +1226,22 @@ p {
         }
 
         .service-price {
-            color: $color-accent;
+            color: $color-white;
+            font-weight: 700;
         }
 
         .service-duration {
             color: rgba($color-white, 0.8);
+        }
+
+        .service-book-btn {
+            background: $color-white;
+            color: $color-primary-dark;
+
+            &:hover {
+                background: $color-beige-light;
+                color: $color-primary-dark;
+            }
         }
     }
 }
@@ -1257,10 +1268,11 @@ p {
 
     .price-original {
         text-decoration: line-through;
-        color: $color-text-light;
+        color: $color-text;
         font-size: 0.9rem;
         font-weight: 400;
         margin-right: 0.25rem;
+        opacity: 0.7;
     }
 }
 
