@@ -12,6 +12,7 @@ show_cta = true
 <p>Nuestros masajes están diseñados para liberar tensiones, mejorar la circulación y proporcionar un estado de relajación profunda. Cada sesión es personalizada según tus necesidades.</p>
 </div>
 
+<h2 class="services-category-title" id="masajes">Masajes</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">

@@ -12,6 +12,7 @@ show_cta = true
 <p>Our massages are designed to release tension, improve circulation and provide a state of deep relaxation. Each session is personalized according to your needs.</p>
 </div>
 
+<h2 class="services-category-title" id="masajes">Massages</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">

@@ -12,7 +12,7 @@ show_cta = true
 <p>Discover our beauty services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish.</p>
 </div>
 
-<h2 class="services-category-title">Hand Nails</h2>
+<h2 class="services-category-title" id="unas-manos">Hand Nails</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
@@ -105,7 +105,7 @@ show_cta = true
 </div>
 </div>
 
-<h2 class="services-category-title">Foot Nails</h2>
+<h2 class="services-category-title" id="unas-pies">Foot Nails</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
@@ -144,7 +144,7 @@ show_cta = true
 </div>
 </div>
 
-<h2 class="services-category-title">Brows & Lashes</h2>
+<h2 class="services-category-title" id="cejas-pestanas">Brows & Lashes</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">

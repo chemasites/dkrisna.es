@@ -802,7 +802,7 @@ p {
 // CTA Section
 // ============================================
 .cta-section {
-    background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 50%, $color-primary 100%);
+    background: linear-gradient(135deg, $color-primary-light 0%, $color-primary 50%, $color-primary-light 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -814,7 +814,7 @@ p {
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(circle at 30% 50%, rgba($color-cyan, 0.15) 0%, transparent 50%);
+        background: radial-gradient(circle at 30% 50%, rgba($color-beige-light, 0.2) 0%, transparent 50%);
     }
 
     .cta-content {

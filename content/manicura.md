@@ -12,7 +12,7 @@ show_cta = true
 <p>Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.</p>
 </div>
 
-<h2 class="services-category-title">Uñas de las Manos</h2>
+<h2 class="services-category-title" id="unas-manos">Uñas de las Manos</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
@@ -105,7 +105,7 @@ show_cta = true
 </div>
 </div>
 
-<h2 class="services-category-title">Uñas de los Pies</h2>
+<h2 class="services-category-title" id="unas-pies">Uñas de los Pies</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
@@ -144,7 +144,7 @@ show_cta = true
 </div>
 </div>
 
-<h2 class="services-category-title">Cejas y Pestañas</h2>
+<h2 class="services-category-title" id="cejas-pestanas">Cejas y Pestañas</h2>
 <div class="services-list">
 <div class="service-detail-card">
 <div class="service-header">
