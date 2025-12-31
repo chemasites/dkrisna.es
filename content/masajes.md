@@ -13,7 +13,7 @@ show_cta = true
 </div>
 
 <div class="services-list">
-<div class="service-detail-card featured">
+<div class="service-detail-card">
 <div class="service-header">
 <h3>Masajes Relajantes</h3>
 <span class="service-price"><span class="price-original">30€</span> desde 15€</span>
@@ -42,6 +42,6 @@ show_cta = true
 </div>
 
 <div class="services-note">
-<p><strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales. Reserva tu cita en Booksy para consultar disponibilidad.</p>
+<p><strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales.<br>Reserva tu cita en Booksy para consultar disponibilidad.</p>
 </div>
 </div>

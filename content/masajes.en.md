@@ -13,7 +13,7 @@ show_cta = true
 </div>
 
 <div class="services-list">
-<div class="service-detail-card featured">
+<div class="service-detail-card">
 <div class="service-header">
 <h3>Relaxing Massage</h3>
 <span class="service-price"><span class="price-original">30€</span> from 15€</span>
@@ -42,6 +42,6 @@ show_cta = true
 </div>
 
 <div class="services-note">
-<p><strong>Special offer:</strong> Take advantage of our promotional prices. Book your appointment on Booksy to check availability.</p>
+<p><strong>Special offer:</strong> Take advantage of our promotional prices.<br>Book your appointment on Booksy to check availability.</p>
 </div>
 </div>

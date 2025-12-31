@@ -137,7 +137,7 @@ p {
         display: block;
         width: 60px;
         height: 3px;
-        background: linear-gradient(90deg, $color-primary 0%, $color-cyan 100%);
+        background: linear-gradient(90deg, $color-primary 0%, $color-primary-light 100%);
         margin: $spacing-sm auto 0;
         border-radius: 2px;
     }
@@ -532,12 +532,16 @@ p {
     &-content {
         position: relative;
         text-align: center;
-        padding: $spacing-md;
         max-width: 800px;
         backdrop-filter: blur(1px);
         background: rgba(255, 255, 255, 0.4);
         border-radius: 32px;
         padding: $spacing-lg;
+        margin: 0 $spacing-md;
+
+        @media (min-width: 864px) {
+            margin: 0;
+        }
     }
 
     &-welcome {
@@ -729,7 +733,7 @@ p {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, $color-cyan-pale 0%, $color-primary-pale 100%);
+    background: linear-gradient(135deg, $color-beige-light 0%, $color-primary-pale 100%);
     color: $color-primary-dark;
     transition: $transition;
 }
@@ -991,7 +995,7 @@ p {
         }
 
         &:nth-child(2):hover {
-            background: $color-cyan;
+            background: $color-primary-dark;
         }
     }
 }
@@ -1049,7 +1053,7 @@ p {
     }
 
     &:nth-child(odd) {
-        background: $color-cyan-pale;
+        background: $color-beige-light;
     }
 
     h3 {
@@ -1216,39 +1220,6 @@ p {
     &:hover {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
-
-    &.featured {
-        background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
-        color: $color-white;
-
-        h3, p {
-            color: $color-white;
-        }
-
-        .service-price {
-            color: $color-white;
-            font-weight: 700;
-
-            .price-original {
-                color: $color-white;
-                opacity: 0.7;
-            }
-        }
-
-        .service-duration {
-            color: rgba($color-white, 0.8);
-        }
-
-        .service-book-btn {
-            background: $color-white;
-            color: $color-primary-dark;
-
-            &:hover {
-                background: $color-beige-light;
-                color: $color-primary-dark;
-            }
-        }
-    }
 }
 
 .service-header {
@@ -1288,7 +1259,7 @@ p {
     margin: $spacing-lg 0 $spacing-md;
     padding-bottom: $spacing-xs;
     border-bottom: 3px solid transparent;
-    background: linear-gradient(to right, $color-primary 0%, $color-cyan 100%) left bottom no-repeat;
+    background: linear-gradient(to right, $color-primary 0%, $color-primary-light 100%) left bottom no-repeat;
     background-size: 100% 3px;
 
     &:first-of-type {
@@ -1322,15 +1293,36 @@ p {
 }
 
 .services-note {
-    background: $color-cyan-pale;
-    padding: $spacing-md;
+    background: linear-gradient(135deg, $color-primary-pale 0%, $color-beige-light 100%);
+    padding: $spacing-lg;
     border-radius: $border-radius-lg;
-    border-left: 4px solid $color-cyan;
+    position: relative;
+    box-shadow: 0 2px 12px rgba($color-primary, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+        content: '✿';
+        color: $color-primary;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        line-height: 1.5;
+    }
 
     p {
         margin: 0;
         font-size: 0.9375rem;
         color: $color-text;
+        line-height: 1.7;
+
+        strong {
+            color: $color-primary-dark;
+            font-weight: 600;
+        }
     }
 }
 
@@ -1421,7 +1413,7 @@ p {
     }
 
     &:nth-child(2n) {
-        background: $color-cyan-pale;
+        background: $color-beige-light;
     }
 
     &:nth-child(3n) {
@@ -1502,7 +1494,7 @@ p {
     }
 
     &:nth-child(2) {
-        background: $color-cyan-pale;
+        background: $color-beige-light;
     }
 
     h4 {

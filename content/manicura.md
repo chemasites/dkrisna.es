@@ -134,7 +134,7 @@ show_cta = true
 <span class="service-duration">1 hora 15 min</span>
 </div>
 
-<div class="service-detail-card featured">
+<div class="service-detail-card">
 <div class="service-header">
 <h3>Pedicura Spa + Semipermanente</h3>
 <span class="service-price">26€</span>
@@ -202,6 +202,6 @@ show_cta = true
 </div>
 
 <div class="services-note">
-<p><strong>Nota:</strong> Los precios pueden variar según el diseño y los materiales utilizados. Reserva tu cita en Booksy para consultar disponibilidad.</p>
+<p><strong>Oferta especial:</strong> Aprovecha nuestros precios promocionales.<br>Reserva tu cita en Booksy para consultar disponibilidad.</p>
 </div>
 </div>

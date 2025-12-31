@@ -134,7 +134,7 @@ show_cta = true
 <span class="service-duration">1 hour 15 min</span>
 </div>
 
-<div class="service-detail-card featured">
+<div class="service-detail-card">
 <div class="service-header">
 <h3>Spa Pedicure + Gel Polish</h3>
 <span class="service-price">26€</span>
@@ -202,6 +202,6 @@ show_cta = true
 </div>
 
 <div class="services-note">
-<p><strong>Note:</strong> Prices may vary depending on design and materials used. Book your appointment on Booksy to check availability.</p>
+<p><strong>Special offer:</strong> Take advantage of our promotional prices.<br>Book your appointment on Booksy to check availability.</p>
 </div>
 </div>
