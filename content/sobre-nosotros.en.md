@@ -8,11 +8,6 @@ show_cta = true
 +++
 
 <div class="about-full">
-<div class="about-intro">
-<h2>Our Story</h2>
-<p>D'Krisna was born from a passion for beauty and wellness. In the heart of Caravaca de la Cruz, we have created a space where tranquility and professionalism come together to offer you a unique experience.</p>
-</div>
-
 <div class="values-grid">
 <div class="value-card">
 <div class="value-icon">
@@ -38,12 +33,40 @@ show_cta = true
 <p>We use premium products and professional techniques.</p>
 </div>
 
-<div class="value-card">
-<div class="value-icon">
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 </div>
-<h3>Professionalism</h3>
-<p>Qualified team in constant training.</p>
+</div>
+
+<div class="team-section">
+<span class="section-label">Our Team</span>
+<h2 class="team-title">Meet Our Experts</h2>
+<p class="team-subtitle">Our team of skilled professionals is dedicated to providing you with the highest quality care and personalized attention.</p>
+
+<div class="team-grid">
+<div class="team-card">
+<div class="team-avatar">
+<span>KG</span>
+</div>
+<h3 class="team-name">Krisna García</h3>
+<span class="team-role">Founder & Nail Artist</span>
+<p class="team-specialty">Acrylic Nails & Design</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>LM</span>
+</div>
+<h3 class="team-name">Laura Martínez</h3>
+<span class="team-role">Brow Specialist</span>
+<p class="team-specialty">Lamination & Micropigmentation</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>AS</span>
+</div>
+<h3 class="team-name">Ana Sánchez</h3>
+<span class="team-role">Therapeutic Masseuse</span>
+<p class="team-specialty">KOBIDO & Hot Stones</p>
 </div>
 </div>
 </div>

@@ -8,11 +8,6 @@ show_cta = true
 +++
 
 <div class="about-full">
-<div class="about-intro">
-<h2>Nuestra Historia</h2>
-<p>D'Krisna nació de la pasión por la belleza y el bienestar. En el corazón de Caravaca de la Cruz, hemos creado un espacio donde la tranquilidad y el profesionalismo se unen para ofrecerte una experiencia única.</p>
-</div>
-
 <div class="values-grid">
 <div class="value-card">
 <div class="value-icon">
@@ -38,12 +33,40 @@ show_cta = true
 <p>Utilizamos productos premium y técnicas profesionales.</p>
 </div>
 
-<div class="value-card">
-<div class="value-icon">
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 </div>
-<h3>Profesionalidad</h3>
-<p>Equipo cualificado y en constante formación.</p>
+</div>
+
+<div class="team-section">
+<span class="section-label">Nuestro Equipo</span>
+<h2 class="team-title">Conoce a Nuestras Expertas</h2>
+<p class="team-subtitle">Nuestro equipo de profesionales cualificadas está dedicado a brindarte la más alta calidad y atención personalizada.</p>
+
+<div class="team-grid">
+<div class="team-card">
+<div class="team-avatar">
+<span>KG</span>
+</div>
+<h3 class="team-name">Krisna García</h3>
+<span class="team-role">Fundadora y Nail Artist</span>
+<p class="team-specialty">Uñas Acrílicas y Diseño</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>LM</span>
+</div>
+<h3 class="team-name">Laura Martínez</h3>
+<span class="team-role">Especialista en Cejas</span>
+<p class="team-specialty">Laminado y Micropigmentación</p>
+</div>
+
+<div class="team-card">
+<div class="team-avatar">
+<span>AS</span>
+</div>
+<h3 class="team-name">Ana Sánchez</h3>
+<span class="team-role">Masajista Terapéutica</span>
+<p class="team-specialty">KOBIDO y Piedras Calientes</p>
 </div>
 </div>
 </div>
