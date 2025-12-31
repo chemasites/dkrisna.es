@@ -2,7 +2,7 @@
 base_url = "https://dkrisna.es"
 
 title = "D'Krisna"
-description = "Centro de belleza y bienestar en Caravaca de la Cruz, Murcia. Uñas, masajes y tratamientos corporales."
+description = "Centro de belleza en Caravaca de la Cruz. Manicura, pedicura, uñas de gel, extensiones de pestañas y masajes relajantes. ¡Reserva tu cita!"
 
 compile_sass = true
 build_search_index = false
@@ -15,7 +15,7 @@ unsafe = true
 
 [languages.en]
 title = "D'Krisna"
-description = "Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments."
+description = "Beauty salon in Caravaca de la Cruz, Spain. Manicure, pedicure, gel nails, lash extensions and relaxing massages. Book your appointment!"
 
 [translations]
 # Spanish translations (default)
