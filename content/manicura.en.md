@@ -8,9 +8,6 @@ show_cta = true
 +++
 
 <div class="services-full">
-<div class="services-intro">
-<p>Discover our beauty services, where every detail matters. We use high-quality products to ensure long-lasting results and a flawless finish.</p>
-</div>
 
 <h2 class="services-category-title">Hand Nails</h2>
 <div class="services-list">
