@@ -6,11 +6,15 @@
         </a>
 
         <nav class="nav" id="main-nav">
+            <button class="menu-close" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}">{{ trans(key="nav_nails") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}">{{ trans(key="nav_massages") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}">{{ trans(key="nav_about") }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}">{{ trans(key="nav_location") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing("manicura") %}class="active"{% endif %}>{{ trans(key="nav_nails") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing("masajes") %}class="active"{% endif %}>{{ trans(key="nav_massages") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}" {% if page and page.permalink is containing("sobre-nosotros") %}class="active"{% endif %}>{{ trans(key="nav_about") }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}" {% if page and page.permalink is containing("ubicacion") %}class="active"{% endif %}>{{ trans(key="nav_location") }}</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -18,11 +22,9 @@
                 <div class="lang-toggle">
                     {% if lang == "es" %}
                         <span class="lang-active">ES</span>
-                        <span class="lang-sep">/</span>
                         <a href="/en{{ path }}" class="lang-inactive" title="English">EN</a>
                     {% else %}
                         <a href="{{ path | replace(from='/en', to='') }}" class="lang-inactive" title="Español">ES</a>
-                        <span class="lang-sep">/</span>
                         <span class="lang-active">EN</span>
                     {% endif %}
                 </div>
@@ -38,11 +40,9 @@
             <div class="lang-toggle">
                 {% if lang == "es" %}
                     <span class="lang-active">ES</span>
-                    <span class="lang-sep">/</span>
                     <a href="/en{{ path }}" class="lang-inactive" title="English">EN</a>
                 {% else %}
                     <a href="{{ path | replace(from='/en', to='') }}" class="lang-inactive" title="Español">ES</a>
-                    <span class="lang-sep">/</span>
                     <span class="lang-active">EN</span>
                 {% endif %}
             </div>

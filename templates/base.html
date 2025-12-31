@@ -26,8 +26,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
             const nav = document.querySelector('.nav');
             const body = document.body;
+
+            // Function to close menu
+            function closeMenu() {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
 
             // Mobile menu toggle
             if (menuToggle && nav) {
@@ -37,13 +45,14 @@
                     body.classList.toggle('menu-open');
                 });
 
+                // Close button click
+                if (menuClose) {
+                    menuClose.addEventListener('click', closeMenu);
+                }
+
                 // Close menu when clicking a link
                 nav.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        nav.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                        body.classList.remove('menu-open');
-                    });
+                    link.addEventListener('click', closeMenu);
                 });
             }
 
