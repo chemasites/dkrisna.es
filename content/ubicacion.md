@@ -32,8 +32,7 @@ show_cta = true
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
 </div>
 <h3>Horario</h3>
-<p><strong>Lunes a Viernes:</strong><br>10:00 - 20:00</p>
-<p><strong>Sábado:</strong><br>10:00 - 14:00</p>
+<p><strong>Lunes a Sábado:</strong><br>09:00 - 21:00</p>
 <p><strong>Domingo:</strong><br>Cerrado</p>
 </div>
 </div>
