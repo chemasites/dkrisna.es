@@ -1642,6 +1642,31 @@ p {
 // ============================================
 // Utilities
 // ============================================
+// Service Showcase
+.service-showcase {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+
+    img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-lg;
+        box-shadow: 0 8px 32px rgba($color-primary, 0.15);
+        border: 3px solid $color-white;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0 12px 40px rgba($color-primary, 0.25);
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            max-width: 320px;
+        }
+    }
+}
+
 .text-center { text-align: center; }
 .mb-0 { margin-bottom: 0; }
 .mt-lg { margin-top: $spacing-lg; }

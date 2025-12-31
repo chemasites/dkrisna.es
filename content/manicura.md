@@ -7,6 +7,10 @@ template = "page.html"
 show_cta = true
 +++
 
+<div class="service-showcase">
+<img src="/images/services/dkrisna-nails-sample.jpeg" alt="Diseño de uñas D'Krisna - Nail art con estilo" loading="lazy">
+</div>
+
 <div class="services-full">
 <h2 class="services-category-title" id="unas-manos">Uñas de las Manos</h2>
 <div class="services-list">
