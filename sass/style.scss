@@ -796,7 +796,13 @@ p {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         transition: transform 0.4s ease;
+
+        &.aim-top { object-position: top; }
+        &.aim-bottom { object-position: bottom; }
+        &.aim-left { object-position: left; }
+        &.aim-right { object-position: right; }
     }
 }
 
