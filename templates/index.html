@@ -179,6 +179,19 @@
 (function() {
     var starSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
 
+    var monthMap = {
+        'ene': 0, 'feb': 1, 'mar': 2, 'abr': 3, 'may': 4, 'jun': 5,
+        'jul': 6, 'ago': 7, 'sep': 8, 'oct': 9, 'nov': 10, 'dic': 11
+    };
+
+    function parseSpanishDate(dateStr) {
+        if (!dateStr) return new Date(0);
+        var match = dateStr.match(/(\w+)\.\s*(\d+),\s*(\d+)/);
+        if (!match) return new Date(0);
+        var month = monthMap[match[1].toLowerCase()] || 0;
+        return new Date(parseInt(match[3]), month, parseInt(match[2]));
+    }
+
     function createReviewCard(review) {
         var initial = review.name.charAt(0).toUpperCase();
         var stars = '';
@@ -208,25 +221,9 @@
     var arrowRight = document.getElementById('arrow-right');
 
     function updateArrows() {
-        if (!carousel) return;
-        var scrollLeft = carousel.scrollLeft;
-        var maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-        if (arrowLeft) {
-            if (scrollLeft > 10) {
-                arrowLeft.classList.add('visible');
-            } else {
-                arrowLeft.classList.remove('visible');
-            }
-        }
-
-        if (arrowRight) {
-            if (scrollLeft < maxScroll - 10) {
-                arrowRight.classList.add('visible');
-            } else {
-                arrowRight.classList.remove('visible');
-            }
-        }
+        // Always show both arrows for infinite scroll
+        if (arrowLeft) arrowLeft.classList.add('visible');
+        if (arrowRight) arrowRight.classList.add('visible');
     }
 
     function scrollCarousel(direction) {
@@ -236,7 +233,18 @@
         var cardWidth = card.offsetWidth;
         var gap = parseInt(getComputedStyle(carousel).gap) || 16;
         var scrollAmount = cardWidth + gap;
-        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        var maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        var currentScroll = carousel.scrollLeft;
+
+        if (direction === 1 && currentScroll >= maxScroll - 10) {
+            // At end, wrap to start
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else if (direction === -1 && currentScroll <= 10) {
+            // At start, wrap to end
+            carousel.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
     }
 
     if (arrowLeft) {
@@ -265,8 +273,12 @@
                 countEl.textContent = template.replace('{count}', data.reviewCount);
             }
 
-            // Render reviews carousel
+            // Sort reviews by date (newest first) and render carousel
             if (carousel && data.reviews && data.reviews.length > 0) {
+                data.reviews.sort(function(a, b) {
+                    return parseSpanishDate(b.date) - parseSpanishDate(a.date);
+                });
+
                 var html = '';
                 data.reviews.forEach(function(review) {
                     html += createReviewCard(review);
