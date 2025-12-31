@@ -1306,6 +1306,12 @@ p {
     color: $color-white;
     padding: $spacing-xl 0 $spacing-md;
 
+    .logo-img {
+        background: $color-white;
+        border-radius: $border-radius;
+        padding: 0;
+    }
+
     .logo-text,
     .logo-sub {
         color: $color-white;
