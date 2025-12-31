@@ -6,6 +6,9 @@ on:
     - cron: '0 3 * * *'
   workflow_dispatch: # Allow manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-services:
     runs-on: ubuntu-latest
@@ -45,7 +48,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet content/; then
+          if git diff --quiet content/ static/data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -56,6 +59,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add content/
-          git commit -m "chore: update services from Booksy"
+          git add content/ static/data/
+          git commit -m "chore: update services and reviews from Booksy"
           git push
