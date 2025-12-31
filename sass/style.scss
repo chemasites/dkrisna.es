@@ -1011,6 +1011,21 @@ p {
         color: rgba($color-white, 0.5);
         margin: 0;
     }
+
+    .footer-credits {
+        margin-top: $spacing-xs;
+        font-size: 0.75rem;
+
+        a {
+            color: rgba($color-white, 0.6);
+            text-decoration: none;
+            transition: $transition;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
 }
 
 // ============================================
@@ -1507,6 +1522,57 @@ p {
         color: $color-text-light;
         font-size: 0.9375rem;
         margin: 0;
+    }
+}
+
+// Legal Page
+.legal-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $spacing-lg 0;
+
+    h2 {
+        font-family: $font-heading;
+        font-size: 1.75rem;
+        color: $color-dark;
+        margin-top: $spacing-lg;
+        margin-bottom: $spacing-md;
+        padding-bottom: $spacing-xs;
+        border-bottom: 2px solid $color-primary-light;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h3 {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        color: $color-dark;
+        margin-top: $spacing-md;
+        margin-bottom: $spacing-sm;
+    }
+
+    p, li {
+        color: $color-text;
+        line-height: 1.7;
+        margin-bottom: $spacing-sm;
+    }
+
+    ul {
+        padding-left: $spacing-md;
+        margin-bottom: $spacing-md;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid $color-beige-dark;
+        margin: $spacing-lg 0 $spacing-md;
+    }
+
+    em {
+        color: $color-text-light;
+        font-size: 0.875rem;
     }
 }
 

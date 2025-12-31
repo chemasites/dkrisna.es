@@ -65,7 +65,7 @@ show_cta = true
 <span>C</span>
 </div>
 <h3 class="team-name">Carlos</h3>
-<span class="team-role">Masajista Terapéutico</span>
+<span class="team-role">Masajista Experto</span>
 <p class="team-specialty">Masajes Relajantes</p>
 </div>
 </div>
