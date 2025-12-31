@@ -119,7 +119,7 @@ error_404_button = "Back to home"
 [extra]
 # Site info
 phone = "+34 968 123 456"
-email = "info@dkrisna.es"
+email = "dkrisnanails@gmail.com"
 address = "C/ Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia"
 maps_url = "https://maps.google.com/?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain"
 maps_embed = "https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed"
