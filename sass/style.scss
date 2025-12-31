@@ -1324,7 +1324,7 @@ p {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 0.8fr 1fr;
     gap: $spacing-xl;
 
     @media (max-width: $breakpoint-lg) {
@@ -1346,8 +1346,17 @@ p {
     .social-links {
         margin-top: $spacing-md;
 
-        @media (max-width: $breakpoint-sm) {
+        @media (max-width: $breakpoint-lg) {
             display: none;
+        }
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        grid-column: 1 / -1; // Span full width
+        text-align: center;
+        
+        .logo {
+            justify-content: center;
         }
     }
 }
@@ -1426,18 +1435,14 @@ p {
             background: $color-primary;
             box-shadow: 0 4px 12px rgba($color-primary, 0.4);
         }
-
-        &:nth-child(2):hover {
-            background: $color-primary-dark;
-        }
     }
 
     &.social-links-mobile {
         display: none;
         justify-content: center;
-        margin-top: $spacing-md;
+        margin-top: $spacing-xl;
 
-        @media (max-width: $breakpoint-sm) {
+        @media (max-width: $breakpoint-lg) {
             display: flex;
         }
     }
