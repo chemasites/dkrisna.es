@@ -14,7 +14,6 @@ show_cta = false
 Este sitio web es propiedad de **D'Krisna**, centro de belleza y bienestar ubicado en Caravaca de la Cruz, Murcia.
 
 - **Dirección:** Calle Carretera de Murcia N45, 30400 Caravaca de la Cruz
-- **Email:** @todo
 
 ## Política de Privacidad
 
