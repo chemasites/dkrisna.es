@@ -101,10 +101,18 @@ async function extractServicesFromPage(page) {
                     }
                   }
 
-                  // Extract description if available
-                  const description = svc.description || svc.desc || svc.details || '';
+                  // Extract description if available (check various possible field names)
+                  const description = svc.description || svc.desc || svc.details ||
+                                      svc.info || svc.text || svc.note || svc.notes ||
+                                      svc.short_description || svc.about || '';
 
-                  services.push({ name, price, duration, description });
+                  // Extract service/variant ID for direct booking URL
+                  const serviceId = svc.id || null;
+                  const variantId = Array.isArray(svc.variants) && svc.variants.length > 0
+                    ? svc.variants[0].id
+                    : null;
+
+                  services.push({ name, price, duration, description, serviceId, variantId });
                 }
               });
             }
@@ -120,6 +128,32 @@ async function extractServicesFromPage(page) {
     }
 
     if (categories.length > 0) {
+      // Try to enrich with descriptions from DOM for services that don't have them in Nuxt data
+      // Structure: h4[data-testid="service-name"] -> parent div -> sibling div -> span -> p
+      try {
+        const serviceHeaders = document.querySelectorAll('h4[data-testid="service-name"]');
+        serviceHeaders.forEach(h4 => {
+          const serviceName = h4.textContent.trim();
+          const parentDiv = h4.parentElement;
+          if (parentDiv) {
+            const descP = parentDiv.querySelector('div span p');
+            if (descP) {
+              const descText = descP.textContent.trim();
+              if (descText) {
+                categories.forEach(cat => {
+                  cat.services.forEach(svc => {
+                    if (svc.name === serviceName && !svc.description) {
+                      svc.description = descText;
+                    }
+                  });
+                });
+              }
+            }
+          }
+        });
+      } catch (e) {
+        // DOM enrichment failed, continue with existing data
+      }
       return { categories };
     }
 
@@ -175,7 +209,10 @@ function normalizeServices(services, lang = 'es') {
       services: category.services.map(service => ({
         name: service.name,
         ...parsePrice(service.price, lang),
-        duration: parseDuration(service.duration, lang)
+        duration: parseDuration(service.duration, lang),
+        description: service.description || '',
+        serviceId: service.serviceId || null,
+        variantId: service.variantId || null
       }))
     }))
   };

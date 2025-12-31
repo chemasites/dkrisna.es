@@ -9,6 +9,8 @@
  * @property {string} duration
  * @property {string} [originalPrice]
  * @property {string} [description]
+ * @property {number} [serviceId]
+ * @property {number} [variantId]
  */
 
 /**
@@ -133,8 +135,14 @@ export function generateServiceCardHTML(service, options = {}) {
     priceHTML = `<span class="price-original">${service.originalPrice}</span> ${price}`;
   }
 
-  const bookingButton = bookingUrl
-    ? `<a href="${bookingUrl}" class="service-book-btn" target="_blank" rel="noopener">${t.book}</a>`
+  // Build service-specific booking URL using variant ID
+  let serviceBookingUrl = bookingUrl;
+  if (bookingUrl && service.variantId) {
+    serviceBookingUrl = `${bookingUrl}#ba-s1v${service.variantId}`;
+  }
+
+  const bookingButton = serviceBookingUrl
+    ? `<a href="${serviceBookingUrl}" class="service-book-btn" target="_blank" rel="noopener">${t.book}</a>`
     : '';
 
   return `<div class="service-detail-card">
