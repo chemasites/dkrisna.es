@@ -1,77 +1,77 @@
 {
-  "rating": 5.0,
+  "rating": 5,
   "reviewCount": 19,
   "reviews": [
     {
-      "name": "Patricia S.",
-      "text": "Excelente atención, las chicas son muy atentas y profesionales, súper recomendadas.",
-      "service": "Pedicura Spa + Esmaltado Tradicional",
-      "date": "dic. 18, 2025",
+      "name": "Cliente 1",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Alba Mirella L.",
-      "text": "Fue mi primero haciéndome las uñas en este sitio y estoy encantada con mis uñas, la atención, el trato todo la verdad muy bien.",
-      "service": "Uñas Semipermanentes Con Diping",
-      "date": "nov. 26, 2025",
+      "name": "Cliente 5",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Erika",
-      "text": "Un servicio estupendo, son muy amables y su trabajo merece muchísimo la pena.",
-      "service": "Uñas Softgel",
-      "date": "oct. 9, 2025",
+      "name": "Cliente 9",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Encarna G.",
-      "text": "Me ha encantado, repetiré.",
-      "service": "Pedicura Spa + Semi",
-      "date": "sep. 18, 2025",
+      "name": "Cliente 13",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Madi V.",
-      "text": "Preciosas, me encantan!",
-      "service": "Uñas Acrílicas",
-      "date": "sep. 2, 2025",
+      "name": "Cliente 17",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Vicky P.",
-      "text": "Muy bien.",
-      "service": "Uñas Poligel",
-      "date": "ago. 27, 2025",
+      "name": "Cliente 21",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Cristina F.",
-      "text": "Excelente servicio, y las chicas súper amables.",
-      "service": "Pestañas Punto Por Punto",
-      "date": "ago. 24, 2025",
+      "name": "Cliente 25",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Ana Olid M.",
-      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables.",
-      "service": "Relleno De Acrílico",
-      "date": "ago. 15, 2025",
+      "name": "Cliente 29",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Eva Sánchez L.",
-      "text": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
-      "service": "Uñas Semipermanentes",
-      "date": "ago. 12, 2025",
+      "name": "Cliente 33",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     },
     {
-      "name": "Jane J.",
-      "text": "Very fast and easy to book.",
-      "service": "Uñas Semipermanentes Con Diping",
-      "date": "dic. 2, 2025",
+      "name": "Cliente 37",
+      "text": "Usuario verificado por Booksy",
+      "service": "",
+      "date": "",
       "rating": 5
     }
   ],
-  "fetchedAt": "2025-12-31T00:00:00.000Z"
+  "fetchedAt": "2025-12-31T16:46:20.901Z"
 }
