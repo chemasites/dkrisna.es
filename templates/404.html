@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Página no encontrada | {{ config.title }}{% endblock %}
+{% block title %}{{ trans(key="error_404_title") }} | {{ config.title }}{% endblock %}
 
 {% block content %}
 <section class="error-page">
     <div class="container">
         <div class="error-content">
             <h1>404</h1>
-            <h2>Página no encontrada</h2>
-            <p>Lo sentimos, la página que buscas no existe o ha sido movida.</p>
-            <a href="/" class="btn btn-primary">Volver al inicio</a>
+            <h2>{{ trans(key="error_404_title") }}</h2>
+            <p>{{ trans(key="error_404_message") }}</p>
+            <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="btn btn-primary">{{ trans(key="error_404_button") }}</a>
         </div>
     </div>
 </section>
