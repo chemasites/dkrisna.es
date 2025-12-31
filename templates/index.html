@@ -87,69 +87,24 @@
     <div class="container">
         <div class="reviews-header">
             <div class="reviews-rating">
-                <div class="rating-stars">
+                <div class="rating-stars" id="rating-stars">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <span class="rating-score">5.0</span>
-                <span class="rating-count">{{ trans(key="reviews_based_on", lang=lang) }}</span>
+                <span class="rating-score" id="rating-score">5.0</span>
+                <span class="rating-count" id="rating-count" data-template="{{ trans(key='reviews_based_on', lang=lang) }}">{{ trans(key="reviews_based_on", lang=lang) }}</span>
             </div>
             <a href="{{ config.extra.booksy_url }}#reviews-section" target="_blank" rel="noopener" class="reviews-booksy">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 Booksy Reviews
             </a>
         </div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">M</div>
-                    <div class="review-info">
-                        <span class="review-name">María José</span>
-                        <div class="review-stars">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <p class="review-text">"{{ trans(key="review_1_text", lang=lang) }}"</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">L</div>
-                    <div class="review-info">
-                        <span class="review-name">Laura</span>
-                        <div class="review-stars">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <p class="review-text">"{{ trans(key="review_2_text", lang=lang) }}"</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">A</div>
-                    <div class="review-info">
-                        <span class="review-name">Ana</span>
-                        <div class="review-stars">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <p class="review-text">"{{ trans(key="review_3_text", lang=lang) }}"</p>
+        <div class="reviews-carousel-wrapper">
+            <div class="reviews-carousel" id="reviews-carousel">
+                <!-- Reviews will be loaded dynamically from booksy-reviews.json -->
             </div>
         </div>
     </div>
@@ -213,4 +168,64 @@
         </div>
     </div>
 </section>
+
+<script>
+(function() {
+    var starSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+
+    function createReviewCard(review) {
+        var initial = review.name.charAt(0).toUpperCase();
+        var stars = '';
+        for (var i = 0; i < 5; i++) {
+            stars += starSvg;
+        }
+
+        var serviceHtml = review.service ? '<span class="review-service">' + review.service + '</span>' : '';
+        var dateHtml = review.date ? '<span class="review-date">' + review.date + '</span>' : '';
+
+        return '<div class="review-card">' +
+            '<div class="review-header">' +
+                '<div class="review-avatar">' + initial + '</div>' +
+                '<div class="review-info">' +
+                    '<span class="review-name">' + review.name + '</span>' +
+                    '<div class="review-stars">' + stars + '</div>' +
+                '</div>' +
+            '</div>' +
+            serviceHtml +
+            '<p class="review-text">"' + review.text + '"</p>' +
+            '<div class="review-footer">' + dateHtml + '</div>' +
+        '</div>';
+    }
+
+    fetch('/data/booksy-reviews.json')
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            // Update rating score
+            var scoreEl = document.getElementById('rating-score');
+            if (scoreEl && data.rating) {
+                scoreEl.textContent = data.rating.toFixed(1);
+            }
+
+            // Update review count using template
+            var countEl = document.getElementById('rating-count');
+            if (countEl && data.reviewCount) {
+                var template = countEl.getAttribute('data-template') || '';
+                countEl.textContent = template.replace('{count}', data.reviewCount);
+            }
+
+            // Render reviews carousel
+            var carousel = document.getElementById('reviews-carousel');
+            if (carousel && data.reviews && data.reviews.length > 0) {
+                var html = '';
+                data.reviews.forEach(function(review) {
+                    html += createReviewCard(review);
+                });
+                carousel.innerHTML = html;
+            }
+        })
+        .catch(function(err) {
+            console.log('Could not load reviews data:', err);
+        });
+})();
+</script>
 {% endblock %}

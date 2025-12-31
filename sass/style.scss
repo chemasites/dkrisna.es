@@ -1048,17 +1048,46 @@ p {
     }
 }
 
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-md;
+.reviews-carousel-wrapper {
+    position: relative;
+    margin: 0 -1rem;
+    padding: 0 1rem;
 
-    @media (max-width: $breakpoint-lg) {
-        grid-template-columns: repeat(2, 1fr);
+    // Fade effect on right edge to hint scrollability
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 60px;
+        background: linear-gradient(to right, transparent, $color-bg);
+        pointer-events: none;
+        opacity: 0.8;
+    }
+}
+
+.reviews-carousel {
+    display: flex;
+    gap: $spacing-md;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: $spacing-sm;
+    scrollbar-width: thin;
+    scrollbar-color: $color-primary-light transparent;
+
+    &::-webkit-scrollbar {
+        height: 6px;
     }
 
-    @media (max-width: $breakpoint-sm) {
-        grid-template-columns: 1fr;
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $color-primary-light;
+        border-radius: 3px;
     }
 }
 
@@ -1067,6 +1096,25 @@ p {
     padding: $spacing-md;
     border-radius: $border-radius-lg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    flex: 0 0 calc(25% - #{$spacing-md} * 3 / 4);
+    min-width: 280px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $breakpoint-lg) {
+        flex: 0 0 calc(33.333% - #{$spacing-md} * 2 / 3);
+    }
+
+    @media (max-width: $breakpoint-md) {
+        flex: 0 0 calc(50% - #{$spacing-md} / 2);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        flex: 0 0 85%;
+        min-width: 260px;
+    }
 }
 
 .review-header {
@@ -1104,12 +1152,35 @@ p {
     }
 }
 
+.review-service {
+    display: block;
+    font-size: 0.75rem;
+    color: $color-primary;
+    font-weight: 500;
+    margin-bottom: $spacing-xs;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .review-text {
     font-size: 0.9375rem;
     color: $color-text;
     line-height: 1.6;
     margin: 0;
     font-style: italic;
+    flex-grow: 1;
+}
+
+.review-footer {
+    margin-top: $spacing-sm;
+    padding-top: $spacing-xs;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: $color-text-light;
 }
 
 // ============================================
