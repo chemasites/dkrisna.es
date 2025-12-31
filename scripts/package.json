@@ -1,0 +1,16 @@
+{
+  "name": "dkrisna-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "fetch": "node fetch-booksy.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0"
+  }
+}
