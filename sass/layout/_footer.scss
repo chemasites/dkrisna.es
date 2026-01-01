@@ -1,0 +1,140 @@
+// ============================================
+// Footer
+// ============================================
+
+.footer {
+    background: $color-dark;
+    color: $color-white;
+    padding: $spacing-xl 0 $spacing-md;
+
+    .logo-img {
+        background: transparent;
+    }
+
+    .logo-text,
+    .logo-sub {
+        color: $color-white;
+    }
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-lg;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+    }
+}
+
+.footer-brand {
+    .logo {
+        margin-bottom: $spacing-sm;
+    }
+
+    .social-links {
+        margin-top: $spacing-md;
+
+        @media (max-width: $breakpoint-lg) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        grid-column: 1 / -1;
+        text-align: center;
+        
+        .logo {
+            justify-content: center;
+        }
+    }
+}
+
+.footer-tagline {
+    font-size: 0.9375rem;
+    color: rgba($color-white, 0.7);
+}
+
+.footer-section {
+    h4 {
+        font-family: $font-body;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $color-white;
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.footer-hours {
+    list-style: none;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-sm;
+        font-size: 0.875rem;
+        color: rgba($color-white, 0.8);
+        padding: $spacing-xxs 0;
+    }
+}
+
+.footer-contact {
+    list-style: none;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-xs;
+        font-size: 0.875rem;
+
+        svg {
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        a {
+            color: rgba($color-white, 0.8);
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    margin-top: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($color-white, 0.1);
+    text-align: center;
+
+    p {
+        font-size: 0.8125rem;
+        color: rgba($color-white, 0.5);
+        margin: 0;
+    }
+
+    .footer-credits {
+        margin-top: $spacing-xs;
+        font-size: 0.75rem;
+
+        a {
+            color: rgba($color-white, 0.6);
+            text-decoration: none;
+            transition: $transition;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+// ============================================
+// Layout & Sections
+// ============================================
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.section {
+    padding: $spacing-xl 0;
+
+    @media (max-width: $breakpoint-md) {
+        padding: $spacing-lg 0;
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, $color-primary 0%, $color-primary-light 100%);
+        margin: $spacing-sm auto 0;
+        border-radius: 2px;
+    }
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+}

@@ -1,0 +1,111 @@
+// ============================================
+// Services Pages
+// ============================================
+
+.services-full {
+    .services-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto $spacing-lg;
+
+        p {
+            font-size: 1.125rem;
+            color: $color-text-light;
+        }
+    }
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+}
+
+.services-category-title {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    color: $color-primary;
+    margin: $spacing-lg 0 $spacing-md;
+    padding-bottom: $spacing-xs;
+    border-bottom: 3px solid transparent;
+    background: linear-gradient(to right, $color-primary 0%, $color-primary-light 100%) left bottom no-repeat;
+    background-size: 100% 3px;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+}
+
+.services-note {
+    background: linear-gradient(135deg, $color-primary-pale 0%, $color-beige-light 100%);
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg;
+    position: relative;
+    box-shadow: 0 2px 12px rgba($color-primary, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+        content: '✿';
+        color: $color-primary;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        line-height: 1.5;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.9375rem;
+        color: $color-text;
+        line-height: 1.7;
+
+        strong {
+            color: $color-primary-dark;
+            font-weight: 600;
+        }
+    }
+}
+
+.services-packages {
+    margin-top: $spacing-xl;
+
+    h2 {
+        text-align: center;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-md;
+}
+
+.service-showcase {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+
+    img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-lg;
+        box-shadow: 0 8px 32px rgba($color-primary, 0.15);
+        border: 3px solid $color-white;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0 12px 40px rgba($color-primary, 0.25);
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            max-width: 320px;
+        }
+    }
+}

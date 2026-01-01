@@ -1,0 +1,42 @@
+// ============================================
+// Language Toggle
+// ============================================
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: $color-beige-light;
+    border-radius: $border-radius-pill;
+    padding: 4px;
+    gap: 0;
+
+    .lang-active {
+        background: $color-primary;
+        color: $color-white;
+        font-weight: 600;
+        font-size: 0.75rem;
+        padding: 6px 16px;
+        border-radius: $border-radius-pill;
+        letter-spacing: 0.5px;
+    }
+
+    .lang-inactive {
+        color: $color-text;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.75rem;
+        padding: 6px 16px;
+        border-radius: $border-radius-pill;
+        letter-spacing: 0.5px;
+        background: transparent;
+
+        &:hover {
+            background: rgba($color-primary, 0.12);
+            color: $color-primary-dark;
+        }
+    }
+
+    .lang-sep {
+        display: none;
+    }
+}

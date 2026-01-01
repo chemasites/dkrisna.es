@@ -1,0 +1,51 @@
+// ============================================
+// Buttons
+// ============================================
+
+.btn {
+    display: inline-block;
+    padding: $spacing-xs + $spacing-xxs + 0.125rem $spacing-md;
+    font-family: $font-body;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: $border-radius-pill;
+    cursor: pointer;
+    transition: $transition;
+    box-shadow: $shadow-sm;
+
+    &-primary {
+        background: $color-primary;
+        color: $color-white;
+        border-color: $color-primary;
+
+        &:hover {
+            background: $color-primary-dark;
+            border-color: $color-primary-dark;
+            color: $color-white;
+            box-shadow: 0 4px 16px rgba($color-primary, 0.35);
+        }
+    }
+
+    &-outline {
+        background: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+        box-shadow: none;
+
+        &:hover {
+            background: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
+            box-shadow: 0 4px 16px rgba($color-primary, 0.25);
+        }
+    }
+
+    &-lg {
+        padding: $spacing-sm + 0.125rem $spacing-md + $spacing-xs;
+        font-size: 1rem;
+    }
+}
