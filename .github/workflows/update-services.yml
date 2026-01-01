@@ -31,6 +31,7 @@ jobs:
         run: |
           cd scripts
           npx playwright install chromium
+          npx playwright install-deps chromium
 
       - name: Fetch and update services
         run: |

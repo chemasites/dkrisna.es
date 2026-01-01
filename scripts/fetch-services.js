@@ -11,7 +11,9 @@ const CONFIG = {
   booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
   dataDir: join(__dirname, '..', 'static', 'data'),
   timeout: 90000,
-  waitForContent: 5000
+  waitForContent: 5000,
+  maxRetries: 3,
+  retryDelay: 5000
 };
 
 // Category translations - maps scraped Spanish names to bilingual structure
@@ -194,6 +196,32 @@ async function extractServicesFromPage(page) {
   });
 }
 
+async function waitForNuxtData(page, timeout = 30000) {
+  const startTime = Date.now();
+  while (Date.now() - startTime < timeout) {
+    const hasData = await page.evaluate(() => {
+      const nuxt = window.__NUXT__;
+      if (!nuxt) return false;
+      // Check if service data is loaded by looking for service_categories
+      const checkForServices = (obj, depth = 0) => {
+        if (depth > 10 || !obj) return false;
+        if (Array.isArray(obj.service_categories) && obj.service_categories.length > 0) return true;
+        if (obj.business?.service_categories?.length > 0) return true;
+        if (typeof obj === 'object') {
+          for (const key of Object.keys(obj)) {
+            if (checkForServices(obj[key], depth + 1)) return true;
+          }
+        }
+        return false;
+      };
+      return checkForServices(nuxt);
+    });
+    if (hasData) return true;
+    await page.waitForTimeout(500);
+  }
+  return false;
+}
+
 async function fetchServicesFromBooksy() {
   console.log('Launching browser...');
   const browser = await launchBrowser();
@@ -222,6 +250,13 @@ async function fetchServicesFromBooksy() {
     // Wait for service content
     await page.waitForSelector('[class*="service"]', { timeout: 15000 })
       .catch(() => console.log('Service selector not found, continuing...'));
+
+    // Wait for __NUXT__ data to be populated with services
+    console.log('Waiting for service data to load...');
+    const nuxtReady = await waitForNuxtData(page);
+    if (!nuxtReady) {
+      console.log('Warning: __NUXT__ data not fully loaded, proceeding anyway...');
+    }
 
     await page.waitForTimeout(CONFIG.waitForContent);
 
@@ -312,18 +347,40 @@ function logServicesSummary(servicesData) {
   });
 }
 
+async function fetchWithRetry() {
+  for (let attempt = 1; attempt <= CONFIG.maxRetries; attempt++) {
+    console.log(`\nAttempt ${attempt}/${CONFIG.maxRetries}...`);
+    try {
+      const rawServices = await fetchServicesFromBooksy();
+
+      if (rawServices.raw || !rawServices.categories?.length) {
+        if (attempt < CONFIG.maxRetries) {
+          console.log(`No services extracted, retrying in ${CONFIG.retryDelay / 1000}s...`);
+          await new Promise(r => setTimeout(r, CONFIG.retryDelay));
+          continue;
+        }
+        return null;
+      }
+
+      return rawServices;
+    } catch (error) {
+      console.error(`Attempt ${attempt} failed:`, error.message);
+      if (attempt < CONFIG.maxRetries) {
+        console.log(`Retrying in ${CONFIG.retryDelay / 1000}s...`);
+        await new Promise(r => setTimeout(r, CONFIG.retryDelay));
+      }
+    }
+  }
+  return null;
+}
+
 async function main() {
   try {
     console.log('Starting Booksy services fetch...');
-    const rawServices = await fetchServicesFromBooksy();
+    const rawServices = await fetchWithRetry();
 
-    if (rawServices.raw) {
-      console.error('Could not parse structured service data (page structure may have changed).');
-      process.exit(1);
-    }
-
-    if (!rawServices.categories?.length) {
-      console.error('No services found in page.');
+    if (!rawServices) {
+      console.error('Could not fetch services after all retries.');
       process.exit(1);
     }
 

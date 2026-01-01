@@ -51,7 +51,7 @@
           "name": "Uñas Semipermanentes Con Diping",
           "price": "15,00 €",
           "originalPrice": null,
-          "duration": "1 hora",
+          "duration": "1 hora 30 min",
           "description": "Sistema de gel más polvo endurezador que aporta mayor resistencia y duración.",
           "variantId": 2016863
         },
@@ -196,24 +196,24 @@
       "services": [
         {
           "name": "KOBIDO lifting Facial",
-          "price": "20,00 €",
-          "originalPrice": "40,00 €",
+          "price": "40,00 €",
+          "originalPrice": null,
           "duration": "1 hora",
           "description": "Elimina las líneas de expresión de forma natural, sin inyecciones ni tratamientos dolorosos.",
           "variantId": 2291300
         },
         {
           "name": "Masajes Relajantes",
-          "price": "15,00 €",
-          "originalPrice": "30,00 €",
+          "price": "30,00 €",
+          "originalPrice": null,
           "duration": "1 hora 20 min",
           "description": "Masaje corporal suave con aceites naturales, que alivia el estrés y promueve el bienestar.",
           "variantId": 2291441
         },
         {
           "name": "Masaje Geotérmico (Piedras Calientes)",
-          "price": "20,00 €",
-          "originalPrice": "40,00 €",
+          "price": "40,00 €",
+          "originalPrice": null,
           "duration": "1 hora 20 min",
           "description": "Masaje profundo con piedras calientes que relaja músculos y reduce tensiones.",
           "variantId": 2291447
@@ -221,5 +221,5 @@
       ]
     }
   ],
-  "fetchedAt": "2025-12-31T20:03:55.408Z"
+  "fetchedAt": "2026-01-01T18:58:56.170Z"
 }
