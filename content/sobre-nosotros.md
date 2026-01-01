@@ -8,9 +8,9 @@ show_cta = true
 +++
 
 <div class="team-section">
-<span class="section-label">Nuestro Equipo</span>
+<span class="section-label">Equipo</span>
 <h2 class="team-title">Conoce a Nuestro Equipo</h2>
-<p class="team-subtitle">Nuestro equipo de profesionales está dedicado a brindarte la más alta calidad y atención personalizada.</p>
+<p class="team-subtitle">Profesionales apasionados dedicados a brindarte una experiencia única de belleza y bienestar.</p>
 
 <div class="team-grid">
 <div class="team-card">
@@ -40,8 +40,9 @@ show_cta = true
 </div>
 
 <div class="about-full">
-<span class="section-label">Nuestros Valores</span>
+<span class="section-label">Valores</span>
 <h2 class="values-title">Lo Que Nos Define</h2>
+<p class="values-subtitle">Los principios que guían cada servicio y cada experiencia en D'Krisna.</p>
 
 <div class="values-grid">
 <div class="value-card">

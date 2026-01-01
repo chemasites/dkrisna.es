@@ -31,7 +31,13 @@
     font-size: 1.75rem;
     font-weight: 400;
     color: $color-dark;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-xs;
+}
+
+.values-subtitle {
+    color: $color-text-light;
+    max-width: 600px;
+    margin: 0 auto $spacing-lg;
 }
 
 .values-grid {

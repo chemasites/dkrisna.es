@@ -8,9 +8,9 @@ show_cta = true
 +++
 
 <div class="team-section">
-<span class="section-label">Our Team</span>
+<span class="section-label">Team</span>
 <h2 class="team-title">Meet Our Team</h2>
-<p class="team-subtitle">Our team of professionals is dedicated to providing you with the highest quality care and personalized attention.</p>
+<p class="team-subtitle">Passionate professionals dedicated to providing you with a unique beauty and wellness experience.</p>
 
 <div class="team-grid">
 <div class="team-card">
@@ -40,8 +40,9 @@ show_cta = true
 </div>
 
 <div class="about-full">
-<span class="section-label">Our Values</span>
+<span class="section-label">Values</span>
 <h2 class="values-title">What Defines Us</h2>
+<p class="values-subtitle">The principles that guide every service and experience at D'Krisna.</p>
 
 <div class="values-grid">
 <div class="value-card">

@@ -9,6 +9,11 @@ show_cta = true
 
 <div class="location-full">
 <div class="location-details">
+<div class="location-header">
+<span class="section-label">Contacto</span>
+<h2 class="location-title">Cómo Encontrarnos</h2>
+<p class="location-subtitle">Todo lo que necesitas saber para visitarnos. Dirección, horarios de atención y formas de contacto a tu disposición.</p>
+</div>
 <div class="location-info-cards">
 <div class="info-card">
 <div class="info-icon">
@@ -39,6 +44,11 @@ show_cta = true
 </div>
 
 <div class="location-map-full">
+<div class="location-header">
+<span class="section-label">Ubicación</span>
+<h2 class="location-title">Encuéntranos</h2>
+<p class="location-subtitle">Estamos en Caravaca de la Cruz, listos para recibirte. Te esperamos para ofrecerte la mejor experiencia.</p>
+</div>
 <div class="map-container">
 <iframe src="https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>

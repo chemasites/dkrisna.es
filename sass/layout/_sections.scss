@@ -33,6 +33,31 @@
     }
 }
 
+.section-header {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+
+    .section-label {
+        display: block;
+        margin-bottom: $spacing-xs;
+    }
+
+    .section-title {
+        margin-bottom: $spacing-xs;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .section-subtitle {
+        color: $color-text-light;
+        font-size: 1.0625rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
 .section-label {
     display: inline-block;
     font-size: 0.875rem;

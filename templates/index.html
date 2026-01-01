@@ -23,7 +23,11 @@
 <!-- Services Preview -->
 <section id="servicios" class="section services-preview">
     <div class="container">
-        <h2 class="section-title">{{ trans(key="services_title", lang=lang) }}</h2>
+        <div class="section-header">
+            <span class="section-label">{{ trans(key="services_label", lang=lang) }}</span>
+            <h2 class="section-title">{{ trans(key="services_title", lang=lang) }}</h2>
+            <p class="section-subtitle">{{ trans(key="services_subtitle", lang=lang) }}</p>
+        </div>
         <div class="services-grid">
             <a href="{% if lang == 'en' %}/en/manicura/#hands{% else %}/manicura/#hands{% endif %}" class="service-card">
                 <div class="service-image">
@@ -100,6 +104,11 @@
 <!-- Reviews Section -->
 <section class="section reviews-section">
     <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ trans(key="reviews_label", lang=lang) }}</span>
+            <h2 class="section-title">{{ trans(key="reviews_title", lang=lang) }}</h2>
+            <p class="section-subtitle">{{ trans(key="reviews_subtitle", lang=lang) }}</p>
+        </div>
         <div class="reviews-header">
             <div class="reviews-rating">
                 <div class="rating-stars" id="rating-stars">
@@ -147,7 +156,11 @@
 <!-- Location Preview -->
 <section class="section location-preview">
     <div class="container">
-        <h2 class="section-title">{{ trans(key="location_title", lang=lang) }}</h2>
+        <div class="section-header">
+            <span class="section-label">{{ trans(key="location_label", lang=lang) }}</span>
+            <h2 class="section-title">{{ trans(key="location_title", lang=lang) }}</h2>
+            <p class="section-subtitle">{{ trans(key="location_subtitle", lang=lang) }}</p>
+        </div>
         <div class="location-grid">
             <div class="location-info">
                 <div class="location-item">

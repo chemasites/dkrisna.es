@@ -9,6 +9,11 @@ show_cta = true
 
 <div class="location-full">
 <div class="location-details">
+<div class="location-header">
+<span class="section-label">Contact</span>
+<h2 class="location-title">How to Find Us</h2>
+<p class="location-subtitle">Everything you need to know to visit us. Address, opening hours and contact information at your disposal.</p>
+</div>
 <div class="location-info-cards">
 <div class="info-card">
 <div class="info-icon">
@@ -39,6 +44,11 @@ show_cta = true
 </div>
 
 <div class="location-map-full">
+<div class="location-header">
+<span class="section-label">Location</span>
+<h2 class="location-title">Find Us</h2>
+<p class="location-subtitle">We're in Caravaca de la Cruz, ready to welcome you. We're waiting to offer you the best experience.</p>
+</div>
 <div class="map-container">
 <iframe src="https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
