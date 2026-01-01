@@ -15,7 +15,7 @@ show_cta = true
 <div class="team-grid">
 <div class="team-card">
 <div class="team-avatar">
-<span>D</span>
+<img src="/images/silhouette-woman.svg" alt="Deyanira">
 </div>
 <h3 class="team-name">Deyanira</h3>
 <span class="team-role">Manicurista</span>
@@ -23,15 +23,15 @@ show_cta = true
 
 <div class="team-card">
 <div class="team-avatar">
-<span>N</span>
+<img src="/images/silhouette-woman.svg" alt="Nazareth">
 </div>
 <h3 class="team-name">Nazareth</h3>
 <span class="team-role">Manicurista</span>
 </div>
 
 <div class="team-card">
-<div class="team-avatar">
-<span>C</span>
+<div class="team-avatar team-avatar--silhouette-blue">
+<img src="/images/silhouette-man.svg" alt="Carlos">
 </div>
 <h3 class="team-name">Carlos</h3>
 <span class="team-role">Masajista</span>

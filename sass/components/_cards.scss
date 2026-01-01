@@ -131,8 +131,8 @@
 }
 
 .team-avatar {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: $color-secondary;
     display: flex;
@@ -140,11 +140,13 @@
     justify-content: center;
     margin: 0 auto $spacing-md;
 
-    span {
-        font-family: $font-heading;
-        font-size: 2rem;
-        font-weight: 500;
-        color: $color-primary-light;
+    img {
+        width: 95px;
+        height: 95px;
+    }
+
+    &--silhouette-blue {
+        background: #e8f4fc;
     }
 }
 
