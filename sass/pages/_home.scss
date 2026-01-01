@@ -14,7 +14,8 @@
 
     @media (max-width: $breakpoint-md) {
         min-height: 100svh;
-        padding-top: $header-height-mobile;
+        padding-top: $hero-padding-mobile;
+        align-items: flex-start;
         background-attachment: scroll;
     }
 
