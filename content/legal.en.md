@@ -23,14 +23,14 @@ This website is owned by **D'Krisna**, a beauty and wellness center located in C
 This website is designed with your privacy in mind:
 
 - We do not use contact forms that collect personal data
-- We do not use Google Analytics or similar tracking tools
-- We do not sell or share data with third parties
+- We do not sell or share personal data with third parties
 - We do not store personal information from visitors
 
 ### Third-party services
 
 This website may include third-party content:
 
+- **Cronitor:** We use Cronitor RUM (Real User Monitoring) to monitor website performance. This tool collects anonymized data such as page load times, browser type, and performance metrics. No personally identifiable data is collected. Subject to [Cronitor's privacy policy](https://cronitor.io/privacy).
 - **Booksy:** For appointment bookings. Reservations are subject to Booksy's privacy policy.
 - **Google Maps:** To display our location. Subject to Google's privacy policy.
 

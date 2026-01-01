@@ -22,14 +22,14 @@ Este sitio web es propiedad de **D'Krisna**, centro de belleza y bienestar ubica
 Este sitio web está diseñado respetando tu privacidad:
 
 - No utilizamos formularios de contacto que recopilen datos personales
-- No utilizamos Google Analytics ni herramientas de seguimiento similares
-- No vendemos ni compartimos datos con terceros
+- No vendemos ni compartimos datos personales con terceros
 - No almacenamos información personal de los visitantes
 
 ### Servicios de terceros
 
 Este sitio web puede incluir contenido de terceros:
 
+- **Cronitor:** Utilizamos Cronitor RUM (Real User Monitoring) para monitorizar el rendimiento del sitio web. Esta herramienta recopila datos anonimizados como tiempos de carga, tipo de navegador y métricas de rendimiento. No se recopilan datos personales identificables. Sujeto a la [política de privacidad de Cronitor](https://cronitor.io/privacy).
 - **Booksy:** Para reservas de citas. Las reservas están sujetas a la política de privacidad de Booksy.
 - **Google Maps:** Para mostrar nuestra ubicación. Sujeto a la política de privacidad de Google.
 
