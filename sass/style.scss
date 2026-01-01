@@ -224,6 +224,12 @@ p {
     backdrop-filter: blur(10px);
     transition: $transition;
 
+    @media (max-width: $breakpoint-lg) {
+        position: relative;
+        backdrop-filter: none;
+        background: $color-white;
+    }
+
     @media (max-width: $breakpoint-md) {
         padding: 1rem 0;
     }
