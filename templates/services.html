@@ -27,7 +27,7 @@
         <div class="services-full">
             {% for category in services_data.categories %}
                 {% if page.extra.category_filter is undefined or category.id in page.extra.category_filter %}
-                <h2 class="services-category-title">
+                <h2 id="{{ category.id }}" class="services-category-title">
                     {% if lang == "en" %}
                         {{ category.name.en }}
                     {% else %}
