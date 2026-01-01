@@ -25,6 +25,7 @@
         {% endif %}
 
         <div class="services-full">
+            {% set_global has_discounts = false %}
             {% for category in services_data.categories %}
                 {% if page.extra.category_filter is undefined or category.id in page.extra.category_filter %}
                 <h2 id="{{ category.id }}" class="services-category-title">
@@ -36,15 +37,20 @@
                 </h2>
                 <div class="services-list">
                     {% for service in category.services %}
+                        {% if service.originalPrice %}
+                            {% set_global has_discounts = true %}
+                        {% endif %}
                         {{ cards::render_card(service=service, lang=lang, booking_url=config.extra.booksy_url) }}
                     {% endfor %}
                 </div>
                 {% endif %}
             {% endfor %}
 
+            {% if has_discounts %}
             <div class="services-note">
                 <p>{{ trans(key=page.extra.services_note_key, lang=lang) | safe }}</p>
             </div>
+            {% endif %}
         </div>
     </div>
 </section>
