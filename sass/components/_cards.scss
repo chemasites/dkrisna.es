@@ -16,7 +16,7 @@
     overflow: hidden;
 
     &:hover {
-        box-shadow: $shadow-xl;
+        box-shadow: $shadow-lg;
         border-color: rgba($color-primary, 0.3);
 
         .service-link {
@@ -89,7 +89,7 @@
     transition: $transition;
 
     &:hover {
-        box-shadow: $shadow-lg;
+        box-shadow: $shadow-md;
     }
 
     h3 {
@@ -126,7 +126,7 @@
     transition: $transition;
 
     &:hover {
-        box-shadow: $shadow-lg;
+        box-shadow: $shadow-md;
     }
 }
 
@@ -271,7 +271,7 @@
     transition: $transition;
 
     &:hover {
-        box-shadow: $shadow-md;
+        box-shadow: $shadow-sm;
     }
 
     h3 {
@@ -314,7 +314,7 @@
 
     &:hover {
         border-color: $color-primary;
-        box-shadow: $shadow-lg;
+        box-shadow: $shadow-md;
     }
 
     h4 {
@@ -354,7 +354,7 @@
     border: 1px solid rgba($color-beige-dark, 0.2);
 
     &:hover {
-        box-shadow: $shadow-lg;
+        box-shadow: $shadow-md;
         transform: translateY(-2px);
     }
 }

@@ -16,7 +16,11 @@
 }
 
 .location-details {
-    margin-bottom: $spacing-lg;
+    background: $color-beige-warm;
+    padding: $spacing-lg 0;
+    margin: (-$spacing-xl) calc(-50vw + 50%) $spacing-lg;
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
 }
 
 .location-header {
