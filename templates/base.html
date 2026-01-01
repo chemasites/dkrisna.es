@@ -35,7 +35,10 @@
     <meta property="og:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
     <meta property="og:title" content="{% block og_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
-    <meta property="og:image" content="{{ config.base_url }}/images/services/dkrisna-nails-sample.jpeg">
+    <meta property="og:image" content="{{ config.base_url }}/images/og-image.webp">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
     <meta property="og:site_name" content="D'Krisna">
 
@@ -44,7 +47,7 @@
     <meta name="twitter:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
-    <meta name="twitter:image" content="{{ config.base_url }}/images/services/dkrisna-nails-sample.jpeg">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/og-image.webp">
 
     <!-- Geo tags for local SEO -->
     <meta name="geo.region" content="ES-MU">
@@ -90,13 +93,21 @@
                 "closes": "21:00"
             }
         ],
-        "priceRange": "$$",
-        "image": "{{ config.base_url }}/images/og-image.jpg",
+        "priceRange": "€€",
+        "image": "{{ config.base_url }}/images/og-image.webp",
         "sameAs": [
             "{{ config.extra.instagram }}",
             "{{ config.extra.facebook }}",
             "{{ config.extra.tiktok }}"
         ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "19",
+            "reviewCount": "19"
+        },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "{% if lang == 'en' %}Beauty Services{% else %}Servicios de Belleza{% endif %}",
@@ -105,25 +116,92 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "{% if lang == 'en' %}Manicure{% else %}Manicura{% endif %}"
+                        "name": "{% if lang == 'en' %}Gel Nails{% else %}Uñas de Gel{% endif %}",
+                        "description": "{% if lang == 'en' %}Professional gel nail extensions and manicure{% else %}Extensiones de uñas de gel y manicura profesional{% endif %}",
+                        "provider": {"@type": "BeautySalon", "name": "D'Krisna"}
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "25.00",
+                        "priceCurrency": "EUR",
+                        "minPrice": "2.00",
+                        "maxPrice": "30.00"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "{% if lang == 'en' %}Pedicure{% else %}Pedicura{% endif %}"
+                        "name": "{% if lang == 'en' %}Pedicure{% else %}Pedicura{% endif %}",
+                        "description": "{% if lang == 'en' %}Spa pedicure with exfoliation and nail polish{% else %}Pedicura spa con exfoliación y esmaltado{% endif %}",
+                        "provider": {"@type": "BeautySalon", "name": "D'Krisna"}
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "23.00",
+                        "priceCurrency": "EUR",
+                        "minPrice": "18.00",
+                        "maxPrice": "26.00"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "{% if lang == 'en' %}Massages{% else %}Masajes{% endif %}"
+                        "name": "{% if lang == 'en' %}Brows & Lashes{% else %}Cejas y Pestañas{% endif %}",
+                        "description": "{% if lang == 'en' %}Eyebrow lamination and eyelash extensions{% else %}Laminado de cejas y extensiones de pestañas{% endif %}",
+                        "provider": {"@type": "BeautySalon", "name": "D'Krisna"}
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "12.00",
+                        "priceCurrency": "EUR",
+                        "minPrice": "4.00",
+                        "maxPrice": "18.00"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "{% if lang == 'en' %}Massages{% else %}Masajes{% endif %}",
+                        "description": "{% if lang == 'en' %}Relaxing massages and hot stone therapy{% else %}Masajes relajantes y terapia con piedras calientes{% endif %}",
+                        "provider": {"@type": "BeautySalon", "name": "D'Krisna"}
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "30.00",
+                        "priceCurrency": "EUR",
+                        "minPrice": "30.00",
+                        "maxPrice": "40.00"
                     }
                 }
             ]
         }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
+                "item": "{{ config.base_url }}{% if lang == 'en' %}/en/{% else %}/{% endif %}"
+            }
+            {% if page %}
+            ,{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{{ page.title }}",
+                "item": "{{ page.permalink }}"
+            }
+            {% endif %}
+        ]
     }
     </script>
 

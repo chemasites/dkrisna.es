@@ -62,4 +62,46 @@
     </div>
 </section>
 {% endif %}
+
+<!-- FAQ Schema for rich snippets -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}How can I book an appointment at D'Krisna?{% else %}¿Cómo puedo reservar una cita en D'Krisna?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}You can book your appointment through our Booksy page, by calling +34 722 27 59 75, or via WhatsApp. We're available Monday to Saturday from 9:00 to 21:00.{% else %}Puedes reservar tu cita a través de nuestra página de Booksy, llamando al +34 722 27 59 75 o por WhatsApp. Estamos disponibles de lunes a sábado de 9:00 a 21:00.{% endif %}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}What payment methods do you accept?{% else %}¿Qué métodos de pago aceptan?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}We accept cash, credit/debit cards, and Bizum for your convenience.{% else %}Aceptamos efectivo, tarjetas de crédito/débito y Bizum para tu comodidad.{% endif %}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}How long do gel or acrylic nails last?{% else %}¿Cuánto duran las uñas de gel o acrílicas?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}Gel and acrylic nails typically last 2-3 weeks before needing a fill. We recommend scheduling maintenance appointments every 2-3 weeks to keep your nails looking perfect.{% else %}Las uñas de gel y acrílicas suelen durar 2-3 semanas antes de necesitar relleno. Recomendamos programar citas de mantenimiento cada 2-3 semanas para mantener tus uñas perfectas.{% endif %}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}Where is D'Krisna located?{% else %}¿Dónde está ubicado D'Krisna?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}We're located at Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia, Spain. Easy to find with free parking nearby.{% else %}Estamos ubicados en Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia, España. Fácil de encontrar con aparcamiento gratuito cercano.{% endif %}"
+            }
+        }
+    ]
+}
+</script>
 {% endblock %}

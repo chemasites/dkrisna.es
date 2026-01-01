@@ -27,7 +27,10 @@
         <div class="services-grid">
             <a href="{% if lang == 'en' %}/en/manicura/#hands{% else %}/manicura/#hands{% endif %}" class="service-card">
                 <div class="service-image">
-                    <img src="/images/services/hand-nails.jpg" alt="{{ trans(key='service_hand_nails_title', lang=lang) }}" loading="lazy">
+                    <img src="/images/services/hand-nails.webp"
+                         srcset="/images/services/hand-nails-300.webp 300w, /images/services/hand-nails.webp 600w"
+                         sizes="(max-width: 768px) 300px, 600px"
+                         alt="{{ trans(key='service_hand_nails_title', lang=lang) }}" width="600" height="900" loading="lazy">
                 </div>
                 <h3>{{ trans(key="service_hand_nails_title", lang=lang) }}</h3>
                 <p>{{ trans(key="service_hand_nails_desc", lang=lang) }}</p>
@@ -36,7 +39,10 @@
 
             <a href="{% if lang == 'en' %}/en/manicura/#feet{% else %}/manicura/#feet{% endif %}" class="service-card">
                 <div class="service-image">
-                    <img class="aim-top" src="/images/services/foot-nails.jpg" alt="{{ trans(key='service_foot_nails_title', lang=lang) }}" loading="lazy">
+                    <img class="aim-top" src="/images/services/foot-nails.webp"
+                         srcset="/images/services/foot-nails-300.webp 300w, /images/services/foot-nails.webp 600w"
+                         sizes="(max-width: 768px) 300px, 600px"
+                         alt="{{ trans(key='service_foot_nails_title', lang=lang) }}" width="600" height="401" loading="lazy">
                 </div>
                 <h3>{{ trans(key="service_foot_nails_title", lang=lang) }}</h3>
                 <p>{{ trans(key="service_foot_nails_desc", lang=lang) }}</p>
@@ -45,7 +51,10 @@
 
             <a href="{% if lang == 'en' %}/en/manicura/#brows_lashes{% else %}/manicura/#brows_lashes{% endif %}" class="service-card">
                 <div class="service-image">
-                    <img src="/images/services/eyebrows.jpg" alt="{{ trans(key='service_eyebrows_title', lang=lang) }}" loading="lazy">
+                    <img src="/images/services/eyebrows.webp"
+                         srcset="/images/services/eyebrows-300.webp 300w, /images/services/eyebrows.webp 600w"
+                         sizes="(max-width: 768px) 300px, 600px"
+                         alt="{{ trans(key='service_eyebrows_title', lang=lang) }}" width="600" height="400" loading="lazy">
                 </div>
                 <h3>{{ trans(key="service_eyebrows_title", lang=lang) }}</h3>
                 <p>{{ trans(key="service_eyebrows_desc", lang=lang) }}</p>
@@ -54,7 +63,10 @@
 
             <a href="{% if lang == 'en' %}/en/masajes/#massages{% else %}/masajes/#massages{% endif %}" class="service-card">
                 <div class="service-image">
-                    <img src="/images/services/massage.jpg" alt="{{ trans(key='service_massage_title', lang=lang) }}" loading="lazy">
+                    <img src="/images/services/massage.webp"
+                         srcset="/images/services/massage-300.webp 300w, /images/services/massage.webp 600w"
+                         sizes="(max-width: 768px) 300px, 600px"
+                         alt="{{ trans(key='service_massage_title', lang=lang) }}" width="600" height="400" loading="lazy">
                 </div>
                 <h3>{{ trans(key="service_massage_title", lang=lang) }}</h3>
                 <p>{{ trans(key="service_massage_desc", lang=lang) }}</p>
@@ -69,7 +81,10 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-image">
-                <img src="/images/about.jpg" alt="{{ trans(key='about_title', lang=lang) }}" loading="lazy">
+                <img src="/images/about.webp"
+                     srcset="/images/about-400.webp 400w, /images/about.webp 800w"
+                     sizes="(max-width: 768px) 400px, 800px"
+                     alt="{{ trans(key='about_title', lang=lang) }}" width="800" height="533" loading="lazy">
             </div>
             <div class="about-content">
                 <span class="section-label">{{ trans(key="about_label", lang=lang) }}</span>
