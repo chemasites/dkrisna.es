@@ -13,12 +13,15 @@
     padding-top: $header-height;
     padding-bottom: $spacing-lg;
 
+    @media (max-width: $breakpoint-lg) {
+        padding-top: $hero-padding-mobile;
+        background-attachment: scroll;
+    }
+
     @media (max-width: $breakpoint-md) {
         min-height: 70svh;
-        padding-top: $hero-padding-mobile;
         padding-bottom: $spacing-md;
         align-items: flex-start;
-        background-attachment: scroll;
     }
 
     &-overlay {

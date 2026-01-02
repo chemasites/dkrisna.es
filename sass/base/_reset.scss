@@ -13,10 +13,18 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: $header-height + 20px;
+
+    @media (max-width: $breakpoint-lg) {
+        scroll-padding-top: 20px;
+    }
 }
 
 [id] {
     scroll-margin-top: $header-height + 20px;
+
+    @media (max-width: $breakpoint-lg) {
+        scroll-margin-top: 20px;
+    }
 }
 
 body {
@@ -38,7 +46,7 @@ main {
     padding-top: $header-height;
 
     @media (max-width: $breakpoint-lg) {
-        padding-top: $header-height-mobile;
+        padding-top: 0;
     }
 }
 
