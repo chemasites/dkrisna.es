@@ -85,13 +85,15 @@
         height: 100vh;
         background-color: $color-white;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: $spacing-lg;
+        gap: $spacing-md;
         padding: $spacing-xl;
-        overflow: auto;
+        padding-top: calc($spacing-xl * 2);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
-    
+
     .nav.active {
         display: flex;
         z-index: 999;
@@ -184,10 +186,9 @@
     @media (max-width: $breakpoint-lg) {
         display: flex;
         gap: $spacing-md;
-        position: absolute;
-        bottom: $spacing-lg;
-        left: 50%;
-        transform: translateX(-50%);
+        margin-top: auto;
+        padding-top: $spacing-lg;
+        padding-bottom: $spacing-md;
 
         a {
             display: flex;
