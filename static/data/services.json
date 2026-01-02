@@ -16,6 +16,14 @@
           "variantId": 2038814
         },
         {
+          "name": "Relleno De Acrílico Y Gel",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Mantenimiento de uñas acrílicas y gel corrigiendo el crecimiento.",
+          "variantId": 2086719
+        },
+        {
           "name": "Una Uña (EXTENSIÓN)",
           "price": "3,00 €",
           "originalPrice": null,
@@ -54,14 +62,6 @@
           "duration": "1 hora 30 min",
           "description": "Sistema de gel más polvo endurezador que aporta mayor resistencia y duración.",
           "variantId": 2016863
-        },
-        {
-          "name": "Relleno De Acrílico Y Gel",
-          "price": "20,00 €",
-          "originalPrice": null,
-          "duration": "1 hora 30 min",
-          "description": "Mantenimiento de uñas acrílicas y gel corrigiendo el crecimiento.",
-          "variantId": 2086719
         },
         {
           "name": "Uñas acrílicas",
@@ -108,7 +108,7 @@
           "name": "Pedicura En Seco + Semi",
           "price": "21,00 €",
           "originalPrice": null,
-          "duration": "1 hora 30 min",
+          "duration": "1 hora",
           "description": "Limpieza de cutículas + esmaltado en gel sin agua",
           "variantId": 2120763
         },
@@ -221,5 +221,5 @@
       ]
     }
   ],
-  "fetchedAt": "2026-01-01T19:12:57.136Z"
+  "fetchedAt": "2026-01-02T03:36:03.314Z"
 }
