@@ -3,11 +3,13 @@
     <!-- Homepage - Highest priority -->
     <url>
         <loc>https://dkrisna.es/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -15,21 +17,25 @@
     <!-- Service Pages - High priority -->
     <url>
         <loc>https://dkrisna.es/manicura/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/manicura/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/masajes/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/masajes/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -37,11 +43,13 @@
     <!-- Location Page - Important for local SEO -->
     <url>
         <loc>https://dkrisna.es/ubicacion/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/ubicacion/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -49,11 +57,13 @@
     <!-- About Page -->
     <url>
         <loc>https://dkrisna.es/sobre-nosotros/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/sobre-nosotros/</loc>
+        <lastmod>2026-01-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -61,11 +71,13 @@
     <!-- Legal - Low priority -->
     <url>
         <loc>https://dkrisna.es/legal/</loc>
+        <lastmod>2025-12-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://dkrisna.es/en/legal/</loc>
+        <lastmod>2025-12-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>

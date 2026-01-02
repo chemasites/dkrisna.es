@@ -14,7 +14,7 @@ show_cta = false
 This website is owned by **D'Krisna**, a beauty and wellness center located in Caravaca de la Cruz, Murcia, Spain.
 
 - **Address:** Carretera de Murcia N45, 30400 Caravaca de la Cruz
-- **Email:** info@dkrisna.es
+- **Email:** dkrisnanails@gmail.com
 
 ## Privacy Policy
 
@@ -31,8 +31,8 @@ This website is designed with your privacy in mind:
 This website may include third-party content:
 
 - **Cronitor:** We use Cronitor RUM (Real User Monitoring) to monitor website performance. This tool collects anonymized data such as page load times, browser type, and performance metrics. No personally identifiable data is collected. Subject to [Cronitor's privacy policy](https://cronitor.io/privacy).
-- **Booksy:** For appointment bookings. Reservations are subject to Booksy's privacy policy.
-- **Google Maps:** To display our location. Subject to Google's privacy policy.
+- **Booksy:** For appointment bookings. Reservations are subject to [Booksy's privacy policy](https://booksy.com/privacy/).
+- **Google Maps:** To display our location. Subject to [Google's privacy policy](https://policies.google.com/privacy).
 
 ### Cookies
 
