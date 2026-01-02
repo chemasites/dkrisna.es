@@ -29,7 +29,7 @@ show_cta = true
 </div>
 <h3>Teléfono</h3>
 <p><a href="tel:+34722275975">+34 722 27 59 75</a></p>
-<p class="small">Llámanos o <a href="https://api.whatsapp.com/message/RPZDDO7K7CCPL1" target="_blank" rel="noopener">envía un WhatsApp</a></p>
+<p class="small">Llámanos o {% whatsapp_link() %}envía un WhatsApp{% end %}</p>
 </div>
 
 <div class="info-card">
