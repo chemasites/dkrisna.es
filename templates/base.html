@@ -278,6 +278,13 @@
                 navOverlay.addEventListener('click', closeMenu);
             }
 
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen() && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
