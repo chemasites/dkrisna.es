@@ -241,6 +241,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('.nav');
+            const navOverlay = document.querySelector('.nav-overlay');
             const body = document.body;
             const header = document.querySelector('.header');
 
@@ -248,6 +249,7 @@
             function closeMenu() {
                 nav.classList.remove('active');
                 menuToggle.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
                 body.classList.remove('menu-open');
             }
 
@@ -261,6 +263,7 @@
                 menuToggle.addEventListener('click', function() {
                     nav.classList.toggle('active');
                     menuToggle.classList.toggle('active');
+                    if (navOverlay) navOverlay.classList.toggle('active');
                     body.classList.toggle('menu-open');
                 });
 
@@ -268,6 +271,11 @@
                 nav.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', closeMenu);
                 });
+            }
+
+            // Close menu when clicking overlay
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMenu);
             }
 
             // Smooth scroll for anchor links

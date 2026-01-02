@@ -82,29 +82,29 @@
         top: 100%;
         left: 0;
         right: 0;
-        max-height: calc(100vh - $header-height-mobile);
-        max-height: calc(100dvh - $header-height-mobile);
         background-color: $color-white;
         box-shadow: $shadow-lg;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
         padding: 0;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
         z-index: 998;
 
-        // Slide animation
-        transform: translateY(-100%);
+        // Expand animation using max-height
+        max-height: 0;
         opacity: 0;
         visibility: hidden;
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .nav.active {
-        transform: translateY(0);
+        max-height: calc(100vh - $header-height-mobile);
+        max-height: calc(100dvh - $header-height-mobile);
         opacity: 1;
         visibility: visible;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -330,3 +330,26 @@
 
 // Removed: .nav-logo and .menu-close are no longer needed
 // The header stays visible with the hamburger button transforming to X
+
+.nav-overlay {
+    display: none;
+
+    @media (max-width: $breakpoint-lg) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($color-white, 0.95);
+        z-index: 997;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
