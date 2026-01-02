@@ -17,19 +17,19 @@
         },
         {
           "name": "Single Nail (EXTENSION)",
-          "price": "3,00 €",
+          "price": "20,00 €",
           "originalPrice": null,
-          "duration": "30 min",
+          "duration": "1 hora 30 min",
           "description": "Reconstruction of an acrylic or gel nail",
-          "variantId": 2120720
+          "variantId": 2086719
         },
         {
           "name": "Traditional Cleaning & Polish (Hands)",
-          "price": "10,00 €",
+          "price": "3,00 €",
           "originalPrice": null,
           "duration": "30 min",
           "description": "Nail cleaning, filing, cuticle care, and classic polish.",
-          "variantId": 2016866
+          "variantId": 2120720
         },
         {
           "name": "Semi-Permanent Removal",
@@ -37,31 +37,31 @@
           "originalPrice": null,
           "duration": "30 min",
           "description": "Safe removal of semi-permanent polish without damaging natural nails.",
-          "variantId": 2053132
+          "variantId": 2016866
         },
         {
           "name": "Acrylic Removal",
-          "price": "12,00 €",
+          "price": "10,00 €",
           "originalPrice": null,
-          "duration": "45 min",
+          "duration": "30 min",
           "description": "Professional removal of acrylic nails while preserving natural nail health.",
-          "variantId": 2053130
+          "variantId": 2053132
         },
         {
           "name": "Semi-Permanent Nails with Dipping",
-          "price": "15,00 €",
+          "price": "12,00 €",
           "originalPrice": null,
-          "duration": "1 hora",
+          "duration": "45 min",
           "description": "Gel system with hardening powder providing increased resistance and durability.",
-          "variantId": 2016863
+          "variantId": 2053130
         },
         {
           "name": "Acrylic and Gel Refill",
-          "price": "20,00 €",
+          "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
           "description": "Maintenance of acrylic and gel nails, correcting nail growth.",
-          "variantId": 2086719
+          "variantId": 2016863
         },
         {
           "name": "Acrylic Nails",
@@ -108,7 +108,7 @@
           "name": "Dry Pedicure + Semi-Permanent",
           "price": "21,00 €",
           "originalPrice": null,
-          "duration": "1 hora 30 min",
+          "duration": "1 hora",
           "description": "Cuticle cleaning + gel polish without water",
           "variantId": 2120763
         },
@@ -196,24 +196,24 @@
       "services": [
         {
           "name": "KOBIDO Facial Lifting",
-          "price": "20,00 €",
-          "originalPrice": "40,00 €",
+          "price": "40,00 €",
+          "originalPrice": null,
           "duration": "1 hora",
           "description": "Naturally eliminates expression lines without injections or painful treatments.",
           "variantId": 2291300
         },
         {
           "name": "Relaxing Massages",
-          "price": "15,00 €",
-          "originalPrice": "30,00 €",
+          "price": "30,00 €",
+          "originalPrice": null,
           "duration": "1 hora 20 min",
           "description": "Gentle body massage with natural oils, alleviating stress and promoting well-being.",
           "variantId": 2291441
         },
         {
           "name": "Geothermal Massage (Hot Stones)",
-          "price": "20,00 €",
-          "originalPrice": "40,00 €",
+          "price": "40,00 €",
+          "originalPrice": null,
           "duration": "1 hora 20 min",
           "description": "Deep massage with hot stones that relaxes muscles and reduces tension.",
           "variantId": 2291447
@@ -221,6 +221,6 @@
       ]
     }
   ],
-  "fetchedAt": "2025-12-31T19:57:04.308Z",
+  "fetchedAt": "2026-01-02T03:36:03.314Z",
   "sourceHash": "96e0b9ceaf6fb513"
 }

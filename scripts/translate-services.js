@@ -128,6 +128,30 @@ function applyTranslations(servicesData, translations) {
   return translated;
 }
 
+/**
+ * Syncs non-translatable fields (prices, duration, etc.) from source to target
+ * This ensures EN always has up-to-date prices even when text hasn't changed
+ */
+function syncNonTranslatableFields(sourceData, targetData) {
+  targetData.categories.forEach((category, catIndex) => {
+    const sourceCategory = sourceData.categories[catIndex];
+    if (!sourceCategory) return;
+
+    category.services.forEach((service, svcIndex) => {
+      const sourceService = sourceCategory.services[svcIndex];
+      if (!sourceService) return;
+
+      service.price = sourceService.price;
+      service.originalPrice = sourceService.originalPrice;
+      service.duration = sourceService.duration;
+      service.variantId = sourceService.variantId;
+    });
+  });
+
+  targetData.fetchedAt = sourceData.fetchedAt;
+  return targetData;
+}
+
 async function main() {
   try {
     console.log('Reading services.json...');
@@ -141,26 +165,28 @@ async function main() {
     const currentHash = createContentHash(texts);
     const storedHash = getStoredHash();
 
-    if (currentHash === storedHash) {
-      console.log('✓ No changes to translate (content hash matches)');
-      console.log(`  Hash: ${currentHash}`);
-      return;
+    let translatedData;
+
+    if (currentHash === storedHash && existsSync(CONFIG.outputFile)) {
+      // Text unchanged - load existing translations but sync prices/duration
+      console.log('✓ No text changes, syncing prices and duration...');
+      translatedData = JSON.parse(readFileSync(CONFIG.outputFile, 'utf-8'));
+      translatedData = syncNonTranslatableFields(servicesData, translatedData);
+    } else {
+      // Text changed or no previous file - full translation needed
+      console.log(`Content changed (${storedHash || 'no previous'} → ${currentHash})`);
+      console.log('Calling Claude Haiku for translation...');
+      const translations = await translateWithClaude(texts);
+
+      console.log('Applying translations...');
+      translatedData = applyTranslations(servicesData, translations);
+      translatedData.sourceHash = currentHash;
     }
-
-    console.log(`Content changed (${storedHash || 'no previous'} → ${currentHash})`);
-    console.log('Calling Claude Haiku for translation...');
-    const translations = await translateWithClaude(texts);
-
-    console.log('Applying translations...');
-    const translatedData = applyTranslations(servicesData, translations);
-
-    // Store the source hash for future comparison
-    translatedData.sourceHash = currentHash;
 
     console.log(`Writing ${CONFIG.outputFile}...`);
     writeFileSync(CONFIG.outputFile, JSON.stringify(translatedData, null, 2), 'utf-8');
 
-    console.log('✓ Translation complete!');
+    console.log('✓ EN services updated!');
   } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
