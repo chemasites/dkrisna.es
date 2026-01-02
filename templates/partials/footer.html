@@ -70,7 +70,7 @@
 
         <div class="footer-bottom">
             <p>&copy; {{ now() | date(format="%Y") }} D'Krisna. {{ trans(key="footer_copyright", lang=lang) }}</p>
-            <p class="footer-credits">{{ trans(key="footer_developed_by", lang=lang) }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a> & <a href="https://jesusvalera.dev/" target="_blank" rel="noopener">Jesus</a> · <a href="{{ get_url(path='legal') }}">{{ trans(key="footer_legal", lang=lang) }}</a></p>
+            <p class="footer-credits">{{ trans(key="footer_developed_by", lang=lang) }} <a href="https://chemaclass.com" target="_blank" rel="noopener">Chemaclass</a> & <a href="https://jesusvalera.dev/" target="_blank" rel="noopener">Jesus</a> · <a href="{{ get_url(path='legal', lang=lang) }}">{{ trans(key="footer_legal", lang=lang) }}</a></p>
         </div>
     </div>
 </footer>
