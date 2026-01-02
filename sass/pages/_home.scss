@@ -405,7 +405,7 @@
     height: 40px;
     border-radius: 50%;
     background: $color-white;
-    border: 1px solid rgba($color-black, 0.1);
+    border: 2px solid rgba($color-primary, 0.3);
     box-shadow: $shadow-sm;
     cursor: pointer;
     display: flex;
@@ -414,6 +414,7 @@
     transition: $transition-fast;
     opacity: 0;
     pointer-events: none;
+    z-index: 10;
 
     &.visible {
         opacity: 1;
@@ -438,20 +439,28 @@
     }
 
     &.arrow-left {
-        left: 0;
+        left: -4px;
     }
 
     &.arrow-right {
-        right: 0;
+        right: -4px;
     }
 
     @media (max-width: $breakpoint-sm) {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
+
+        &.arrow-left {
+            left: -8px;
+        }
+
+        &.arrow-right {
+            right: -8px;
+        }
 
         svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
         }
     }
 }
