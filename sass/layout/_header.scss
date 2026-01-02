@@ -11,14 +11,9 @@
     background: rgba($color-white, 0.97);
     backdrop-filter: blur(10px);
     transition: $transition;
-
-    @media (min-width: $breakpoint-lg + 1) {
-        z-index: 100;
-    }
+    z-index: 1000;
 
     @media (max-width: $breakpoint-lg) {
-        position: relative;
-        backdrop-filter: none;
         background: $color-white;
     }
 
@@ -78,25 +73,33 @@
 
 @media (max-width: $breakpoint-lg) {
     .nav {
-        display: none;
         position: fixed;
-        inset: 0;
-        width: 100vw;
-        height: 100vh;
+        top: $header-height-mobile;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - $header-height-mobile);
+        max-height: calc(100dvh - $header-height-mobile);
         background-color: $color-white;
+        box-shadow: $shadow-lg;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: $spacing-md;
-        padding: $spacing-xl;
-        padding-top: calc($spacing-xl * 2);
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        z-index: 998;
+
+        // Slide animation
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .nav.active {
-        display: flex;
-        z-index: 999;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -107,11 +110,17 @@
 
     @media (max-width: $breakpoint-lg) {
         flex-direction: column;
-        align-items: center;
-        gap: $spacing-sm;
+        align-items: stretch;
+        gap: 0;
         width: 100%;
-        max-width: 280px;
-        text-align: center;
+        text-align: left;
+        border-bottom: 1px solid rgba($color-dark, 0.08);
+    }
+
+    li {
+        @media (max-width: $breakpoint-lg) {
+            border-top: 1px solid rgba($color-dark, 0.08);
+        }
     }
 
     a {
@@ -124,10 +133,16 @@
         position: relative;
 
         @media (max-width: $breakpoint-lg) {
-            font-size: 1.5rem;
+            display: block;
+            font-size: 1.125rem;
             font-weight: 500;
             color: $color-dark;
-            padding: $spacing-sm 0;
+            padding: $spacing-sm $spacing-md;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                background-color: rgba($color-primary, 0.05);
+            }
         }
 
         &::after {
@@ -138,6 +153,10 @@
             width: 0;
             height: 2px;
             background: $color-primary;
+
+            @media (max-width: $breakpoint-lg) {
+                display: none;
+            }
         }
 
         &:hover {
@@ -145,8 +164,12 @@
         }
 
         &.active {
-            color: $color-dark;
+            color: $color-primary;
             font-weight: 500;
+
+            @media (max-width: $breakpoint-lg) {
+                background-color: rgba($color-primary, 0.08);
+            }
 
             &::after {
                 width: 100%;
@@ -163,19 +186,45 @@
         flex-direction: column;
         align-items: center;
         gap: $spacing-md;
-        margin-top: $spacing-md;
+        padding: $spacing-md;
         width: 100%;
-        max-width: 280px;
 
         .lang-toggle {
-            margin-bottom: $spacing-xs;
+            display: flex;
+            background: rgba($color-dark, 0.05);
+            border-radius: $border-radius-pill;
+            padding: $spacing-xxs;
+            gap: 0;
+
+            span, a {
+                padding: $spacing-xs $spacing-sm;
+                border-radius: $border-radius-pill;
+                font-size: 0.875rem;
+                font-weight: 500;
+                transition: all 0.2s ease;
+            }
+
+            .lang-active {
+                background: $color-white;
+                color: $color-dark;
+                box-shadow: $shadow-sm;
+            }
+
+            .lang-inactive {
+                color: $color-text-light;
+
+                &:hover {
+                    color: $color-dark;
+                }
+            }
         }
 
         .btn {
             width: 100%;
             text-align: center;
             padding: $spacing-sm $spacing-md;
-            font-size: 0.9375rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
     }
 }
@@ -185,25 +234,31 @@
 
     @media (max-width: $breakpoint-lg) {
         display: flex;
-        gap: $spacing-md;
-        margin-top: auto;
-        padding-top: $spacing-lg;
-        padding-bottom: $spacing-md;
+        justify-content: center;
+        gap: $spacing-sm;
+        padding: $spacing-md;
+        padding-top: $spacing-xs;
+        border-top: 1px solid rgba($color-dark, 0.08);
 
         a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba($color-primary, 0.1);
-            color: $color-primary;
+            background: transparent;
+            color: $color-text-light;
             transition: $transition;
 
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
             &:hover {
-                background: $color-primary;
-                color: $color-white;
+                background: rgba($color-primary, 0.1);
+                color: $color-primary;
             }
         }
     }
@@ -227,11 +282,17 @@
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
     background: none;
     border: none;
     cursor: pointer;
     padding: $spacing-xs;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 1001;
 
     @media (max-width: $breakpoint-lg) {
         display: flex;
@@ -239,18 +300,17 @@
 
     span {
         display: block;
-        width: 26px;
-        height: 2.5px;
-        background: $color-primary;
+        width: 24px;
+        height: 2px;
+        background: $color-dark;
         border-radius: 2px;
-        transition: $transition;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
     }
 
     &.active span {
-        background: $color-primary;
-
         &:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: translateY(8px) rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -258,75 +318,10 @@
         }
 
         &:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: translateY(-8px) rotate(-45deg);
         }
     }
 }
 
-.nav-logo {
-    display: none;
-    position: absolute;
-    top: $spacing-sm;
-    left: $spacing-md;
-    text-decoration: none;
-    align-items: center;
-    gap: $spacing-xs;
-
-    @media (max-width: $breakpoint-lg) {
-        display: flex;
-    }
-
-    .logo-img {
-        height: 35px;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .logo-text {
-        font-family: $font-heading;
-        font-size: 1.375rem;
-        font-weight: 500;
-        color: $color-dark;
-        line-height: 1;
-    }
-}
-
-.menu-close {
-    display: none;
-    position: absolute;
-    top: $spacing-sm;
-    right: $spacing-md;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: $spacing-xs;
-    width: 42px;
-    height: 34px;
-
-    @media (max-width: $breakpoint-lg) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    span {
-        position: absolute;
-        display: block;
-        width: 26px;
-        height: 2.5px;
-        background: $color-primary;
-        border-radius: 2px;
-
-        &:nth-child(1) {
-            transform: rotate(45deg);
-        }
-
-        &:nth-child(2) {
-            transform: rotate(-45deg);
-        }
-    }
-
-    &:hover span {
-        background: $color-primary-dark;
-    }
-}
+// Removed: .nav-logo and .menu-close are no longer needed
+// The header stays visible with the hamburger button transforming to X

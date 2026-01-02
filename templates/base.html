@@ -240,15 +240,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
-            const menuClose = document.querySelector('.menu-close');
             const nav = document.querySelector('.nav');
             const body = document.body;
+            const header = document.querySelector('.header');
 
             // Function to close menu
             function closeMenu() {
                 nav.classList.remove('active');
                 menuToggle.classList.remove('active');
                 body.classList.remove('menu-open');
+            }
+
+            // Function to check if menu is open
+            function isMenuOpen() {
+                return nav.classList.contains('active');
             }
 
             // Mobile menu toggle
@@ -258,11 +263,6 @@
                     menuToggle.classList.toggle('active');
                     body.classList.toggle('menu-open');
                 });
-
-                // Close button click
-                if (menuClose) {
-                    menuClose.addEventListener('click', closeMenu);
-                }
 
                 // Close menu when clicking a link
                 nav.querySelectorAll('a').forEach(link => {
@@ -282,7 +282,6 @@
             });
 
             // Header scroll effect
-            const header = document.querySelector('.header');
             let lastScrollY = 0;
             let ticking = false;
 
@@ -297,7 +296,8 @@
                 }
 
                 // Hide/show on scroll direction (only after scrolling past 100px)
-                if (currentScrollY > 100) {
+                // Don't hide header when menu is open
+                if (currentScrollY > 100 && !isMenuOpen()) {
                     if (currentScrollY > lastScrollY) {
                         // Scrolling down
                         header.classList.add('header-hidden');

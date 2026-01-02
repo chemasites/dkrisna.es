@@ -4,17 +4,19 @@
 
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: url('/images/hero.webp') center/cover no-repeat fixed;
     overflow: hidden;
     padding-top: $header-height;
+    padding-bottom: $spacing-lg;
 
     @media (max-width: $breakpoint-md) {
-        min-height: 100svh;
+        min-height: 70svh;
         padding-top: $hero-padding-mobile;
+        padding-bottom: $spacing-md;
         align-items: flex-start;
         background-attachment: scroll;
     }

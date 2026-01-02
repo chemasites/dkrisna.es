@@ -6,14 +6,6 @@
         </a>
 
         <nav class="nav" id="main-nav">
-            <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="nav-logo">
-                <img src="/images/logo.webp" alt="D'Krisna" class="logo-img">
-                <span class="logo-text">D'Krisna</span>
-            </a>
-            <button class="menu-close" aria-label="Close menu">
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-links">
                 <li><a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing("manicura") %}class="active"{% endif %}>{{ trans(key="nav_nails", lang=lang) }}</a></li>
                 <li><a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing("masajes") %}class="active"{% endif %}>{{ trans(key="nav_massages", lang=lang) }}</a></li>
