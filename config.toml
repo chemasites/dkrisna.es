@@ -9,10 +9,6 @@ build_search_index = false
 default_language = "es"
 generate_feeds = false
 
-[markdown]
-highlight_code = false
-unsafe = true
-
 [languages.en]
 title = "D'Krisna"
 description = "Beauty salon in Caravaca de la Cruz, Spain. Manicure, pedicure, gel nails, lash extensions and relaxing massages. Book your appointment!"

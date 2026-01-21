@@ -32,6 +32,19 @@ jobs:
           cd scripts
           npx playwright install chromium
 
+      - name: Get stored content hash
+        id: stored
+        run: |
+          STORED_HASH=$(node -e "
+            const fs = require('fs');
+            try {
+              const data = JSON.parse(fs.readFileSync('static/data/booksy-reviews.json', 'utf-8'));
+              console.log(data.contentHash || '');
+            } catch { console.log(''); }
+          ")
+          echo "hash=$STORED_HASH" >> $GITHUB_OUTPUT
+          echo "Stored content hash: $STORED_HASH"
+
       - name: Fetch and update reviews
         run: |
           cd scripts
@@ -45,13 +58,26 @@ jobs:
       - name: Verify build
         run: zola build
 
-      - name: Check for changes
+      - name: Check for content changes
         id: changes
         run: |
-          if git diff --quiet static/data/; then
+          NEW_HASH=$(node -e "
+            const fs = require('fs');
+            try {
+              const data = JSON.parse(fs.readFileSync('static/data/booksy-reviews.json', 'utf-8'));
+              console.log(data.contentHash || '');
+            } catch { console.log(''); }
+          ")
+          STORED_HASH="${{ steps.stored.outputs.hash }}"
+          echo "Stored hash: $STORED_HASH"
+          echo "New hash: $NEW_HASH"
+
+          if [ "$NEW_HASH" = "$STORED_HASH" ] && [ -n "$STORED_HASH" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No content changes detected, skipping commit"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Content changed, will commit"
           fi
 
       - name: Commit and push changes

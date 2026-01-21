@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { createReviewsContentHash } from './content-hash.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -142,8 +143,7 @@ async function extractReviewsFromPage(page) {
     return {
       rating: rating || 5.0,
       reviewCount: reviewCount || reviews.length,
-      reviews: reviews,
-      fetchedAt: new Date().toISOString()
+      reviews: reviews
     };
   });
 }
@@ -216,12 +216,19 @@ function saveReviewsData(reviews) {
     mkdirSync(staticDir, { recursive: true });
   }
 
+  const dataWithHash = {
+    ...reviews,
+    contentHash: createReviewsContentHash(reviews),
+    fetchedAt: new Date().toISOString()
+  };
+
   const filePath = join(staticDir, 'booksy-reviews.json');
-  writeFileSync(filePath, JSON.stringify(reviews, null, 2), 'utf-8');
+  writeFileSync(filePath, JSON.stringify(dataWithHash, null, 2), 'utf-8');
   console.log(`Saved reviews data to ${filePath}`);
   console.log(`  - Rating: ${reviews.rating}/5`);
   console.log(`  - Reviews: ${reviews.reviewCount}`);
   console.log(`  - Individual reviews: ${reviews.reviews.length}`);
+  console.log(`  - Content hash: ${dataWithHash.contentHash}`);
 }
 
 function validateReviews(reviews) {

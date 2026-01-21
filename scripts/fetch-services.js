@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { parseDuration } from './booksy-parser.js';
+import { createServicesContentHash } from './content-hash.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -327,6 +328,7 @@ function transformToJSON(rawServices) {
 
   return {
     categories: categorizedServices,
+    contentHash: createServicesContentHash(categorizedServices),
     fetchedAt: new Date().toISOString()
   };
 }
@@ -345,6 +347,7 @@ function logServicesSummary(servicesData) {
   servicesData.categories.forEach(cat => {
     console.log(`  - ${cat.name.es}: ${cat.services.length} services`);
   });
+  console.log(`  - Content hash: ${servicesData.contentHash}`);
 }
 
 async function fetchWithRetry() {
