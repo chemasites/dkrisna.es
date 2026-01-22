@@ -137,4 +137,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add static/data/
           git commit -m "chore: update services from Booksy"
+          git pull --rebase
           git push
