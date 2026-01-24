@@ -195,6 +195,27 @@
     }
     </script>
 
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "D'Krisna",
+        "alternateName": "D'Krisna Nails",
+        "url": "{{ config.base_url }}",
+        "inLanguage": ["es", "en"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "D'Krisna",
+            "url": "{{ config.base_url }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ config.base_url }}/images/logo.webp"
+            }
+        }
+    }
+    </script>
+
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
     {

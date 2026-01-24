@@ -4,6 +4,55 @@
 <link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high">
 {% endblock %}
 
+{% block head %}
+<!-- Individual Review Schema for Rich Snippets -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "@id": "{{ config.base_url }}/#beautysalon",
+    "name": "D'Krisna",
+    "review": [
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Patricia S."},
+            "datePublished": "2025-12-18",
+            "reviewBody": "Excelente atención, las chicas son muy atentas y profesionales, súper recomendadas.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Alba Mirella L."},
+            "datePublished": "2025-11-26",
+            "reviewBody": "Fue mi primero haciéndome las uñas en este sitio y estoy encantada con mis uñas, la atención, el trato todo la verdad muy bien.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Erika ."},
+            "datePublished": "2025-10-09",
+            "reviewBody": "Un servicio estupendo, son muy amables y su trabajo merece muchísimo la pena",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Ana Olid M."},
+            "datePublished": "2025-08-15",
+            "reviewBody": "Genial, como siempre! Naza es increíble y hace trabajos impecables",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        },
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Eva Sánchez L."},
+            "datePublished": "2025-08-12",
+            "reviewBody": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
+            "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+        }
+    ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
 <!-- Hero Section -->
