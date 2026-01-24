@@ -1,6 +1,6 @@
 +++
-title = "Manicura"
-description = "Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable."
+title = "Manicura en Caravaca de la Cruz"
+description = "Manicura profesional en Caravaca de la Cruz, Murcia. Uñas de gel, acrílicas, semipermanentes y pedicura spa. Productos de alta calidad y resultados impecables. Reserva tu cita."
 template = "services.html"
 
 [extra]

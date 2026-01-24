@@ -114,6 +114,22 @@
             "{{ config.extra.facebook }}",
             "{{ config.extra.tiktok }}"
         ],
+        "potentialAction": [
+            {
+                "@type": "ReserveAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "{{ config.extra.booksy_url }}",
+                    "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+                },
+                "result": {
+                    "@type": "Reservation",
+                    "name": "{% if lang == 'en' %}Beauty appointment{% else %}Cita de belleza{% endif %}"
+                }
+            }
+        ],
+        "hasMenu": "{{ config.base_url }}/manicura/",
+        "acceptsReservations": true,
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",

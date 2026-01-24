@@ -1,6 +1,6 @@
 +++
-title = "Masajes"
-description = "Nuestros masajes están diseñados para liberar tensiones, mejorar la circulación y proporcionar un estado de relajación profunda. Cada sesión es personalizada según tus necesidades."
+title = "Masajes en Caravaca de la Cruz"
+description = "Masajes relajantes y terapéuticos en Caravaca de la Cruz, Murcia. Libera tensiones y mejora tu bienestar con sesiones personalizadas. Reserva tu cita en D'Krisna."
 template = "services.html"
 
 [extra]

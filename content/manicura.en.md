@@ -1,6 +1,6 @@
 +++
-title = "Manicure"
-description = "Discover our beauty services, where every detail counts. We use high-quality products to ensure long-lasting results and a flawless finish."
+title = "Manicure in Caravaca de la Cruz"
+description = "Professional manicure in Caravaca de la Cruz, Murcia, Spain. Gel nails, acrylic, semi-permanent and spa pedicure. High-quality products and flawless results. Book your appointment."
 template = "services.html"
 
 [extra]

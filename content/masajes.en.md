@@ -1,6 +1,6 @@
 +++
-title = "Massages"
-description = "Our massages are designed to release tension, improve circulation and provide a state of deep relaxation. Each session is personalized according to your needs."
+title = "Massages in Caravaca de la Cruz"
+description = "Relaxing and therapeutic massages in Caravaca de la Cruz, Murcia, Spain. Release tension and improve your wellbeing with personalized sessions. Book at D'Krisna."
 template = "services.html"
 
 [extra]
