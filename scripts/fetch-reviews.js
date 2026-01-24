@@ -68,6 +68,10 @@ async function extractReviewsFromPage(page) {
             if (typeof obj.average_rating === 'number') {
               return { rating: obj.average_rating, count: obj.reviews_count || 0 };
             }
+            // Also check for rank field (Booksy uses this)
+            if (typeof obj.rank === 'number' && typeof obj.reviews_count === 'number') {
+              return { rating: obj.rank, count: obj.reviews_count };
+            }
             for (const key of Object.keys(obj)) {
               const result = findRating(obj[key], depth + 1);
               if (result) return result;
@@ -116,7 +120,7 @@ async function extractReviewsFromPage(page) {
                   text: reviewText,
                   service: serviceName,
                   date: dateStr,
-                  rating: r.rating || 5
+                  rating: r.rank || r.rating || 5
                 });
               }
             }
@@ -156,13 +160,21 @@ async function fetchReviewsFromBooksy() {
     const page = await browser.newPage();
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
-    // Navigate and wait for page load
+    // Navigate and wait for DOM to be ready
     await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'load',
+      waitUntil: 'domcontentloaded',
       timeout: CONFIG.timeout
     });
 
     console.log('Waiting for page to fully render...');
+
+    // Wait for NUXT data to be available (this indicates app hydration is complete)
+    console.log('Waiting for NUXT data...');
+    await page.waitForFunction(() => window.__NUXT__ !== undefined, { timeout: 30000 }).catch(() => {
+      console.log('NUXT data not found via waitForFunction, will try extraction anyway...');
+    });
+
+    // Additional wait for any async data loading
     await page.waitForTimeout(5000);
 
     // Scroll to reviews section to trigger lazy loading
@@ -203,7 +215,12 @@ async function fetchReviewsFromBooksy() {
     await page.waitForTimeout(CONFIG.waitForContent);
 
     console.log('Extracting reviews...');
-    return await extractReviewsFromPage(page);
+    const result = await extractReviewsFromPage(page);
+
+    // Debug: log extraction results
+    console.log(`Extracted: rating=${result.rating}, reviewCount=${result.reviewCount}, reviews=${result.reviews.length}`);
+
+    return result;
   } finally {
     await browser.close();
   }
