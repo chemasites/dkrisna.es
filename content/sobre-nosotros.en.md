@@ -1,6 +1,6 @@
 +++
-title = "About Us"
-description = "Discover our story, values, and the team that makes your beauty and wellness experience possible."
+title = "About D'Krisna - Beauty Salon in Caravaca de la Cruz, Spain"
+description = "Meet the D'Krisna team: beauty and wellness professionals in Caravaca de la Cruz, Spain. Expert nail artists and massage therapists."
 template = "page.html"
 
 [extra]

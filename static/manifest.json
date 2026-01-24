@@ -1,0 +1,20 @@
+{
+  "name": "D'Krisna - Centro de Belleza y Bienestar",
+  "short_name": "D'Krisna",
+  "description": "Centro de belleza en Caravaca de la Cruz. Manicura, pedicura, uñas de gel, extensiones de pestañas y masajes relajantes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E8A4B8",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "categories": ["beauty", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

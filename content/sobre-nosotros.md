@@ -1,6 +1,6 @@
 +++
-title = "Sobre Nosotros"
-description = "Conoce nuestra historia, valores y el equipo que hace posible tu experiencia de belleza y bienestar."
+title = "Sobre D'Krisna - Centro de Belleza en Caravaca de la Cruz"
+description = "Conoce al equipo de D'Krisna: profesionales de belleza y bienestar en Caravaca de la Cruz. Manicuristas y masajistas expertos."
 template = "page.html"
 
 [extra]
