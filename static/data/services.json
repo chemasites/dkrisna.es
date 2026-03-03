@@ -97,20 +97,20 @@
       },
       "services": [
         {
-          "name": "Pedicura En Seco + Esmaltado Tradicional",
-          "price": "18,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Limpieza de cutículas + esmaltado con esmalte tradicional sin agua",
-          "variantId": 2016864
-        },
-        {
           "name": "Pedicura En Seco + Semi",
           "price": "21,00 €",
           "originalPrice": null,
           "duration": "1 hora",
           "description": "Limpieza de cutículas + esmaltado en gel sin agua",
           "variantId": 2120763
+        },
+        {
+          "name": "Pedicura En Seco + Esmaltado Tradicional",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Limpieza de cutículas + esmaltado con esmalte tradicional sin agua",
+          "variantId": 2016864
         },
         {
           "name": "Pedicura Spa + Esmaltado Tradicional",
@@ -221,6 +221,6 @@
       ]
     }
   ],
-  "contentHash": "72c594c9bf283d93",
-  "fetchedAt": "2026-01-22T03:37:46.045Z"
+  "contentHash": "3afcf8d956a5c153",
+  "fetchedAt": "2026-03-03T03:50:49.329Z"
 }
