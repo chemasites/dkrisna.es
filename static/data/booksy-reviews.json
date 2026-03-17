@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 19,
+  "reviewCount": 20,
   "reviews": [
+    {
+      "name": "María M.",
+      "text": "Súper contenta! Tratan genial las uñas.",
+      "service": "Uñas Semipermanentes Con Diping",
+      "date": "mar. 16, 2026",
+      "rating": 5
+    },
     {
       "name": "Patricia S.",
       "text": "Excelente atención, las chicas son muy atentas y profesionales, súper recomendadas.",
@@ -64,15 +71,8 @@
       "service": "Relleno De Acrílico",
       "date": "ago. 15, 2025",
       "rating": 5
-    },
-    {
-      "name": "Eva Sánchez L.",
-      "text": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
-      "service": "Retiro De Semipermanente",
-      "date": "ago. 12, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "37270f70c6998502",
-  "fetchedAt": "2026-01-24T15:18:46.517Z"
+  "contentHash": "5cf27495e5a8305c",
+  "fetchedAt": "2026-03-17T03:04:34.398Z"
 }
