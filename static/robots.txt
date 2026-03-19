@@ -3,9 +3,31 @@
 
 User-agent: *
 Allow: /
+Disallow: /404.html
 
-# Sitemap location
+# Sitemap & Discovery
 Sitemap: https://dkrisna.es/sitemap.xml
+LLMs-txt: https://dkrisna.es/llms.txt
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+# AI Agents & LLMs
+# We welcome AI crawlers to help users discover our services
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /

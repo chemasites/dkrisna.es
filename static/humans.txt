@@ -1,0 +1,9 @@
+/* TEAM */
+Name: D'Krisna
+Location: Caravaca de la Cruz, Murcia, Spain
+Contact: dkrisnanails [at] gmail.com
+
+/* SITE */
+Standards: HTML5, CSS3, SCSS
+Software: Zola (Static Site Generator)
+Languages: Spanish, English
