@@ -5,6 +5,6 @@ template = "services.html"
 
 [extra]
 show_cta = true
-category_filter = ["massages"]
+category_filter = ["massages", "wood_therapy", "wood_therapy_packages"]
 services_note_key = "services_note_masajes"
 +++

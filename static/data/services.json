@@ -219,8 +219,122 @@
           "variantId": 2291447
         }
       ]
+    },
+    {
+      "id": "wood_therapy",
+      "name": {
+        "es": "Maderoterapia",
+        "en": "Wood Therapy"
+      },
+      "services": [
+        {
+          "name": "Maderoterapia Facial + Fototerapia",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Reafirma, redefine e ilumina tu rostro con maderoterapia facial + fototerapia\n\nEstimula el colágeno, mejora la firmeza, suaviza líneas de expresión y potencia la luminosidad de la piel mientras la luz terapéutica ayuda a unificar el tono y mejorar su textura. Un rostro más tonificado, fresco y radiante desde las primeras sesiones.",
+          "variantId": 2431110
+        },
+        {
+          "name": "Maderoterapia De Piernas Y Glúteos",
+          "price": "45,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Transforma tus piernas y glúteos con maderoterapia. \n\nReduce celulitis, reafirma la piel y mejora visiblemente las estrías mientras remodelas tu figura de forma natural. \n\nUna piel más firme, lisa y uniforme desde las primeras sesiones.",
+          "variantId": 2431072
+        },
+        {
+          "name": "Maderoterapia En Abdomen, Cintura Y Brazos",
+          "price": "45,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Define tu abdomen, estiliza tu cintura y reafirma tus brazos con maderoterapia.\n\nAyuda a reducir grasa localizada, mejora la firmeza de la piel y suaviza la apariencia de estrías, logrando una silueta más moldeada y uniforme desde las primeras sesiones.",
+          "variantId": 2431093
+        },
+        {
+          "name": "Maderoterapia Corporal",
+          "price": "50,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Moldea, reafirma y redefine tu cuerpo con maderoterapia corporal.  \nActiva la circulación, ayuda a reducir celulitis y grasa localizada, mejora la firmeza de la piel y contribuye a suavizar la apariencia de estrías. Resultados visibles que realzan tu silueta desde las primeras sesiones.",
+          "variantId": 2431138
+        }
+      ]
+    },
+    {
+      "id": "wood_therapy_packages",
+      "name": {
+        "es": "Bonos Maderoterapia",
+        "en": "Wood Therapy Packages"
+      },
+      "services": [
+        {
+          "name": "6 Sesiones De Maderoterapia Facial + Fototerapia",
+          "price": "210,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "6 sesiones de maderoterapia facial + fototerapia incluida. \n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431689
+        },
+        {
+          "name": "10 Sesiones De Maderoterapia Facial + Fototerapia",
+          "price": "330,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "10 sesiones de maderoterapia facial con fototerapia incluida.\n\nEl servicio se realizará una vez a la semana durante 9 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431704
+        },
+        {
+          "name": "6 Sesiones De Maderoterapia En Piernas Y Glúteos",
+          "price": "260,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "6 sesiones de maderoterapia de piernas y glúteos.\n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431158
+        },
+        {
+          "name": "10 Sesiones De Maderoterapia Piernas y Glúteos",
+          "price": "400,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "10 sesiones de maderoterapia de piernas y glúteos.\n\nEl servicio se realizará una vez a la semana durante 9 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431661
+        },
+        {
+          "name": "6 Sesiones: Abdomen, Cintura Y Brazos",
+          "price": "260,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "6 sesiones de maderoterapia en abdomen, cintura y brazos.\n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431667
+        },
+        {
+          "name": "10 Sesiones: Abdomen, Brazos Y Cintura",
+          "price": "400,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "10 sesiones de maderoterapia en abdomen, cintura y brazos.\n\nEl servicio se realizará una vez a la semana durante 9 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431684
+        },
+        {
+          "name": "6 Sesiones De Maderoterapia Corporal",
+          "price": "270,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "6 sesiones de maderoterapia corporal \n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431714
+        },
+        {
+          "name": "10 Sesiones De Maderoterapia Corporal",
+          "price": "430,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "10 sesiones de maderoterapia corporal.\n\nEl servicio se realizará una vez a la semana durante 9 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431722
+        }
+      ]
     }
   ],
-  "contentHash": "3afcf8d956a5c153",
-  "fetchedAt": "2026-03-03T03:50:49.329Z"
+  "contentHash": "3445ca2ebf948b45",
+  "fetchedAt": "2026-03-19T08:06:08.724Z"
 }

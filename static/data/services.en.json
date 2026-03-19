@@ -220,7 +220,122 @@
         }
       ]
     }
+    ,
+    {
+      "id": "wood_therapy",
+      "name": {
+        "es": "Maderoterapia",
+        "en": "Wood Therapy"
+      },
+      "services": [
+        {
+          "name": "Facial Wood Therapy + Phototherapy",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Firms, redefines and illuminates your face with facial wood therapy + phototherapy. Stimulates collagen, improves firmness, softens expression lines and enhances skin radiance while therapeutic light helps even out tone and improve texture. A more toned, fresh and radiant face from the very first sessions.",
+          "variantId": 2431110
+        },
+        {
+          "name": "Leg & Glute Wood Therapy",
+          "price": "45,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Transform your legs and glutes with wood therapy. Reduces cellulite, firms the skin and visibly improves stretch marks while naturally reshaping your figure. Firmer, smoother and more even skin from the very first sessions.",
+          "variantId": 2431072
+        },
+        {
+          "name": "Abdomen, Waist & Arms Wood Therapy",
+          "price": "45,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Define your abdomen, slim your waist and firm your arms with wood therapy. Helps reduce localized fat, improves skin firmness and smooths the appearance of stretch marks, achieving a more sculpted and even silhouette from the very first sessions.",
+          "variantId": 2431093
+        },
+        {
+          "name": "Full Body Wood Therapy",
+          "price": "50,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Shape, firm and redefine your body with full body wood therapy. Activates circulation, helps reduce cellulite and localized fat, improves skin firmness and helps smooth the appearance of stretch marks. Visible results that enhance your silhouette from the very first sessions.",
+          "variantId": 2431138
+        }
+      ]
+    },
+    {
+      "id": "wood_therapy_packages",
+      "name": {
+        "es": "Bonos Maderoterapia",
+        "en": "Wood Therapy Packages"
+      },
+      "services": [
+        {
+          "name": "6 Sessions: Facial Wood Therapy + Phototherapy",
+          "price": "210,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "6 sessions of facial wood therapy with phototherapy included. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431689
+        },
+        {
+          "name": "10 Sessions: Facial Wood Therapy + Phototherapy",
+          "price": "330,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "10 sessions of facial wood therapy with phototherapy included. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431704
+        },
+        {
+          "name": "6 Sessions: Leg & Glute Wood Therapy",
+          "price": "260,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "6 sessions of leg and glute wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431158
+        },
+        {
+          "name": "10 Sessions: Leg & Glute Wood Therapy",
+          "price": "400,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "10 sessions of leg and glute wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431661
+        },
+        {
+          "name": "6 Sessions: Abdomen, Waist & Arms",
+          "price": "260,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "6 sessions of abdomen, waist and arms wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431667
+        },
+        {
+          "name": "10 Sessions: Abdomen, Arms & Waist",
+          "price": "400,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "10 sessions of abdomen, waist and arms wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431684
+        },
+        {
+          "name": "6 Sessions: Full Body Wood Therapy",
+          "price": "270,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "6 sessions of full body wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431714
+        },
+        {
+          "name": "10 Sessions: Full Body Wood Therapy",
+          "price": "430,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "10 sessions of full body wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "variantId": 2431722
+        }
+      ]
+    }
   ],
-  "fetchedAt": "2026-01-02T03:36:03.314Z",
-  "sourceHash": "96e0b9ceaf6fb513"
+  "fetchedAt": "2026-03-19T08:06:08.724Z",
+  "sourceHash": "a763a814aaf800d3"
 }

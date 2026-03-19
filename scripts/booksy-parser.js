@@ -34,7 +34,9 @@ const translations = {
       hands: 'Uñas de las Manos',
       feet: 'Uñas de los Pies',
       browsLashes: 'Cejas y Pestañas',
-      massages: 'Masajes'
+      massages: 'Masajes',
+      woodTherapy: 'Maderoterapia',
+      woodTherapyPackages: 'Bonos Maderoterapia'
     },
     manicuraIntro: 'Descubre nuestros servicios de belleza, donde cada detalle cuenta. Utilizamos productos de alta calidad para garantizar resultados duraderos y un acabado impecable.',
     manicuraNote: '<strong>Nota:</strong> Reserva tu cita en Booksy para consultar disponibilidad.',
@@ -52,7 +54,9 @@ const translations = {
       hands: 'Hand Nails',
       feet: 'Foot Nails',
       browsLashes: 'Brows & Lashes',
-      massages: 'Massages'
+      massages: 'Massages',
+      woodTherapy: 'Wood Therapy',
+      woodTherapyPackages: 'Wood Therapy Packages'
     },
     manicuraIntro: 'Discover our beauty services, where every detail matters. We use high-quality products to ensure long-lasting results and a flawless finish.',
     manicuraNote: '<strong>Note:</strong> Book your appointment on Booksy to check availability.',

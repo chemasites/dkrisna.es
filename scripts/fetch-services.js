@@ -22,7 +22,9 @@ const CATEGORY_TRANSLATIONS = {
   hands: { es: 'Uñas de las Manos', en: 'Hand Nails' },
   feet: { es: 'Uñas de los Pies', en: 'Foot Nails' },
   brows_lashes: { es: 'Cejas y Pestañas', en: 'Brows & Lashes' },
-  massages: { es: 'Masajes', en: 'Massages' }
+  massages: { es: 'Masajes', en: 'Massages' },
+  wood_therapy: { es: 'Maderoterapia', en: 'Wood Therapy' },
+  wood_therapy_packages: { es: 'Bonos Maderoterapia', en: 'Wood Therapy Packages' }
 };
 
 async function launchBrowser() {
@@ -281,6 +283,10 @@ function getCategoryId(categoryName) {
     return 'brows_lashes';
   } else if (nameLower.includes('masaje') || nameLower.includes('massage')) {
     return 'massages';
+  } else if (nameLower.includes('bono') && nameLower.includes('maderoterapia')) {
+    return 'wood_therapy_packages';
+  } else if (nameLower.includes('maderoterapia')) {
+    return 'wood_therapy';
   }
   return null;
 }
@@ -323,7 +329,7 @@ function transformToJSON(rawServices) {
   });
 
   // Sort categories in preferred order
-  const categoryOrder = ['hands', 'feet', 'brows_lashes', 'massages'];
+  const categoryOrder = ['hands', 'feet', 'brows_lashes', 'massages', 'wood_therapy', 'wood_therapy_packages'];
   categorizedServices.sort((a, b) => categoryOrder.indexOf(a.id) - categoryOrder.indexOf(b.id));
 
   return {
