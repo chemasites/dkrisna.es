@@ -1,5 +1,5 @@
 .idea/
 .vscode/
-.claude/
+.claude/settings.local.json
 public/
 static/processed_images/
