@@ -133,6 +133,29 @@
     </div>
 </section>
 
+<!-- Gallery -->
+{% set gallery_data = load_data(path="static/data/gallery.json") %}
+{% if gallery_data.images | length > 0 %}
+<section id="galeria" class="section gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ trans(key="gallery_label", lang=lang) }}</span>
+            <h2 class="section-title">{{ trans(key="gallery_title", lang=lang) }}</h2>
+            <p class="section-subtitle">{{ trans(key="gallery_subtitle", lang=lang) }}</p>
+        </div>
+        <div class="gallery-grid">
+            {% for image in gallery_data.images %}
+            <div class="gallery-item">
+                <img src="{{ image.src }}"
+                     alt="D'Krisna - {% if lang == 'en' %}Work sample{% else %}Muestra de trabajo{% endif %} {{ loop.index }}"
+                     width="400" height="400" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
 <!-- About Preview -->
 <section class="section about-preview">
     <div class="container">

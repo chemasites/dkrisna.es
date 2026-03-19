@@ -1,0 +1,10 @@
+{
+  "images": [
+    { "src": "/images/gallery/gallery-01.jpg" },
+    { "src": "/images/gallery/gallery-02.jpg" },
+    { "src": "/images/gallery/gallery-03.jpg" },
+    { "src": "/images/gallery/gallery-04.jpg" }
+  ],
+  "contentHash": "3cecb6b85331a8a7",
+  "fetchedAt": "2026-03-19T08:50:38.253Z"
+}
