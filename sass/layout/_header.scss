@@ -122,13 +122,15 @@
         border-bottom: 1px solid rgba($color-dark, 0.08);
     }
 
-    li {
+    > li {
+        position: relative;
+
         @media (max-width: $breakpoint-lg) {
             border-top: 1px solid rgba($color-dark, 0.08);
         }
     }
 
-    a {
+    > li > a {
         font-size: 0.9375rem;
         font-weight: 400;
         letter-spacing: 0.3px;
@@ -136,9 +138,12 @@
         text-decoration: none;
         padding: $spacing-xs 0;
         position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
 
         @media (max-width: $breakpoint-lg) {
-            display: block;
+            display: flex;
             font-size: 1.125rem;
             font-weight: 500;
             color: $color-dark;
@@ -179,6 +184,109 @@
             &::after {
                 width: 100%;
             }
+        }
+    }
+}
+
+// Dropdown arrow
+.dropdown-arrow {
+    transition: transform 0.25s ease;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+// Desktop dropdown
+.has-dropdown {
+    @media (min-width: $breakpoint-lg + 1) {
+        &:hover .dropdown,
+        &:focus-within .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    // Desktop: floating panel
+    @media (min-width: $breakpoint-lg + 1) {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 200px;
+        background: $color-white;
+        border-radius: $border-radius-sm;
+        box-shadow: $shadow-lg;
+        padding: $spacing-xs 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease, visibility 0.15s ease;
+        z-index: 1010;
+
+        // Invisible bridge so hover doesn't break when moving to dropdown
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+
+        li a {
+            display: block;
+            padding: $spacing-xs + $spacing-xxs $spacing-sm;
+            font-size: 0.875rem;
+            color: $color-text;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.15s ease;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    // Mobile: accordion sub-items
+    @media (max-width: $breakpoint-lg) {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: rgba($color-dark, 0.02);
+
+        li a {
+            display: block;
+            padding: $spacing-xs $spacing-md;
+            padding-left: $spacing-md + $spacing-sm;
+            font-size: 0.9375rem;
+            color: $color-text;
+            text-decoration: none;
+            transition: background-color 0.15s ease, color 0.15s ease;
+            border-top: 1px solid rgba($color-dark, 0.05);
+
+            &:hover {
+                background: rgba($color-primary, 0.06);
+                color: $color-primary-dark;
+            }
+        }
+    }
+}
+
+// Mobile: expand dropdown when parent is open
+@media (max-width: $breakpoint-lg) {
+    .has-dropdown.open {
+        .dropdown {
+            max-height: 300px;
+        }
+
+        > a .dropdown-arrow {
+            transform: rotate(180deg);
+            opacity: 1;
         }
     }
 }

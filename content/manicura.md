@@ -5,6 +5,6 @@ template = "services.html"
 
 [extra]
 show_cta = true
-category_filter = ["hands", "feet", "brows_lashes"]
+category_filter = ["manos", "pies", "cejas-pestanas"]
 services_note_key = "services_note_manicura"
 +++

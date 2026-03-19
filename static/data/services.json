@@ -1,7 +1,7 @@
 {
   "categories": [
     {
-      "id": "hands",
+      "id": "manos",
       "name": {
         "es": "Uñas de las Manos",
         "en": "Hand Nails"
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "id": "feet",
+      "id": "pies",
       "name": {
         "es": "Uñas de los Pies",
         "en": "Foot Nails"
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "id": "brows_lashes",
+      "id": "cejas-pestanas",
       "name": {
         "es": "Cejas y Pestañas",
         "en": "Brows & Lashes"
@@ -188,7 +188,7 @@
       ]
     },
     {
-      "id": "massages",
+      "id": "masajes",
       "name": {
         "es": "Masajes",
         "en": "Massages"
@@ -221,7 +221,7 @@
       ]
     },
     {
-      "id": "wood_therapy",
+      "id": "maderoterapia",
       "name": {
         "es": "Maderoterapia",
         "en": "Wood Therapy"
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "id": "wood_therapy_packages",
+      "id": "bonos-maderoterapia",
       "name": {
         "es": "Bonos Maderoterapia",
         "en": "Wood Therapy Packages"

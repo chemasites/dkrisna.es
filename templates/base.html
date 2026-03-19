@@ -308,9 +308,20 @@
                     body.classList.toggle('menu-open');
                 });
 
-                // Close menu when clicking a link
+                // Close menu when clicking a nav link (but not dropdown parent links on mobile)
                 nav.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
+                    link.addEventListener('click', function(e) {
+                        // On mobile, toggle dropdown instead of navigating
+                        const parentLi = this.closest('.has-dropdown');
+                        if (parentLi && this === parentLi.querySelector(':scope > a') && window.innerWidth <= 992) {
+                            e.preventDefault();
+                            parentLi.classList.toggle('open');
+                            return;
+                        }
+                        closeMenu();
+                        // Close any open dropdowns
+                        document.querySelectorAll('.has-dropdown.open').forEach(d => d.classList.remove('open'));
+                    });
                 });
             }
 

@@ -93,7 +93,7 @@ describe('createReviewsContentHash', () => {
 describe('createServicesContentHash', () => {
   const sampleCategories = [
     {
-      id: 'hands',
+      id: 'manos',
       name: { es: 'Uñas de las Manos', en: 'Hand Nails' },
       services: [
         { name: 'Manicura', price: '15,00 €', duration: '30 min' }
@@ -159,7 +159,7 @@ describe('createServicesContentHash', () => {
     const changed = [
       ...sampleCategories,
       {
-        id: 'feet',
+        id: 'pies',
         name: { es: 'Uñas de los Pies', en: 'Foot Nails' },
         services: []
       }
