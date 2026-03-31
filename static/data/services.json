@@ -155,7 +155,7 @@
         },
         {
           "name": "Lifting De Pestañas",
-          "price": "12,00 €",
+          "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora",
           "description": "Curvatura y elevación natural de las pestañas para una mirada abierta.",
@@ -335,6 +335,6 @@
       ]
     }
   ],
-  "contentHash": "6f091417689d213b",
-  "fetchedAt": "2026-03-20T03:50:18.320Z"
+  "contentHash": "f877310cfe1b7d18",
+  "fetchedAt": "2026-03-31T04:01:14.392Z"
 }
