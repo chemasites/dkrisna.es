@@ -12,55 +12,55 @@
           "price": "2,00 €",
           "originalPrice": null,
           "duration": "20 min",
-          "description": "Specific nail touch-up with semi-permanent polish",
+          "description": "Quick fix for a single nail with semi-permanent polish",
           "variantId": 2038814
         },
         {
-          "name": "Single Nail (EXTENSION)",
+          "name": "Acrylic and Gel Fill",
           "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Reconstruction of an acrylic or gel nail",
+          "description": "Maintenance of acrylic and gel nails, correcting growth",
           "variantId": 2086719
         },
         {
-          "name": "Traditional Cleaning & Polish (Hands)",
+          "name": "Single Nail (EXTENSION)",
           "price": "3,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Nail cleaning, filing, cuticle care, and classic polish.",
+          "description": "Reconstruction of a single acrylic or gel nail",
           "variantId": 2120720
         },
         {
-          "name": "Semi-Permanent Removal",
+          "name": "Classic Manicure (Hands)",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Safe removal of semi-permanent polish without damaging natural nails.",
+          "description": "Nail cleaning, filing, cuticle care, and classic polish",
           "variantId": 2016866
         },
         {
-          "name": "Acrylic Removal",
+          "name": "Semi-Permanent Polish Removal",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Professional removal of acrylic nails while preserving natural nail health.",
+          "description": "Safe removal of semi-permanent polish without damaging natural nails",
           "variantId": 2053132
         },
         {
-          "name": "Semi-Permanent Nails with Dipping",
+          "name": "Acrylic Nail Removal",
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Gel system with hardening powder providing increased resistance and durability.",
+          "description": "Professional removal of acrylic nails while caring for natural nails",
           "variantId": 2053130
         },
         {
-          "name": "Acrylic and Gel Refill",
+          "name": "Semi-Permanent Nails with Dipping",
           "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Maintenance of acrylic and gel nails, correcting nail growth.",
+          "description": "Gel system combined with hardening powder for enhanced durability and longevity",
           "variantId": 2016863
         },
         {
@@ -68,23 +68,23 @@
           "price": "25,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Extension and sculpting with acrylic for resistant and personalized nails.",
+          "description": "Extension and sculpting with acrylic for durable, customized nails",
           "variantId": 2016865
         },
         {
-          "name": "Softgel Nails",
+          "name": "Soft Gel Nails",
           "price": "29,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Extensions with soft gel, lightweight, flexible, with a natural finish.",
+          "description": "Lightweight, flexible soft gel extensions with a natural finish",
           "variantId": 2029570
         },
         {
-          "name": "Polygel Nails",
+          "name": "PolyGel Nails",
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Hybrid system between acrylic and gel, resistant with a natural appearance.",
+          "description": "Hybrid system between acrylic and gel, durable with a natural appearance",
           "variantId": 2029571
         }
       ]
@@ -97,27 +97,27 @@
       },
       "services": [
         {
-          "name": "Dry Pedicure + Traditional Polish",
-          "price": "18,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Cuticle cleaning + polish with traditional nail polish without water",
-          "variantId": 2016864
-        },
-        {
           "name": "Dry Pedicure + Semi-Permanent",
           "price": "21,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Cuticle cleaning + gel polish without water",
+          "description": "Cuticle cleaning plus gel polish without water",
           "variantId": 2120763
         },
         {
-          "name": "Spa Pedicure + Traditional Polish",
+          "name": "Dry Pedicure + Classic Polish",
+          "price": "18,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Cuticle cleaning plus traditional polish without water",
+          "variantId": 2016864
+        },
+        {
+          "name": "Spa Pedicure + Classic Polish",
           "price": "23,00 €",
           "originalPrice": null,
           "duration": "1 hora 15 min",
-          "description": "Relaxing treatment with exfoliation, hydration, deep cleaning, and classic polish",
+          "description": "Relaxing treatment with exfoliation, hydration, deep cleansing, and classic polish",
           "variantId": 2066537
         },
         {
@@ -125,7 +125,7 @@
           "price": "26,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Exfoliation, callus and hardness removal, deep cleaning, and long-lasting semi-permanent polish.",
+          "description": "Exfoliation, callus and hardness removal, deep cleansing, and long-lasting semi-permanent polish",
           "variantId": 2016871
         }
       ]
@@ -138,51 +138,43 @@
       },
       "services": [
         {
-          "name": "Mustache and Eyebrow Hair Removal",
+          "name": "Upper Lip and Eyebrow Waxing",
           "price": "4,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Hair removal with razor blade, design and facial contour cleaning for a harmonious finish",
+          "description": "Blade waxing with eyebrow design and facial contour cleaning for a harmonious finish",
           "variantId": 2120923
         },
         {
-          "name": "Lash Removal + Facial Massage",
+          "name": "Lash Extension Removal + Facial Massage",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Extension removal without damaging natural lashes and relaxing facial massage.",
+          "description": "Safe removal of lash extensions without damaging natural lashes, plus relaxing facial massage",
           "variantId": 2120922
         },
         {
-          "name": "Lash Lifting",
-          "price": "12,00 €",
+          "name": "Lash Lift",
+          "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Natural lash curving and elevation for an open gaze.",
+          "description": "Natural curl and lift of lashes for an open, lifted look",
           "variantId": 2016868
         },
         {
-          "name": "Eyebrow Lamination",
+          "name": "Brow Lamination",
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Hair alignment and fixation for more defined eyebrows.",
+          "description": "Hair alignment and fixing for more defined eyebrows",
           "variantId": 2016869
         },
         {
-          "name": "Eyebrow Lamination + Pigmentation",
-          "price": "18,00 €",
+          "name": "Individual Lash Extensions",
+          "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Design, fixation, and color for more intense eyebrows.",
-          "variantId": 2103191
-        },
-        {
-          "name": "Point-by-Point Lashes",
-          "price": "18,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Personalized extension application for a natural effect.",
+          "description": "Personalized application of lash extensions for a natural effect",
           "variantId": 2016870
         }
       ]
@@ -195,19 +187,11 @@
       },
       "services": [
         {
-          "name": "KOBIDO Facial Lifting",
-          "price": "40,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Naturally eliminates expression lines without injections or painful treatments.",
-          "variantId": 2291300
-        },
-        {
-          "name": "Relaxing Massages",
+          "name": "Relaxation Massage",
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "Gentle body massage with natural oils, alleviating stress and promoting well-being.",
+          "description": "Gentle full-body massage with natural oils that relieves stress and promotes wellness",
           "variantId": 2291441
         },
         {
@@ -215,12 +199,19 @@
           "price": "40,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "Deep massage with hot stones that relaxes muscles and reduces tension.",
+          "description": "Deep massage with hot stones that relaxes muscles and reduces tension",
           "variantId": 2291447
+        },
+        {
+          "name": "Acupuncture for Back Pain",
+          "price": "30,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Relieves tension, reduces pain, and improves your wellness with a natural and effective technique. Treatment focused on relaxing muscles and restoring balance to your body. Feel the relief from the first session! ✨",
+          "variantId": 2487076
         }
       ]
-    }
-    ,
+    },
     {
       "id": "maderoterapia",
       "name": {
@@ -229,27 +220,19 @@
       },
       "services": [
         {
-          "name": "Facial Wood Therapy + Phototherapy",
-          "price": "40,00 €",
-          "originalPrice": null,
-          "duration": "1 hora 20 min",
-          "description": "Firms, redefines and illuminates your face with facial wood therapy + phototherapy. Stimulates collagen, improves firmness, softens expression lines and enhances skin radiance while therapeutic light helps even out tone and improve texture. A more toned, fresh and radiant face from the very first sessions.",
-          "variantId": 2431110
-        },
-        {
-          "name": "Leg & Glute Wood Therapy",
+          "name": "Wood Therapy - Legs and Glutes",
           "price": "45,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Transform your legs and glutes with wood therapy. Reduces cellulite, firms the skin and visibly improves stretch marks while naturally reshaping your figure. Firmer, smoother and more even skin from the very first sessions.",
+          "description": "Transform your legs and glutes with wood therapy. Reduce cellulite, firm skin, and visibly improve stretch marks while naturally reshaping your figure. Firmer, smoother, more even skin from the first sessions.",
           "variantId": 2431072
         },
         {
-          "name": "Abdomen, Waist & Arms Wood Therapy",
+          "name": "Wood Therapy - Abdomen, Waist and Arms",
           "price": "45,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Define your abdomen, slim your waist and firm your arms with wood therapy. Helps reduce localized fat, improves skin firmness and smooths the appearance of stretch marks, achieving a more sculpted and even silhouette from the very first sessions.",
+          "description": "Define your abdomen, streamline your waist, and firm your arms with wood therapy. Helps reduce localized fat, improves skin firmness, and softens the appearance of stretch marks, achieving a more sculpted and even silhouette from the first sessions.",
           "variantId": 2431093
         },
         {
@@ -257,7 +240,7 @@
           "price": "50,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "Shape, firm and redefine your body with full body wood therapy. Activates circulation, helps reduce cellulite and localized fat, improves skin firmness and helps smooth the appearance of stretch marks. Visible results that enhance your silhouette from the very first sessions.",
+          "description": "Sculpt, firm, and redefine your body with full body wood therapy. Activates circulation, helps reduce cellulite and localized fat, improves skin firmness, and helps soften the appearance of stretch marks. Visible results that enhance your silhouette from the first sessions.",
           "variantId": 2431138
         }
       ]
@@ -270,72 +253,73 @@
       },
       "services": [
         {
-          "name": "6 Sessions: Facial Wood Therapy + Phototherapy",
+          "name": "6 Sessions Facial Wood Therapy + Phototherapy",
           "price": "210,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "6 sessions of facial wood therapy with phototherapy included. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "description": "6 sessions of facial wood therapy plus included phototherapy. Service performed once weekly over 5 weeks (first and second sessions in week one)",
           "variantId": 2431689
         },
         {
-          "name": "10 Sessions: Facial Wood Therapy + Phototherapy",
+          "name": "10 Sessions Facial Wood Therapy + Phototherapy",
           "price": "330,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "10 sessions of facial wood therapy with phototherapy included. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "description": "10 sessions of facial wood therapy with included phototherapy. Service performed once weekly over 9 weeks (first and second sessions in week one)",
           "variantId": 2431704
         },
         {
-          "name": "6 Sessions: Leg & Glute Wood Therapy",
+          "name": "6 Sessions Wood Therapy - Legs and Glutes",
           "price": "260,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "6 sessions of leg and glute wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "description": "6 sessions of legs and glutes wood therapy. Service performed once weekly over 5 weeks (first and second sessions in week one)",
           "variantId": 2431158
         },
         {
-          "name": "10 Sessions: Leg & Glute Wood Therapy",
+          "name": "10 Sessions Wood Therapy - Legs and Glutes",
           "price": "400,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "10 sessions of leg and glute wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "description": "10 sessions of legs and glutes wood therapy. Service performed once weekly over 9 weeks (first and second sessions in week one)",
           "variantId": 2431661
         },
         {
-          "name": "6 Sessions: Abdomen, Waist & Arms",
+          "name": "6 Sessions - Abdomen, Waist and Arms",
           "price": "260,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "6 sessions of abdomen, waist and arms wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "description": "6 sessions of wood therapy for abdomen, waist, and arms. Service performed once weekly over 5 weeks (first and second sessions in week one)",
           "variantId": 2431667
         },
         {
-          "name": "10 Sessions: Abdomen, Arms & Waist",
+          "name": "10 Sessions - Abdomen, Arms and Waist",
           "price": "400,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "10 sessions of abdomen, waist and arms wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "description": "10 sessions of wood therapy for abdomen, waist, and arms. Service performed once weekly over 9 weeks (first and second sessions in week one)",
           "variantId": 2431684
         },
         {
-          "name": "6 Sessions: Full Body Wood Therapy",
+          "name": "6 Sessions Full Body Wood Therapy",
           "price": "270,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "6 sessions of full body wood therapy. Sessions are scheduled once a week over 5 weeks (the first and second sessions are held in the first week).",
+          "description": "6 sessions of full body wood therapy. Service performed once weekly over 5 weeks (first and second sessions in week one)",
           "variantId": 2431714
         },
         {
-          "name": "10 Sessions: Full Body Wood Therapy",
+          "name": "10 Sessions Full Body Wood Therapy",
           "price": "430,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "10 sessions of full body wood therapy. Sessions are scheduled once a week over 9 weeks (the first and second sessions are held in the first week).",
+          "description": "10 sessions of full body wood therapy. Service performed once weekly over 9 weeks (first and second sessions in week one)",
           "variantId": 2431722
         }
       ]
     }
   ],
-  "fetchedAt": "2026-03-19T08:06:08.724Z",
-  "sourceHash": "a763a814aaf800d3"
+  "contentHash": "4893e7447ea9e9e2",
+  "fetchedAt": "2026-04-08T06:34:14.629Z",
+  "sourceHash": "369ef0c3204a18a2"
 }

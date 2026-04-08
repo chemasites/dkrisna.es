@@ -170,16 +170,8 @@
           "variantId": 2016869
         },
         {
-          "name": "Laminado De Cejas + Pigmentación",
-          "price": "18,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Diseño, fijación y color para cejas con mayor intensidad.",
-          "variantId": 2103191
-        },
-        {
           "name": "Pestañas Punto Por Punto",
-          "price": "18,00 €",
+          "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora",
           "description": "Aplicación personalizada de extensiones para un efecto natural.",
@@ -195,14 +187,6 @@
       },
       "services": [
         {
-          "name": "KOBIDO lifting Facial",
-          "price": "40,00 €",
-          "originalPrice": null,
-          "duration": "1 hora",
-          "description": "Elimina las líneas de expresión de forma natural, sin inyecciones ni tratamientos dolorosos.",
-          "variantId": 2291300
-        },
-        {
           "name": "Masajes Relajantes",
           "price": "30,00 €",
           "originalPrice": null,
@@ -217,6 +201,14 @@
           "duration": "1 hora 20 min",
           "description": "Masaje profundo con piedras calientes que relaja músculos y reduce tensiones.",
           "variantId": 2291447
+        },
+        {
+          "name": "ACUPUNTURA PARA EL DOLOR DE ESPALDA",
+          "price": "30,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Alivia tensiones, reduce el dolor y mejora tu bienestar con una técnica natural y efectiva. Tratamiento enfocado en relajar la musculatura y devolverle equilibrio a tu cuerpo. ¡Siente el alivio desde la primera sesión! ✨",
+          "variantId": 2487076
         }
       ]
     },
@@ -227,14 +219,6 @@
         "en": "Wood Therapy"
       },
       "services": [
-        {
-          "name": "Maderoterapia Facial + Fototerapia",
-          "price": "40,00 €",
-          "originalPrice": null,
-          "duration": "1 hora 20 min",
-          "description": "Reafirma, redefine e ilumina tu rostro con maderoterapia facial + fototerapia\n\nEstimula el colágeno, mejora la firmeza, suaviza líneas de expresión y potencia la luminosidad de la piel mientras la luz terapéutica ayuda a unificar el tono y mejorar su textura. Un rostro más tonificado, fresco y radiante desde las primeras sesiones.",
-          "variantId": 2431110
-        },
         {
           "name": "Maderoterapia De Piernas Y Glúteos",
           "price": "45,00 €",
@@ -335,6 +319,6 @@
       ]
     }
   ],
-  "contentHash": "f877310cfe1b7d18",
-  "fetchedAt": "2026-03-31T04:01:14.392Z"
+  "contentHash": "4893e7447ea9e9e2",
+  "fetchedAt": "2026-04-08T06:34:14.629Z"
 }
