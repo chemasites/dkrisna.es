@@ -116,7 +116,7 @@
           "name": "Pedicura Spa + Esmaltado Tradicional",
           "price": "23,00 €",
           "originalPrice": null,
-          "duration": "1 hora 15 min",
+          "duration": "1 hora 30 min",
           "description": "Tratamiento relajante con exfoliación, hidratación, limpieza profunda y esmaltado clásico",
           "variantId": 2066537
         },
@@ -124,7 +124,7 @@
           "name": "Pedicura spa + Semi",
           "price": "26,00 €",
           "originalPrice": null,
-          "duration": "1 hora 30 min",
+          "duration": "1 hora 45 min",
           "description": "Exfoliación, retirar cayos y durezas, limpiza profudidad y esmaltado con esmalte semipermanente de larga duración.",
           "variantId": 2016871
         }
@@ -319,6 +319,6 @@
       ]
     }
   ],
-  "contentHash": "4893e7447ea9e9e2",
-  "fetchedAt": "2026-04-08T06:34:14.629Z"
+  "contentHash": "80e725da1bd0ddc4",
+  "fetchedAt": "2026-04-11T03:53:36.558Z"
 }
