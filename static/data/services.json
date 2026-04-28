@@ -16,20 +16,20 @@
           "variantId": 2038814
         },
         {
-          "name": "Relleno De Acrílico Y Gel",
-          "price": "20,00 €",
-          "originalPrice": null,
-          "duration": "1 hora 30 min",
-          "description": "Mantenimiento de uñas acrílicas y gel corrigiendo el crecimiento.",
-          "variantId": 2086719
-        },
-        {
           "name": "Una Uña (EXTENSIÓN)",
           "price": "3,00 €",
           "originalPrice": null,
           "duration": "30 min",
           "description": "Reconstrucción de una uña acrílica o de gel",
           "variantId": 2120720
+        },
+        {
+          "name": "Relleno De Acrílico Y Gel",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 30 min",
+          "description": "Mantenimiento de uñas acrílicas y gel corrigiendo el crecimiento.",
+          "variantId": 2086719
         },
         {
           "name": "Limpieza Y Esmaltado Tradicional (Manos)",
@@ -319,6 +319,6 @@
       ]
     }
   ],
-  "contentHash": "80e725da1bd0ddc4",
-  "fetchedAt": "2026-04-11T03:53:36.558Z"
+  "contentHash": "1ff8a6e78cc1f966",
+  "fetchedAt": "2026-04-28T04:19:17.462Z"
 }
