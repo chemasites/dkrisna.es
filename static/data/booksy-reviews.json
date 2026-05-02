@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 20,
+  "reviewCount": 21,
   "reviews": [
+    {
+      "name": "Minerva G.",
+      "text": "Muy contenta. Las uñas preciosas. También me he echo las pestañas y están muy bien",
+      "service": "Depilación De Bozo Y Cejas",
+      "date": "may. 1, 2026",
+      "rating": 5
+    },
     {
       "name": "María M.",
       "text": "Súper contenta! Tratan genial las uñas.",
@@ -64,15 +71,8 @@
       "service": "Pestañas Punto Por Punto",
       "date": "ago. 24, 2025",
       "rating": 5
-    },
-    {
-      "name": "Ana Olid M.",
-      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables ❤️",
-      "service": "Relleno De Acrílico",
-      "date": "ago. 15, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "5cf27495e5a8305c",
-  "fetchedAt": "2026-03-17T03:04:34.398Z"
+  "contentHash": "8ee7f2636df58b82",
+  "fetchedAt": "2026-05-02T03:10:53.924Z"
 }
