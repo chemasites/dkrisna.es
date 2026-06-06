@@ -14,8 +14,36 @@ const CONFIG = {
   waitForContent: 5000
 };
 
+// Realistic desktop Chrome UA — default Playwright UA contains "HeadlessChrome",
+// which Booksy's bot detection (hCaptcha) flags on CI runners, returning a page
+// without embedded __NUXT__ data.
+const USER_AGENT =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
+  '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+
 async function launchBrowser() {
-  return chromium.launch({ headless: true });
+  return chromium.launch({
+    headless: true,
+    args: [
+      '--disable-blink-features=AutomationControlled',
+      '--no-sandbox',
+      '--disable-dev-shm-usage'
+    ]
+  });
+}
+
+async function newStealthPage(browser) {
+  const context = await browser.newContext({
+    userAgent: USER_AGENT,
+    locale: 'es-ES',
+    timezoneId: 'Europe/Madrid',
+    viewport: { width: 1366, height: 900 },
+    extraHTTPHeaders: { 'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8' }
+  });
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+  });
+  return context.newPage();
 }
 
 async function extractReviewsFromPage(page) {
@@ -157,7 +185,7 @@ async function fetchReviewsFromBooksy() {
   const browser = await launchBrowser();
 
   try {
-    const page = await browser.newPage();
+    const page = await newStealthPage(browser);
     console.log(`Navigating to ${CONFIG.booksyUrl}...`);
 
     // Navigate and wait for DOM to be ready
