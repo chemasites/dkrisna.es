@@ -178,6 +178,7 @@ export function generateManicuraHTML(categories, options = {}) {
   const categoryMap = categorizeNailServices(categories, lang);
 
   let html = `<div class="services-full">
+<p class="services-intro">${t.manicuraIntro}</p>
 `;
 
   for (const [categoryName, categoryServices] of Object.entries(categoryMap)) {
@@ -218,6 +219,7 @@ export function generateMasajesHTML(categories, options = {}) {
   const massageServices = extractMassageServices(categories);
 
   let html = `<div class="services-full">
+<p class="services-intro">${t.masajesIntro}</p>
 <h2 class="services-category-title">${t.categories.massages}</h2>
 <div class="services-list">
 `;
