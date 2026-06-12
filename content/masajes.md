@@ -5,6 +5,6 @@ template = "services.html"
 
 [extra]
 show_cta = true
-category_filter = ["masajes", "maderoterapia", "bonos-maderoterapia"]
+category_filter = ["masajes", "faciales", "maderoterapia", "bonos-maderoterapia"]
 services_note_key = "services_note_masajes"
 +++

@@ -36,7 +36,7 @@
                     </a>
                     <ul class="dropdown">
                         {% for category in services_data.categories %}
-                            {% if category.id in ["masajes", "maderoterapia", "bonos-maderoterapia"] %}
+                            {% if category.id in ["masajes", "faciales", "maderoterapia", "bonos-maderoterapia"] %}
                             <li>
                                 <a href="{% if lang == 'en' %}/en/masajes/#{{ category.id }}{% else %}/masajes/#{{ category.id }}{% endif %}">
                                     {% if lang == "en" %}{{ category.name.en }}{% else %}{{ category.name.es }}{% endif %}

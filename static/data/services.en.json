@@ -213,6 +213,39 @@
       ]
     },
     {
+      "id": "faciales",
+      "name": {
+        "es": "Tratamientos Faciales",
+        "en": "Facial Treatments"
+      },
+      "services": [
+        {
+          "name": "KOBIDO Lifting Facial",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Naturally smooths away expression lines, with no injections or painful treatments.",
+          "variantId": 2291300
+        },
+        {
+          "name": "Facial Wood Therapy + Phototherapy",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Firm, redefine and brighten your face with facial wood therapy + phototherapy\n\nStimulates collagen, improves firmness, softens expression lines and boosts skin radiance while therapeutic light helps even out tone and improve texture. A more toned, fresh and radiant face from the very first sessions.",
+          "variantId": 2431110
+        },
+        {
+          "name": "Facial Cleansing",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Renew your skin, remove impurities and reveal a radiant face from the first session. Includes steaming and phototherapy for more complete care. Clean, fresh and luminous skin instantly! 💆‍♀️✨",
+          "variantId": 2487057
+        }
+      ]
+    },
+    {
       "id": "maderoterapia",
       "name": {
         "es": "Maderoterapia",
@@ -319,7 +352,7 @@
       ]
     }
   ],
-  "contentHash": "4893e7447ea9e9e2",
-  "fetchedAt": "2026-04-08T06:34:14.629Z",
-  "sourceHash": "369ef0c3204a18a2"
+  "contentHash": "117dd3010fca9987",
+  "fetchedAt": "2026-06-12T07:18:18.926Z",
+  "sourceHash": "4a4f07f808ded26a"
 }

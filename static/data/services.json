@@ -213,6 +213,39 @@
       ]
     },
     {
+      "id": "faciales",
+      "name": {
+        "es": "Tratamientos Faciales",
+        "en": "Facial Treatments"
+      },
+      "services": [
+        {
+          "name": "KOBIDO lifting Facial",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Elimina las líneas de expresión de forma natural, sin inyecciones ni tratamientos dolorosos.",
+          "variantId": 2291300
+        },
+        {
+          "name": "Maderoterapia Facial + Fototerapia",
+          "price": "40,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "Reafirma, redefine e ilumina tu rostro con maderoterapia facial + fototerapia\n\nEstimula el colágeno, mejora la firmeza, suaviza líneas de expresión y potencia la luminosidad de la piel mientras la luz terapéutica ayuda a unificar el tono y mejorar su textura. Un rostro más tonificado, fresco y radiante desde las primeras sesiones.",
+          "variantId": 2431110
+        },
+        {
+          "name": "LIMPIEZA FACIAL",
+          "price": "20,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Renueva tu piel, elimina impurezas y luce un rostro radiante desde la primera sesión. Incluye vaporización y fototerapia para un cuidado más completo. ¡Piel limpia, fresca y luminosa al instante! 💆‍♀️✨",
+          "variantId": 2487057
+        }
+      ]
+    },
+    {
       "id": "maderoterapia",
       "name": {
         "es": "Maderoterapia",
@@ -319,6 +352,6 @@
       ]
     }
   ],
-  "contentHash": "1ff8a6e78cc1f966",
-  "fetchedAt": "2026-04-28T04:19:17.462Z"
+  "contentHash": "117dd3010fca9987",
+  "fetchedAt": "2026-06-12T07:18:18.926Z"
 }

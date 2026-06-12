@@ -20,6 +20,7 @@ const CATEGORY_TRANSLATIONS = {
   pies: { es: 'Uñas de los Pies', en: 'Foot Nails' },
   'cejas-pestanas': { es: 'Cejas y Pestañas', en: 'Brows & Lashes' },
   masajes: { es: 'Masajes', en: 'Massages' },
+  faciales: { es: 'Tratamientos Faciales', en: 'Facial Treatments' },
   maderoterapia: { es: 'Maderoterapia', en: 'Wood Therapy' },
   'bonos-maderoterapia': { es: 'Bonos Maderoterapia', en: 'Wood Therapy Packages' }
 };
@@ -134,6 +135,8 @@ function getCategoryId(categoryName) {
     return 'pies';
   } else if (nameLower.includes('ceja') || nameLower.includes('pestaña')) {
     return 'cejas-pestanas';
+  } else if (nameLower.includes('facial')) {
+    return 'faciales';
   } else if (nameLower.includes('masaje') || nameLower.includes('massage')) {
     return 'masajes';
   } else if (nameLower.includes('bono') && nameLower.includes('maderoterapia')) {
@@ -182,7 +185,7 @@ function transformToJSON(rawServices) {
   });
 
   // Sort categories in preferred order
-  const categoryOrder = ['manos', 'pies', 'cejas-pestanas', 'masajes', 'maderoterapia', 'bonos-maderoterapia'];
+  const categoryOrder = ['manos', 'pies', 'cejas-pestanas', 'masajes', 'faciales', 'maderoterapia', 'bonos-maderoterapia'];
   categorizedServices.sort((a, b) => categoryOrder.indexOf(a.id) - categoryOrder.indexOf(b.id));
 
   return {
