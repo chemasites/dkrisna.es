@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 21,
+  "reviewCount": 22,
   "reviews": [
+    {
+      "name": "Marta S.",
+      "text": "Excelente trato, trabajo y profesionalismo",
+      "service": "Uñas acrílicas",
+      "date": "jun. 11, 2026",
+      "rating": 5
+    },
     {
       "name": "Minerva G.",
       "text": "Muy contenta. Las uñas preciosas. También me he echo las pestañas y están muy bien",
@@ -64,15 +71,8 @@
       "service": "Uñas Poligel",
       "date": "ago. 27, 2025",
       "rating": 5
-    },
-    {
-      "name": "cristina f.",
-      "text": "Excelente servicio , y las chicas super amables",
-      "service": "Pestañas Punto Por Punto",
-      "date": "ago. 24, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "8ee7f2636df58b82",
-  "fetchedAt": "2026-05-02T03:10:53.924Z"
+  "contentHash": "20d7900462c89230",
+  "fetchedAt": "2026-06-12T03:15:26.463Z"
 }
