@@ -71,8 +71,78 @@
       "service": "Uñas Poligel",
       "date": "ago. 27, 2025",
       "rating": 5
+    },
+    {
+      "name": "cristina f.",
+      "text": "Excelente servicio , y las chicas super amables",
+      "service": "Pestañas Punto Por Punto",
+      "date": "ago. 24, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Ana Olid M.",
+      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables ❤️",
+      "service": "Relleno De Acrílico",
+      "date": "ago. 15, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Eva Sánchez L.",
+      "text": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
+      "service": "Retiro De Semipermanente",
+      "date": "ago. 12, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Eva E.",
+      "text": "Muy profesional Nazareth. Era la primera vez que iba y me ha encantado, volveré sin duda para mi pedicura y manicura con ella",
+      "service": "Pedicura spa",
+      "date": "jul. 14, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Cayi19-07 L.",
+      "text": "Tuve una experiencia maravillosa con Nazareth. Me realizó un trabajo impecable tanto en las uñas como en las pestañas. Las uñas quedaron espectaculares, con un acabado prolijo y de excelente calidad. En cuanto a las pestañas, cada punto fue colocado con una precisión admirable, demostrando su dedicación y profesionalismo.",
+      "service": "Pestañas Punto Por Punto",
+      "date": "jun. 30, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Shauanny M.",
+      "text": "Muy lindo ,me encantó ,toda una profesional\nNo encontraba a nadie que me hiciera tan bien ,limar ,masajes y otras cosas más .volveré 100%",
+      "service": "",
+      "date": "jun. 17, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Si S.",
+      "text": "Muy amables, me hicieron las uñas exactamente como yo quería y con el máximo cuidado y detalle",
+      "service": "",
+      "date": "jun. 17, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Cayi19-07 L.",
+      "text": "Buen trabajo,lo recomiendo 💯*💯",
+      "service": "",
+      "date": "jun. 16, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Irene V.",
+      "text": "Las uñas las deja perfectas, hace el trabajo con mucho cuidado y esmero. El ambiente es inmejorable. He repetido un par de veces y serán muchas más.",
+      "service": "",
+      "date": "jun. 9, 2025",
+      "rating": 5
+    },
+    {
+      "name": "Lorena S.",
+      "text": "Llevo yendo medio año y estoy encantada. El trato, el servicio y el resultado son fabulosos. Nazaret me ha salvado las uñas y ha conseguido que deje de mordermelas! Adjunto fotos de cómo empezaron y como las tengo ahora.",
+      "service": "",
+      "date": "jun. 2, 2025",
+      "rating": 5
     }
   ],
-  "contentHash": "20d7900462c89230",
-  "fetchedAt": "2026-06-12T03:15:26.463Z"
+  "contentHash": "8032ccbfe36a818a",
+  "fetchedAt": "2026-06-12T07:10:18.809Z"
 }
