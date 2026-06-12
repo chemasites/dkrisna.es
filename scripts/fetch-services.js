@@ -1,18 +1,15 @@
-import { chromium } from 'playwright';
 import { writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { parseDuration } from './booksy-parser.js';
 import { createServicesContentHash } from './content-hash.js';
+import { fetchBusiness } from './booksy-api.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const CONFIG = {
-  booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz',
   dataDir: join(__dirname, '..', 'static', 'data'),
-  timeout: 90000,
-  waitForContent: 5000,
   maxRetries: 3,
   retryDelay: 5000
 };
@@ -27,276 +24,103 @@ const CATEGORY_TRANSLATIONS = {
   'bonos-maderoterapia': { es: 'Bonos Maderoterapia', en: 'Wood Therapy Packages' }
 };
 
-// Realistic desktop Chrome UA — default Playwright UA contains "HeadlessChrome",
-// which Booksy's bot detection (hCaptcha) flags on CI runners, returning a page
-// without embedded __NUXT__ service data.
-const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
-  '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
-
-async function launchBrowser() {
-  return chromium.launch({
-    headless: true,
-    args: [
-      '--disable-blink-features=AutomationControlled',
-      '--no-sandbox',
-      '--disable-dev-shm-usage'
-    ]
-  });
+/** Formats a number of euros as "12,00 €". */
+function formatEuro(amount) {
+  return `${amount.toFixed(2).replace('.', ',')} €`;
 }
 
-async function newStealthPage(browser) {
-  const context = await browser.newContext({
-    userAgent: USER_AGENT,
-    locale: 'es-ES',
-    timezoneId: 'Europe/Madrid',
-    viewport: { width: 1366, height: 900 },
-    extraHTTPHeaders: { 'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8' }
-  });
-  // Hide navigator.webdriver flag used by bot detectors
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
-  return context.newPage();
-}
-
-async function extractServicesFromPage(page) {
-  return page.evaluate(() => {
-    const categories = [];
-
-    // Try to extract from Nuxt's embedded data (window.__NUXT__)
-    try {
-      const nuxtData = window.__NUXT__;
-      if (nuxtData) {
-        // Recursively search for service categories in Nuxt data
-        const findServices = (obj, depth = 0) => {
-          if (depth > 15 || !obj) return null;
-          if (Array.isArray(obj)) {
-            for (const item of obj) {
-              const result = findServices(item, depth + 1);
-              if (result) return result;
-            }
-          } else if (typeof obj === 'object') {
-            // Check if this is a service category with services array
-            if (obj.name && Array.isArray(obj.services) && obj.services.length > 0) {
-              // Check if services have expected properties
-              if (obj.services[0].name || obj.services[0].title) {
-                return 'found_category';
-              }
-            }
-            // Check for service_categories array
-            if (Array.isArray(obj.service_categories)) {
-              return obj.service_categories;
-            }
-            // Check for categories array
-            if (Array.isArray(obj.categories) && obj.categories.length > 0 && obj.categories[0].services) {
-              return obj.categories;
-            }
-            // Check for business with service_categories
-            if (obj.business && obj.business.service_categories) {
-              return obj.business.service_categories;
-            }
-            // Recursively search
-            for (const key of Object.keys(obj)) {
-              const result = findServices(obj[key], depth + 1);
-              if (result && result !== 'found_category') return result;
-            }
-          }
-          return null;
-        };
-
-        const foundCategories = findServices(nuxtData);
-
-        if (Array.isArray(foundCategories)) {
-          foundCategories.forEach(cat => {
-            const categoryName = cat.name || cat.title || 'Servicios';
-            const services = [];
-
-            if (Array.isArray(cat.services)) {
-              cat.services.forEach(svc => {
-                const name = svc.name || svc.title || '';
-                if (name) {
-                  // Format price and duration - check variants first
-                  let price = '';
-                  let originalPrice = '';
-                  let duration = '';
-
-                  // Check variants for price, duration, and promotion data
-                  if (Array.isArray(svc.variants) && svc.variants.length > 0) {
-                    const variant = svc.variants[0];
-
-                    // Get duration from variant
-                    if (variant.duration) {
-                      const mins = typeof variant.duration === 'number' ? variant.duration : parseInt(variant.duration);
-                      if (!isNaN(mins)) {
-                        if (mins >= 60) {
-                          const hours = Math.floor(mins / 60);
-                          const remainMins = mins % 60;
-                          duration = remainMins > 0 ? `${hours}h ${remainMins}min` : `${hours}h`;
-                        } else {
-                          duration = `${mins} min`;
-                        }
-                      }
-                    }
-
-                    // Check for promotion with original price
-                    if (variant.promotion && variant.promotion.price) {
-                      // Promotion exists - original price is variant.price, discounted is promotion.price.price
-                      if (variant.price !== undefined) {
-                        originalPrice = `${variant.price.toFixed(2).replace('.', ',')} €`;
-                      }
-                      if (variant.promotion.price.price !== undefined) {
-                        price = `${variant.promotion.price.price.toFixed(2).replace('.', ',')} €`;
-                      } else if (variant.promotion.price.formatted_price) {
-                        price = variant.promotion.price.formatted_price;
-                      }
-                    } else if (variant.price !== undefined) {
-                      price = `${variant.price.toFixed(2).replace('.', ',')} €`;
-                    }
-                  }
-
-                  // Fallback to service-level price
-                  if (!price) {
-                    if (svc.price !== undefined && svc.price !== null) {
-                      const priceNum = typeof svc.price === 'number' ? svc.price : parseFloat(svc.price);
-                      if (!isNaN(priceNum)) {
-                        price = `${priceNum.toFixed(2).replace('.', ',')} €`;
-                      }
-                    } else if (svc.price_from !== undefined) {
-                      price = `${svc.price_from.toFixed(2).replace('.', ',')} €+`;
-                    }
-                  }
-
-                  // Extract description if available (check various possible field names)
-                  const description = svc.description || svc.desc || svc.details ||
-                                      svc.info || svc.text || svc.note || svc.notes ||
-                                      svc.short_description || svc.about || '';
-
-                  // Extract service/variant ID for direct booking URL
-                  const serviceId = svc.id || null;
-                  const variantId = Array.isArray(svc.variants) && svc.variants.length > 0
-                    ? svc.variants[0].id
-                    : null;
-
-                  services.push({ name, price, originalPrice, duration, description, serviceId, variantId });
-                }
-              });
-            }
-
-            if (services.length > 0) {
-              categories.push({ name: categoryName, services });
-            }
-          });
-        }
-      }
-    } catch (e) {
-      console.log('Error extracting from NUXT data:', e);
-    }
-
-    if (categories.length > 0) {
-      // Try to enrich with descriptions from DOM for services that don't have them in Nuxt data
-      // Structure: h4[data-testid="service-name"] -> parent div -> sibling div -> span -> p
-      try {
-        const serviceHeaders = document.querySelectorAll('h4[data-testid="service-name"]');
-        serviceHeaders.forEach(h4 => {
-          const serviceName = h4.textContent.trim();
-          const parentDiv = h4.parentElement;
-          if (parentDiv) {
-            const descP = parentDiv.querySelector('div span p');
-            if (descP) {
-              const descText = descP.textContent.trim();
-              if (descText) {
-                categories.forEach(cat => {
-                  cat.services.forEach(svc => {
-                    if (svc.name === serviceName && !svc.description) {
-                      svc.description = descText;
-                    }
-                  });
-                });
-              }
-            }
-          }
-        });
-      } catch (e) {
-        // DOM enrichment failed, continue with existing data
-      }
-      return { categories };
-    }
-
-    // Fallback: return raw text for debugging
-    return { raw: document.body.innerText.substring(0, 1000), categories: [] };
-  });
-}
-
-async function waitForNuxtData(page, timeout = 30000) {
-  const startTime = Date.now();
-  while (Date.now() - startTime < timeout) {
-    const hasData = await page.evaluate(() => {
-      const nuxt = window.__NUXT__;
-      if (!nuxt) return false;
-      // Check if service data is loaded by looking for service_categories
-      const checkForServices = (obj, depth = 0) => {
-        if (depth > 10 || !obj) return false;
-        if (Array.isArray(obj.service_categories) && obj.service_categories.length > 0) return true;
-        if (obj.business?.service_categories?.length > 0) return true;
-        if (typeof obj === 'object') {
-          for (const key of Object.keys(obj)) {
-            if (checkForServices(obj[key], depth + 1)) return true;
-          }
-        }
-        return false;
-      };
-      return checkForServices(nuxt);
-    });
-    if (hasData) return true;
-    await page.waitForTimeout(500);
+/** Formats a duration in minutes as "20 min" / "1h" / "1h 30min". */
+function formatDuration(mins) {
+  if (typeof mins !== 'number' || isNaN(mins)) return '';
+  if (mins >= 60) {
+    const hours = Math.floor(mins / 60);
+    const remainMins = mins % 60;
+    return remainMins > 0 ? `${hours}h ${remainMins}min` : `${hours}h`;
   }
-  return false;
+  return `${mins} min`;
 }
 
-async function fetchServicesFromBooksy() {
-  console.log('Launching browser...');
-  const browser = await launchBrowser();
+/**
+ * Maps a single Booksy API service object to the raw shape consumed by
+ * transformToJSON. Mirrors the price/promotion/duration handling that the
+ * previous __NUXT__ extraction performed.
+ */
+function mapService(svc) {
+  let price = '';
+  let originalPrice = '';
+  let duration = '';
 
-  try {
-    const page = await newStealthPage(browser);
-    console.log(`Navigating to ${CONFIG.booksyUrl}...`);
+  const variant = Array.isArray(svc.variants) && svc.variants.length > 0
+    ? svc.variants[0]
+    : null;
 
-    // Navigate and wait for page load
-    await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'load',
-      timeout: CONFIG.timeout
-    });
-
-    console.log('Waiting for page to fully render...');
-    await page.waitForTimeout(5000);
-
-    // Scroll down to trigger lazy loading of services
-    console.log('Scrolling to load services...');
-    await page.evaluate(() => {
-      window.scrollTo(0, document.body.scrollHeight / 3);
-    });
-
-    await page.waitForTimeout(2000);
-
-    // Wait for service content
-    await page.waitForSelector('[class*="service"]', { timeout: 15000 })
-      .catch(() => console.log('Service selector not found, continuing...'));
-
-    // Wait for __NUXT__ data to be populated with services
-    console.log('Waiting for service data to load...');
-    const nuxtReady = await waitForNuxtData(page);
-    if (!nuxtReady) {
-      console.log('Warning: __NUXT__ data not fully loaded, proceeding anyway...');
+  if (variant) {
+    if (variant.duration) {
+      const mins = typeof variant.duration === 'number'
+        ? variant.duration
+        : parseInt(variant.duration, 10);
+      duration = formatDuration(mins);
     }
 
-    await page.waitForTimeout(CONFIG.waitForContent);
-
-    console.log('Extracting services...');
-    return await extractServicesFromPage(page);
-  } finally {
-    await browser.close();
+    // Promotion present: original price is variant.price, discounted is in promotion.
+    if (variant.promotion && variant.promotion.price) {
+      if (variant.price !== undefined) {
+        originalPrice = formatEuro(variant.price);
+      }
+      if (variant.promotion.price.price !== undefined) {
+        price = formatEuro(variant.promotion.price.price);
+      } else if (variant.promotion.price.formatted_price) {
+        price = variant.promotion.price.formatted_price;
+      }
+    } else if (variant.price !== undefined) {
+      price = formatEuro(variant.price);
+    }
   }
+
+  // Fallback to service-level price.
+  if (!price) {
+    if (svc.price !== undefined && svc.price !== null) {
+      const priceNum = typeof svc.price === 'number' ? svc.price : parseFloat(svc.price);
+      if (!isNaN(priceNum)) {
+        price = formatEuro(priceNum);
+      }
+    } else if (svc.price_from !== undefined) {
+      price = `${formatEuro(svc.price_from)}+`;
+    }
+  }
+
+  return {
+    name: svc.name || svc.title || '',
+    price,
+    originalPrice,
+    duration,
+    description: svc.description || '',
+    serviceId: svc.id || null,
+    variantId: variant ? variant.id : null
+  };
+}
+
+/**
+ * Maps the Booksy business object into the raw { categories } shape that the
+ * rest of the pipeline expects.
+ */
+function mapBusinessToRawServices(business) {
+  const categories = [];
+  const sourceCategories = Array.isArray(business.service_categories)
+    ? business.service_categories
+    : [];
+
+  sourceCategories.forEach(cat => {
+    const categoryName = cat.name || cat.title || 'Servicios';
+    const services = (Array.isArray(cat.services) ? cat.services : [])
+      .map(mapService)
+      .filter(svc => svc.name);
+    if (services.length > 0) {
+      categories.push({ name: categoryName, services });
+    }
+  });
+
+  return { categories };
 }
 
 /**
@@ -389,9 +213,10 @@ async function fetchWithRetry() {
   for (let attempt = 1; attempt <= CONFIG.maxRetries; attempt++) {
     console.log(`\nAttempt ${attempt}/${CONFIG.maxRetries}...`);
     try {
-      const rawServices = await fetchServicesFromBooksy();
+      const business = await fetchBusiness();
+      const rawServices = mapBusinessToRawServices(business);
 
-      if (rawServices.raw || !rawServices.categories?.length) {
+      if (!rawServices.categories.length) {
         if (attempt < CONFIG.maxRetries) {
           console.log(`No services extracted, retrying in ${CONFIG.retryDelay / 1000}s...`);
           await new Promise(r => setTimeout(r, CONFIG.retryDelay));

@@ -1,257 +1,63 @@
-import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { createReviewsContentHash } from './content-hash.js';
+import { fetchReviews } from './booksy-api.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const CONFIG = {
-  booksyUrl: 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz#reviews-section',
-  staticDir: join(__dirname, '..', 'static', 'data'),
-  timeout: 90000,
-  waitForContent: 5000
+  staticDir: join(__dirname, '..', 'static', 'data')
 };
 
-// Realistic desktop Chrome UA — default Playwright UA contains "HeadlessChrome",
-// which Booksy's bot detection (hCaptcha) flags on CI runners, returning a page
-// without embedded __NUXT__ data.
-const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
-  '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+const MONTHS_ES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 
-async function launchBrowser() {
-  return chromium.launch({
-    headless: true,
-    args: [
-      '--disable-blink-features=AutomationControlled',
-      '--no-sandbox',
-      '--disable-dev-shm-usage'
-    ]
-  });
+/** Formats a Booksy date string (e.g. "2026-06-11T13:43") as "jun. 11, 2026". */
+function formatDate(created) {
+  if (!created) return '';
+  const d = new Date(created);
+  if (isNaN(d.getTime())) return created;
+  return `${MONTHS_ES[d.getMonth()]}. ${d.getDate()}, ${d.getFullYear()}`;
 }
 
-async function newStealthPage(browser) {
-  const context = await browser.newContext({
-    userAgent: USER_AGENT,
-    locale: 'es-ES',
-    timezoneId: 'Europe/Madrid',
-    viewport: { width: 1366, height: 900 },
-    extraHTTPHeaders: { 'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8' }
-  });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
-  return context.newPage();
+/** Builds a display name like "Marta S." from the API user object. */
+function formatUserName(user) {
+  if (!user) return 'Cliente';
+  const first = user.first_name || '';
+  const lastInitial = (user.last_name || '').charAt(0);
+  const name = `${first} ${lastInitial}.`.trim();
+  return name.substring(0, 20);
 }
 
-async function extractReviewsFromPage(page) {
-  return page.evaluate(() => {
-    let rating = null;
-    let reviewCount = null;
-    const reviews = [];
+/**
+ * Maps the Booksy reviews API payload into the shape stored in
+ * static/data/booksy-reviews.json.
+ */
+function mapReviews(payload) {
+  const rawReviews = Array.isArray(payload.reviews) ? payload.reviews : [];
 
-    // Try to extract from Nuxt's embedded data (window.__NUXT__)
-    try {
-      const nuxtData = window.__NUXT__;
-      if (nuxtData) {
-        // Navigate through Nuxt data structure to find reviews
-        const findReviews = (obj, depth = 0) => {
-          if (depth > 10 || !obj) return null;
-          if (Array.isArray(obj)) {
-            for (const item of obj) {
-              const result = findReviews(item, depth + 1);
-              if (result) return result;
-            }
-          } else if (typeof obj === 'object') {
-            // Check if this object has review-like properties
-            if (obj.review && obj.user && obj.created) {
-              return 'found_review_item';
-            }
-            // Check if this is an array of reviews
-            if (Array.isArray(obj.reviews)) {
-              return obj.reviews;
-            }
-            // Check for business data with reviews
-            if (obj.business && obj.business.reviews) {
-              return obj.business.reviews;
-            }
-            // Recursively search
-            for (const key of Object.keys(obj)) {
-              const result = findReviews(obj[key], depth + 1);
-              if (result && result !== 'found_review_item') return result;
-            }
-          }
-          return null;
-        };
+  const reviews = rawReviews
+    .map(r => {
+      const text = r.review || r.text || r.comment || '';
+      const service = Array.isArray(r.services) && r.services.length > 0
+        ? (r.services[0].name || r.services[0])
+        : (r.service || '');
+      return {
+        name: formatUserName(r.user),
+        text,
+        service,
+        date: formatDate(r.created || r.date),
+        rating: r.rank || r.rating || 5
+      };
+    })
+    .filter(r => r.text && r.text.length > 5);
 
-        // Also try to find rating info
-        const findRating = (obj, depth = 0) => {
-          if (depth > 10 || !obj) return null;
-          if (typeof obj === 'object' && obj !== null) {
-            if (typeof obj.rating === 'number' && typeof obj.reviews_count === 'number') {
-              return { rating: obj.rating, count: obj.reviews_count };
-            }
-            if (typeof obj.average_rating === 'number') {
-              return { rating: obj.average_rating, count: obj.reviews_count || 0 };
-            }
-            // Also check for rank field (Booksy uses this)
-            if (typeof obj.rank === 'number' && typeof obj.reviews_count === 'number') {
-              return { rating: obj.rank, count: obj.reviews_count };
-            }
-            for (const key of Object.keys(obj)) {
-              const result = findRating(obj[key], depth + 1);
-              if (result) return result;
-            }
-          }
-          return null;
-        };
-
-        const foundReviews = findReviews(nuxtData);
-        const foundRating = findRating(nuxtData);
-
-        if (foundRating) {
-          rating = foundRating.rating;
-          reviewCount = foundRating.count;
-        }
-
-        if (Array.isArray(foundReviews)) {
-          foundReviews.forEach(r => {
-            if (r.review || r.text || r.comment) {
-              const userName = r.user
-                ? `${r.user.first_name || ''} ${(r.user.last_name || '').charAt(0)}.`.trim()
-                : (r.author || r.name || 'Cliente');
-
-              const reviewText = r.review || r.text || r.comment || '';
-              const serviceName = Array.isArray(r.services) && r.services.length > 0
-                ? r.services[0].name || r.services[0]
-                : (r.service || '');
-
-              // Format date from timestamp or string
-              let dateStr = '';
-              if (r.created) {
-                try {
-                  const d = new Date(r.created);
-                  const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-                  dateStr = `${months[d.getMonth()]}. ${d.getDate()}, ${d.getFullYear()}`;
-                } catch (e) {
-                  dateStr = r.created;
-                }
-              } else if (r.date) {
-                dateStr = r.date;
-              }
-
-              if (reviewText && reviewText.length > 5) {
-                reviews.push({
-                  name: userName.substring(0, 20),
-                  text: reviewText,
-                  service: serviceName,
-                  date: dateStr,
-                  rating: r.rank || r.rating || 5
-                });
-              }
-            }
-          });
-        }
-      }
-    } catch (e) {
-      console.log('Error extracting from NUXT data:', e);
-    }
-
-    // Fallback: try to get rating from page text
-    if (!rating) {
-      const bodyText = document.body.innerText;
-      const ratingMatch = bodyText.match(/(\d[,.]?\d?)\s*\/\s*5/);
-      if (ratingMatch) {
-        rating = parseFloat(ratingMatch[1].replace(',', '.'));
-      }
-      const countMatch = bodyText.match(/(\d+)\s*(reviews?|opiniones?|reseñas?)/i);
-      if (countMatch) {
-        reviewCount = parseInt(countMatch[1], 10);
-      }
-    }
-
-    return {
-      rating: rating || 5.0,
-      reviewCount: reviewCount || reviews.length,
-      reviews: reviews
-    };
-  });
-}
-
-async function fetchReviewsFromBooksy() {
-  console.log('Launching browser...');
-  const browser = await launchBrowser();
-
-  try {
-    const page = await newStealthPage(browser);
-    console.log(`Navigating to ${CONFIG.booksyUrl}...`);
-
-    // Navigate and wait for DOM to be ready
-    await page.goto(CONFIG.booksyUrl, {
-      waitUntil: 'domcontentloaded',
-      timeout: CONFIG.timeout
-    });
-
-    console.log('Waiting for page to fully render...');
-
-    // Wait for NUXT data to be available (this indicates app hydration is complete)
-    console.log('Waiting for NUXT data...');
-    await page.waitForFunction(() => window.__NUXT__ !== undefined, { timeout: 30000 }).catch(() => {
-      console.log('NUXT data not found via waitForFunction, will try extraction anyway...');
-    });
-
-    // Additional wait for any async data loading
-    await page.waitForTimeout(5000);
-
-    // Scroll to reviews section to trigger lazy loading
-    console.log('Scrolling to reviews section...');
-    await page.evaluate(() => {
-      // Try to find and scroll to reviews section
-      const reviewsSection = document.querySelector('[id*="review"], [class*="reviews-section"], [class*="ReviewsSection"]');
-      if (reviewsSection) {
-        reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Scroll down the page to trigger lazy loading
-        window.scrollTo(0, document.body.scrollHeight / 2);
-      }
-    });
-
-    await page.waitForTimeout(2000);
-
-    // Try clicking on reviews tab/link if it exists
-    console.log('Looking for reviews tab...');
-    const reviewsTab = await page.$('a[href*="review"], button:has-text("reseñas"), button:has-text("reviews"), [data-testid*="review"]');
-    if (reviewsTab) {
-      console.log('Clicking reviews tab...');
-      await reviewsTab.click();
-      await page.waitForTimeout(3000);
-    }
-
-    // Scroll again after potential tab click
-    await page.evaluate(() => {
-      window.scrollBy(0, 300);
-    });
-
-    // Wait for review content to appear
-    console.log('Waiting for review content...');
-    await page.waitForSelector('[class*="review"]', { timeout: 15000 }).catch(() => {
-      console.log('Review selector not found, continuing anyway...');
-    });
-
-    await page.waitForTimeout(CONFIG.waitForContent);
-
-    console.log('Extracting reviews...');
-    const result = await extractReviewsFromPage(page);
-
-    // Debug: log extraction results
-    console.log(`Extracted: rating=${result.rating}, reviewCount=${result.reviewCount}, reviews=${result.reviews.length}`);
-
-    return result;
-  } finally {
-    await browser.close();
-  }
+  return {
+    rating: payload.reviews_stars || payload.reviews_rank || 5.0,
+    reviewCount: payload.reviews_count || reviews.length,
+    reviews
+  };
 }
 
 function saveReviewsData(reviews) {
@@ -307,7 +113,9 @@ function validateReviews(reviews) {
 async function main() {
   try {
     console.log('Starting Booksy reviews fetch...');
-    const reviews = await fetchReviewsFromBooksy();
+    const payload = await fetchReviews();
+    const reviews = mapReviews(payload);
+    console.log(`Fetched: rating=${reviews.rating}, reviewCount=${reviews.reviewCount}, reviews=${reviews.reviews.length}`);
 
     if (!reviews || reviews.reviewCount === 0) {
       console.error('Failed to fetch reviews data.');
