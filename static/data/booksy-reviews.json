@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 22,
+  "reviewCount": 23,
   "reviews": [
+    {
+      "name": "Erika .",
+      "text": "Me han encantado, el trato como siempre de maravilla y las uñas perfectas, estoy muy contenta😊",
+      "service": "Uñas acrílicas",
+      "date": "jun. 22, 2026",
+      "rating": 5
+    },
     {
       "name": "Marta S.",
       "text": "Excelente trato, trabajo y profesionalismo",
@@ -134,15 +141,8 @@
       "service": "",
       "date": "jun. 9, 2025",
       "rating": 5
-    },
-    {
-      "name": "Lorena S.",
-      "text": "Llevo yendo medio año y estoy encantada. El trato, el servicio y el resultado son fabulosos. Nazaret me ha salvado las uñas y ha conseguido que deje de mordermelas! Adjunto fotos de cómo empezaron y como las tengo ahora.",
-      "service": "",
-      "date": "jun. 2, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "8032ccbfe36a818a",
-  "fetchedAt": "2026-06-12T07:10:18.809Z"
+  "contentHash": "6c39e334679993e1",
+  "fetchedAt": "2026-06-29T03:03:04.017Z"
 }
