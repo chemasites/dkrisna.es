@@ -231,7 +231,7 @@
           "name": "Maderoterapia Facial + Fototerapia",
           "price": "40,00 €",
           "originalPrice": null,
-          "duration": "1 hora 20 min",
+          "duration": "1 hora",
           "description": "Reafirma, redefine e ilumina tu rostro con maderoterapia facial + fototerapia\n\nEstimula el colágeno, mejora la firmeza, suaviza líneas de expresión y potencia la luminosidad de la piel mientras la luz terapéutica ayuda a unificar el tono y mejorar su textura. Un rostro más tonificado, fresco y radiante desde las primeras sesiones.",
           "variantId": 2431110
         },
@@ -326,20 +326,20 @@
           "variantId": 2431667
         },
         {
+          "name": "6 Sesiones De Maderoterapia Corporal",
+          "price": "280,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": "6 sesiones de maderoterapia corporal \n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
+          "variantId": 2431714
+        },
+        {
           "name": "10 Sesiones: Abdomen, Brazos Y Cintura",
           "price": "400,00 €",
           "originalPrice": null,
           "duration": "1 hora",
           "description": "10 sesiones de maderoterapia en abdomen, cintura y brazos.\n\nEl servicio se realizará una vez a la semana durante 9 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
           "variantId": 2431684
-        },
-        {
-          "name": "6 Sesiones De Maderoterapia Corporal",
-          "price": "270,00 €",
-          "originalPrice": null,
-          "duration": "1 hora 20 min",
-          "description": "6 sesiones de maderoterapia corporal \n\nEl servicio se realizará una vez a la semana durante 5 semanas ( la primera y la segunda sesión se realizarán la primera semana)",
-          "variantId": 2431714
         },
         {
           "name": "10 Sesiones De Maderoterapia Corporal",
@@ -352,6 +352,6 @@
       ]
     }
   ],
-  "contentHash": "117dd3010fca9987",
-  "fetchedAt": "2026-06-12T07:18:18.926Z"
+  "contentHash": "cd61f10f35b0bc42",
+  "fetchedAt": "2026-07-06T04:24:52.074Z"
 }
