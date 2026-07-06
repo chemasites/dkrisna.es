@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 23,
+  "reviewCount": 24,
   "reviews": [
+    {
+      "name": "María Ángeles M.",
+      "text": "Chicas súper agradables, uñas preciosas. La primera vez que voy y repetiré sin duda.",
+      "service": "Limpieza Y Esmaltado Tradicional (Manos)",
+      "date": "jul. 3, 2026",
+      "rating": 5
+    },
     {
       "name": "Erika .",
       "text": "Me han encantado, el trato como siempre de maravilla y las uñas perfectas, estoy muy contenta😊",
@@ -134,15 +141,8 @@
       "service": "",
       "date": "jun. 16, 2025",
       "rating": 5
-    },
-    {
-      "name": "Irene V.",
-      "text": "Las uñas las deja perfectas, hace el trabajo con mucho cuidado y esmero. El ambiente es inmejorable. He repetido un par de veces y serán muchas más.",
-      "service": "",
-      "date": "jun. 9, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "6c39e334679993e1",
-  "fetchedAt": "2026-06-29T03:03:04.017Z"
+  "contentHash": "cf1b5c0ead51f774",
+  "fetchedAt": "2026-07-06T03:02:08.027Z"
 }
