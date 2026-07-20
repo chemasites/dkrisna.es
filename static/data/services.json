@@ -242,6 +242,14 @@
           "duration": "1 hora",
           "description": "Renueva tu piel, elimina impurezas y luce un rostro radiante desde la primera sesión. Incluye vaporización y fototerapia para un cuidado más completo. ¡Piel limpia, fresca y luminosa al instante! 💆‍♀️✨",
           "variantId": 2487057
+        },
+        {
+          "name": "Microneedling ( Dermapen)",
+          "price": "50,00 €",
+          "originalPrice": null,
+          "duration": "1 hora",
+          "description": "Elimina las lineas de expresión con el tratamiento de microneedling, aclara tu piel de manera uniforme✨",
+          "variantId": 2650664
         }
       ]
     },
@@ -352,6 +360,6 @@
       ]
     }
   ],
-  "contentHash": "cd61f10f35b0bc42",
-  "fetchedAt": "2026-07-06T04:24:52.074Z"
+  "contentHash": "c986db5868f86c93",
+  "fetchedAt": "2026-07-20T04:13:46.107Z"
 }
