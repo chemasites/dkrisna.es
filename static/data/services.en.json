@@ -32,15 +32,15 @@
           "variantId": 2086719
         },
         {
-          "name": "Classic Manicure (Hands)",
+          "name": "Cleaning and Traditional Polish (Hands)",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Nail cleaning, filing, cuticle care, and classic polish application",
+          "description": "Nail cleaning, filing, cuticle care and classic polish",
           "variantId": 2016866
         },
         {
-          "name": "Semi-Permanent Polish Removal",
+          "name": "Semi-Permanent Removal",
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
@@ -48,7 +48,7 @@
           "variantId": 2053132
         },
         {
-          "name": "Acrylic Nail Removal",
+          "name": "Acrylic Removal",
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
@@ -60,7 +60,7 @@
           "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Gel system combined with hardening powder for enhanced durability and longevity",
+          "description": "Gel system with hardening powder that provides greater strength and durability",
           "variantId": 2016863
         },
         {
@@ -68,7 +68,7 @@
           "price": "25,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Acrylic extension and sculpting for durable, customized nails",
+          "description": "Extension and sculpting with acrylic for strong and personalized nails",
           "variantId": 2016865
         },
         {
@@ -76,7 +76,7 @@
           "price": "29,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Light, flexible gel extensions with a natural finish",
+          "description": "Extensions with soft gel, lightweight, flexible and natural finish",
           "variantId": 2029570
         },
         {
@@ -84,7 +84,7 @@
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "2 horas",
-          "description": "Hybrid system combining acrylic and gel for durability with a natural appearance",
+          "description": "Hybrid system between acrylic and gel, durable with natural appearance",
           "variantId": 2029571
         }
       ]
@@ -97,35 +97,35 @@
       },
       "services": [
         {
-          "name": "Dry Pedicure + Semi-Permanent",
+          "name": "Dry Pedicure + Semi",
           "price": "21,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Cuticle cleaning and gel polish application without water",
+          "description": "Cuticle cleaning + gel polish without water",
           "variantId": 2120763
         },
         {
-          "name": "Dry Pedicure + Classic Polish",
+          "name": "Dry Pedicure + Traditional Polish",
           "price": "18,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Cuticle cleaning and traditional polish application without water",
+          "description": "Cuticle cleaning + traditional polish without water",
           "variantId": 2016864
         },
         {
-          "name": "Spa Pedicure + Classic Polish",
+          "name": "Spa Pedicure + Traditional Polish",
           "price": "23,00 €",
           "originalPrice": null,
           "duration": "1 hora 30 min",
-          "description": "Relaxing treatment with exfoliation, hydration, deep cleansing, and classic polish",
+          "description": "Relaxing treatment with exfoliation, hydration, deep cleaning and classic polish",
           "variantId": 2066537
         },
         {
-          "name": "Spa Pedicure + Semi-Permanent",
+          "name": "Spa Pedicure + Semi",
           "price": "26,00 €",
           "originalPrice": null,
           "duration": "1 hora 45 min",
-          "description": "Exfoliation, callus and hardness removal, deep cleansing, and long-lasting semi-permanent polish",
+          "description": "Exfoliation, callus and hardness removal, deep cleansing and long-lasting semi-permanent polish",
           "variantId": 2016871
         }
       ]
@@ -138,11 +138,11 @@
       },
       "services": [
         {
-          "name": "Facial Hair and Eyebrow Removal",
+          "name": "Upper Lip and Eyebrow Waxing",
           "price": "4,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Hair removal with precision blade, eyebrow design, and facial contour grooming for harmonious results",
+          "description": "Waxing with razor blade, design and facial contour cleaning for harmonious results",
           "variantId": 2120923
         },
         {
@@ -150,7 +150,7 @@
           "price": "10,00 €",
           "originalPrice": null,
           "duration": "30 min",
-          "description": "Gentle removal of lash extensions without damaging natural lashes, followed by a relaxing facial massage",
+          "description": "Safe removal of extensions without damaging natural lashes and relaxing facial massage",
           "variantId": 2120922
         },
         {
@@ -158,15 +158,15 @@
           "price": "15,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Natural curling and lifting of lashes for an open, lifted eye appearance",
+          "description": "Natural curling and lifting of lashes for an open-eyed look",
           "variantId": 2016868
         },
         {
-          "name": "Brow Lamination",
+          "name": "Eyebrow Lamination",
           "price": "12,00 €",
           "originalPrice": null,
           "duration": "45 min",
-          "description": "Hair alignment and setting for defined, polished brows",
+          "description": "Alignment and fixation of brow hairs for more defined eyebrows",
           "variantId": 2016869
         },
         {
@@ -174,7 +174,7 @@
           "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Customized application of individual lash extensions for a natural effect",
+          "description": "Customized application of extensions for a natural effect",
           "variantId": 2016870
         }
       ]
@@ -191,11 +191,11 @@
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "Gentle full-body massage with natural oils that relieves stress and promotes wellness",
+          "description": "Gentle body massage with natural oils that relieves stress and promotes wellness",
           "variantId": 2291441
         },
         {
-          "name": "Geothermal Massage (Hot Stones)",
+          "name": "Hot Stone Massage",
           "price": "40,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
@@ -207,8 +207,16 @@
           "price": "30,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Relieves tension, reduces pain, and improves your wellness with a natural and effective technique. Treatment focused on relaxing muscles and restoring balance to your body. Feel relief from the first session! ✨",
+          "description": "Relieves tension, reduces pain and improves your wellness with a natural and effective technique. Treatment focused on relaxing muscles and restoring balance to your body. Feel the relief from the first session! ✨",
           "variantId": 2487076
+        },
+        {
+          "name": "Therapeutic Massage",
+          "price": "50,00 €",
+          "originalPrice": null,
+          "duration": "1 hora 20 min",
+          "description": null,
+          "variantId": 2659030
         }
       ]
     },
@@ -220,19 +228,19 @@
       },
       "services": [
         {
-          "name": "KOBIDO Facial Lift",
+          "name": "KOBIDO Facial Lifting",
           "price": "40,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Naturally eliminates expression lines without injections or painful treatments",
+          "description": "Eliminates expression lines naturally, without injections or painful treatments",
           "variantId": 2291300
         },
         {
-          "name": "Facial Woodtherapy + Phototherapy",
+          "name": "Maderotherapy Facial + Light Therapy",
           "price": "40,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Firm, redefine, and illuminate your face with facial woodtherapy + phototherapy. Stimulates collagen, improves firmness, softens expression lines, and boosts skin luminosity while therapeutic light helps even tone and improve texture. A more toned, fresh, and radiant face from the first sessions.",
+          "description": "Firms, redefines and brightens your face with maderotherapy + light therapy\n\nStimulates collagen, improves firmness, softens expression lines and enhances skin radiance while therapeutic light helps unify tone and improve texture. A more toned, fresh and radiant face from the first sessions.",
           "variantId": 2431110
         },
         {
@@ -240,7 +248,7 @@
           "price": "20,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Renew your skin, eliminate impurities, and reveal a radiant complexion from the first session. Includes steaming and phototherapy for complete skincare. Clean, fresh, and luminous skin instantly! 💆‍♀️✨",
+          "description": "Renew your skin, eliminate impurities and enjoy a radiant face from the first session. Includes steaming and light therapy for more complete care. Clean, fresh and glowing skin instantly! 💆‍♀️✨",
           "variantId": 2487057
         },
         {
@@ -248,7 +256,7 @@
           "price": "50,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Eliminate expression lines with microneedling treatment and achieve an even, brighter skin tone ✨",
+          "description": "Eliminate expression lines with microneedling treatment, evenly brighten your skin ✨",
           "variantId": 2650664
         }
       ]
@@ -261,27 +269,27 @@
       },
       "services": [
         {
-          "name": "Legs and Glutes Woodtherapy",
+          "name": "Maderotherapy Legs and Glutes",
           "price": "45,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Transform your legs and glutes with woodtherapy. Reduces cellulite, firms skin, and visibly improves stretch marks while naturally reshaping your figure. Firmer, smoother, more even skin from the first sessions.",
+          "description": "Transform your legs and glutes with maderotherapy.\n\nReduce cellulite, firm skin and visibly improve stretch marks while naturally reshaping your figure.\n\nFirmer, smoother and more even skin from the first sessions.",
           "variantId": 2431072
         },
         {
-          "name": "Abdomen, Waist, and Arms Woodtherapy",
+          "name": "Maderotherapy Abdomen, Waist and Arms",
           "price": "45,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "Define your abdomen, slim your waist, and firm your arms with woodtherapy. Helps reduce localized fat, improves skin firmness, and softens the appearance of stretch marks, achieving a more sculpted and even silhouette from the first sessions.",
+          "description": "Define your abdomen, slim your waist and firm your arms with maderotherapy.\n\nHelps reduce localized fat, improves skin firmness and softens the appearance of stretch marks, achieving a more sculpted and uniform silhouette from the first sessions.",
           "variantId": 2431093
         },
         {
-          "name": "Full Body Woodtherapy",
+          "name": "Full Body Maderotherapy",
           "price": "50,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "Shape, firm, and redefine your body with full body woodtherapy. Activates circulation, helps reduce cellulite and localized fat, improves skin firmness, and softens the appearance of stretch marks. Visible results that enhance your silhouette from the first sessions.",
+          "description": "Shape, firm and redefine your body with full body maderotherapy.\nActivates circulation, helps reduce cellulite and localized fat, improves skin firmness and helps soften the appearance of stretch marks. Visible results that enhance your silhouette from the first sessions.",
           "variantId": 2431138
         }
       ]
@@ -294,73 +302,73 @@
       },
       "services": [
         {
-          "name": "6 Sessions: Facial Woodtherapy + Phototherapy",
+          "name": "6 Sessions Maderotherapy Facial + Light Therapy",
           "price": "210,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "6 sessions of facial woodtherapy with phototherapy included. Service is performed once weekly over 5 weeks (first and second sessions are in the first week)",
+          "description": "6 sessions of maderotherapy facial + light therapy included.\n\nService performed once a week for 5 weeks (first and second sessions performed in the first week)",
           "variantId": 2431689
         },
         {
-          "name": "10 Sessions: Facial Woodtherapy + Phototherapy",
+          "name": "10 Sessions Maderotherapy Facial + Light Therapy",
           "price": "330,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "10 sessions of facial woodtherapy with phototherapy included. Service is performed once weekly over 9 weeks (first and second sessions are in the first week)",
+          "description": "10 sessions of maderotherapy facial + light therapy included.\n\nService performed once a week for 9 weeks (first and second sessions performed in the first week)",
           "variantId": 2431704
         },
         {
-          "name": "6 Sessions: Legs and Glutes Woodtherapy",
+          "name": "6 Sessions Maderotherapy Legs and Glutes",
           "price": "260,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "6 sessions of legs and glutes woodtherapy. Service is performed once weekly over 5 weeks (first and second sessions are in the first week)",
+          "description": "6 sessions of maderotherapy legs and glutes.\n\nService performed once a week for 5 weeks (first and second sessions performed in the first week)",
           "variantId": 2431158
         },
         {
-          "name": "10 Sessions: Legs and Glutes Woodtherapy",
+          "name": "10 Sessions Maderotherapy Legs and Glutes",
           "price": "400,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "10 sessions of legs and glutes woodtherapy. Service is performed once weekly over 9 weeks (first and second sessions are in the first week)",
+          "description": "10 sessions of maderotherapy legs and glutes.\n\nService performed once a week for 9 weeks (first and second sessions performed in the first week)",
           "variantId": 2431661
         },
         {
-          "name": "6 Sessions: Abdomen, Waist, and Arms",
+          "name": "6 Sessions: Abdomen, Waist and Arms",
           "price": "260,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "6 sessions of abdomen, waist, and arms woodtherapy. Service is performed once weekly over 5 weeks (first and second sessions are in the first week)",
+          "description": "6 sessions of maderotherapy abdomen, waist and arms.\n\nService performed once a week for 5 weeks (first and second sessions performed in the first week)",
           "variantId": 2431667
         },
         {
-          "name": "6 Sessions: Full Body Woodtherapy",
+          "name": "6 Sessions Full Body Maderotherapy",
           "price": "280,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "6 sessions of full body woodtherapy. Service is performed once weekly over 5 weeks (first and second sessions are in the first week)",
+          "description": "6 sessions of full body maderotherapy.\n\nService performed once a week for 5 weeks (first and second sessions performed in the first week)",
           "variantId": 2431714
         },
         {
-          "name": "10 Sessions: Abdomen, Arms, and Waist",
+          "name": "10 Sessions: Abdomen, Arms and Waist",
           "price": "400,00 €",
           "originalPrice": null,
           "duration": "1 hora",
-          "description": "10 sessions of abdomen, waist, and arms woodtherapy. Service is performed once weekly over 9 weeks (first and second sessions are in the first week)",
+          "description": "10 sessions of maderotherapy abdomen, waist and arms.\n\nService performed once a week for 9 weeks (first and second sessions performed in the first week)",
           "variantId": 2431684
         },
         {
-          "name": "10 Sessions: Full Body Woodtherapy",
+          "name": "10 Sessions Full Body Maderotherapy",
           "price": "430,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
-          "description": "10 sessions of full body woodtherapy. Service is performed once weekly over 9 weeks (first and second sessions are in the first week)",
+          "description": "10 sessions of full body maderotherapy.\n\nService performed once a week for 9 weeks (first and second sessions performed in the first week)",
           "variantId": 2431722
         }
       ]
     }
   ],
-  "contentHash": "c986db5868f86c93",
-  "fetchedAt": "2026-07-20T04:13:46.107Z",
-  "sourceHash": "1fc8c2dcc2c65563"
+  "contentHash": "1528713bd4ed3166",
+  "fetchedAt": "2026-07-27T04:13:22.281Z",
+  "sourceHash": "078913b89d056d57"
 }
