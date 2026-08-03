@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 24,
+  "reviewCount": 25,
   "reviews": [
+    {
+      "name": "Loles M.",
+      "text": "atención y servicio genial. volveremos",
+      "service": "Pedicura spa + Semi",
+      "date": "jul. 27, 2026",
+      "rating": 5
+    },
     {
       "name": "María Ángeles M.",
       "text": "Chicas súper agradables, uñas preciosas. La primera vez que voy y repetiré sin duda.",
@@ -134,15 +141,8 @@
       "service": "",
       "date": "jun. 17, 2025",
       "rating": 5
-    },
-    {
-      "name": "Cayi19-07 L.",
-      "text": "Buen trabajo,lo recomiendo 💯*💯",
-      "service": "",
-      "date": "jun. 16, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "cf1b5c0ead51f774",
-  "fetchedAt": "2026-07-06T03:02:08.027Z"
+  "contentHash": "d8081499517e8399",
+  "fetchedAt": "2026-08-03T05:30:53.990Z"
 }
