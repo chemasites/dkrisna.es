@@ -188,7 +188,7 @@
       "services": [
         {
           "name": "Masajes Relajantes",
-          "price": "30,00 €",
+          "price": "35,00 €",
           "originalPrice": null,
           "duration": "1 hora 20 min",
           "description": "Masaje corporal suave con aceites naturales, que alivia el estrés y promueve el bienestar.",
@@ -204,7 +204,7 @@
         },
         {
           "name": "ACUPUNTURA PARA EL DOLOR DE ESPALDA",
-          "price": "30,00 €",
+          "price": "50,00 €",
           "originalPrice": null,
           "duration": "1 hora",
           "description": "Alivia tensiones, reduce el dolor y mejora tu bienestar con una técnica natural y efectiva. Tratamiento enfocado en relajar la musculatura y devolverle equilibrio a tu cuerpo. ¡Siente el alivio desde la primera sesión! ✨",
@@ -368,6 +368,6 @@
       ]
     }
   ],
-  "contentHash": "1528713bd4ed3166",
-  "fetchedAt": "2026-07-27T04:13:22.281Z"
+  "contentHash": "e9f9dc58ef8b2c00",
+  "fetchedAt": "2026-08-10T04:19:02.581Z"
 }
