@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 25,
+  "reviewCount": 26,
   "reviews": [
+    {
+      "name": "Rocío Ruiz S.",
+      "text": "Quedaron unas uñas preciosas y no tardó casi nada en hacerlas. Un trato muy bueno por parte de la chica. Repetiré.",
+      "service": "Uñas Semipermanentes Con Diping",
+      "date": "ago. 15, 2026",
+      "rating": 5
+    },
     {
       "name": "Loles M.",
       "text": "atención y servicio genial. volveremos",
@@ -134,15 +141,8 @@
       "service": "",
       "date": "jun. 17, 2025",
       "rating": 5
-    },
-    {
-      "name": "Si S.",
-      "text": "Muy amables, me hicieron las uñas exactamente como yo quería y con el máximo cuidado y detalle",
-      "service": "",
-      "date": "jun. 17, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "d8081499517e8399",
-  "fetchedAt": "2026-08-03T05:30:53.990Z"
+  "contentHash": "ef65c95d5059b0db",
+  "fetchedAt": "2026-08-17T02:51:43.241Z"
 }
