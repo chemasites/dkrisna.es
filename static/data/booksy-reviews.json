@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 26,
+  "reviewCount": 27,
   "reviews": [
+    {
+      "name": "Jane J.",
+      "text": "very good service. always happy there. 😊",
+      "service": "Lifting De Pestañas",
+      "date": "ago. 22, 2026",
+      "rating": 5
+    },
     {
       "name": "Rocío Ruiz S.",
       "text": "Quedaron unas uñas preciosas y no tardó casi nada en hacerlas. Un trato muy bueno por parte de la chica. Repetiré.",
@@ -134,15 +141,8 @@
       "service": "Pestañas Punto Por Punto",
       "date": "jun. 30, 2025",
       "rating": 5
-    },
-    {
-      "name": "Shauanny M.",
-      "text": "Muy lindo ,me encantó ,toda una profesional\nNo encontraba a nadie que me hiciera tan bien ,limar ,masajes y otras cosas más .volveré 100%",
-      "service": "",
-      "date": "jun. 17, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "ef65c95d5059b0db",
-  "fetchedAt": "2026-08-17T02:51:43.241Z"
+  "contentHash": "465203cdbaf4a94d",
+  "fetchedAt": "2026-08-24T02:54:28.670Z"
 }
