@@ -1,6 +1,6 @@
 {
   "rating": 5,
-  "reviewCount": 27,
+  "reviewCount": 29,
   "reviews": [
     {
       "name": "Jane J.",
@@ -127,22 +127,8 @@
       "service": "Retiro De Semipermanente",
       "date": "ago. 12, 2025",
       "rating": 5
-    },
-    {
-      "name": "Eva E.",
-      "text": "Muy profesional Nazareth. Era la primera vez que iba y me ha encantado, volveré sin duda para mi pedicura y manicura con ella",
-      "service": "Pedicura spa",
-      "date": "jul. 14, 2025",
-      "rating": 5
-    },
-    {
-      "name": "Cayi19-07 L.",
-      "text": "Tuve una experiencia maravillosa con Nazareth. Me realizó un trabajo impecable tanto en las uñas como en las pestañas. Las uñas quedaron espectaculares, con un acabado prolijo y de excelente calidad. En cuanto a las pestañas, cada punto fue colocado con una precisión admirable, demostrando su dedicación y profesionalismo.",
-      "service": "Pestañas Punto Por Punto",
-      "date": "jun. 30, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "465203cdbaf4a94d",
-  "fetchedAt": "2026-08-24T02:54:28.670Z"
+  "contentHash": "34a7f9714e5ea1bb",
+  "fetchedAt": "2026-09-07T06:45:41.676Z"
 }
