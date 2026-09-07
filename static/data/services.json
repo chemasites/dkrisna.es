@@ -162,14 +162,6 @@
           "variantId": 2016868
         },
         {
-          "name": "Laminado De Cejas",
-          "price": "12,00 €",
-          "originalPrice": null,
-          "duration": "45 min",
-          "description": "Alineación y fijación del vello para cejas más definidas.",
-          "variantId": 2016869
-        },
-        {
           "name": "Pestañas Punto Por Punto",
           "price": "20,00 €",
           "originalPrice": null,
@@ -368,6 +360,6 @@
       ]
     }
   ],
-  "contentHash": "e9f9dc58ef8b2c00",
-  "fetchedAt": "2026-08-10T04:19:02.581Z"
+  "contentHash": "0a595938b5679e1e",
+  "fetchedAt": "2026-09-07T07:34:21.467Z"
 }
