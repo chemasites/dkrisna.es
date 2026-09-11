@@ -7,7 +7,7 @@ The September 11, 2026 audit found that `www.dkrisna.es` points to
 `https://www.dkrisna.es` fails certificate validation before a redirect can run.
 
 In the domain's IONOS DNS settings, replace the `www` CNAME target with
-`chemaclass.github.io`. Keep the bare-domain records and the GitHub Pages
+`chemasites.github.io`. Keep the bare-domain records and the GitHub Pages
 custom domain `dkrisna.es` unchanged. Wait for DNS propagation and GitHub
 certificate provisioning, then confirm HTTPS works for both names and the
 `www` address redirects to the canonical domain while preserving the path.

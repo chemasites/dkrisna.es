@@ -12,7 +12,7 @@ Website for D'Krisna, a beauty and wellness center located in Caravaca de la Cru
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Chemaclass/dkrisna.es.git
+git clone https://github.com/chemasites/dkrisna.es.git
 cd dkrisna.es
 ```
 
