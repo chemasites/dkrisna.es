@@ -18,13 +18,13 @@
     box-shadow: $shadow-sm;
 
     &-primary {
-        background: $color-primary;
+        background: $color-primary-ink;
         color: $color-white;
-        border-color: $color-primary;
+        border-color: $color-primary-ink;
 
         &:hover {
-            background: $color-primary-dark;
-            border-color: $color-primary-dark;
+            background: darken($color-primary-ink, 8%);
+            border-color: darken($color-primary-ink, 8%);
             color: $color-white;
             box-shadow: 0 4px 16px rgba($color-primary, 0.35);
         }
@@ -32,13 +32,13 @@
 
     &-outline {
         background: transparent;
-        color: $color-primary;
-        border-color: $color-primary;
+        color: $color-primary-ink;
+        border-color: $color-primary-ink;
         box-shadow: none;
 
         &:hover {
-            background: $color-primary;
-            border-color: $color-primary;
+            background: $color-primary-ink;
+            border-color: $color-primary-ink;
             color: $color-white;
             box-shadow: 0 4px 16px rgba($color-primary, 0.25);
         }

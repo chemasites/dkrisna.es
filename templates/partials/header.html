@@ -1,7 +1,8 @@
 <header class="header">
     <div class="container">
         <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" class="logo">
-            <img src="/images/logo.webp" alt="D'Krisna" class="logo-img">
+            {% set logo = resize_image(path="static/images/logo.webp", width=128, op="fit_width", format="webp", quality=85) %}
+            <img src="{{ logo.url | replace(from=config.base_url, to='') }}" alt="" class="logo-img" width="{{ logo.width }}" height="{{ logo.height }}">
             <span class="logo-text">D'Krisna</span>
         </a>
 

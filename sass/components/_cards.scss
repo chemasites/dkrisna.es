@@ -20,7 +20,7 @@
         border-color: rgba($color-primary, 0.3);
 
         .service-link {
-            color: $color-primary-dark;
+            color: $color-primary-ink;
         }
     }
 
@@ -46,7 +46,7 @@
     height: 80px;
     border-radius: 50%;
     background: linear-gradient(135deg, $color-beige-light 0%, $color-primary-pale 100%);
-    color: $color-primary-dark;
+    color: $color-primary-ink;
     transition: $transition;
 }
 
@@ -78,7 +78,7 @@
 .service-link {
     font-size: 0.875rem;
     font-weight: 500;
-    color: $color-primary;
+    color: $color-primary-ink;
 }
 
 .value-card {
@@ -113,7 +113,7 @@
     height: 64px;
     border-radius: 50%;
     background: $color-white;
-    color: $color-primary;
+    color: $color-primary-ink;
     box-shadow: $shadow-md;
 }
 
@@ -159,7 +159,7 @@
 
 .team-role {
     display: block;
-    color: $color-primary;
+    color: $color-primary-ink;
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: $spacing-xs;
@@ -177,7 +177,7 @@
     border-radius: $border-radius-lg;
     box-shadow: $shadow-sm;
     flex: 0 0 calc(25% - #{$spacing-md} * 3 / 4);
-    min-width: 280px;
+    min-width: min(280px, 100%);
     max-width: 320px;
     scroll-snap-align: start;
     display: flex;
@@ -235,7 +235,7 @@
 .review-service {
     display: block;
     font-size: 0.75rem;
-    color: $color-primary;
+    color: $color-primary-ink;
     font-weight: 500;
     margin-bottom: $spacing-xs;
     white-space: nowrap;
@@ -301,7 +301,7 @@
     height: 64px;
     border-radius: 50%;
     background: $color-white;
-    color: $color-primary;
+    color: $color-primary-ink;
     box-shadow: $shadow-md;
 }
 
@@ -319,7 +319,7 @@
     }
 
     h4 {
-        color: $color-primary;
+        color: $color-primary-ink;
         margin-bottom: $spacing-xs;
     }
 
@@ -334,7 +334,7 @@
     font-family: $font-heading;
     font-size: 1.5rem;
     font-weight: 600;
-    color: $color-primary-dark;
+    color: $color-primary-ink;
 
     small {
         display: block;
@@ -381,7 +381,7 @@
     font-family: $font-heading;
     font-size: 1.25rem;
     font-weight: 600;
-    color: $color-primary;
+    color: $color-primary-ink;
     white-space: nowrap;
 
     .price-original {
@@ -412,10 +412,7 @@
     padding: $spacing-xxs $spacing-xs + 0.1rem;
     border-radius: $border-radius;
 
-    &::before {
-        content: "⏱";
-        font-size: 0.75rem;
-    }
+
 }
 
 .service-description {
@@ -429,7 +426,7 @@
     display: inline-block;
     margin-top: auto;
     padding: $spacing-xs $spacing-md;
-    background: $color-primary;
+    background: $color-primary-ink;
     color: $color-white;
     font-size: 0.875rem;
     font-weight: 500;
@@ -438,7 +435,7 @@
     transition: $transition;
 
     &:hover {
-        background: darken($color-primary, 10%);
+        background: darken($color-primary-ink, 8%);
         color: $color-white;
     }
 }

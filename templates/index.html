@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 
 {% block preload %}
-<link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high">
+{% set hero_small = resize_image(path="static/images/hero.webp", width=640, op="fit_width", format="webp", quality=75) %}
+{% set hero_large = resize_image(path="static/images/hero.webp", width=1280, op="fit_width", format="webp", quality=80) %}
+<link rel="preload" as="image" href="{{ hero_large.url | replace(from=config.base_url, to='') }}"
+      imagesrcset="{{ hero_small.url | replace(from=config.base_url, to='') }} 640w, {{ hero_large.url | replace(from=config.base_url, to='') }} 1280w"
+      imagesizes="100vw" fetchpriority="high">
 {% endblock %}
 
 {% block content %}
 
 <!-- Hero Section -->
 <section class="hero">
+    {% set hero_small = resize_image(path="static/images/hero.webp", width=640, op="fit_width", format="webp", quality=75) %}
+{% set hero_large = resize_image(path="static/images/hero.webp", width=1280, op="fit_width", format="webp", quality=80) %}
+    <img class="hero-image" src="{{ hero_large.url | replace(from=config.base_url, to='') }}"
+         srcset="{{ hero_small.url | replace(from=config.base_url, to='') }} 640w, {{ hero_large.url | replace(from=config.base_url, to='') }} 1280w"
+         sizes="100vw" width="{{ hero_large.width }}" height="{{ hero_large.height }}" alt="" fetchpriority="high">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1 class="hero-title">{{ trans(key="hero_title", lang=lang) }}</h1>
@@ -96,9 +105,14 @@
         <div class="gallery-grid">
             {% for image in gallery_data.images %}
             <div class="gallery-item">
-                <img src="{{ image.src }}"
-                     alt="D'Krisna - {% if lang == 'en' %}Work sample{% else %}Muestra de trabajo{% endif %} {{ loop.index }}"
-                     width="400" height="400" loading="lazy">
+                {% set small = resize_image(path="static" ~ image.src, width=320, height=320, op="fill", format="webp", quality=80) %}
+                {% set medium = resize_image(path="static" ~ image.src, width=640, height=640, op="fill", format="webp", quality=80) %}
+                {% set large = resize_image(path="static" ~ image.src, width=960, height=960, op="fill", format="webp", quality=80) %}
+                <img src="{{ medium.url | replace(from=config.base_url, to='') }}"
+                     srcset="{{ small.url | replace(from=config.base_url, to='') }} 320w, {{ medium.url | replace(from=config.base_url, to='') }} 640w, {{ large.url | replace(from=config.base_url, to='') }} 960w"
+                     sizes="(max-width: 768px) calc(50vw - 2rem), (max-width: 992px) 30vw, 280px"
+                     alt="{{ trans(key='gallery_image_alt', lang=lang) | replace(from='{number}', to=loop.index | as_str) }}"
+                     width="640" height="640" loading="lazy" decoding="async">
             </div>
             {% endfor %}
         </div>
@@ -192,14 +206,14 @@
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <div>
-                        <h4>{{ trans(key="location_address", lang=lang) }}</h4>
+                        <h3>{{ trans(key="location_address", lang=lang) }}</h3>
                         <p>{{ config.extra.address }}</p>
                     </div>
                 </div>
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <div>
-                        <h4>{{ trans(key="location_phone", lang=lang) }}</h4>
+                        <h3>{{ trans(key="location_phone", lang=lang) }}</h3>
                         <p><a href="tel:{{ config.extra.phone }}">{{ config.extra.phone }}</a></p>
                         <p class="contact-whatsapp"><a href="{{ config.extra.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a></p>
                     </div>
@@ -207,7 +221,7 @@
                 <div class="location-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     <div>
-                        <h4>{{ trans(key="location_hours", lang=lang) }}</h4>
+                        <h3>{{ trans(key="location_hours", lang=lang) }}</h3>
                         <p>{{ trans(key="weekdays", lang=lang) }}: {{ config.extra.horario_semana }}</p>
                     </div>
                 </div>

@@ -8,14 +8,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/images/hero.webp') center/cover no-repeat fixed;
+    background: $color-primary-pale;
     overflow: hidden;
     padding-top: $header-height;
     padding-bottom: $spacing-lg;
 
     @media (max-width: $breakpoint-lg) {
         padding-top: $hero-padding-mobile;
-        background-attachment: scroll;
     }
 
     @media (max-width: $breakpoint-md) {
@@ -24,10 +23,17 @@
         align-items: flex-start;
     }
 
+    &-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     &-overlay {
         position: absolute;
         inset: 0;
-        backdrop-filter: blur(4px);
         background:
             radial-gradient(
                 ellipse at center,
@@ -81,7 +87,7 @@
         }
 
         .highlight {
-            color: $color-primary-dark;
+            color: $color-primary-ink;
             font-weight: 700;
             background: linear-gradient(135deg, $color-primary-dark 0%, darken($color-primary-dark, 15%) 100%);
             -webkit-background-clip: text;
@@ -99,7 +105,7 @@
                      0 1px 2px rgba($color-black, 0.05);
 
         .highlight {
-            color: $color-primary-dark;
+            color: $color-primary-ink;
             font-style: italic;
             text-shadow: 0 2px 4px rgba($color-white, 0.8),
                          0 1px 3px rgba($color-primary, 0.3);
@@ -189,19 +195,19 @@
 }
 
 .page-title {
-    color: $color-white;
+    color: $color-dark;
     margin-bottom: $spacing-sm;
 }
 
 .page-subtitle {
-    color: $color-white;
+    color: $color-dark;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.7;
     max-width: 700px;
     margin: 0 auto;
     padding: $spacing-sm $spacing-md;
-    background: rgba($color-primary-dark, 0.25);
+    background: rgba($color-white, 0.65);
     border-radius: $border-radius;
     text-shadow: 0 1px 2px rgba($color-black, 0.15);
 
@@ -348,12 +354,12 @@
         position: relative;
 
         h2 {
-            color: $color-white;
+            color: $color-dark;
             margin-bottom: $spacing-xs;
         }
 
         p {
-            color: rgba($color-white, 0.95);
+            color: $color-dark;
             margin-bottom: $spacing-md;
             font-size: 1.0625rem;
         }
@@ -470,7 +476,7 @@
     svg {
         width: 20px;
         height: 20px;
-        color: $color-primary;
+        color: $color-primary-ink;
         transition: $transition-fast;
     }
 
@@ -548,10 +554,10 @@
 
     svg {
         flex-shrink: 0;
-        color: $color-primary;
+        color: $color-primary-ink;
     }
 
-    h4 {
+    h3 {
         font-size: 1rem;
         margin-bottom: $spacing-xxs;
     }

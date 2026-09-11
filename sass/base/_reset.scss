@@ -56,10 +56,10 @@ img {
 }
 
 a {
-    color: $color-primary;
+    color: $color-primary-ink;
     text-decoration: none;
 
     &:hover {
-        color: $color-primary-dark;
+        color: $color-primary-ink;
     }
 }

@@ -11,7 +11,7 @@
     gap: 0;
 
     .lang-active {
-        background: $color-primary;
+        background: $color-primary-ink;
         color: $color-white;
         font-weight: 600;
         font-size: 0.75rem;
@@ -32,7 +32,7 @@
 
         &:hover {
             background: rgba($color-primary, 0.12);
-            color: $color-primary-dark;
+            color: $color-primary-ink;
         }
     }
 

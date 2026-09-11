@@ -174,7 +174,7 @@
         }
 
         &.active {
-            color: $color-primary;
+            color: $color-primary-ink;
             font-weight: 500;
 
             @media (max-width: $breakpoint-lg) {
@@ -247,7 +247,7 @@
             transition: color 0.15s ease;
 
             &:hover {
-                color: $color-primary;
+                color: $color-primary-ink;
             }
         }
     }
@@ -271,7 +271,7 @@
 
             &:hover {
                 background: rgba($color-primary, 0.06);
-                color: $color-primary-dark;
+                color: $color-primary-ink;
             }
         }
     }
@@ -371,7 +371,7 @@
 
             &:hover {
                 background: rgba($color-primary, 0.1);
-                color: $color-primary;
+                color: $color-primary-ink;
             }
         }
     }

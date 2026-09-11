@@ -15,6 +15,8 @@ title = "D'Krisna"
 description = "Beauty salon in Caravaca de la Cruz, Spain. Manicure, pedicure, gel nails, lash extensions and relaxing massages. Book your appointment!"
 
 [translations]
+gallery_image_alt = "Trabajo de uñas de D’Krisna, imagen {number}"
+map_title = "Mapa de D’Krisna en Caravaca de la Cruz"
 service_categories = "Categorías de servicios"
 therapeutic_description = "Sesión de masaje terapéutico con reserva individual. Consulta con el profesional las zonas que quieres trabajar antes de elegir tu cita."
 breadcrumb_home = "Inicio"
@@ -85,6 +87,8 @@ error_404_message = "Lo sentimos, la página que buscas no existe o ha sido movi
 error_404_button = "Volver al inicio"
 
 [languages.en.translations]
+gallery_image_alt = "Nail work by D’Krisna, image {number}"
+map_title = "Map of D’Krisna in Caravaca de la Cruz"
 service_categories = "Service categories"
 therapeutic_description = "An individually booked therapeutic massage session. Discuss the areas you would like to focus on with the practitioner before choosing your appointment."
 breadcrumb_home = "Home"

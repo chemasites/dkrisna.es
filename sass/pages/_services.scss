@@ -16,7 +16,7 @@
 
 .services-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: $spacing-md;
     margin-bottom: $spacing-lg;
 }
@@ -24,7 +24,7 @@
 .services-category-title {
     font-family: $font-heading;
     font-size: 1.75rem;
-    color: $color-primary;
+    color: $color-primary-ink;
     margin: $spacing-lg 0 $spacing-md;
     padding-bottom: $spacing-xs;
     border-bottom: 3px solid transparent;
@@ -51,7 +51,7 @@
 
     &::before {
         content: '✿';
-        color: $color-primary;
+        color: $color-primary-ink;
         font-size: 1.25rem;
         flex-shrink: 0;
         line-height: 1.5;
@@ -64,7 +64,7 @@
         line-height: 1.7;
 
         strong {
-            color: $color-primary-dark;
+            color: $color-primary-ink;
             font-weight: 600;
         }
     }
