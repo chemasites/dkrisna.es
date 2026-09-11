@@ -273,6 +273,15 @@ describe('generateServiceCardHTML', () => {
     expect(html).toContain('target="_blank"');
   });
 
+  it.each(['es', 'en'])('opens the Booksy widget for the selected variant (%s)', (lang) => {
+    const service = { name: 'Masaje Terapéutico', price: '50€', variantId: 2659030 };
+    const bookingUrl = 'https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz';
+    const html = generateServiceCardHTML(service, { bookingUrl, lang });
+
+    expect(html).toContain(`href="${bookingUrl}?do=open-widget&amp;variantId=2659030"`);
+    expect(html).not.toContain('#ba-s1v');
+  });
+
   it('includes booking button with "Book" (EN)', () => {
     const service = { name: 'Manicura', price: '15€' };
     const html = generateServiceCardHTML(service, { bookingUrl: 'https://link.booksy.com/test', lang: 'en' });

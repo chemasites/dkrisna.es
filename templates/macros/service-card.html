@@ -11,7 +11,7 @@
   </div>
   {% if service.description %}<p class="service-description">{{ service.description }}</p>{% endif %}
   {% if service.variantId %}
-  <a href="{{ booking_url }}#ba-s1v{{ service.variantId }}" class="service-book-btn" target="_blank" rel="noopener">
+  <a href="{{ booking_url }}?do=open-widget&amp;variantId={{ service.variantId }}" class="service-book-btn" target="_blank" rel="noopener">
     {{ trans(key="book", lang=lang) }}
   </a>
   {% endif %}

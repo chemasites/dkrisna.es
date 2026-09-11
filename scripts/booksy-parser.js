@@ -141,10 +141,10 @@ export function generateServiceCardHTML(service, options = {}) {
     priceHTML = `<span class="price-original">${service.originalPrice}</span> ${price}`;
   }
 
-  // Build service-specific booking URL using variant ID
+  // Open Booksy's booking widget with the service selected; legacy hashes are ignored.
   let serviceBookingUrl = bookingUrl;
   if (bookingUrl && service.variantId) {
-    serviceBookingUrl = `${bookingUrl}#ba-s1v${service.variantId}`;
+    serviceBookingUrl = `${bookingUrl}?do=open-widget&amp;variantId=${service.variantId}`;
   }
 
   const bookingButton = serviceBookingUrl
