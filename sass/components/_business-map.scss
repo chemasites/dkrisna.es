@@ -1,0 +1,12 @@
+.business-map-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: $spacing-sm;
+    background: $color-white;
+
+    .btn {
+        @media (max-width: $breakpoint-sm) {
+            width: 100%;
+        }
+    }
+}

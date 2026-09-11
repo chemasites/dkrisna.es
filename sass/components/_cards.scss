@@ -46,7 +46,7 @@
     height: 80px;
     border-radius: 50%;
     background: linear-gradient(135deg, $color-beige-light 0%, $color-primary-pale 100%);
-    color: $color-primary-ink;
+    color: $color-primary-dark;
     transition: $transition;
 }
 
@@ -113,7 +113,7 @@
     height: 64px;
     border-radius: 50%;
     background: $color-white;
-    color: $color-primary-ink;
+    color: $color-primary-dark;
     box-shadow: $shadow-md;
 }
 
@@ -301,7 +301,7 @@
     height: 64px;
     border-radius: 50%;
     background: $color-white;
-    color: $color-primary-ink;
+    color: $color-primary-dark;
     box-shadow: $shadow-md;
 }
 
@@ -423,11 +423,15 @@
 }
 
 .service-book-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    text-align: center;
     margin-top: auto;
     padding: $spacing-xs $spacing-md;
-    background: $color-primary-ink;
-    color: $color-white;
+    background: $color-primary;
+    color: $color-dark;
     font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
@@ -435,8 +439,8 @@
     transition: $transition;
 
     &:hover {
-        background: darken($color-primary-ink, 8%);
-        color: $color-white;
+        background: lighten($color-primary, 5%);
+        color: $color-dark;
     }
 }
 

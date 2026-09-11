@@ -10,9 +10,17 @@
     padding: 4px;
     gap: 0;
 
+    .lang-active, .lang-inactive {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
     .lang-active {
-        background: $color-primary-ink;
-        color: $color-white;
+        background: $color-primary;
+        color: $color-dark;
         font-weight: 600;
         font-size: 0.75rem;
         padding: 6px 16px;

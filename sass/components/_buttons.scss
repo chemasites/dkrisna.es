@@ -3,7 +3,11 @@
 // ============================================
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    max-width: 100%;
     padding: $spacing-xs + $spacing-xxs + 0.125rem $spacing-md;
     font-family: $font-body;
     font-size: 0.875rem;
@@ -18,28 +22,28 @@
     box-shadow: $shadow-sm;
 
     &-primary {
-        background: $color-primary-ink;
-        color: $color-white;
-        border-color: $color-primary-ink;
+        background: $color-primary;
+        color: $color-dark;
+        border-color: $color-primary;
 
         &:hover {
-            background: darken($color-primary-ink, 8%);
-            border-color: darken($color-primary-ink, 8%);
-            color: $color-white;
+            background: lighten($color-primary, 5%);
+            border-color: lighten($color-primary, 5%);
+            color: $color-dark;
             box-shadow: 0 4px 16px rgba($color-primary, 0.35);
         }
     }
 
     &-outline {
         background: transparent;
-        color: $color-primary-ink;
-        border-color: $color-primary-ink;
+        color: $color-dark;
+        border-color: $color-primary;
         box-shadow: none;
 
         &:hover {
-            background: $color-primary-ink;
-            border-color: $color-primary-ink;
-            color: $color-white;
+            background: $color-primary-pale;
+            border-color: $color-primary;
+            color: $color-dark;
             box-shadow: 0 4px 16px rgba($color-primary, 0.25);
         }
     }
