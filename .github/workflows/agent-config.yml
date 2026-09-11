@@ -1,0 +1,42 @@
+name: Check agent configuration
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agent-config-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      AGNOSTIC_AI_VERSION: v0.51.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pinned agnostic-ai
+        env:
+          AGNOSTIC_AI_INSTALL_DIR: ${{ runner.temp }}/agnostic-ai-bin
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/Chemaclass/agnostic-ai/${AGNOSTIC_AI_VERSION}/scripts/install.sh" -o "$RUNNER_TEMP/install-agnostic-ai.sh"
+          bash "$RUNNER_TEMP/install-agnostic-ai.sh"
+          echo "$AGNOSTIC_AI_INSTALL_DIR" >> "$GITHUB_PATH"
+
+      - name: Validate sources
+        run: |
+          agnostic-ai validate
+          agnostic-ai lint --strict
+
+      - name: Verify generation from sources
+        run: |
+          agnostic-ai sync
+          agnostic-ai sync --check --diff --format=github

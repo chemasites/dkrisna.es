@@ -1,4 +1,6 @@
 ---
+name: booksy-api
+description: Preserve the public Booksy API integration and output contracts.
 globs: scripts/booksy-api.js,scripts/fetch-services.js,scripts/fetch-reviews.js
 ---
 
@@ -13,7 +15,7 @@ GitHub-hosted runners use datacenter IPs that Booksy's hCaptcha bot-detection
 flags. The headless browser loaded the page but the server withheld the
 embedded `__NUXT__` service/review data, so the nightly sync failed every run
 (see the original failure: 3 retries → "No services extracted" → exit 1). A
-realistic user-agent / stealth context did not fix it — the block is on IP
+realistic user-agent / stealth context did not fix it - the block is on IP
 reputation, not the UA. The REST API is gated by a public web `api_key`, not by
 hCaptcha, so it works from CI.
 
@@ -40,6 +42,6 @@ hCaptcha, so it works from CI.
 - Output JSON shapes are unchanged from the old scraper so the parser, content
   hashing, translation, and templates all keep working. If you change the
   mapping, keep `services.json` / `booksy-reviews.json` shapes stable.
-- `fetch-gallery.js` still uses Playwright — only services/reviews moved to the API.
+- `fetch-gallery.js` still uses Playwright - only services/reviews moved to the API.
 - Category map lives in `fetch-services.js` (`CATEGORY_TRANSLATIONS`,
   `getCategoryId`, `categoryOrder`). Unmapped categories are silently skipped.

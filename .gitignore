@@ -4,3 +4,18 @@
 .env
 public/
 static/processed_images/
+
+# >>> agnostic-ai (managed) >>>
+# Generated paths. Edit specs, not this block. Run `agnostic-ai sync` to refresh.
+# Not committed: a fresh clone or `git worktree` lacks these until `agnostic-ai sync` runs (e.g. a post-checkout hook).
+/.agnostic-ai/.sync-state
+/.agnostic-ai/packs/
+/.claude/agent-memory/
+/.claude/agents/
+/.claude/rules/
+/.claude/settings.local.json
+/.codex/agents/
+/AGENTS.md
+/CLAUDE.md
+/agnostic-ai.local.yaml
+# <<< agnostic-ai (managed) <<<
