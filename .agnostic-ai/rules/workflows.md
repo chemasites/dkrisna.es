@@ -6,7 +6,7 @@ globs: .github/workflows/*.yml
 
 # GitHub Actions Workflow Rules
 
-- `main.yml` - Builds and deploys to GitHub Pages on push to main
+- `main.yml` - Builds and deploys to GitHub Pages on push to main and after successful services/reviews syncs on main
 - `update-services.yml` - Weekly (Mon 3 AM UTC) fetch services from Booksy, translate, auto-commit
 - `update-reviews.yml` - Weekly (Mon 2 AM UTC) fetch reviews from Booksy, auto-commit
 - Booksy data comes from its public REST API (`scripts/booksy-api.js`), not headless scraping - datacenter IPs got hCaptcha-blocked when using Playwright

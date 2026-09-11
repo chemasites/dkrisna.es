@@ -1,8 +1,12 @@
-# On every push this script is executed
+# Publish direct changes and successful Booksy synchronizations.
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: [Update Services from Booksy, Update Reviews from Booksy]
+    types: [completed]
+    branches: [main]
 
 name: Build and deploy GH Pages
 
@@ -18,12 +22,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          # The sync commits data after its triggering SHA; build current main.
+          ref: main
 
       - name: Setup Pages
         id: pages
