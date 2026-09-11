@@ -1,4 +1,4 @@
 {# JSON serialization must not use HTML entities or allow a closing script tag. #}
 {% macro encode(value) -%}
-{{ value | json_encode() | replace(from="<", to="\\u003c") | safe }}
+{{ value | json_encode() | replace(from="<", to="\u003c") | safe }}
 {%- endmacro encode %}

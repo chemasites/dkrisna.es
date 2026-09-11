@@ -1,61 +1,31 @@
-# D'Krisna - Centro de Belleza y Bienestar
+# D'Krisna
 
-> Beauty and wellness salon in Caravaca de la Cruz, Murcia, Spain.
+> Beauty and wellness services in Caravaca de la Cruz, Murcia, Spain.
 
-## About
+## Spanish pages
 
-D'Krisna is a professional beauty salon offering nail services (manicure, pedicure, gel nails, acrylic nails, softgel, polygel), brow and lash treatments (lamination, lifting, extensions), relaxing and therapeutic massages (including hot stone massage and Kobido facial lifting), and wood therapy body treatments (maderoterapia).
+- [Home](https://dkrisna.es/): Overview of the salon and customer reviews.
+- [Manicure and pedicure](https://dkrisna.es/manicura/): Nail, brow and lash appointments, prices, durations and booking links.
+- [Massages](https://dkrisna.es/masajes/): Massages, facial treatments and wood therapy, with prices, durations and booking links.
+- [Location and contact](https://dkrisna.es/ubicacion/): Address, telephone, regular hours and directions.
+- [Team](https://dkrisna.es/sobre-nosotros/): The salon team and planning a visit.
 
-## Location
+## English pages
 
-- Address: Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia, Spain
-- Phone: +34 722 27 59 75
-- Email: dkrisnanails@gmail.com
-- Hours: Monday to Saturday, 09:00–21:00. Closed on Sundays.
+- [Home](https://dkrisna.es/en/)
+- [Manicure and pedicure](https://dkrisna.es/en/manicura/)
+- [Massages](https://dkrisna.es/en/masajes/)
+- [Location and contact](https://dkrisna.es/en/ubicacion/)
+- [Team](https://dkrisna.es/en/sobre-nosotros/)
 
-## Booking
+## Booking and current information
 
-Appointments can be booked online via Booksy:
-https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz
+Follow the booking link beside the desired service. It opens Booksy with that
+service selected. Confirm the final appointment details and availability there.
+Read prices and business details on the linked pages; they are not duplicated
+in this directory. Availability is provided by Booksy, not by this website.
 
-## Services
+## Legal
 
-### Nail Services (Manicura)
-- Gel nails, acrylic nails, softgel, polygel extensions
-- Semi-permanent polish, dipping system
-- Traditional manicure and cleanup
-- Acrylic and gel refills
-
-### Pedicure (Pedicura)
-- Dry pedicure with traditional or semi-permanent polish
-- Spa pedicure with exfoliation and hydration
-
-### Brows & Lashes (Cejas y Pestañas)
-- Eyebrow lamination and pigmentation
-- Lash lifting and point-by-point extensions
-- Facial waxing
-
-### Massages (Masajes)
-- Relaxing body massage with natural oils
-- Geothermal hot stone massage
-- Kobido facial lifting
-
-### Wood Therapy (Maderoterapia)
-- Facial wood therapy with phototherapy
-- Legs and glutes contouring
-- Abdomen, waist, and arms sculpting
-- Full body treatment
-- Session packages available (6 and 10 sessions)
-
-## Social Media
-
-- Instagram: https://www.instagram.com/d_krisnanails
-- Facebook: https://www.facebook.com/profile.php?id=61573120598091
-- TikTok: https://www.tiktok.com/@d_krisna
-- WhatsApp: https://wa.me/34722275975
-
-## Languages
-
-The website is available in Spanish (primary) and English.
-- Spanish: https://dkrisna.es/
-- English: https://dkrisna.es/en/
+- [Aviso legal](https://dkrisna.es/legal/)
+- [Legal notice](https://dkrisna.es/en/legal/)

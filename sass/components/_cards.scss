@@ -228,7 +228,7 @@
     .review-stars {
         display: flex;
         gap: 1px;
-        color: $color-star-rating;
+        color: $color-primary-ink;
     }
 }
 
@@ -439,3 +439,5 @@
         color: $color-white;
     }
 }
+
+.review-text { margin-left: 0; margin-right: 0; }

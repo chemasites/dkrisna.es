@@ -1,6 +1,6 @@
 +++
 title = "Location and contact in Caravaca de la Cruz"
-description = "Visit D'Krisna at Carretera de Murcia, 45, Caravaca de la Cruz, Murcia, Spain. Open Monday to Saturday 9AM-9PM."
+description = "Find D’Krisna in Caravaca de la Cruz, Murcia, Spain. Check the address, opening hours, contact details and directions for your appointment."
 template = "page.html"
 
 [extra]

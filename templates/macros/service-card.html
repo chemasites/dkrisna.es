@@ -15,7 +15,7 @@
   <p class="service-description">{{ trans(key="therapeutic_description", lang=lang) }}</p>
   {% endif %}
   {% if service.variantId %}
-  <a href="{{ booking_url }}?do=open-widget&amp;variantId={{ service.variantId }}" class="service-book-btn" target="_blank" rel="noopener">
+  <a href="{{ booking_url }}?do=open-widget&amp;variantId={{ service.variantId }}" class="service-book-btn" aria-label="{{ trans(key='book_service', lang=lang) | replace(from='{service}', to=service.name) }}" target="_blank" rel="noopener">
     {{ trans(key="book", lang=lang) }}
   </a>
   {% endif %}

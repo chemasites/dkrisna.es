@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros/review-card.html" as reviews %}
 
 {% block preload %}
 {% set hero_small = resize_image(path="static/images/hero.webp", width=640, op="fit_width", format="webp", quality=75) %}
@@ -135,13 +136,14 @@
                 <h2>{{ trans(key="about_title", lang=lang) }}</h2>
                 <p>{{ trans(key="about_p1", lang=lang) }}</p>
                 <p>{{ trans(key="about_p2", lang=lang) }}</p>
-                <a href="{{ get_url(path='sobre-nosotros') }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
+                <a href="{{ get_url(path='sobre-nosotros/', lang=lang) }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Reviews Section -->
+<!-- Reviews remain readable when JavaScript is unavailable. -->
+{% set reviews_data = load_data(path="static/data/booksy-reviews.json") %}
 <section class="section reviews-section">
     <div class="container">
         <div class="section-header">
@@ -151,29 +153,24 @@
         </div>
         <div class="reviews-header">
             <div class="reviews-rating">
-                <div class="rating-stars" id="rating-stars">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </div>
-                <span class="rating-score" id="rating-score">5.0</span>
-                <span class="rating-count" id="rating-count" data-template="{{ trans(key='reviews_based_on', lang=lang) }}">{{ trans(key="reviews_based_on", lang=lang) }}</span>
+                <span class="rating-score" id="rating-score">{{ reviews_data.rating }}/5</span>
+                <span class="rating-count" id="rating-count">{{ trans(key="reviews_based_on", lang=lang) | replace(from="{count}", to=reviews_data.reviewCount | as_str) }}</span>
             </div>
             <a href="{{ config.extra.booksy_url }}#reviews-section" target="_blank" rel="noopener" class="reviews-booksy">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Booksy Reviews
+                {{ trans(key="booksy_reviews", lang=lang) }}
             </a>
         </div>
         <div class="reviews-carousel-wrapper" id="reviews-wrapper">
-            <button class="carousel-arrow arrow-left" id="arrow-left" aria-label="Scroll left">
+            <button class="carousel-arrow arrow-left" id="arrow-left" aria-label="{{ trans(key='previous_reviews', lang=lang) }}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
             <div class="reviews-carousel" id="reviews-carousel">
-                <!-- Reviews will be loaded dynamically from booksy-reviews.json -->
+                {% for review in reviews_data.reviews %}
+                    {{ reviews::card(review=review, lang=lang) }}
+                {% endfor %}
             </div>
-            <button class="carousel-arrow arrow-right" id="arrow-right" aria-label="Scroll right">
+            <button class="carousel-arrow arrow-right" id="arrow-right" aria-label="{{ trans(key='next_reviews', lang=lang) }}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
         </div>
@@ -225,7 +222,7 @@
                         <p>{{ trans(key="weekdays", lang=lang) }}: {{ config.extra.opening_time }} - {{ config.extra.closing_time }}</p>
                     </div>
                 </div>
-                <a href="{{ get_url(path='ubicacion') }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
+                <a href="{{ get_url(path='ubicacion/', lang=lang) }}" class="btn btn-outline">{{ trans(key="view_more", lang=lang) }}</a>
             </div>
             <div class="location-map">
                 {% include "partials/business-map.html" %}
@@ -236,45 +233,6 @@
 
 <script>
 (function() {
-    var starSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
-
-    var monthMap = {
-        'ene': 0, 'feb': 1, 'mar': 2, 'abr': 3, 'may': 4, 'jun': 5,
-        'jul': 6, 'ago': 7, 'sep': 8, 'oct': 9, 'nov': 10, 'dic': 11
-    };
-
-    function parseSpanishDate(dateStr) {
-        if (!dateStr) return new Date(0);
-        var match = dateStr.match(/(\w+)\.\s*(\d+),\s*(\d+)/);
-        if (!match) return new Date(0);
-        var month = monthMap[match[1].toLowerCase()] || 0;
-        return new Date(parseInt(match[3]), month, parseInt(match[2]));
-    }
-
-    function createReviewCard(review) {
-        var initial = review.name.charAt(0).toUpperCase();
-        var stars = '';
-        for (var i = 0; i < 5; i++) {
-            stars += starSvg;
-        }
-
-        var serviceHtml = review.service ? '<span class="review-service">' + review.service + '</span>' : '';
-        var dateHtml = review.date ? '<span class="review-date">' + review.date + '</span>' : '';
-
-        return '<div class="review-card">' +
-            '<div class="review-header">' +
-                '<div class="review-avatar">' + initial + '</div>' +
-                '<div class="review-info">' +
-                    '<span class="review-name">' + review.name + '</span>' +
-                    '<div class="review-stars">' + stars + '</div>' +
-                '</div>' +
-            '</div>' +
-            serviceHtml +
-            '<p class="review-text">"' + review.text + '"</p>' +
-            '<div class="review-footer">' + dateHtml + '</div>' +
-        '</div>';
-    }
-
     var carousel = document.getElementById('reviews-carousel');
     var arrowLeft = document.getElementById('arrow-left');
     var arrowRight = document.getElementById('arrow-right');
@@ -297,12 +255,12 @@
 
         if (direction === 1 && currentScroll >= maxScroll - 10) {
             // At end, wrap to start
-            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            carousel.scrollTo({ left: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         } else if (direction === -1 && currentScroll <= 10) {
             // At start, wrap to end
-            carousel.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            carousel.scrollTo({ left: maxScroll, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         } else {
-            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         }
     }
 
@@ -316,40 +274,8 @@
         carousel.addEventListener('scroll', updateArrows);
     }
 
-    fetch('/data/booksy-reviews.json')
-        .then(function(response) { return response.json(); })
-        .then(function(data) {
-            // Update rating score
-            var scoreEl = document.getElementById('rating-score');
-            if (scoreEl && data.rating) {
-                scoreEl.textContent = data.rating.toFixed(1);
-            }
+    updateArrows();
 
-            // Update review count using template
-            var countEl = document.getElementById('rating-count');
-            if (countEl && data.reviewCount) {
-                var template = countEl.getAttribute('data-template') || '';
-                countEl.textContent = template.replace('{count}', data.reviewCount);
-            }
-
-            // Sort reviews by date (newest first) and render carousel
-            if (carousel && data.reviews && data.reviews.length > 0) {
-                data.reviews.sort(function(a, b) {
-                    return parseSpanishDate(b.date) - parseSpanishDate(a.date);
-                });
-
-                var html = '';
-                data.reviews.forEach(function(review) {
-                    html += createReviewCard(review);
-                });
-                carousel.innerHTML = html;
-                // Update arrows after content is loaded
-                setTimeout(updateArrows, 100);
-            }
-        })
-        .catch(function(err) {
-            console.log('Could not load reviews data:', err);
-        });
 })();
 </script>
 {% endblock %}

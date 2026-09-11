@@ -23,11 +23,24 @@ class Document(HTMLParser):
         self.schemas = []
         self.ids = set()
         self.robots = []
+        self.meta = {}
+        self.text = []
+        self.hidden = False
+        self.h1_count = 0
+        self.review_count = 0
         self.json_text = None
         self.feed(text)
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag in ("script", "style"):
+            self.hidden = True
+        if tag == "h1":
+            self.h1_count += 1
+        if tag == "article" and "review-card" in attrs.get("class", "").split():
+            self.review_count += 1
+        if tag == "meta":
+            self.meta[attrs.get("name", attrs.get("property"))] = attrs.get("content")
         if attrs.get("id"):
             self.ids.add(attrs["id"])
         if tag in ("link", "a"):
@@ -38,10 +51,14 @@ class Document(HTMLParser):
             self.json_text = ""
 
     def handle_data(self, text):
+        if not self.hidden:
+            self.text.append(text)
         if self.json_text is not None:
             self.json_text += text
 
     def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.hidden = False
         if tag == "script" and self.json_text is not None:
             data = json.loads(self.json_text)
             self.schemas.extend(data.get("@graph", [data]))
@@ -69,6 +86,9 @@ for file in sorted(PUBLIC.rglob("*.html")):
         assert not doc.schemas
         continue
     assert len(doc.robots) == 1 and "noindex" not in doc.robots[0], path
+    assert doc.h1_count == 1, path
+    assert doc.meta.get("description") == doc.meta.get("og:description") == doc.meta.get("twitter:description"), path
+    assert doc.meta.get("og:title") == doc.meta.get("twitter:title"), path
     canonical = [a["href"] for a in doc.links if a.get("rel") == "canonical"]
     assert len(canonical) == 1 and urlparse(canonical[0]).path == path, (path, canonical)
     check_values(doc.schemas)
@@ -79,6 +99,13 @@ for file in sorted(PUBLIC.rglob("*.html")):
 for lang, prefix in (("es", "/"), ("en", "/en/")):
     source = ROOT / "static/data" / ("services.json" if lang == "es" else "services.en.json")
     categories = json.loads(source.read_text())["categories"]
+    reviews = json.loads((ROOT / "static/data/booksy-reviews.json").read_text())
+    home = pages[prefix]
+    assert home.review_count == len(reviews["reviews"]), "Reviews missing from initial HTML"
+    home_text = " ".join(" ".join(home.text).split())
+    assert "{count}" not in home_text
+    for review in reviews["reviews"]:
+        assert " ".join(review["text"].split()) in home_text, "Review text differs from source"
     for slug, filters in (("manicura", ["manos", "pies", "cejas-pestanas"]),
                           ("masajes", ["masajes", "faciales", "maderoterapia", "bonos-maderoterapia"])):
         doc = pages[prefix + slug + "/"]
@@ -93,6 +120,8 @@ for lang, prefix in (("es", "/"), ("en", "/en/")):
             assert offer["url"].endswith("?do=open-widget&variantId=" + str(service["variantId"]))
             assert any(a.get("href") == offer["url"] for a in doc.links)
             assert urlparse(schema["url"]).fragment in doc.ids
+            if service.get("description"):
+                assert schema.get("description") == service["description"], "Description serialization changed the source"
 
 sitemap = ElementTree.parse(PUBLIC / "sitemap.xml")
 locations = sitemap.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
@@ -101,4 +130,6 @@ for path, doc in pages.items():
     for link in doc.links:
         if link.get("hreflang"):
             assert urlparse(link["href"]).path in pages, (path, link)
+            if link["hreflang"] == "x-default":
+                assert urlparse(link["href"]).path == path.replace("/en/", "/"), (path, link)
 print(f"SEO checks passed: {len(pages)} pages, sitemap, structured data and bilingual Booksy offers")

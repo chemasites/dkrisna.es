@@ -63,3 +63,9 @@ a {
         color: $color-primary-ink;
     }
 }
+
+:focus-visible {
+    outline: 3px solid $color-primary-ink;
+    outline-offset: 4px;
+}
+[id] { scroll-margin-top: 100px; }
