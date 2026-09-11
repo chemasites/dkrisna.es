@@ -108,3 +108,18 @@
         }
     }
 }
+
+.service-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs $spacing-md;
+    margin-bottom: $spacing-md;
+    a { padding: $spacing-xs 0; text-decoration: underline; }
+}
+.service-guide {
+    max-width: 72ch;
+    margin-top: $spacing-lg;
+    h2 { margin: $spacing-lg 0 $spacing-sm; }
+    h3 { margin: $spacing-md 0 $spacing-xs; }
+    a { text-decoration: underline; }
+}

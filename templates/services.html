@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% import "macros/service-card.html" as cards %}
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
-
-{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
-
 {% block content %}
 <section class="page-hero">
     <div class="page-hero-overlay"></div>
@@ -24,6 +20,13 @@
             {% set services_data = load_data(path="static/data/services.json") %}
         {% endif %}
 
+        <nav class="service-categories" aria-label="{{ trans(key='service_categories', lang=lang) }}">
+            {% for category in services_data.categories %}
+                {% if category.id in page.extra.category_filter %}
+                <a href="#{{ category.id }}">{% if lang == 'en' %}{{ category.name.en }}{% else %}{{ category.name.es }}{% endif %}</a>
+                {% endif %}
+            {% endfor %}
+        </nav>
         <div class="services-full">
             {% set_global has_discounts = false %}
             {% for category in services_data.categories %}
@@ -52,6 +55,7 @@
             </div>
             {% endif %}
         </div>
+        <div class="service-guide">{{ page.content | safe }}</div>
     </div>
 </section>
 

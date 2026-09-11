@@ -1,5 +1,5 @@
 +++
-title = "Sobre D'Krisna - Centro de Belleza en Caravaca de la Cruz"
+title = "Nuestro equipo en Caravaca de la Cruz"
 description = "Conoce al equipo de D'Krisna: profesionales de belleza y bienestar en Caravaca de la Cruz. Manicuristas y masajistas expertos."
 template = "page.html"
 
@@ -71,3 +71,9 @@ show_cta = true
 
 </div>
 </div>
+
+## Prepara tu visita
+
+Consulta nuestros [servicios de manicura y pedicura](@/manicura.md) o la carta de [masajes y tratamientos corporales](@/masajes.md). Cada servicio incluye su precio, duración y enlace de reserva.
+
+Si necesitas ayuda para elegir tu cita, {% whatsapp_link() %}contacta con el equipo por WhatsApp{% end %}. Estamos en [Caravaca de la Cruz, Murcia](@/ubicacion.md).

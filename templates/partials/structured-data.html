@@ -6,7 +6,7 @@
     {% set entity_title = page.title %}
 {% else %}
     {% set entity_url = section.permalink %}
-    {% set entity_title = config.title %}
+    {% set entity_title = section.title %}
 {% endif %}
 <script type="application/ld+json">
 {
@@ -108,6 +108,8 @@
             "name": {{ json::encode(value=service.name) }},
             {% if service.description %}
             "description": {{ json::encode(value=service.description) }},
+            {% elif service.variantId == 2659030 %}
+            "description": {{ json::encode(value=trans(key="therapeutic_description", lang=lang)) }},
             {% endif %}
             "provider": {"@id": {{ json::encode(value=business_id) }}},
             "mainEntityOfPage": {"@id": {{ json::encode(value=entity_url ~ "#webpage") }}},

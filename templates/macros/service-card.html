@@ -3,13 +3,17 @@
   <div class="service-header">
     <h3>{{ service.name }}</h3>
     <div class="service-meta">
-      {% if service.duration %}<span class="service-duration">{{ service.duration }}</span>{% endif %}
+      {% if service.duration %}<span class="service-duration">{% if lang == "en" %}{{ service.duration | replace(from="horas", to="hours") | replace(from="hora", to="hour") }}{% else %}{{ service.duration }}{% endif %}</span>{% endif %}
       <span class="service-price">
         {% if service.originalPrice %}<span class="price-original">{{ service.originalPrice }}</span> {% endif %}{{ service.price }}
       </span>
     </div>
   </div>
-  {% if service.description %}<p class="service-description">{{ service.description }}</p>{% endif %}
+  {% if service.description %}
+  <p class="service-description">{{ service.description }}</p>
+  {% elif service.variantId == 2659030 %}
+  <p class="service-description">{{ trans(key="therapeutic_description", lang=lang) }}</p>
+  {% endif %}
   {% if service.variantId %}
   <a href="{{ booking_url }}?do=open-widget&amp;variantId={{ service.variantId }}" class="service-book-btn" target="_blank" rel="noopener">
     {{ trans(key="book", lang=lang) }}

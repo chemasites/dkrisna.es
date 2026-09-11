@@ -1,5 +1,5 @@
 +++
-title = "Ubicación D'Krisna en Caravaca de la Cruz"
+title = "Ubicación y contacto en Caravaca de la Cruz"
 description = "Visita D'Krisna en Carretera de Murcia N45, Caravaca de la Cruz, Murcia. Horario: Lunes a Sábado 9:00-21:00. Aparcamiento gratuito cerca."
 template = "page.html"
 

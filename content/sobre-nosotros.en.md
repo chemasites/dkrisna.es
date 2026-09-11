@@ -1,5 +1,5 @@
 +++
-title = "About D'Krisna - Beauty Salon in Caravaca de la Cruz, Spain"
+title = "Our team in Caravaca de la Cruz"
 description = "Meet the D'Krisna team: beauty and wellness professionals in Caravaca de la Cruz, Spain. Expert nail artists and massage therapists."
 template = "page.html"
 
@@ -71,3 +71,9 @@ show_cta = true
 
 </div>
 </div>
+
+## Plan your visit
+
+Explore our [manicure and pedicure services](@/manicura.en.md) or [massages and body treatments](@/masajes.en.md). Each service includes its price, duration and booking link.
+
+For help choosing your appointment, {% whatsapp_link() %}contact the team on WhatsApp{% end %}. Find us in [Caravaca de la Cruz, Murcia, Spain](@/ubicacion.en.md).

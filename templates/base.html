@@ -1,59 +1,47 @@
+{% if page %}
+    {% set seo_title = page.title ~ " | " ~ config.title %}
+    {% set seo_description = page.description | default(value=config.description) %}
+    {% set canonical_url = page.permalink %}
+{% elif section %}
+    {% set seo_title = section.title ~ " | " ~ config.title %}
+    {% set seo_description = section.description | default(value=config.description) %}
+    {% set canonical_url = section.permalink %}
+{% else %}
+    {% set seo_title = config.title %}
+    {% set seo_description = config.description %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
-    <title>{% block title %}{{ config.title }} - {% if lang == "en" %}Beauty & Wellness Center{% else %}Centro de Belleza y Bienestar{% endif %}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
-    <meta name="author" content="D'Krisna">
+    <title>{% block title %}{{ seo_title }}{% endblock %}</title>
+    <meta name="description" content="{{ seo_description }}">
+    <meta name="author" content="{{ config.title }}">
     <meta name="robots" content="{% block robots %}index, follow, max-image-preview:large{% endblock %}">
     <meta name="theme-color" content="#E8A4B8">
 
-    <!-- Canonical URL -->
-    {% if page %}
-    <link rel="canonical" href="{{ page.permalink }}">
-    {% elif section %}
-    <link rel="canonical" href="{{ section.permalink }}">
-    {% else %}
-    <link rel="canonical" href="{{ config.base_url }}{% if lang == 'en' %}/en/{% else %}/{% endif %}">
+    {% if canonical_url is defined %}
+    {% set spanish_url = canonical_url | replace(from='/en/', to='/') %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="alternate" hreflang="es" href="{{ spanish_url }}">
+    <link rel="alternate" hreflang="en" href="{{ spanish_url | replace(from=config.base_url, to=config.base_url ~ '/en') }}">
+    <link rel="alternate" hreflang="x-default" href="{{ spanish_url }}">
+    <meta property="og:url" content="{{ canonical_url }}">
     {% endif %}
-
-    <!-- Hreflang for multilingual SEO -->
-    {% if page %}
-    <link rel="alternate" hreflang="es" href="{{ page.permalink | replace(from='/en/', to='/') }}">
-    <link rel="alternate" hreflang="en" href="{% if '/en/' in page.permalink %}{{ page.permalink }}{% else %}{{ page.permalink | replace(from=config.base_url, to=config.base_url ~ '/en') }}{% endif %}">
-    {% else %}
-    <link rel="alternate" hreflang="es" href="{{ config.base_url }}/">
-    <link rel="alternate" hreflang="en" href="{{ config.base_url }}/en/">
-    {% endif %}
-    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}/">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
-    <meta property="og:title" content="{% block og_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
+    <meta property="og:title" content="{{ seo_title }}">
+    <meta property="og:description" content="{{ seo_description }}">
     <meta property="og:image" content="{{ config.base_url }}/images/og-image.webp">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="1600">
     <meta property="og:image:type" content="image/webp">
-    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
-    <meta property="og:site_name" content="D'Krisna">
-
-    <!-- Twitter -->
+    <meta property="og:locale" content="{% if lang == 'en' %}en_GB{% else %}es_ES{% endif %}">
+    <meta property="og:site_name" content="{{ config.title }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{% if page %}{{ page.permalink }}{% elif section %}{{ section.permalink }}{% else %}{{ config.base_url }}/{% endif %}">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} - {% if lang == 'en' %}Beauty & Wellness{% else %}Belleza y Bienestar{% endif %}{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}{% if lang == 'en' %}Beauty and wellness center in Caravaca de la Cruz, Murcia. Nails, massages and body treatments.{% else %}{{ config.description }}{% endif %}{% endblock %}">
+    <meta name="twitter:title" content="{{ seo_title }}">
+    <meta name="twitter:description" content="{{ seo_description }}">
     <meta name="twitter:image" content="{{ config.base_url }}/images/og-image.webp">
-
-    <!-- Geo tags for local SEO -->
-    <meta name="geo.region" content="ES-MU">
-    <meta name="geo.placename" content="Caravaca de la Cruz">
-    <meta name="geo.position" content="38.105022796540084;-1.851400649856759">
-    <meta name="ICBM" content="38.105022796540084, -1.851400649856759">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
