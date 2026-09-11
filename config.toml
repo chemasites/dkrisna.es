@@ -8,12 +8,14 @@ compile_sass = true
 build_search_index = false
 default_language = "es"
 generate_feeds = false
+generate_sitemap = true
 
 [languages.en]
 title = "D'Krisna"
 description = "Beauty salon in Caravaca de la Cruz, Spain. Manicure, pedicure, gel nails, lash extensions and relaxing massages. Book your appointment!"
 
 [translations]
+breadcrumb_home = "Inicio"
 # Spanish translations (default)
 nav_about = "Sobre Nosotros"
 nav_nails = "Manicura"
@@ -81,6 +83,7 @@ error_404_message = "Lo sentimos, la página que buscas no existe o ha sido movi
 error_404_button = "Volver al inicio"
 
 [languages.en.translations]
+breadcrumb_home = "Home"
 nav_about = "About Us"
 nav_nails = "Manicure"
 nav_massages = "Massages"

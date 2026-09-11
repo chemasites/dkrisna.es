@@ -1,5 +1,5 @@
 {% macro render_card(service, lang, booking_url) %}
-<div class="service-detail-card">
+<div class="service-detail-card"{% if service.variantId %} id="service-{{ service.variantId }}"{% endif %}>
   <div class="service-header">
     <h3>{{ service.name }}</h3>
     <div class="service-meta">

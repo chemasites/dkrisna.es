@@ -35,44 +35,4 @@
 </section>
 {% endif %}
 
-{% if "sobre-nosotros" in page.path %}
-<!-- Team Members Schema -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "D'Krisna",
-    "url": "{{ config.base_url }}",
-    "employee": [
-        {
-            "@type": "Person",
-            "name": "Deyanira",
-            "jobTitle": "{% if lang == 'en' %}Nail Artist{% else %}Manicurista{% endif %}",
-            "worksFor": {
-                "@type": "BeautySalon",
-                "name": "D'Krisna"
-            }
-        },
-        {
-            "@type": "Person",
-            "name": "Nazareth",
-            "jobTitle": "{% if lang == 'en' %}Nail Artist{% else %}Manicurista{% endif %}",
-            "worksFor": {
-                "@type": "BeautySalon",
-                "name": "D'Krisna"
-            }
-        },
-        {
-            "@type": "Person",
-            "name": "Carlos",
-            "jobTitle": "{% if lang == 'en' %}Massage Therapist{% else %}Masajista{% endif %}",
-            "worksFor": {
-                "@type": "BeautySalon",
-                "name": "D'Krisna"
-            }
-        }
-    ]
-}
-</script>
-{% endif %}
 {% endblock %}

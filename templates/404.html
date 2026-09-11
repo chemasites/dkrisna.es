@@ -2,9 +2,7 @@
 
 {% block title %}{{ trans(key="error_404_title") }} | {{ config.title }}{% endblock %}
 
-{% block head %}
-<meta name="robots" content="noindex, nofollow">
-{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
 
 {% block content %}
 <section class="error-page">
