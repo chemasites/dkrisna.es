@@ -25,22 +25,22 @@
             "logo": {{ json::encode(value=config.base_url ~ "/images/logo.webp") }},
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Carretera de Murcia N45",
-                "addressLocality": "Caravaca de la Cruz",
-                "postalCode": "30400",
-                "addressRegion": "Murcia",
-                "addressCountry": "ES"
+                "streetAddress": {{ json::encode(value=config.extra.street_address) }},
+                "addressLocality": {{ json::encode(value=config.extra.city) }},
+                "postalCode": {{ json::encode(value=config.extra.postal_code) }},
+                "addressRegion": {{ json::encode(value=config.extra.region) }},
+                "addressCountry": {{ json::encode(value=config.extra.country) }}
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 38.105022796540084,
-                "longitude": -1.851400649856759
+                "latitude": {{ config.extra.latitude }},
+                "longitude": {{ config.extra.longitude }}
             },
             "openingHoursSpecification": [{
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "09:00",
-                "closes": "21:00"
+                "dayOfWeek": {{ json::encode(value=config.extra.opening_days) }},
+                "opens": {{ json::encode(value=config.extra.opening_time) }},
+                "closes": {{ json::encode(value=config.extra.closing_time) }}
             }],
             "sameAs": [
                 {{ json::encode(value=config.extra.booksy_url) }},

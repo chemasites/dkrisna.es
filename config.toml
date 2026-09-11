@@ -15,6 +15,7 @@ title = "D'Krisna"
 description = "Beauty salon in Caravaca de la Cruz, Spain. Manicure, pedicure, gel nails, lash extensions and relaxing massages. Book your appointment!"
 
 [translations]
+directions = "Cómo llegar"
 gallery_image_alt = "Trabajo de uñas de D’Krisna, imagen {number}"
 map_title = "Mapa de D’Krisna en Caravaca de la Cruz"
 service_categories = "Categorías de servicios"
@@ -87,6 +88,7 @@ error_404_message = "Lo sentimos, la página que buscas no existe o ha sido movi
 error_404_button = "Volver al inicio"
 
 [languages.en.translations]
+directions = "Get directions"
 gallery_image_alt = "Nail work by D’Krisna, image {number}"
 map_title = "Map of D’Krisna in Caravaca de la Cruz"
 service_categories = "Service categories"
@@ -161,9 +163,18 @@ error_404_button = "Back to home"
 # Site info
 phone = "+34 722 27 59 75"
 email = "dkrisnanails@gmail.com"
-address = "Carretera de Murcia N45, 30400 Caravaca de la Cruz, Murcia"
-maps_url = "https://maps.google.com/?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain"
-maps_embed = "https://www.google.com/maps?q=Calle+Carretera+de+Murcia+45,+30400+Caravaca+de+la+Cruz,+Murcia,+Spain&output=embed"
+
+# Address and regular hours, checked against the public Booksy profile.
+street_address = "Carretera de Murcia, 45"
+postal_code = "30400"
+city = "Caravaca de la Cruz"
+region = "Murcia"
+country = "ES"
+latitude = 38.10493002
+longitude = -1.85133006
+opening_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+opening_time = "09:00"
+closing_time = "21:00"
 
 # Social media
 instagram = "https://www.instagram.com/d_krisnanails"
@@ -175,5 +186,3 @@ whatsapp = "https://wa.me/34722275975"
 booksy_url = "https://booksy.com/es-es/144031_d-krisna-nails_salon-de-unas_81457_caravaca-de-la-cruz"
 
 # Business hours
-horario_semana = "09:00 - 21:00"
-horario_domingo = "Cerrado"

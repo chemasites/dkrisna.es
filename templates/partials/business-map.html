@@ -1,0 +1,6 @@
+{% set address_query = config.extra.street_address ~ ", " ~ config.extra.postal_code ~ " " ~ config.extra.city ~ ", " ~ config.extra.region ~ ", " ~ config.extra.country %}
+<iframe title="{{ trans(key='map_title', lang=lang) }}"
+        src="https://www.google.com/maps?q={{ address_query | urlencode }}&amp;output=embed"
+        width="100%" height="350" style="border:0;" loading="lazy" allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+<p><a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ address_query | urlencode }}" target="_blank" rel="noopener">{{ trans(key="directions", lang=lang) }}</a></p>
