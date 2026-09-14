@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 29,
+  "reviewCount": 31,
   "reviews": [
+    {
+      "name": "Maria B.",
+      "text": "Buena profesional",
+      "service": "Uñas Semipermanentes Con Diping",
+      "date": "sep. 9, 2026",
+      "rating": 5
+    },
     {
       "name": "Jane J.",
       "text": "very good service. always happy there. 😊",
@@ -113,22 +120,8 @@
       "service": "Pestañas Punto Por Punto",
       "date": "ago. 24, 2025",
       "rating": 5
-    },
-    {
-      "name": "Ana Olid M.",
-      "text": "Genial, como siempre! Naza es increíble y hace trabajos impecables ❤️",
-      "service": "Relleno De Acrílico",
-      "date": "ago. 15, 2025",
-      "rating": 5
-    },
-    {
-      "name": "Eva Sánchez L.",
-      "text": "Chica súper agradable y sobre todo muy profesional. Volveré sin duda. Me ha encantado.",
-      "service": "Retiro De Semipermanente",
-      "date": "ago. 12, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "34a7f9714e5ea1bb",
-  "fetchedAt": "2026-09-07T06:45:41.676Z"
+  "contentHash": "29027f1d22f8c476",
+  "fetchedAt": "2026-09-14T07:19:41.565Z"
 }
