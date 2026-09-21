@@ -1,6 +1,6 @@
 {
   "rating": 5,
-  "reviewCount": 31,
+  "reviewCount": 32,
   "reviews": [
     {
       "name": "Maria B.",
@@ -113,15 +113,8 @@
       "service": "Uñas Poligel",
       "date": "ago. 27, 2025",
       "rating": 5
-    },
-    {
-      "name": "cristina f.",
-      "text": "Excelente servicio , y las chicas super amables",
-      "service": "Pestañas Punto Por Punto",
-      "date": "ago. 24, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "29027f1d22f8c476",
-  "fetchedAt": "2026-09-14T07:19:41.565Z"
+  "contentHash": "8d3012cd639790d0",
+  "fetchedAt": "2026-09-21T07:23:38.977Z"
 }
