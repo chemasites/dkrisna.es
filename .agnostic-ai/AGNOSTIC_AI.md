@@ -45,7 +45,7 @@ Services and reviews are fetched from Booksy weekly on Monday via GitHub Actions
 
 ## Maintaining tool configuration
 - Edit `.agnostic-ai/AGNOSTIC_AI.md`, `.agnostic-ai/rules/`, and `.agnostic-ai/agents/`; generated files are overwritten by sync.
-- Use agnostic-ai 0.75.0, matching `.github/workflows/agent-config.yml`.
+- Use agnostic-ai 0.76.0, matching `.github/workflows/agent-config.yml`.
 - After finishing source changes, run `agnostic-ai validate`, `agnostic-ai lint --strict`, `agnostic-ai sync`, and `agnostic-ai sync --check`.
 - Commit shared sources and configuration only; native tool outputs are ignored. Run `agnostic-ai sync` after cloning or creating a worktree, before using either tool.
 - Batch relevant validation after the complete change; avoid running it after each small edit.

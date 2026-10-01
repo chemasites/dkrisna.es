@@ -49,7 +49,7 @@ instructions, agents, and rules for Claude and Codex. Targets are configured in
 Install the pinned CLI version on macOS or Linux (matching CI):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.75.0/scripts/install.sh | AGNOSTIC_AI_VERSION=v0.75.0 bash
+curl -fsSL https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.76.0/scripts/install.sh | AGNOSTIC_AI_VERSION=v0.76.0 bash
 ```
 
 After cloning or creating a worktree, run `agnostic-ai sync` before using Claude

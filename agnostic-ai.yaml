@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.75.0/docs/schemas/config.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.76.0/docs/schemas/config.schema.json
 version: 1
 
 targets:
@@ -11,3 +11,8 @@ gitignore:
 
 # Fail if a spec cannot be represented by a selected target.
 on-unsupported: error
+
+# Codex nested AGENTS.md rules can only scope whole folders; booksy-api targets single files.
+outputs:
+  codex:
+    nested-glob-rules: false

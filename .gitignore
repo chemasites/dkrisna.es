@@ -14,7 +14,9 @@ static/processed_images/
 /.claude/agent-memory-local/
 /.claude/agents/
 /.claude/rules/
+/.claude/scheduled_tasks.lock
 /.claude/settings.local.json
+/.claude/worktrees/
 /.codex/agents/
 /AGENTS.md
 /CLAUDE.md

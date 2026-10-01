@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      AGNOSTIC_AI_VERSION: v0.75.0
+      AGNOSTIC_AI_VERSION: v0.76.0
     steps:
       - name: Checkout
         uses: actions/checkout@v5
