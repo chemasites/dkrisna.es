@@ -9,7 +9,7 @@
         <nav class="nav" id="main-nav">
             <ul class="nav-links">
                 <li class="has-dropdown">
-                    <a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing("manicura") %}class="active"{% endif %}>
+                    <a href="{% if lang == 'en' %}/en/manicura/{% else %}/manicura/{% endif %}" {% if page and page.permalink is containing(pat="manicura") %}class="active"{% endif %}>
                         {{ trans(key="nav_nails", lang=lang) }}
                         <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </a>
@@ -31,7 +31,7 @@
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing("masajes") %}class="active"{% endif %}>
+                    <a href="{% if lang == 'en' %}/en/masajes/{% else %}/masajes/{% endif %}" {% if page and page.permalink is containing(pat="masajes") %}class="active"{% endif %}>
                         {{ trans(key="nav_massages", lang=lang) }}
                         <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </a>
@@ -47,8 +47,8 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}" {% if page and page.permalink is containing("sobre-nosotros") %}class="active"{% endif %}>{{ trans(key="nav_about", lang=lang) }}</a></li>
-                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}" {% if page and page.permalink is containing("ubicacion") %}class="active"{% endif %}>{{ trans(key="nav_location", lang=lang) }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/sobre-nosotros/{% else %}/sobre-nosotros/{% endif %}" {% if page and page.permalink is containing(pat="sobre-nosotros") %}class="active"{% endif %}>{{ trans(key="nav_about", lang=lang) }}</a></li>
+                <li><a href="{% if lang == 'en' %}/en/ubicacion/{% else %}/ubicacion/{% endif %}" {% if page and page.permalink is containing(pat="ubicacion") %}class="active"{% endif %}>{{ trans(key="nav_location", lang=lang) }}</a></li>
             </ul>
 
             <div class="nav-actions">

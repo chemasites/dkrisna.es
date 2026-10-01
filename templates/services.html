@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% import "macros/service-card.html" as cards %}
 
 {% block content %}
 <section class="page-hero">
@@ -43,7 +42,7 @@
                         {% if service.originalPrice %}
                             {% set_global has_discounts = true %}
                         {% endif %}
-                        {{ cards::render_card(service=service, lang=lang, booking_url=config.extra.booksy_url) }}
+                        {{ <service_card service={service} booking_url={config.extra.booksy_url} /> }}
                     {% endfor %}
                 </div>
                 {% endif %}

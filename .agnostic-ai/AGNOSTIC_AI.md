@@ -1,7 +1,7 @@
 # D'Krisna - Beauty Salon Website
 
 ## Project Overview
-Static website for D'Krisna beauty salon (Caravaca de la Cruz, Murcia, Spain) built with **Zola** (v0.21.0+), a Rust-based static site generator. Deployed to GitHub Pages at https://dkrisna.es.
+Static website for D'Krisna beauty salon (Caravaca de la Cruz, Murcia, Spain) built with **Zola** (v0.23.0+), a Rust-based static site generator. Deployed to GitHub Pages at https://dkrisna.es.
 
 ## Tech Stack
 - **SSG**: Zola (Rust) - templates use Tera/Jinja2 syntax
@@ -14,7 +14,7 @@ Static website for D'Krisna beauty salon (Caravaca de la Cruz, Murcia, Spain) bu
 
 ## Key Directories
 - `content/` - Markdown pages (`.md` = Spanish, `.en.md` = English)
-- `templates/` - Tera HTML templates (base, pages, partials, macros, shortcodes)
+- `templates/` - Tera HTML templates (base, pages, partials, components)
 - `sass/` - SCSS organized: abstracts, base, components, layout, pages, utilities
 - `static/data/` - JSON data files (services, reviews) synced from Booksy
 - `scripts/` - Node.js automation (fetch, translate, hash)
@@ -45,7 +45,7 @@ Services and reviews are fetched from Booksy weekly on Monday via GitHub Actions
 
 ## Maintaining tool configuration
 - Edit `.agnostic-ai/AGNOSTIC_AI.md`, `.agnostic-ai/rules/`, and `.agnostic-ai/agents/`; generated files are overwritten by sync.
-- Use agnostic-ai 0.51.0, matching `.github/workflows/agent-config.yml`.
+- Use agnostic-ai 0.75.0, matching `.github/workflows/agent-config.yml`.
 - After finishing source changes, run `agnostic-ai validate`, `agnostic-ai lint --strict`, `agnostic-ai sync`, and `agnostic-ai sync --check`.
 - Commit shared sources and configuration only; native tool outputs are ignored. Run `agnostic-ai sync` after cloning or creating a worktree, before using either tool.
 - Batch relevant validation after the complete change; avoid running it after each small edit.

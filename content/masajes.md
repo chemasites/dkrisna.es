@@ -33,4 +33,4 @@ Aparecen junto al nombre de cada tratamiento en la carta. Revisa también los de
 
 ### ¿Puedo hablar con el profesional antes de reservar?
 
-Sí. {% whatsapp_link() %}Escríbenos por WhatsApp{% end %} para explicar lo que buscas o consultar cualquier duda sobre la sesión. Puedes [conocer al equipo](@/sobre-nosotros.md) y consultar [la ubicación del centro](@/ubicacion.md).
+Sí. {% <whatsapp_link> %}Escríbenos por WhatsApp{% </whatsapp_link> %} para explicar lo que buscas o consultar cualquier duda sobre la sesión. Puedes [conocer al equipo](@/sobre-nosotros.md) y consultar [la ubicación del centro](@/ubicacion.md).

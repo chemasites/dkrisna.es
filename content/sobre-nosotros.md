@@ -76,4 +76,4 @@ show_cta = true
 
 Consulta nuestros [servicios de manicura y pedicura](@/manicura.md) o la carta de [masajes y tratamientos corporales](@/masajes.md). Cada servicio incluye su precio, duración y enlace de reserva.
 
-Si necesitas ayuda para elegir tu cita, {% whatsapp_link() %}contacta con el equipo por WhatsApp{% end %}. Estamos en [Caravaca de la Cruz, Murcia](@/ubicacion.md).
+Si necesitas ayuda para elegir tu cita, {% <whatsapp_link> %}contacta con el equipo por WhatsApp{% </whatsapp_link> %}. Estamos en [Caravaca de la Cruz, Murcia](@/ubicacion.md).

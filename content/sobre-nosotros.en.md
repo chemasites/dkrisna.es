@@ -76,4 +76,4 @@ show_cta = true
 
 Explore our [manicure and pedicure services](@/manicura.en.md) or [massages and body treatments](@/masajes.en.md). Each service includes its price, duration and booking link.
 
-For help choosing your appointment, {% whatsapp_link() %}contact the team on WhatsApp{% end %}. Find us in [Caravaca de la Cruz, Murcia, Spain](@/ubicacion.en.md).
+For help choosing your appointment, {% <whatsapp_link> %}contact the team on WhatsApp{% </whatsapp_link> %}. Find us in [Caravaca de la Cruz, Murcia, Spain](@/ubicacion.en.md).

@@ -33,4 +33,4 @@ Ask the team about maintenance for your chosen technique and the condition of yo
 
 ### Can I ask for help choosing?
 
-Yes. {% whatsapp_link() %}Message us on WhatsApp{% end %} with your question. You can also [meet the team](@/sobre-nosotros.en.md) and find [directions to the salon](@/ubicacion.en.md).
+Yes. {% <whatsapp_link> %}Message us on WhatsApp{% </whatsapp_link> %} with your question. You can also [meet the team](@/sobre-nosotros.en.md) and find [directions to the salon](@/ubicacion.en.md).

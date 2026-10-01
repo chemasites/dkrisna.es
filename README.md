@@ -6,7 +6,7 @@ Website for D'Krisna, a beauty and wellness center located in Caravaca de la Cru
 
 ### Prerequisites
 
-- [Zola](https://www.getzola.org/documentation/getting-started/installation/) (0.21.0 or higher)
+- [Zola](https://www.getzola.org/documentation/getting-started/installation/) (0.23.0 or higher)
 
 ### Getting Started
 
@@ -49,7 +49,7 @@ instructions, agents, and rules for Claude and Codex. Targets are configured in
 Install the pinned CLI version on macOS or Linux (matching CI):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.51.0/scripts/install.sh | AGNOSTIC_AI_VERSION=v0.51.0 bash
+curl -fsSL https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.75.0/scripts/install.sh | AGNOSTIC_AI_VERSION=v0.75.0 bash
 ```
 
 After cloning or creating a worktree, run `agnostic-ai sync` before using Claude

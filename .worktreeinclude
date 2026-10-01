@@ -1,14 +1,6 @@
-.idea/
-.vscode/
-.claude/settings.local.json
-.env
-public/
-static/processed_images/
-
 # >>> agnostic-ai (managed) >>>
 # Generated paths. Edit specs, not this block. Run `agnostic-ai sync` to refresh.
-# Not committed: a fresh clone or `git worktree` lacks these until `agnostic-ai sync` runs (e.g. a post-checkout hook).
-/.agnostic-ai/.sync-state
+# Copied into each Claude Code worktree: the gitignored paths sync writes, and the local layer it reads.
 /.agnostic-ai/local/
 /.agnostic-ai/packs/
 /.claude/agent-memory-local/

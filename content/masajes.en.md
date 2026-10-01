@@ -33,4 +33,4 @@ Both appear beside each treatment’s name in the menu. Review the details in Bo
 
 ### Can I speak to the practitioner before booking?
 
-Yes. {% whatsapp_link() %}Message us on WhatsApp{% end %} to describe what you are looking for or ask about the session. You can also [meet the team](@/sobre-nosotros.en.md) and find [the salon’s location](@/ubicacion.en.md).
+Yes. {% <whatsapp_link> %}Message us on WhatsApp{% </whatsapp_link> %} to describe what you are looking for or ask about the session. You can also [meet the team](@/sobre-nosotros.en.md) and find [the salon’s location](@/ubicacion.en.md).

@@ -1,10 +1,10 @@
-{% macro card(review, lang) %}
+{% component review_card(review, @lang) %}
 <article class="review-card">
     <div class="review-header">
         <div class="review-info">
             <span class="review-name">{{ review.name }}</span>
             {% if review.rating is defined %}
-            <span class="review-stars">{{ trans(key="review_rating", lang=lang) | replace(from="{rating}", to=review.rating | as_str) }}</span>
+            <span class="review-stars">{{ trans(key="review_rating", lang=lang) | replace(from="{rating}", to=review.rating | str) }}</span>
             {% endif %}
         </div>
     </div>
@@ -12,4 +12,4 @@
     <blockquote class="review-text">{{ review.text }}</blockquote>
     {% if review.date %}<div class="review-footer"><span class="review-date">{{ review.date }}</span></div>{% endif %}
 </article>
-{% endmacro card %}
+{% endcomponent review_card %}

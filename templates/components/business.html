@@ -1,0 +1,12 @@
+{% component business_address(@config) %}{% include "partials/business-address.html" %}{% endcomponent business_address %}
+
+{% component business_hours(@config, @lang) %}
+<p><strong>{{ trans(key="weekdays", lang=lang) }}:</strong><br>{{ config.extra.opening_time }} - {{ config.extra.closing_time }}</p>
+<p><strong>{{ trans(key="sunday", lang=lang) }}:</strong><br>{{ trans(key="closed", lang=lang) }}</p>
+{% endcomponent business_hours %}
+
+{% component business_map(@config, @lang) %}{% include "partials/business-map.html" %}{% endcomponent business_map %}
+
+{% component business_phone(@config) %}<a href="tel:{{ config.extra.phone | replace(from=' ', to='') }}">{{ config.extra.phone }}</a>{% endcomponent business_phone %}
+
+{% component whatsapp_link(@config) %}<a href="{{ config.extra.whatsapp }}" target="_blank" rel="noopener">{{ body }}</a>{% endcomponent whatsapp_link %}

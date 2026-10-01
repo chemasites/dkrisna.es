@@ -48,7 +48,7 @@ jobs:
       - name: Build site to verify
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.21.0
+          tool: zola@0.23.6
 
       - name: Verify build
         run: zola build

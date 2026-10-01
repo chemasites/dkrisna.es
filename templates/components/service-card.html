@@ -1,4 +1,4 @@
-{% macro render_card(service, lang, booking_url) %}
+{% component service_card(service, booking_url, @lang) %}
 <div class="service-detail-card"{% if service.variantId %} id="service-{{ service.variantId }}"{% endif %}>
   <div class="service-header">
     <h3>{{ service.name }}</h3>
@@ -20,4 +20,4 @@
   </a>
   {% endif %}
 </div>
-{% endmacro render_card %}
+{% endcomponent service_card %}

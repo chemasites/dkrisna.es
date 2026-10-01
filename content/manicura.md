@@ -33,4 +33,4 @@ Pregunta al equipo qué mantenimiento corresponde a tu técnica y al estado de t
 
 ### ¿Puedo consultar antes de elegir?
 
-Sí. {% whatsapp_link() %}Escríbenos por WhatsApp{% end %} para preguntar por el servicio que necesitas. También puedes [conocer al equipo](@/sobre-nosotros.md) y consultar [cómo llegar al centro](@/ubicacion.md).
+Sí. {% <whatsapp_link> %}Escríbenos por WhatsApp{% </whatsapp_link> %} para preguntar por el servicio que necesitas. También puedes [conocer al equipo](@/sobre-nosotros.md) y consultar [cómo llegar al centro](@/ubicacion.md).

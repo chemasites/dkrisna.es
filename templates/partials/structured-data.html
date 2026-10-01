@@ -13,22 +13,22 @@
     "@graph": [
         {
             "@type": "BeautySalon",
-            "@id": {{ json::encode(value=business_id) }},
-            "name": {{ json::encode(value=config.title) }},
+            "@id": {{ <json value={business_id} /> }},
+            "name": {{ <json value={config.title} /> }},
             "alternateName": "D'Krisna Nails",
-            "url": {{ json::encode(value=config.base_url ~ "/") }},
-            "description": {{ json::encode(value=config.description) }},
-            "telephone": {{ json::encode(value=config.extra.phone) }},
-            "email": {{ json::encode(value=config.extra.email) }},
-            "image": {{ json::encode(value=config.base_url ~ "/images/og-image.webp") }},
-            "logo": {{ json::encode(value=config.base_url ~ "/images/logo.webp") }},
+            "url": {{ <json value={config.base_url ~ "/"} /> }},
+            "description": {{ <json value={config.description} /> }},
+            "telephone": {{ <json value={config.extra.phone} /> }},
+            "email": {{ <json value={config.extra.email} /> }},
+            "image": {{ <json value={config.base_url ~ "/images/og-image.webp"} /> }},
+            "logo": {{ <json value={config.base_url ~ "/images/logo.webp"} /> }},
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": {{ json::encode(value=config.extra.street_address) }},
-                "addressLocality": {{ json::encode(value=config.extra.city) }},
-                "postalCode": {{ json::encode(value=config.extra.postal_code) }},
-                "addressRegion": {{ json::encode(value=config.extra.region) }},
-                "addressCountry": {{ json::encode(value=config.extra.country) }}
+                "streetAddress": {{ <json value={config.extra.street_address} /> }},
+                "addressLocality": {{ <json value={config.extra.city} /> }},
+                "postalCode": {{ <json value={config.extra.postal_code} /> }},
+                "addressRegion": {{ <json value={config.extra.region} /> }},
+                "addressCountry": {{ <json value={config.extra.country} /> }}
             },
             "geo": {
                 "@type": "GeoCoordinates",
@@ -37,55 +37,55 @@
             },
             "openingHoursSpecification": [{
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": {{ json::encode(value=config.extra.opening_days) }},
-                "opens": {{ json::encode(value=config.extra.opening_time) }},
-                "closes": {{ json::encode(value=config.extra.closing_time) }}
+                "dayOfWeek": {{ <json value={config.extra.opening_days} /> }},
+                "opens": {{ <json value={config.extra.opening_time} /> }},
+                "closes": {{ <json value={config.extra.closing_time} /> }}
             }],
             "sameAs": [
-                {{ json::encode(value=config.extra.booksy_url) }},
-                {{ json::encode(value=config.extra.instagram) }},
-                {{ json::encode(value=config.extra.facebook) }},
-                {{ json::encode(value=config.extra.tiktok) }}
+                {{ <json value={config.extra.booksy_url} /> }},
+                {{ <json value={config.extra.instagram} /> }},
+                {{ <json value={config.extra.facebook} /> }},
+                {{ <json value={config.extra.tiktok} /> }}
             ],
             "potentialAction": {
                 "@type": "ReserveAction",
-                "target": {{ json::encode(value=config.extra.booksy_url) }}
+                "target": {{ <json value={config.extra.booksy_url} /> }}
             }
         },
         {
             "@type": "WebSite",
-            "@id": {{ json::encode(value=website_id) }},
-            "url": {{ json::encode(value=config.base_url ~ "/") }},
-            "name": {{ json::encode(value=config.title) }},
+            "@id": {{ <json value={website_id} /> }},
+            "url": {{ <json value={config.base_url ~ "/"} /> }},
+            "name": {{ <json value={config.title} /> }},
             "inLanguage": ["es", "en"],
-            "publisher": {"@id": {{ json::encode(value=business_id) }}}
+            "publisher": {"@id": {{ <json value={business_id} /> }}}
         },
         {
             "@type": "WebPage",
-            "@id": {{ json::encode(value=entity_url ~ "#webpage") }},
-            "url": {{ json::encode(value=entity_url) }},
-            "name": {{ json::encode(value=entity_title) }},
-            "inLanguage": {{ json::encode(value=lang) }},
-            "isPartOf": {"@id": {{ json::encode(value=website_id) }}},
-            "about": {"@id": {{ json::encode(value=business_id) }}}
+            "@id": {{ <json value={entity_url ~ "#webpage"} /> }},
+            "url": {{ <json value={entity_url} /> }},
+            "name": {{ <json value={entity_title} /> }},
+            "inLanguage": {{ <json value={lang} /> }},
+            "isPartOf": {"@id": {{ <json value={website_id} /> }}},
+            "about": {"@id": {{ <json value={business_id} /> }}}
             {% if page %},
-            "breadcrumb": {"@id": {{ json::encode(value=entity_url ~ "#breadcrumb") }}}
+            "breadcrumb": {"@id": {{ <json value={entity_url ~ "#breadcrumb"} /> }}}
             {% endif %}
         }
         {% if page %},
         {
             "@type": "BreadcrumbList",
-            "@id": {{ json::encode(value=entity_url ~ "#breadcrumb") }},
+            "@id": {{ <json value={entity_url ~ "#breadcrumb"} /> }},
             "itemListElement": [
                 {
                     "@type": "ListItem", "position": 1,
-                    "name": {{ json::encode(value=trans(key="breadcrumb_home", lang=lang)) }},
-                    "item": {{ json::encode(value=get_url(path="/", lang=lang)) }}
+                    "name": {{ <json value={trans(key="breadcrumb_home", lang=lang)} /> }},
+                    "item": {{ <json value={get_url(path="/", lang=lang, trailing_slash=true)} /> }}
                 },
                 {
                     "@type": "ListItem", "position": 2,
-                    "name": {{ json::encode(value=page.title) }},
-                    "item": {{ json::encode(value=entity_url) }}
+                    "name": {{ <json value={page.title} /> }},
+                    "item": {{ <json value={entity_url} /> }}
                 }
             ]
         }
@@ -102,21 +102,21 @@
                         {% if service.variantId %},
         {
             "@type": "Service",
-            "@id": {{ json::encode(value=entity_url ~ "#service-" ~ service.variantId) }},
-            "url": {{ json::encode(value=entity_url ~ "#service-" ~ service.variantId) }},
-            "name": {{ json::encode(value=service.name) }},
+            "@id": {{ <json value={entity_url ~ "#service-" ~ service.variantId} /> }},
+            "url": {{ <json value={entity_url ~ "#service-" ~ service.variantId} /> }},
+            "name": {{ <json value={service.name} /> }},
             {% if service.description %}
-            "description": {{ json::encode(value=service.description) }},
+            "description": {{ <json value={service.description} /> }},
             {% elif service.variantId == 2659030 %}
-            "description": {{ json::encode(value=trans(key="therapeutic_description", lang=lang)) }},
+            "description": {{ <json value={trans(key="therapeutic_description", lang=lang)} /> }},
             {% endif %}
-            "provider": {"@id": {{ json::encode(value=business_id) }}},
-            "mainEntityOfPage": {"@id": {{ json::encode(value=entity_url ~ "#webpage") }}},
+            "provider": {"@id": {{ <json value={business_id} /> }}},
+            "mainEntityOfPage": {"@id": {{ <json value={entity_url ~ "#webpage"} /> }}},
             "offers": {
                 "@type": "Offer",
-                "url": {{ json::encode(value=config.extra.booksy_url ~ "?do=open-widget&variantId=" ~ service.variantId) }},
+                "url": {{ <json value={config.extra.booksy_url ~ "?do=open-widget&variantId=" ~ service.variantId} /> }},
                 "priceCurrency": "EUR",
-                "price": {{ json::encode(value=service.price | replace(from=".", to="") | replace(from=",", to=".") | replace(from=" €", to="") | trim) }}
+                "price": {{ <json value={service.price | replace(from=".", to="") | replace(from=",", to=".") | replace(from=" €", to="") | trim} /> }}
             }
         }
                         {% endif %}
