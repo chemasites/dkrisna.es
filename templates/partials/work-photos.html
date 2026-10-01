@@ -1,0 +1,21 @@
+{% set gallery_data = load_data(path="static/data/gallery.json") %}
+{% if gallery_data.images | length >= 3 %}
+<ul class="hero-photos">
+    {% for image in gallery_data.images[:3] %}
+    {% if loop.first %}
+    {% set small = resize_image(path="static" ~ image.src, width=280, height=350, op="fill", format="webp", quality=80) %}
+    {% set large = resize_image(path="static" ~ image.src, width=560, height=700, op="fill", format="webp", quality=80) %}
+    {% else %}
+    {% set small = resize_image(path="static" ~ image.src, width=240, height=240, op="fill", format="webp", quality=80) %}
+    {% set large = resize_image(path="static" ~ image.src, width=480, height=480, op="fill", format="webp", quality=80) %}
+    {% endif %}
+    <li class="hero-photo">
+        <img src="{{ large.url | replace(from=config.base_url, to='') }}"
+             srcset="{{ small.url | replace(from=config.base_url, to='') }} {{ small.width }}w, {{ large.url | replace(from=config.base_url, to='') }} {{ large.width }}w"
+             sizes="(max-width: 992px) 30vw, 280px"
+             alt="{{ trans(key='gallery_image_alt', lang=lang) | replace(from='{number}', to=loop.index | str) }}"
+             width="{{ large.width }}" height="{{ large.height }}"{% if loop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

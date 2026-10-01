@@ -2,13 +2,16 @@
 <div class="service-detail-card"{% if service.variantId %} id="service-{{ service.variantId }}"{% endif %}>
   <div class="service-header">
     <h3>{{ service.name }}</h3>
-    <div class="service-meta">
-      {% if service.duration %}<span class="service-duration">{% if lang == "en" %}{{ service.duration | replace(from="horas", to="hours") | replace(from="hora", to="hour") }}{% else %}{{ service.duration }}{% endif %}</span>{% endif %}
-      <span class="service-price">
-        {% if service.originalPrice %}<span class="price-original">{{ service.originalPrice }}</span> {% endif %}{{ service.price }}
-      </span>
-    </div>
+    <span class="service-price">
+      {% if service.originalPrice %}<span class="price-original">{{ service.originalPrice }}</span> {% endif %}{{ service.price }}
+    </span>
   </div>
+  {% if service.duration %}
+  <span class="service-duration">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    {% if lang == "en" %}{{ service.duration | replace(from="horas", to="hours") | replace(from="hora", to="hour") }}{% else %}{{ service.duration }}{% endif %}
+  </span>
+  {% endif %}
   {% if service.description %}
   <p class="service-description">{{ service.description }}</p>
   {% elif service.variantId == 2659030 %}

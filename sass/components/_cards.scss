@@ -2,6 +2,19 @@
 // Cards
 // ============================================
 
+@mixin soft-card {
+    background: $color-white;
+    border: 1px solid rgba($color-primary, 0.22);
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+        border-color: rgba($color-primary, 0.6);
+        box-shadow: $shadow-md;
+    }
+}
+
 .service-card {
     display: block;
     background: $color-white;
@@ -82,15 +95,9 @@
 }
 
 .value-card {
-    background: $color-beige-light;
+    @include soft-card;
     padding: $spacing-md;
-    border-radius: $border-radius-lg;
     text-align: center;
-    transition: $transition;
-
-    &:hover {
-        box-shadow: $shadow-md;
-    }
 
     h3 {
         margin: $spacing-sm 0 $spacing-xs;
@@ -118,16 +125,9 @@
 }
 
 .team-card {
-    background: $color-white;
+    @include soft-card;
     padding: $spacing-md $spacing-sm;
-    border-radius: $border-radius;
-    box-shadow: $shadow-sm;
     text-align: center;
-    transition: $transition;
-
-    &:hover {
-        box-shadow: $shadow-md;
-    }
 }
 
 .team-avatar {
@@ -264,15 +264,9 @@
 }
 
 .info-card {
-    background: $color-white;
+    @include soft-card;
     padding: $spacing-md;
-    border-radius: $border-radius-lg;
     text-align: center;
-    transition: $transition;
-
-    &:hover {
-        box-shadow: $shadow-sm;
-    }
 
     h3 {
         font-size: 1.25rem;
@@ -345,61 +339,54 @@
 }
 
 .service-detail-card {
+    @include soft-card;
     display: flex;
     flex-direction: column;
-    gap: $spacing-sm;
-    background: $color-beige-light;
-    padding: $spacing-md;
-    border-radius: $border-radius-lg;
-    transition: $transition;
-    border: 1px solid rgba($color-beige-dark, 0.2);
+    align-items: flex-start;
+    gap: $spacing-xs + $spacing-xxs;
+    padding: $spacing-md - $spacing-xxs $spacing-md;
 
     &:hover {
-        box-shadow: $shadow-md;
         transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &:hover {
+            transform: none;
+        }
     }
 }
 
 .service-header {
-    margin-bottom: $spacing-xs;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    width: 100%;
 
     h3 {
-        font-size: 1.125rem;
-        margin: 0 0 $spacing-xs 0;
+        font-size: 1.25rem;
+        margin: 0;
         line-height: 1.3;
     }
 }
 
-.service-meta {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
-    flex-wrap: wrap;
-}
-
 .service-price {
     font-family: $font-heading;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 600;
     color: $color-primary-ink;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 
     .price-original {
         text-decoration: line-through;
         color: $color-text;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 400;
         margin-right: 0.25rem;
-        opacity: 0.6;
+        opacity: 0.7;
     }
-}
-
-.service-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: $spacing-sm;
-    margin-top: $spacing-sm;
 }
 
 .service-duration {
@@ -407,19 +394,18 @@
     align-items: center;
     gap: $spacing-xxs + 0.1rem;
     font-size: 0.8125rem;
-    color: $color-text;
-    background: rgba($color-beige-dark, 0.15);
+    font-weight: 500;
+    color: $color-primary-ink;
+    background: $color-primary-pale;
     padding: $spacing-xxs $spacing-xs + 0.1rem;
-    border-radius: $border-radius;
-
-
+    border-radius: $border-radius-pill;
 }
 
 .service-description {
-    font-size: 0.875rem;
-    color: $color-text-light;
-    margin: $spacing-xs 0 0 0;
-    line-height: 1.4;
+    font-size: 0.9375rem;
+    color: $color-text;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .service-book-btn {
@@ -427,19 +413,22 @@
     align-items: center;
     justify-content: center;
     min-height: 44px;
-    text-align: center;
     margin-top: auto;
     padding: $spacing-xs $spacing-md;
-    background: $color-primary;
-    color: $color-dark;
-    font-size: 0.875rem;
-    font-weight: 500;
+    background: transparent;
+    color: $color-primary-ink;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     text-decoration: none;
-    border-radius: $border-radius;
-    transition: $transition;
+    border: 1.5px solid $color-primary;
+    border-radius: $border-radius-pill;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
     &:hover {
-        background: lighten($color-primary, 5%);
+        background: $color-primary;
+        border-color: $color-primary;
         color: $color-dark;
     }
 }

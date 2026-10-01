@@ -5,6 +5,7 @@ template = "services.html"
 
 [extra]
 show_cta = true
+hero_photos = true
 category_filter = ["manos", "pies", "cejas-pestanas"]
 services_note_key = "services_note_manicura"
 +++

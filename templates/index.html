@@ -1,34 +1,36 @@
 {% extends "base.html" %}
 
 {% block preload %}
-{% set hero_small = resize_image(path="static/images/hero.webp", width=640, op="fit_width", format="webp", quality=75) %}
-{% set hero_large = resize_image(path="static/images/hero.webp", width=1280, op="fit_width", format="webp", quality=80) %}
-<link rel="preload" as="image" href="{{ hero_large.url | replace(from=config.base_url, to='') }}"
-      imagesrcset="{{ hero_small.url | replace(from=config.base_url, to='') }} 640w, {{ hero_large.url | replace(from=config.base_url, to='') }} 1280w"
-      imagesizes="100vw" fetchpriority="high">
+{% set gallery_data = load_data(path="static/data/gallery.json") %}
+{% if gallery_data.images | length >= 3 %}
+{% set lead_small = resize_image(path="static" ~ gallery_data.images[0].src, width=280, height=350, op="fill", format="webp", quality=80) %}
+{% set lead_large = resize_image(path="static" ~ gallery_data.images[0].src, width=560, height=700, op="fill", format="webp", quality=80) %}
+<link rel="preload" as="image" href="{{ lead_large.url | replace(from=config.base_url, to='') }}"
+      imagesrcset="{{ lead_small.url | replace(from=config.base_url, to='') }} {{ lead_small.width }}w, {{ lead_large.url | replace(from=config.base_url, to='') }} {{ lead_large.width }}w"
+      imagesizes="(max-width: 992px) 30vw, 280px" fetchpriority="high">
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% set gallery_data = load_data(path="static/data/gallery.json") %}
 
 <!-- Hero Section -->
 <section class="hero">
-    {% set hero_small = resize_image(path="static/images/hero.webp", width=640, op="fit_width", format="webp", quality=75) %}
-{% set hero_large = resize_image(path="static/images/hero.webp", width=1280, op="fit_width", format="webp", quality=80) %}
-    <img class="hero-image" src="{{ hero_large.url | replace(from=config.base_url, to='') }}"
-         srcset="{{ hero_small.url | replace(from=config.base_url, to='') }} 640w, {{ hero_large.url | replace(from=config.base_url, to='') }} 1280w"
-         sizes="100vw" width="{{ hero_large.width }}" height="{{ hero_large.height }}" alt="" fetchpriority="high">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1 class="hero-title">{{ trans(key="hero_title", lang=lang) }}</h1>
-        <p class="hero-subtitle">{{ trans(key="hero_subtitle", lang=lang) }}</p>
-        <div class="hero-buttons">
-            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
-                {{ trans(key="hero_cta", lang=lang) }}
-            </a>
-            <a href="#servicios" class="btn btn-outline">
-                {{ trans(key="hero_explore", lang=lang) }} →
-            </a>
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ trans(key="hero_title", lang=lang) }}</h1>
+            <p class="hero-subtitle">{{ trans(key="hero_subtitle", lang=lang) }}</p>
+            <div class="hero-buttons">
+                <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+                    {{ trans(key="hero_cta", lang=lang) }}
+                </a>
+                <a href="#servicios" class="btn btn-outline">
+                    {{ trans(key="hero_explore", lang=lang) }} →
+                </a>
+            </div>
+            {% include "partials/open-status.html" %}
         </div>
+        {% include "partials/work-photos.html" %}
     </div>
 </section>
 
@@ -93,7 +95,6 @@
 </section>
 
 <!-- Gallery -->
-{% set gallery_data = load_data(path="static/data/gallery.json") %}
 {% if gallery_data.images | length > 0 %}
 <section id="galeria" class="section gallery-section">
     <div class="container">
@@ -177,17 +178,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2>{{ trans(key="cta_title", lang=lang) }}</h2>
-            <p>{{ trans(key="cta_subtitle", lang=lang) }}</p>
-            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-                {{ trans(key="book_now", lang=lang) }}
-            </a>
-        </div>
-    </div>
-</section>
+{% include "partials/cta.html" %}
 
 <!-- Location Preview -->
 <section class="section location-preview">

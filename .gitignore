@@ -4,6 +4,9 @@
 .env
 public/
 static/processed_images/
+.impeccable/hook.cache.json
+.impeccable/questions/
+.impeccable/review/
 
 # >>> agnostic-ai (managed) >>>
 # Generated paths. Edit specs, not this block. Run `agnostic-ai sync` to refresh.

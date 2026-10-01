@@ -1,0 +1,39 @@
+<p class="hero-status"
+   data-days="{{ config.extra.opening_days | join(sep=',') }}"
+   data-open="{{ config.extra.opening_time }}"
+   data-close="{{ config.extra.closing_time }}"
+   data-lang="{{ lang }}"
+   data-text-open="{{ trans(key='status_open', lang=lang) }}"
+   data-text-today="{{ trans(key='status_opens_today', lang=lang) }}"
+   data-text-later="{{ trans(key='status_opens_on', lang=lang) }}">
+    <span class="hero-status-dot" aria-hidden="true"></span>
+    <span class="hero-status-text">{{ trans(key="weekdays", lang=lang) }}: {{ config.extra.opening_time }} - {{ config.extra.closing_time }}</span>
+</p>
+<script>
+(function() {
+    var status = document.querySelector('.hero-status');
+    if (!status) return;
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var openDays = status.dataset.days.split(',');
+    var toMinutes = function(hhmm) { var p = hhmm.split(':'); return +p[0] * 60 + +p[1]; };
+    var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', weekday: 'long', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    var get = function(type) { return parts.find(function(p) { return p.type === type; }).value; };
+    var today = days.indexOf(get('weekday'));
+    var now = +get('hour') * 60 + +get('minute');
+    var openToday = openDays.indexOf(days[today]) !== -1;
+    var text;
+    if (openToday && now >= toMinutes(status.dataset.open) && now < toMinutes(status.dataset.close)) {
+        text = status.dataset.textOpen.replace('{time}', status.dataset.close);
+        status.classList.add('is-open');
+    } else if (openToday && now < toMinutes(status.dataset.open)) {
+        text = status.dataset.textToday.replace('{time}', status.dataset.open);
+    } else {
+        var next = today;
+        do { next = (next + 1) % 7; } while (openDays.indexOf(days[next]) === -1 && next !== today);
+        // 2024-01-07 was a Sunday, so day index maps directly onto that week.
+        var dayName = new Intl.DateTimeFormat(status.dataset.lang, { weekday: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(2024, 0, 7 + next, 12)));
+        text = status.dataset.textLater.replace('{day}', dayName).replace('{time}', status.dataset.open);
+    }
+    status.querySelector('.hero-status-text').textContent = text;
+})();
+</script>

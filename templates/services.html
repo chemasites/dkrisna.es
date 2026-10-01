@@ -1,15 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="page-hero">
-    <div class="page-hero-overlay"></div>
-    <div class="container">
-        <h1 class="page-title">{{ page.title }}</h1>
-        {% if page.description %}
-        <p class="page-subtitle">{{ page.description }}</p>
-        {% endif %}
-    </div>
-</section>
+{% include "partials/page-hero.html" %}
 
 <section class="section page-content">
     <div class="container">
@@ -59,17 +51,7 @@
 </section>
 
 {% if page.extra.show_cta | default(value=true) %}
-<section class="section cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2>{{ trans(key="cta_title", lang=lang) }}</h2>
-            <p>{{ trans(key="cta_subtitle", lang=lang) }}</p>
-            <a href="{{ config.extra.booksy_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-                {{ trans(key="book_now", lang=lang) }}
-            </a>
-        </div>
-    </div>
-</section>
+{% include "partials/cta.html" %}
 {% endif %}
 
 {% endblock %}

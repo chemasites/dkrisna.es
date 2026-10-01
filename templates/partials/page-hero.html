@@ -1,0 +1,19 @@
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div class="page-hero-content">
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="page-subtitle">{{ page.description }}</p>
+            {% endif %}
+            {% if page.extra.show_cta | default(value=true) %}
+            <div class="page-hero-actions">
+                <a href="{{ config.extra.booksy_url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ trans(key="hero_cta", lang=lang) }}</a>
+            </div>
+            {% include "partials/open-status.html" %}
+            {% endif %}
+        </div>
+        {% if page.extra.hero_photos | default(value=false) %}
+        {% include "partials/work-photos.html" %}
+        {% endif %}
+    </div>
+</section>
