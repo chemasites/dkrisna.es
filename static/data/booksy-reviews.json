@@ -1,7 +1,14 @@
 {
   "rating": 5,
-  "reviewCount": 32,
+  "reviewCount": 33,
   "reviews": [
+    {
+      "name": "Jane J.",
+      "text": "I go to this salón from July 2025. I'm always satisfied with my nails. Nazareth and Dreyka are very lovely ladies. salón is always clean and cosy.",
+      "service": "Uñas Semipermanentes Con Diping",
+      "date": "oct. 8, 2026",
+      "rating": 5
+    },
     {
       "name": "Maria B.",
       "text": "Buena profesional",
@@ -106,15 +113,8 @@
       "service": "Uñas acrílicas",
       "date": "sep. 2, 2025",
       "rating": 5
-    },
-    {
-      "name": "Vicky P.",
-      "text": "Muy bien",
-      "service": "Uñas Poligel",
-      "date": "ago. 27, 2025",
-      "rating": 5
     }
   ],
-  "contentHash": "8d3012cd639790d0",
-  "fetchedAt": "2026-09-21T07:23:38.977Z"
+  "contentHash": "030c66fc11dfef37",
+  "fetchedAt": "2026-10-12T08:15:09.474Z"
 }
